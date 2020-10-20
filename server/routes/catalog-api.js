@@ -13,6 +13,10 @@
  //TODO Import Catalog model
  const router = express.Router();
 
+// Import the Catalog Model
+const Catalog = require('../models/catalog')
+
+
  //bring in our base and error response classes
  const BaseResponse = require('../services/base-response');
  const ErrorResponse = require('../services/error-response');

@@ -20,6 +20,8 @@ let CatalogSchema = new Schema({
     title: String,
     price: Number,
     isDisabled: Boolean
+}, { 
+    collection: 'catalog'
 })
 
 module.exports = mongoose.model('Catalog', CatalogSchema)

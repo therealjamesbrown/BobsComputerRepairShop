@@ -10,6 +10,7 @@
  */
 
  const express = require('express');
+const { restart } = require('nodemon');
  //TODO Import Catalog model
  const router = express.Router();
 
@@ -28,7 +29,7 @@ const Catalog = require('../models/catalog')
   */
 
 
-  
+
 
 router.get('/', async(req, res) => {
   try{
@@ -84,5 +85,36 @@ router.get('/', async(req, res) => {
   * --Delete Item--
   * 
   */
+  router.patch('/:_id', async(req, res) => {
+    try{
+      Catalog.findOne({'_id': req.params._id}, function(error, item){
+        if(error){
+          console.log(error);
+          const deleteTaskMongoErrorReponse = new ErrorResponse('500', 'Internal Server Error', err);
+          res.status(500).send(deleteTaskMongoErrorReponse.toObject());
+        } else {
+          item.set({
+            isDisabled: req.body.isDisabled
+          });
+
+          item.save(function(err, updatedItem){
+            if(err){
+              console.log(err);
+              const updateIsDisabledStatusError = new ErrorResponse('500', 'Internal Server Error', err);
+              res.status(500).send(updateIsDisabledStatusError.toObject());
+            } else {
+              console.log(updatedItem);
+              const updateIsDisabledStatusSuccess = new BaseResponse('200', 'Success!', updatedItem);
+              res.json(updateIsDisabledStatusSuccess.toObject());
+            }
+          })
+        }
+      })
+    }catch(err){
+      console.log(err);
+      const updateIsDisabledCatchError = new ErrorResponse('500', 'Internal Server Error', err.message);
+      res.status(500).send(updateIsDisabledCatchError.toObject());
+    }
+  })
 
  module.exports = router; 

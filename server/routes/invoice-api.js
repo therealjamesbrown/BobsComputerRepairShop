@@ -28,8 +28,37 @@ const ErrorResponse = require('../services/error-response');
 /**
  * 
  * --Find Invoice by ID--
- * 
+ * Complete by JB
  */
+router.get('/:_id', async(req, res) => {
+    try{
+        Invoice.findOne({
+            '_id': req.params._id
+        },
+        function(err, invoice){
+            /**
+         * 
+         * if db error handle it
+         * 
+         */
+        if(err){
+            console.log(err);
+            const mongoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err)
+            res.status(500).send(mongoDbErrorResponse.toObject());
+            //if success log the invoice and return the success using base response class
+        } else {
+            console.log(invoice);
+            const findInvoiceByIdSuccessResponse = new BaseResponse('200', 'Successful!', invoice);
+            res.json(findInvoiceByIdSuccessResponse.toObject());
+        }
+        })
+        //catch any other errors that might occur
+    } catch(e){
+        console.log(e);
+        const errorCatchResponse = new ErrorResopnse('500', 'Internal Server Error', e.message);
+        res.status(500).send(errorCatchResponse.toObject());
+    }
+}) 
 
 
 

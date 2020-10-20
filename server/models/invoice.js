@@ -16,11 +16,11 @@ const Schema = mongoose.Schema;
 /*import over Catalog so we can use items from the catalog to
  in the line items. 
 */
-const Catalog = require('./catalog');
+const Catalog = require('./catalog').schema;
 let ObjectId = mongoose.ObjectId;
 
 let invoiceSchema = new Schema({
-    _id: ObjectId,
+    _id:           ObjectId,
     lineItem:      [Catalog],
     partsAmount:   { type: Number},
     laborAmount:   { type: Number },

@@ -28,6 +28,34 @@ const Catalog = require('../models/catalog')
   */
 
 
+  
+
+router.get('/', async(req, res) => {
+  try{
+    //pulling all documents, so we'll leave the request object empty and 
+    //just worry about the callback function.
+    Catalog.find({},
+      function(err, item){
+        if(err){
+          console.log(err);
+          const mongoDbFindAllErrorResponse = new ErrorResponse('500', 'Internal Server Error', err)
+          res.status(500).send(mongoDbFindAllErrorResponse.toObject());
+        } else {
+          console.log(item);
+          const findAllSuccessResponse = new BaseResponse('200', 'Successful!', item);
+          res.json(findAllSuccessResponse.toObject());
+        }
+      });
+  }catch(e){
+    console.log(e);
+    const errorFindAllCatchResponse = new ErrorResponse('500', 'Internal Server Error', e.message);
+    res.status(500).send(errorFindAllCatchResponse.toObject());
+  }
+});
+
+
+
+
 
  /**
   * 

@@ -22,6 +22,14 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
 
+//Import our APIs
+const CatalogApi = require('./routes/catalog-api');
+const InvoiceApi = require('./routes/invoice-api');
+const RoleApi = require('./routes/role-api');
+const SecurityQuestionsApi = require('./routes/securityQuestion-api');
+const UserApi = require('./routes/user-api');
+
+
 /**
  * App configurations
  */
@@ -35,10 +43,10 @@ app.use('/', express.static(path.join(__dirname, '../dist/bcrs')));
 /**
  * Variables
  */
-const port = 3000; // server port
+const port = 3000 || process.env.PORT; // server port
 
 // TODO: This line will need to be replaced with your actual database connection string
-const conn = 'mongodb+srv://superadmin:s3cret@cluster0-lujih.mongodb.net/bcrs?retryWrites=true&w=majority';
+const conn = 'mongodb+srv://admin:snow123@cluster0.jiil7.mongodb.net/BCRS?retryWrites=true&w=majority';
 
 /**
  * Database connection
@@ -53,9 +61,17 @@ mongoose.connect(conn, {
   console.log(`MongoDB Error: ${err.message}`)
 }); // end mongoose connection
 
+
 /**
- * API(s) go here...
+ * APIs
  */
+app.use('/api/catalogs', CatalogApi);
+app.use('/api/invoices', CatalogApi);
+app.use('/api/roles', RoleApi);
+app.use('/api/securityQuestions', SecurityQuestionsApi);
+app.use('/api/users', UserApi);
+
+
 
 /**
  * Create and start server

@@ -10,7 +10,7 @@
  */
 
 const express = require('express');
-//TODO Import Invoice model
+const Invoice = require('../models/invoice');
 const router = express.Router();
 
 //bring in our base and error response classes

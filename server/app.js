@@ -22,6 +22,9 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
 
+// Import Router
+const router = require('./routes/router')
+
 /**
  * App configurations
  */
@@ -31,6 +34,12 @@ app.use(bodyParser.urlencoded({'extended': true}));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../dist/bcrs')));
 app.use('/', express.static(path.join(__dirname, '../dist/bcrs')));
+
+/**
+ * Router goes here...
+ */
+
+ app.use('/api', router)
 
 /**
  * Variables
@@ -53,9 +62,6 @@ mongoose.connect(conn, {
   console.log(`MongoDB Error: ${err.message}`)
 }); // end mongoose connection
 
-/**
- * API(s) go here...
- */
 
 /**
  * Create and start server

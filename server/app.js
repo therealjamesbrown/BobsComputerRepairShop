@@ -22,9 +22,6 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
 
-// Import Router
-const router = require('./routes/router')
-
 /**
  * App configurations
  */

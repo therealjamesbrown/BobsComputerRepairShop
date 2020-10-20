@@ -3,7 +3,6 @@
  * ================================
  * ; Title: BCRS PROJECT
  * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
- * ; Modified by: James Brown
  * ; Date: 10/14/2020
  * ; Description: Application for Bobs Computer Repair Shop.
  * ================================
@@ -22,26 +21,31 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
 
+//Import our APIs
+const CatalogApi = require('./routes/catalog-api');
+const InvoiceApi = require('./routes/invoice-api');
+const RoleApi = require('./routes/role-api');
+const SecurityQuestionsApi = require('./routes/securityQuestion-api');
+const UserApi = require('./routes/user-api');
+
+
 /**
  * App configurations
  */
 let app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({'extended': true}));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../dist/bcrs')));
 app.use('/', express.static(path.join(__dirname, '../dist/bcrs')));
 
 /**
- * API Routes go here...
- */
-
-
-/**
  * Variables
  */
-const port = 3000; // server port
+const port = 3000 || process.env.PORT; // server port
 
 // TODO: This line will need to be replaced with your actual database connection string
-const conn = 'mongodb+srv://superadmin:s3cret@cluster0-lujih.mongodb.net/bcrs?retryWrites=true&w=majority';
+const conn = 'mongodb+srv://admin:snow123@cluster0.jiil7.mongodb.net/BCRS?retryWrites=true&w=majority';
 
 /**
  * Database connection
@@ -55,6 +59,17 @@ mongoose.connect(conn, {
 }).catch(err => {
   console.log(`MongoDB Error: ${err.message}`)
 }); // end mongoose connection
+
+
+/**
+ * APIs
+ */
+app.use('/api/catalogs', CatalogApi);
+app.use('/api/invoices', CatalogApi);
+app.use('/api/roles', RoleApi);
+app.use('/api/securityQuestions', SecurityQuestionsApi);
+app.use('/api/users', UserApi);
+
 
 
 /**

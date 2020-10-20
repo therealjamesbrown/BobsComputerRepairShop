@@ -52,3 +52,5 @@ const ErrorResponse = require('../services/error-response');
  * --Delete Role--
  * 
  */
+
+module.exports = router; 

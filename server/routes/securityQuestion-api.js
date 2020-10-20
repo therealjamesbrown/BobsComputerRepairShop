@@ -52,3 +52,7 @@ const ErrorResponse = require('../services/error-response');
  * --Delete securityQuestion--
  * 
  */
+
+
+
+module.exports = router; 

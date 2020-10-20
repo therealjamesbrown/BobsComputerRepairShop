@@ -52,3 +52,6 @@ const ErrorResponse = require('../services/error-response');
  * --Delete User--
  * 
  */
+
+
+ module.exports = router; 

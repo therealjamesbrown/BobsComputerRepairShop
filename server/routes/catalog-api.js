@@ -56,3 +56,5 @@ const Catalog = require('../models/catalog')
   * --Delete Item--
   * 
   */
+
+ module.exports = router; 

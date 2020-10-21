@@ -41,11 +41,12 @@ const ErrorResponse = require('../services/error-response');
 */
 router.post('/', async(req, res) => {
     try{
-        //if it doesn't insert the new object
+        //get the role details from the client
         const newRole = {
             text: req.body.text,
             isDisabled: req.body.isDisabled
         }
+        //insert the new role into mongo
         Role.create(newRole, function(err, createdRole){
             if(err){
                 console.log(err);

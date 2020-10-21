@@ -16,8 +16,9 @@ let Schema = mongoose.Schema;
 let ObjectId = mongoose.ObjectId;
 
 let RolesSchema = new Schema({
-    _id: ObjectId,
-    text: String,
+    //_id: ObjectId, commented this out until we discuss with the team.
+    text: String, //this needs updated per the BRCS requirements
+    isDisabled: Boolean
 }, { 
     collection: 'roles'
 })

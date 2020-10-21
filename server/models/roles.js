@@ -22,4 +22,4 @@ let RolesSchema = new Schema({
     collection: 'roles'
 })
 
-module.exports = mongoose.model('Roles', CatalogSchema)
+module.exports = mongoose.model('Roles', RolesSchema)

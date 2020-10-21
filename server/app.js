@@ -64,7 +64,7 @@ mongoose.connect(conn, {
 /**
  * APIs
  */
-app.use('/api/catalogs', CatalogApi);
+app.use('/api/catalog', CatalogApi);
 app.use('/api/invoices', InvoiceApi);
 app.use('/api/roles', RoleApi);
 app.use('/api/securityQuestions', SecurityQuestionsApi);

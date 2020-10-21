@@ -19,7 +19,7 @@ const ErrorResponse = require('../services/error-response');
 
 //default server error/success message, this is generic unless we feel a need to update the param
 const internalServerError = "Internal Server Error!";
-const serverSuccess = "Sucess!"
+const serverSuccess = "Success!"
 
 
 /**

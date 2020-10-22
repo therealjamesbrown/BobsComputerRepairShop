@@ -36,7 +36,12 @@ const serverSuccess = "Success!"
  * 
  */
 
-
+router.get('/:id', function(req, res) {
+    Role.find({ "_id": req.params.id }, function(err, user) {
+        if (err) console.log(err)
+        else res.json(user)
+    })
+})
 
 /**
 * 

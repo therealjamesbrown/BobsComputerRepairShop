@@ -45,7 +45,7 @@ app.use('/', express.static(path.join(__dirname, '../dist/bcrs')));
 const port = 3000 || process.env.PORT; // server port
 
 // TODO: This line will need to be replaced with your actual database connection string
-const conn = 'mongodb+srv://admin:snow123@cluster0.jiil7.mongodb.net/BCRS?retryWrites=true&w=majority';
+const conn = 'mongodb+srv://admin:admin@cluster0.jiil7.mongodb.net/BCRS?retryWrites=true&w=majority';
 
 /**
  * Database connection
@@ -55,7 +55,7 @@ mongoose.connect(conn, {
   useUnifiedTopology: true,
   useNewUrlParser: true
 }).then(() => {
-  console.debug(`Connection to the database instance was successful`);
+  console.debug(`Connectiozn to the database instance was successful`);
 }).catch(err => {
   console.log(`MongoDB Error: ${err.message}`)
 }); // end mongoose connection

@@ -44,7 +44,9 @@ const ErrorResponse = require('../services/error-response');
 * --CREATE User-- 
 * 
 */
-
+router.post('/', async(req, res) => {
+    
+})
 
 
 /**

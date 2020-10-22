@@ -19,8 +19,8 @@ const UserRoleSchema = require('../schemas/user-role');
 let UserSchema = new Schema({
     username: {type: String, required: true, unique: true, dropDups: true},
     password: {type: String, required: true},
-    firstname: {type: String},
-    lastname: {type: String},
+    firstName: {type: String},
+    lastName: {type: String},
     phoneNumber: {type: String},
     address: {type: String},
     email: {type: String},

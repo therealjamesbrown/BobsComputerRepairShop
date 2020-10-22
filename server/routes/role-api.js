@@ -37,11 +37,16 @@ const serverSuccess = "Success!"
  */
 
 router.get('/:id', function(req, res) {
+    try {
+    // Finds user
     Role.find({ "_id": req.params.id }, function(err, user) {
         if (err) console.log(err)
+        // Sends user data
         else res.json(user)
     })
-})
+} catch (e) {
+        console.log(e)
+}})
 
 /**
 * 
@@ -123,5 +128,22 @@ router.put('/:roleId/update', async(req, res) =>{
  * --Delete Role--
  * 
  */
+
+ router.delete('/:id', function(req, res) {
+    try { 
+    // Finds the user
+    Role.findOne({ "_id": req.params.id }, function(err, user) {
+         if (err) console.log(err)
+        // Removes the user
+         else user.remove(function(err) {
+             if (err) console.log(err)
+             else res.json("Delete Successful")
+         })
+     })
+    } catch(e) {
+        console.log(e)
+    }
+ })
+
 
  module.exports = router; 

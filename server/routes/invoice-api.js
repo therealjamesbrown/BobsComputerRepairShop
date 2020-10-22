@@ -68,7 +68,14 @@ router.get('/:_id', async(req, res) => {
 * 
 */
 
-
+router.post('/', function(req, res) {
+    // Creates the Invoice
+   try {
+        Invoice.create(req.body)
+    } catch (e) {
+        res.json(e)
+    } 
+})
 
 /**
 * 

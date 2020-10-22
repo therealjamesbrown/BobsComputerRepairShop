@@ -122,8 +122,7 @@ router.put('/:id', async(req, res) => {
         res.status(500).send(updateUserCatchErrorResponse.toObject());
     }
 })
-
-
+"5f91c55c199335fb0f957056"
 
 
 /**
@@ -131,6 +130,13 @@ router.put('/:id', async(req, res) => {
  * --Delete User--
  * 
  */
-
+router.delete('/:id', function(req, res) {
+    User.findOne({ "_id": req.params.id }, function(err, user) {
+        if (err) console.log(err)
+        else user.remove(function() {
+            res.json({ "message": "User Removed" })
+        })
+    })
+})
 
  module.exports = router; 

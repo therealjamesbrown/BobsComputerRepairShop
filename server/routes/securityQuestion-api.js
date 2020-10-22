@@ -23,6 +23,12 @@ const ErrorResponse = require('../services/error-response');
  * 
  */
 
+ router.get('/', function(req, res) {
+     SecurityQuestion.find({}, function(err, securityQuestion) {
+         if (err) res.json(securityQuestion)
+         else res.json(securityQuestion)
+     })
+ })
 
 
 /**
@@ -73,6 +79,14 @@ router.get('/:_id', async(req, res) => {
  * 
  */
 
+ router.delete('/:id', function(req, res) {
+     SecurityQuestion.findOne({ "_id": req.params.id }, function(err, securityQuestion) {
+         if (err) res.json(err)
+         else securityQuestion.remove(function() {
+             res.json(securityQuestion)
+         })
+     })
+ })
 
 
 module.exports = router; 

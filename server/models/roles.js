@@ -3,8 +3,8 @@
  * ================================
  * ; Title: roles.js
  * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
- * ; Modified by: James Brown
- * ; Date: 10/20/2020
+ * ; Modified by: Sarah Kovar
+ * ; Date: 10/21/2020
  * ; Description: Role Model
  * ================================
  * 
@@ -13,14 +13,13 @@
 let mongoose = require('mongoose')
 
 let Schema = mongoose.Schema;
-let ObjectId = mongoose.ObjectId;
 
 let RolesSchema = new Schema({
-    //_id: ObjectId, commented this out until we discuss with the team.
-    text: String, //this needs updated per the BRCS requirements
-    isDisabled: Boolean
+    text: {type: String, unique: true, dropDups: true}, 
+    isDisabled: {type: Boolean, default: false}
+
 }, { 
     collection: 'roles'
 })
 
-module.exports = mongoose.model('Roles', RolesSchema)
+module.exports = mongoose.model('Roles', RolesSchema);

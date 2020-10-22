@@ -13,6 +13,8 @@
 let mongoose = require('mongoose')
 
 let Schema = mongoose.Schema;
+const SelectedSecurityQuestions = require('../schemas/selected-security-questions');
+const UserRoleSchema = require('../schemas/user-role');
 
 let UserSchema = new Schema({
     username: {type: String, required: true, unique: true, dropDups: true},
@@ -23,8 +25,8 @@ let UserSchema = new Schema({
     address: {type: String},
     email: {type: String},
     isDisabled: {type: Boolean, default: false},
-    role: RolesSchema,    // role: {type: String, default: 'standard'}//need to define default
-    securityQuestions: [securityQuestions],
+    role: UserRoleSchema,    // role: {type: String, default: 'standard'}//need to define default
+    securityQuestions: [SelectedSecurityQuestions],
     date_created: { type: Date, default: new Date() },
     date_modified: { type: Date }
 

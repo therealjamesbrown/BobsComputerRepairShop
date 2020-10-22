@@ -10,7 +10,7 @@
  */
 
 const express = require('express');
-//TODO Import Catalog model
+const User = require('../models/user')
 const router = express.Router();
 
 //bring in our base and error response classes
@@ -24,7 +24,10 @@ const ErrorResponse = require('../services/error-response');
  */
 
  router.get('/', function(req, res) {
-
+    User.find({}, function(err, user) {
+        if (err) res.json(err)
+        else res.json(user)
+    })
  })
 
 

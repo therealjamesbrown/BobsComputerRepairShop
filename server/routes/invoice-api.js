@@ -71,7 +71,10 @@ router.get('/:_id', async(req, res) => {
 router.post('/', function(req, res) {
     // Creates the Invoice
    try {
-        Invoice.create(req.body)
+        Invoice.create(req.body, function(err, invoice) {
+            if (err) res.json(err)
+            else res.json(invoice)
+        })
     } catch (e) {
         res.json(e)
     } 

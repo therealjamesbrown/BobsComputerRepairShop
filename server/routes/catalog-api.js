@@ -64,6 +64,18 @@ router.get('/', async(req, res) => {
   * 
   */
 
+  router.get('/:id', function(req, res) {
+    try {
+      // Find the indivudal item
+      Catalog.findOne({ "_id": req.params.id }, function(err, item) {
+        if (err) res.json(err)
+        // output the single item
+        else res.json(item)
+      })
+    } catch (e) {
+      console.log(e)
+    }
+  })
 
 
 /**

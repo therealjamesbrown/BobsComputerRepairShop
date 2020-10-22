@@ -23,6 +23,9 @@ const ErrorResponse = require('../services/error-response');
  * 
  */
 
+ router.get('/', function(req, res) {
+
+ })
 
 
 /**

@@ -68,7 +68,17 @@ router.get('/:_id', async(req, res) => {
 * 
 */
 
-
+router.post('/', function(req, res) {
+    // Creates the Invoice
+   try {
+        Invoice.create(req.body, function(err, invoice) {
+            if (err) res.json(err)
+            else res.json(invoice)
+        })
+    } catch (e) {
+        res.json(e)
+    } 
+})
 
 /**
 * 
@@ -76,6 +86,37 @@ router.get('/:_id', async(req, res) => {
 * 
 */
 
+router.put('/:id', function(req, res) {
+    try {
+    // Find Invoice By Id
+    Invoice.findOne({ "_id": req.params.id }, function(err, updatedInvoice) {
+        if (err) res.json(err)
+        // Create new invoice and saves
+        else {
+        // Sets new invoice
+            updatedInvoice.set({
+                "lineItem": {
+                    "title": req.body.lineItem.title,
+                    "price": req.body.lineItem.price,
+                    "isDisabled": req.body.lineItem.isDisabled
+            },
+                "partsAmount": req.body.partsAmount,
+                "laborAmount": req.body.laborAmount,
+                "lineItemAmount": req.body.lineItemAmount,
+                "total": req.body.total,
+                "username": req.body.username,
+                "orderDat": req.body.orderDate
+            })
+            updatedInvoice.save(function(err, Invoice) {
+                if (err) res.json(err)
+                else res.json(Invoice)
+            })
+        }
+    })
+} catch (e) {
+    res.json(e)
+}
+})
 /**
  * 
  * --Delete Invoice--

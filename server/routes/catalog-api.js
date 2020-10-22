@@ -10,7 +10,7 @@
  */
 
  const express = require('express');
-const { restart } = require('nodemon');
+
  //TODO Import Catalog model
  const router = express.Router();
 
@@ -22,6 +22,7 @@ const Catalog = require('../models/catalog')
  const BaseResponse = require('../services/base-response');
  const ErrorResponse = require('../services/error-response');
 
+ 
  /**
   * 
   * --Find All Items--

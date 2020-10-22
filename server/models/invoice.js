@@ -1,11 +1,11 @@
 /**
  * 
  * ================================
- * ; Title: BCRS PROJECT
+ * ; Title: invoice.js
  * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
  * ; Modified by: James Brown
  * ; Date: 10/14/2020
- * ; Description: Application for Bobs Computer Repair Shop.
+ * ; Description: Model that connects to the invoice collection
  * ================================
  * 
  */
@@ -13,10 +13,10 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-/*import over Catalog so we can use items from the catalog to
+/*
+import over Catalog so we can use items from the catalog to
  in the line items. 
 */
-const Catalog = require('./catalog').schema;
 const CatalogItemSchema = require('../schemas/catalog-item');
 
 let invoiceSchema = new Schema({

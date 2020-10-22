@@ -17,9 +17,6 @@ const router = express.Router();
 const BaseResponse = require('../services/base-response');
 const ErrorResponse = require('../services/error-response');
 
-// Import User Model
-// let User = require('../models/users.js')
-
 /**
  * 
  * --Find All Users--

@@ -17,9 +17,10 @@ const Schema = mongoose.Schema;
  in the line items. 
 */
 const Catalog = require('./catalog').schema;
+const CatalogItemSchema = require('../schemas/catalog-item');
 
 let invoiceSchema = new Schema({
-    lineItem:      [Catalog],
+    lineItem:      [CatalogItemSchema],
     partsAmount:   { type: Number},
     laborAmount:   { type: Number },
     lineItemTotal: { type: Number },

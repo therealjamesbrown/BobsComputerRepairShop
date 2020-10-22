@@ -97,15 +97,15 @@ router.put('/:id', function(req, res) {
             updatedInvoice.set({
                 "lineItem": {
                     "title": req.body.lineItem.title,
-                    "price": req.body.lineItem.price,
-                    "isDisabled": req.body.lineItem.isDisabled
+                    "price": req.body.lineItem.price
+      //this needs removed bc we aren't altering the catalog "isDisabled": req.body.lineItem.isDisabled
             },
                 "partsAmount": req.body.partsAmount,
                 "laborAmount": req.body.laborAmount,
                 "lineItemAmount": req.body.lineItemAmount,
                 "total": req.body.total,
                 "username": req.body.username,
-                "orderDat": req.body.orderDate
+                "orderDate": req.body.orderDate
             })
             updatedInvoice.save(function(err, Invoice) {
                 if (err) res.json(err)
@@ -117,6 +117,7 @@ router.put('/:id', function(req, res) {
     res.json(e)
 }
 })
+
 /**
  * 
  * --Delete Invoice--

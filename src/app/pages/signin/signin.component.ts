@@ -54,6 +54,7 @@ export class SigninComponent implements OnInit {
     this.http.post('http://localhost:3000/api/session/signin', {
       userName,
       password
+      // Added httpoptions to remove cors error
     }, httpOptions).subscribe(res => {
       console.log(res['data']);
       if (res['data'].userName){

@@ -9,6 +9,8 @@
  * 
  */
 
+//const { try } = require('bluebird'); //SK commented this out 10/22/20 at 10pm; no idea why this is here - I think it populates when you type 'try'
+const { try } = require('bluebird');
 const express = require('express');
 const SecurityQuestion = require('../models/securityQuestion');
 const router = express.Router();
@@ -62,16 +64,87 @@ router.get('/:_id', async(req, res) => {
 /**
 * 
 * --CREATE securityQuestion-- 
-* 
+* Created by SK
 */
+router.post('/', async(req, res) => {
+    try
+    {
+        let newSecurityQuestion = {
+            text: req.body.text
+        };
 
+        SecurityQuestion.create(newSecurityQuestion, function(err, securityQuestion) {
+            if (err)
+            {
+                console.log(err);
+                const createSecurityQuestionMongodbErrorResponse = new ErrorResponse('500', 'Internal Server Error!', err);
+                res.status(500).send(createSecurityQuestionMongodbErrorResponse.toObject());
+            }
+            else {
+                console.log(securityQuestion);
+                const createSecurityQuestionResponse = new BaseResponse('200', 'Success!', securityQuestion);
+                res.json(createSecurityQuestionResponse.toObject());
+            }
+        })
+    }
+    catch (e)
+    {
+        console.log(e);
+        const createsecurityQuestionCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error!', e.message);
+        res.status(500).send(createsecurityQuestionCatchErrorResponse.toObject());
+    }
+});
 
 
 /**
 * 
 * --Update securityQuestion-- 
-* 
+* Created by SK
 */
+
+router.put('/_id', async(req,res) => {
+    try 
+    {
+        SecurityQuestion.findOne({'_id': req.params.id}, function(err, securityQuestion)  {
+            if (err)
+            {
+                console.log(err);
+                const updateSecurityQuestionMongodbErrorResponse = new ErrorResponse('500', 'Internal Server Error!', err);
+                res.status(500).send(updateSecurityQuestionMongodbErrorResponse.toObject());
+            }
+            else 
+            {   console.log(securityQuestion);
+
+                securityQuestion.set({
+                    text: req.body.text
+                });
+
+                securityQuestion.save(function( err, savedSecurityQuestion) {
+                    if (err)
+                    {
+                        console.log(err);
+                        const savedSecurityQuestionMongodbErrorResponse = new ErrorResponse('500', 'Internal Server Error!', err);
+                        res.status(500).send(savedSecurityQuestionMongodbErrorResponse.toObject());
+                    }
+                    else
+                    {
+                        console.log(savedSecurityQuestion);
+                        const updateSecurityQuestionResponse = new BaseResponse('200', 'Success!', savedSecurityQuestion);
+                        res.json(updateSecurityQuestionResponse.toObject());
+                    }
+                })
+            }
+        })
+    }
+    catch (e)
+    {
+        console.log(e);
+        const updateSecurityQuestionCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error!', e.message);
+        res.status(500).send(updateSecurityQuestionCatchErrorResponse.toObject());
+    }
+});
+
+
 
 /**
  * 

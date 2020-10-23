@@ -37,9 +37,9 @@ const saltRounds = 10; //set the number of times the password is getting salted
 /**
  * 
  * --Find User by ID--
- * 
+ * Created by SK
  */
-router.get('/:id', async(req, res) => {
+router.get('/:_id', async(req, res) => {
     try {
       User.findOne({'_id': req.params.id}, function(err, user) {
   

@@ -90,8 +90,8 @@ router.post('/', async(req, res) => {
     catch (e)
     {
         console.log(e);
-        const createsecurityQuestionCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error!', e.message);
-        res.status(500).send(createsecurityQuestionCatchErrorResponse.toObject());
+        const createSecurityQuestionCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error!', e.message);
+        res.status(500).send(createSecurityQuestionCatchErrorResponse.toObject());
     }
 });
 

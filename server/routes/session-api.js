@@ -11,9 +11,15 @@
 
 
  // Install dependencies
+<<<<<<< HEAD
  let bcrypt = require('bcryptjs')
  const express = require('express')
  let router = express.Router()
+=======
+ let bcrypt = require('bcryptjs');
+ const express = require('express');
+ let router = express.Router();
+>>>>>>> e70b9e2d452b25689f82e379a7adf05fde3fcf25
 
  // Import Base and Error Responses
 let ErrorResponse = require('../services/error-response')
@@ -25,21 +31,37 @@ let BaseResponse = require('../services/error-response')
  //Sign-in route
  router.post('/signin', async (req,res) => {
      try {
+         console.log(req.body);
         User.findOne({ "username": req.body.username }, function(err, user) {
             if (err) {
+                console.log(err);
                 const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
-                res.json(ErrorMessage)
+                res.status(500).json(ErrorMessage.toObject());
             } else {
-              bcrypt.compare(req.body.password, user['password'], function(err, user) {
-                        if (err) {
-                            const ErrorMessage = new ErrorResponse('403', 'Passwords did not match', err);
-                            res.send(500).json(ErrorMessage.toObject());
-                        } else {
-                            console.log(req.body)
-                                const SuccessMessage = new BaseResponse('200', 'Sign In Request Configmed', user)
-                            res.json(SuccessMessage.toObject());
-                        }
-                    })
+                /**
+                 * 
+                 * Begin JB changes
+                 * 
+                 */
+                 let passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
+                 /**
+                  * 
+                  * If password is valid, return success
+                  */
+                if(passwordIsValid) {
+                    console.log('Login Successful!');
+                    const signinResponse = new BaseResponse('200', 'Login Successful', user);
+                    res.json(signinResponse.toObject());
+                }
+
+                /**
+                 * If pass is invalid, return invalid password message
+                 */
+                else {
+                    console.log(`Username: ${req.body.username} is invalid.`);
+                    const invalidUserNameResponse = new BaseResponse('200', 'Invalid username and/or password, please try again.', null);
+                    res.status(401).send(invalidUserNameResponse.toObject());
+                }
             }
         })
      } catch (e) {

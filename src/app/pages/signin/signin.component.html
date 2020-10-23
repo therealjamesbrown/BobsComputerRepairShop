@@ -31,7 +31,8 @@
                         <button type="submit" 
                                 fxFlex 
                                 mat-raised-button 
-                                color="primary">Sign-in</button>
+                                color="primary"
+                                [disabled]="!form.valid">Sign-in</button>
                       </p>
                 </form>
             </div>
@@ -51,7 +52,8 @@
                     <button type="submit" 
                             fxFlex 
                             mat-raised-button 
-                            color="primary">Sign-Up</button>
+                            color="primary"
+                            >Sign-Up</button>
             </div>
         </div>
     </mat-card-content>

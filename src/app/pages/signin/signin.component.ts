@@ -37,7 +37,7 @@ export class SigninComponent implements OnInit {
     });
   }
 
-  singin(){
+  signin(){
     const userName = this.form.controls.userName.value;
     const password = this.form.controls.password.value;
 

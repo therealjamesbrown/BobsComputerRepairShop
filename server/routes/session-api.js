@@ -25,6 +25,7 @@ let BaseResponse = require('../services/error-response')
  //Sign-in route
  router.post('/signin', async (req,res) => {
      try {
+         console.log(req.body);
         User.findOne({ "username": req.body.username }, function(err, user) {
             if (err) {
                 console.log(err);

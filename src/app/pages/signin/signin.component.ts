@@ -44,14 +44,14 @@ export class SigninComponent implements OnInit {
   }
 
   signin(){
-    const userName = this.form.controls.userName.value;
+    const username = this.form.controls.userName.value;
     const password = this.form.controls.password.value;
 
-    console.log(userName);
+    console.log(username);
     console.log(password);
 
-    this.http.post('http://localhost:3000/api/session/signin', {
-      userName,
+    this.http.post('/api/session/signin', {
+      username,
       password
     }).subscribe(res => {
       console.log(res['data']);

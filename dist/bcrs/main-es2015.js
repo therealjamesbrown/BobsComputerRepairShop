@@ -312,7 +312,7 @@ class SigninComponent {
         const password = this.form.controls.password.value;
         console.log(userName);
         console.log(password);
-        this.http.post('http://localhost:3000/api/session/signin', {
+        this.http.post('/api/session/signin', {
             userName,
             password
         }).subscribe(res => {

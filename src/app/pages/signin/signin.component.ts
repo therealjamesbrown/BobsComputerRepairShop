@@ -42,6 +42,7 @@ export class SigninComponent implements OnInit {
     const password = this.form.controls.password.value;
 
     console.log(userName);
+    console.log(password);
     this.cookieService.set('session_user', userName, 1);
     this.router.navigate(['/']);
     this.http.post('/api/session/signin', {
@@ -59,5 +60,4 @@ export class SigninComponent implements OnInit {
       this.errorMessage = err.error.message;
     });
   }
-
 }

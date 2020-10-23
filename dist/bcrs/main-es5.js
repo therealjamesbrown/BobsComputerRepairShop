@@ -324,7 +324,7 @@
         _createClass(AuthGuard, [{
           key: "canActivate",
           value: function canActivate(route, state) {
-            var isAuthenticated = this.cookieService.get('session_user');
+            var isAuthenticated = this.cookieService.get('sessionuser');
 
             if (isAuthenticated) {
               return true;

@@ -178,7 +178,7 @@ class AuthGuard {
         this.cookieService = cookieService;
     }
     canActivate(route, state) {
-        const isAuthenticated = this.cookieService.get('session_user');
+        const isAuthenticated = this.cookieService.get('sessionuser');
         if (isAuthenticated) {
             return true;
         }

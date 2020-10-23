@@ -10,7 +10,6 @@
  */
 
 //const { try } = require('bluebird'); //SK commented this out 10/22/20 at 10pm; no idea why this is here - I think it populates when you type 'try'
-const { try } = require('bluebird');
 const express = require('express');
 const SecurityQuestion = require('../models/securityQuestion');
 const router = express.Router();

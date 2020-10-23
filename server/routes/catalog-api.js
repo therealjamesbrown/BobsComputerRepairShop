@@ -82,16 +82,81 @@ router.get('/', async(req, res) => {
 /**
  * 
  * --CREATE Item-- 
- * 
+ * Created by SK
  */
+router.post('/', async(req, res) => {
+  try
+  {
+      let newCatalogItem = {
+          title: req.body.title,
+          price: req.body.price,
+      };
+
+      Catalog.create(newCatalogItem, function(err, catalogItem) {
+          if (err)
+          {
+              console.log(err);
+              const createCatalogItemMongodbErrorResponse = new ErrorResponse('500', 'Internal Server Error!', err);
+              res.status(500).send(createCatalogItemMongodbErrorResponse.toObject());
+          }
+          else {
+              console.log(catalogItem);
+              const createCatalogItemResponse = new BaseResponse('200', 'Success!', catalogItem);
+              res.json(createCatalogItemResponse.toObject());
+          }
+      })
+  }
+  catch (e)
+  {
+      console.log(e);
+      const createCatalogItemCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error!', e.message);
+      res.status(500).send(createCatalogItemCatchErrorResponse.toObject());
+  }
+});
+
 
 
 
  /**
  * 
  * --Update Item-- 
- * 
+ * Created by SK
  */
+
+router.put('/:catalogItemId/update', async(req, res) =>{
+  try{
+  Role.findOne({'_id': req.params.catalogItemId}, function(error, catalogItem){
+      if(error){
+          console.log(err);
+          const updateCatalogItemMongoErrorResponse = new ErrorResponse('500', 'Internal Server Error!', error);
+          res.status(500).send(updateCatalogItemMongoErrorResponse.toObject());
+      } else {
+
+          catalogItem.set({
+              title: req.body.title,
+              price: req.body.price
+          });
+          catalogItem.save(function(err, updatedCatalogItem){
+              if(err){
+                  console.log(err);
+                  const saveUpdatedCatalogItemErrorResponse = new ErrorResponse('500', 'Internal Server Error!', err);
+                  res.status(500).send(saveUpdatedCatalogItemErrorResponse.toObject());
+              } else {
+                  console.log(updatedRole);
+                  const saveUpdatedCatalogItemSuccess = new BaseResponse('200', 'Success!', updatedCatalogItem);
+                  res.json(saveUpdatedCatalogItemSuccess.toObject());
+              }
+          })
+      }
+  })
+} catch(e){
+  console.log(e);
+  const updateCatalogItemCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error!', e.message);
+  res.json(updateCatalogItemCatchErrorResponse.toObject());
+}
+})
+
+
 
  /**
   * 
@@ -104,7 +169,7 @@ router.get('/', async(req, res) => {
         if(error){
           console.log(error);
           const deleteTaskMongoErrorReponse = new ErrorResponse('500', 'Internal Server Error', err);
-          res.status(500).send(deleteTaskMongoErrorReponse.toObject());
+          res.status(500).send(deleteTaskMongoErrorResponse.toObject()); //sk fixed typo 'Reponse' to 'Response'
         } else {
           item.set({
             isDisabled: req.body.isDisabled

@@ -101,7 +101,7 @@ router.post('/', async(req, res) => {
 * Created by SK
 */
 
-router.put('/_id', async(req,res) => {
+router.put('/_id', async(req,res) => { //double check this works /:_id JB
     try 
     {
         SecurityQuestion.findOne({'_id': req.params.id}, function(err, securityQuestion)  {

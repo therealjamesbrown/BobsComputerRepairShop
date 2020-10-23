@@ -34,7 +34,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatListModule } from '@angular/material/list'
+import { MatListModule } from '@angular/material/list';
+import { AdministrationComponent } from './pages/administration/administration.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { PricingComponent } from './pages/pricing/pricing.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +48,13 @@ import { MatListModule } from '@angular/material/list'
     HomeComponent,
     BaseLayoutComponent,
     AuthLayoutComponent,
-    SigninComponent
+    SigninComponent,
+    AdministrationComponent,
+    NotFoundComponent,
+    ProfileComponent,
+    ContactComponent,
+    PricingComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -17,6 +17,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { AuthGuard } from './shared/auth.guard';
+import { AdministrationComponent } from './pages/administration/administration.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { PricingComponent } from './pages/pricing/pricing.component';
+import { AboutComponent } from './pages/about/about.component';
 
 const routes: Routes = [
   {
@@ -26,6 +32,30 @@ const routes: Routes = [
       {
         path: '',
         component: HomeComponent
+      },
+      {
+        path: 'about',
+        component: AboutComponent
+      },
+      {
+        path: 'pricing',
+        component: PricingComponent
+      },
+      {
+        path: 'contact',
+        component: ContactComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
+      },
+      {
+        path: 'admin',
+        component: AdministrationComponent
+      },
+      {
+        path: 'not-found',
+        component: NotFoundComponent
       }
     ],
     canActivate: [AuthGuard]

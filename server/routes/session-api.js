@@ -31,17 +31,20 @@ let BaseResponse = require('../services/error-response')
                 const singinMongoDbErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
                 res.status(500).json(singinMongoDbErrorMessage.toObject());
             } 
+            /**
+                 * 
+                 * Begin JB changes
+                 * 
+                 */
+
+                 //check if the user doesn't exist bc compareSync doesn't like null values.
             else if(!user){
                 console.log('no user exists');
                 const invalidUserNameResponse = new BaseResponse('200', 'Invalid username and/or password, please try again.', null);
                 res.status(401).send(invalidUserNameResponse.toObject());
             }
             else {
-                /**
-                 * 
-                 * Begin JB changes
-                 * 
-                 */
+                
                  let passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
 
                  /**

@@ -49,13 +49,11 @@ export class SigninComponent implements OnInit {
 
     console.log(userName);
     console.log(password);
-    this.cookieService.set('session_user', userName, 1);
-    this.router.navigate(['/']);
+
     this.http.post('http://localhost:3000/api/session/signin', {
       userName,
       password
-      // Added httpoptions to remove cors error
-    }, httpOptions).subscribe(res => {
+    }).subscribe(res => {
       console.log(res['data']);
       if (res['data'].userName){
         //user authenticated

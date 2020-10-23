@@ -26,18 +26,24 @@ let BaseResponse = require('../services/error-response')
  //Sign-in route
  router.post('/signin', async (req,res) => {
      try {
-        User.findOne({ "username": req.body.username }, function(err, user) {
+        User.findOne({ 'username': req.body.username }, function(err, user) {
             if (err) {
-                console.log('this error fired');
-                const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
-                res.status(500).json(ErrorMessage.toObject());
-            } else {
+                const singinMongoDbErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+                res.status(500).json(singinMongoDbErrorMessage.toObject());
+            } 
+            else if(!user){
+                console.log('no user exists');
+                const invalidUserNameResponse = new BaseResponse('200', 'Invalid username and/or password, please try again.', null);
+                res.status(401).send(invalidUserNameResponse.toObject());
+            }
+            else {
                 /**
                  * 
                  * Begin JB changes
                  * 
                  */
                  let passwordIsValid = bcrypt.compareSync(req.body.password, user.password);
+
                  /**
                   * 
                   * If password is valid, return success
@@ -60,7 +66,7 @@ let BaseResponse = require('../services/error-response')
         })
      } catch (e) {
          console.log("this error fired")
-        const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+        const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err.message)
         res.status(500).json(ErrorMessage.toObject())
      }
  })

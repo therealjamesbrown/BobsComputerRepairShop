@@ -53,7 +53,8 @@ const conn = 'mongodb+srv://admin:admin@cluster0.jiil7.mongodb.net/BCRS?retryWri
 mongoose.connect(conn, {
   promiseLibrary: require('bluebird'),
   useUnifiedTopology: true,
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useCreateIndex: true
 }).then(() => {
   console.debug(`Connection to the database instance was successful`);
 }).catch(err => {

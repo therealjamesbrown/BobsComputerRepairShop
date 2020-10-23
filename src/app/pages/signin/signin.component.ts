@@ -39,7 +39,7 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       userName: [null, Validators.compose([Validators.required])],
-      password: [null, Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z]+$')])]
+      password: [null, Validators.compose([Validators.required])]
     });
   }
 
@@ -54,10 +54,10 @@ export class SigninComponent implements OnInit {
       username,
       password
     }).subscribe(res => {
-      console.log(res['data']);
-      if (res['data'].userName){
+      console.log(res['data'].username);
+      if (res['data'].username){
         //user authenticated
-        this.cookieService.set('sessionuser', res['data'].userName, 1);
+        this.cookieService.set('sessionuser', res['data'].username, 1);
         this.router.navigate(['/']);
       }
     }, err => {

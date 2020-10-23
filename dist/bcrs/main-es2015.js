@@ -304,22 +304,22 @@ class SigninComponent {
     ngOnInit() {
         this.form = this.fb.group({
             userName: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
-            password: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern('^[a-zA-Z]+$')])]
+            password: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])]
         });
     }
     signin() {
-        const userName = this.form.controls.userName.value;
+        const username = this.form.controls.userName.value;
         const password = this.form.controls.password.value;
-        console.log(userName);
+        console.log(username);
         console.log(password);
         this.http.post('/api/session/signin', {
-            userName,
+            username,
             password
         }).subscribe(res => {
-            console.log(res['data']);
-            if (res['data'].userName) {
+            console.log(res['data'].username);
+            if (res['data'].username) {
                 //user authenticated
-                this.cookieService.set('sessionuser', res['data'].userName, 1);
+                this.cookieService.set('sessionuser', res['data'].username, 1);
                 this.router.navigate(['/']);
             }
         }, err => {

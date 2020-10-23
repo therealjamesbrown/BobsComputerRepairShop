@@ -25,10 +25,9 @@ let BaseResponse = require('../services/error-response')
  //Sign-in route
  router.post('/signin', async (req,res) => {
      try {
-         console.log(req.body);
         User.findOne({ "username": req.body.username }, function(err, user) {
             if (err) {
-                console.log(err);
+                console.log('this error fired');
                 const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
                 res.status(500).json(ErrorMessage.toObject());
             } else {
@@ -59,8 +58,9 @@ let BaseResponse = require('../services/error-response')
             }
         })
      } catch (e) {
+         console.log("this error fired")
         const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
-        res.json(ErrorMessage)
+        res.status(500).json(ErrorMessage.toObject())
      }
  })
 

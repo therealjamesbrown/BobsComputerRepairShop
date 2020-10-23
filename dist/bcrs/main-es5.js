@@ -562,7 +562,7 @@
           value: function ngOnInit() {
             this.form = this.fb.group({
               userName: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])],
-              password: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern('^[a-zA-Z]+$')])]
+              password: [null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required])]
             });
           }
         }, {
@@ -570,19 +570,19 @@
           value: function signin() {
             var _this = this;
 
-            var userName = this.form.controls.userName.value;
+            var username = this.form.controls.userName.value;
             var password = this.form.controls.password.value;
-            console.log(userName);
+            console.log(username);
             console.log(password);
             this.http.post('/api/session/signin', {
-              userName: userName,
+              username: username,
               password: password
             }).subscribe(function (res) {
-              console.log(res['data']);
+              console.log(res['data'].username);
 
-              if (res['data'].userName) {
+              if (res['data'].username) {
                 //user authenticated
-                _this.cookieService.set('sessionuser', res['data'].userName, 1);
+                _this.cookieService.set('sessionuser', res['data'].username, 1);
 
                 _this.router.navigate(['/']);
               }

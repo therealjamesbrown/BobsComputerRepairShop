@@ -27,10 +27,18 @@ const saltRounds = 10; //set the number of times the password is getting salted
  */
 
  router.get('/', function(req, res) {
+try {
     User.find({}, function(err, user) {
-        if (err) res.json(err)
-        else res.json(user)
-    })
+        if (err) { 
+            const ErrorMessage = new ErrorResponse('500', 'Internal Server Erorr', err)
+            res.json(ErrorMessage) 
+        } else { 
+            const SuccessMessage = new BaseResponse('200', 'GET Request Success', user)
+            res.json(SuccessMessage) }
+    })} catch (e) {
+        const ErrorMessage = new ErrorResponse('500', 'Internal Server Erorr', err)
+        res.json(ErrorMessage)
+    }
  })
 
 
@@ -156,12 +164,19 @@ router.put('/:id', async(req, res) => {
  * 
  */
 router.delete('/:id', function(req, res) {
+try {
     User.findOne({ "_id": req.params.id }, function(err, user) {
-        if (err) console.log(err)
-        else user.remove(function() {
-            res.json({ "message": "User Removed" })
-        })
-    })
+        if (err) { 
+            const ErrorMessage = new ErrorResponse('500', 'Internal Server Erorr', err)
+            console.log(ErrorMessage)
+        } else {
+            user.remove(function() {
+            const SuccessMessage = new BaseResponse('200', 'DELETE Request Success', user)
+            res.json(SuccessMessage)
+    })}})} catch (e) {
+            const ErrorMessage = new ErrorResponse('500', 'Internal Server Erorr', err)
+            res.json(ErrorMessage)
+    }   
 })
 
  module.exports = router; 

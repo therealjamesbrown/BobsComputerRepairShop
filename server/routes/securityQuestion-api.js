@@ -25,10 +25,18 @@ const ErrorResponse = require('../services/error-response');
  */
 
  router.get('/', function(req, res) {
+     try {
      SecurityQuestion.find({}, function(err, securityQuestion) {
-         if (err) res.json(securityQuestion)
-         else res.json(securityQuestion)
-     })
+         if (err) { 
+            const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err) 
+            res.json(ErrorMessage)
+         } else { 
+            const SuccessMessage = new BaseResponse('200', 'GET Request Success', securityQuestion)
+            res.json(SuccessMessage)
+        }})} catch (e) {
+        const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+        res.json(ErrorMessage)
+     }
  })
 
 
@@ -152,12 +160,22 @@ router.put('/_id', async(req,res) => { //double check this works /:_id JB
  */
 
  router.delete('/:id', function(req, res) {
-     SecurityQuestion.findOne({ "_id": req.params.id }, function(err, securityQuestion) {
-         if (err) res.json(err)
-         else securityQuestion.remove(function() {
-             res.json(securityQuestion)
-         })
-     })
+    try { 
+    SecurityQuestion.findOne({ "_id": req.params.id }, function(err, securityQuestion) {
+         if (err) { 
+            const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+             res.json(ErrorMessage) 
+         } else { 
+             securityQuestion.remove(function() {
+                const SuccessMessage = new BaseResponse('200', 'Delete Request Successful', securityQuestion)
+                res.json(securityQuestion)
+             })    
+            }
+            })
+        } catch(e) {
+        const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+        res.json(ErrorMessage)
+     }
  })
 
 

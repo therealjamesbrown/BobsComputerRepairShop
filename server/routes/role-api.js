@@ -57,12 +57,19 @@ router.get('/:id', function(req, res) {
     try {
     // Finds user
     Role.find({ "_id": req.params.id }, function(err, user) {
-        if (err) console.log(err)
+        if (err) { 
+            const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+            res.json(ErrorMessage) 
+        }
         // Sends user data
-        else res.json(user)
+        else { 
+            const SuccessMessage = new BaseResponse('500', 'Internal Server Error', err)
+            res.json(SuccessMessage) 
+        }
     })
 } catch (e) {
-        console.log(e)
+        const ErrorMessage = new ErrorMessage('500', 'Internal Server Error', err)
+        res.json(ErrorMessage)
 }})
 
 /**
@@ -150,15 +157,25 @@ router.put('/:roleId/update', async(req, res) =>{
     try { 
     // Finds the user
     Role.findOne({ "_id": req.params.id }, function(err, user) {
-         if (err) console.log(err)
+         if (err){
+             const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+             res.json(ErrorMessage)
+         }
         // Removes the user
          else user.remove(function(err) {
-             if (err) console.log(err)
-             else res.json("Delete Successful")
+             if (err) { 
+                const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+                res.json(ErrorMessage)
+            }
+             else { 
+                const BaseMessage = new BaseResponse('200', 'Delete Successful!', user)
+                res.json(BaseMessage)
+             }
          })
      })
     } catch(e) {
-        console.log(e)
+        const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+        res.json(ErrorMessage)
     }
  })
 

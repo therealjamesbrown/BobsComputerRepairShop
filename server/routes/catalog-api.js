@@ -69,10 +69,16 @@ router.get('/', async(req, res) => {
     try {
       // Find the indivudal item
       Catalog.findOne({ "_id": req.params.id }, function(err, item) {
-        if (err) res.json(err)
+        if (err) {
+          const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err);
+          res.json(ErorrMessage)
+        }
         // output the single item
-        else res.json(item)
-      })
+  
+        else { 
+          const SuccessMessage = new BaseResponse('200', 'Successful GET Request', item)
+                res.json(SuccessMessage)
+      }})
     } catch (e) {
       console.log(e)
     }

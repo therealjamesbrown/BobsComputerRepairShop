@@ -72,11 +72,17 @@ router.post('/', function(req, res) {
     // Creates the Invoice
    try {
         Invoice.create(req.body, function(err, invoice) {
-            if (err) res.json(err)
-            else res.json(invoice)
+            if (err) { 
+                const ErrorMessage = new ErrorResponse('500', 'internal server error', err)
+                res.json(ErrorMessages) 
+            } else { 
+                const SuccessMessage = new BaseResponse('200', 'Successful POST Request', err)
+                res.json(SuccessMessage)
+            }
         })
     } catch (e) {
-        res.json(e)
+        const ErrorMessage = new ErrorResponse('500', 'internal server error', err)
+        res.json(ErrorMessage)
     } 
 })
 
@@ -90,9 +96,11 @@ router.put('/:id', function(req, res) {
     try {
     // Find Invoice By Id
     Invoice.findOne({ "_id": req.params.id }, function(err, updatedInvoice) {
-        if (err) res.json(err)
+        if (err) {
+            const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+            res.json(ErrorMessage)
         // Create new invoice and saves
-        else {
+         } else {
         // Sets new invoice
             updatedInvoice.set({
                 "lineItem": {
@@ -108,13 +116,19 @@ router.put('/:id', function(req, res) {
                 "orderDate": req.body.orderDate
             })
             updatedInvoice.save(function(err, Invoice) {
-                if (err) res.json(err)
-                else res.json(Invoice)
+                if (err) {
+                     const ErrorMessage = new ErrorResponse('500', 'Interna; Server Error', err)
+                     res.json(ErrorMessage)
+                } else { 
+                    const SuccessMessage = new BaseResponse('200', 'Internal Server Error', invoice)
+                    res.json(SuccessMessage)
+                }
             })
         }
     })
 } catch (e) {
-    res.json(e)
+    const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+    res.json(ErrorMessage)
 }
 })
 

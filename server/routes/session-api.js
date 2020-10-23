@@ -25,17 +25,18 @@ let BaseResponse = require('../services/error-response')
  //Sign-in route
  router.post('/signin', async (req,res) => {
      try {
-        User.findOne({ "_id": req.params.id }, function(err, user) {
+        User.findOne({ "username": req.body.username }, function(err, user) {
             if (err) {
                 const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
                 res.json(ErrorMessage)
             } else {
-                    bcrypt.compare(req.body.password, user.password, function(err, user) {
+              bcrypt.compare(req.body.password, user['password'], function(err, user) {
                         if (err) {
                             const ErrorMessage = new ErrorResponse('403', 'Passwords did not match', err);
                             res.send(500).json(ErrorMessage.toObject());
                         } else {
-                            const SuccessMessage = new BaseResponse('200', 'Sign In Request Configmed', user)
+                            console.log(req.body)
+                                const SuccessMessage = new BaseResponse('200', 'Sign In Request Configmed', user)
                             res.json(SuccessMessage.toObject());
                         }
                     })

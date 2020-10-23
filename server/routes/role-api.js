@@ -28,7 +28,24 @@ const serverSuccess = "Success!"
  * 
  */
 
-
+router.get('/', async(req, res) => {
+    try {
+      User.find({}).where('isDisabled').equals(false).exec(function(err, roles) {
+        if (err) {
+          console.log(err);
+          const userFindAllMongodbErrorResponse = new ErrorResponse(500, internalServerError, err);
+          res.status(500).send(userFindAllMongodbErrorResponse.toObject());
+        } else {
+          console.log(roles);
+          const userFindAllSuccessResponse = new BaseResponse(200, serverSuccess, roles);
+          res.json(userFindAllSuccessResponse.toObject());
+        }
+      })
+    } catch (e) {
+      const userFindAllCatchErrorResponse = new ErrorResponse(500, internalServerError, e.message);
+      res.status(500).send(userFindAllCatchErrorResponse.toObject());
+    }
+  });
 
 /**
  * 

@@ -10,7 +10,6 @@
  * 
  */
 
-
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -45,7 +44,6 @@ export class SigninComponent implements OnInit {
     console.log(userName);
     this.cookieService.set('session_user', userName, 1);
     this.router.navigate(['/']);
-    /*
     this.http.post('/api/session/signin', {
       userName,
       password
@@ -59,7 +57,7 @@ export class SigninComponent implements OnInit {
     }, err => {
       console.log(err);
       this.errorMessage = err.error.message;
-    });*/
+    });
   }
 
 }

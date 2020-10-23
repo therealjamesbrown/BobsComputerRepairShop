@@ -27,7 +27,7 @@ const InvoiceApi = require('./routes/invoice-api');
 const RoleApi = require('./routes/role-api');
 const SecurityQuestionsApi = require('./routes/securityQuestion-api');
 const UserApi = require('./routes/user-api');
-
+const SessionApi = require('./routes/session-api')
 
 /**
  * App configurations
@@ -69,6 +69,7 @@ app.use('/api/invoices', InvoiceApi);
 app.use('/api/roles', RoleApi);
 app.use('/api/securityQuestions', SecurityQuestionsApi);
 app.use('/api/users', UserApi);
+app.use('/api/session', SessionApi);
 
 
 

@@ -45,7 +45,7 @@ export class SigninComponent implements OnInit {
     console.log(password);
     this.cookieService.set('session_user', userName, 1);
     this.router.navigate(['/']);
-    this.http.post('/api/session/signin', {
+    this.http.post('http://localhost:3000/api/session/signin', {
       userName,
       password
     }).subscribe(res => {

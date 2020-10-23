@@ -11,10 +11,16 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
 
 @Component({
   selector: 'app-signin',
@@ -48,7 +54,7 @@ export class SigninComponent implements OnInit {
     this.http.post('http://localhost:3000/api/session/signin', {
       userName,
       password
-    }).subscribe(res => {
+    }, httpOptions).subscribe(res => {
       console.log(res['data']);
       if (res['data'].userName){
         //user authenticated

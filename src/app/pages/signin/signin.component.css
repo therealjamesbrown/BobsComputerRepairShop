@@ -3,8 +3,8 @@ a{
 }
 
 a:visited {
-    text-decoration: none;
-  }
+  text-decoration: none;
+}
 
 .singinOuterContainer{
     width: 60%;
@@ -18,18 +18,18 @@ a:visited {
 .logo {
     margin-top: 25px auto;
     margin-bottom: 15px;
-    width: 40%;
+    width: 50%;
 }
 
 .signInFormStuff{
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 .signUpSection{
     margin-top: 15px;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 25%;
+    margin-right: 25%;
     margin-bottom: 60px;
 }
 

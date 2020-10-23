@@ -10,13 +10,14 @@
  */
 
 const express = require('express');
-const User = require('../models/user')
+const User = require('../models/user');
 const router = express.Router();
 var bcrypt = require('bcryptjs');
 
 //bring in our base and error response classes
 const BaseResponse = require('../services/base-response');
 const ErrorResponse = require('../services/error-response');
+//const { try } = require('bluebird'); //SK commented this out 10/22/20 at 10pm; no idea why this is here - I think it populates when you type 'try'
 const saltRounds = 10; //set the number of times the password is getting salted
 
 /**
@@ -38,7 +39,31 @@ const saltRounds = 10; //set the number of times the password is getting salted
  * --Find User by ID--
  * 
  */
-
+router.get('/:id', async(req, res) => {
+    try {
+      User.findOne({'_id': req.params.id}, function(err, user) {
+  
+        console.log(req.params.id)
+  
+        if (err) {
+          console.log(err);
+  
+          const mongoDbErrorResponse = new ErrorResponse ('500', 'Internal server error', err);
+  
+          res.status(500).send(mongoDbErrorResponse.toObject());
+        } else {
+  
+          console.log(user);
+          res.json(user);
+        }
+      })
+    } catch (e) {
+      console.log(e);
+  
+      const errorCatchResponse = new ErrorResponse('500', 'Internal server error', err)
+      res.status(500).send(errorCatchResponse.toObject());
+    }
+  });
 
 
 /**

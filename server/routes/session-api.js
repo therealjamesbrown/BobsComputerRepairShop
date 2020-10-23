@@ -11,9 +11,10 @@
 
 
  // Install dependencies
- let bcrypt = require('bcryptjs');
- const express = require('express');
- let router = express.Router();
+ let cors = require('cors')
+ let bcrypt = require('bcryptjs')
+ const express = require('express')
+ let router = express.Router()
 
  // Import Base and Error Responses
 let ErrorResponse = require('../services/error-response')
@@ -21,6 +22,9 @@ let BaseResponse = require('../services/error-response')
 
  // Import User Schema
  let User = require('../models/user')
+
+  // cors middleware
+router.use(cors())
 
  //Sign-in route
  router.post('/signin', async (req,res) => {

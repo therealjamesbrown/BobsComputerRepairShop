@@ -82,6 +82,21 @@ router.get('/:_id', async(req, res) => {
 }) 
 
 
+/**
+ * 
+ * --Find Invoice by username--
+ * 
+ */
+
+
+
+ /**
+ * 
+ * --FindPurchasesByService (purchases-graph)--
+ * 
+ */
+ 
+
 
 /**
 * 
@@ -159,31 +174,40 @@ router.put('/:id', function(req, res) {
  * Completed by SK
  */
 
-router.patch('/:id', function(req, res) {
+ //question from SK - I did a soft delete, thinking you wouldn't want to actual delete any records from your system, only inactivate; however we
+ //would probably want to set isDisabled: false on the model
+router.delete('/:id', function(req, res) {
     try { 
     Invoice.findOne({ "_id": req.params.id }, function(err, invoice) {
          if (err){
+             console.log(err);
              const invoiceDeleteMongoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err)
              res.status(500).send(invoiceDeleteMongoDbErrorResponse.toObject());
          }
-         else invoice.remove(function(err) {
-             if (err) { 
-                console.log(err);
-                const invoiceDeleteMongoDbErrorResponse = new BaseResponse('500', 'Internal Server Error', err)
-                res.json(invoiceDeleteMongoDbErrorResponse)
-            }
-             else { 
-                console.log(invoice);
-                const invoiceDeleteSuccessMongoDbErrorResponse = new BaseResponse('200', 'Delete Successful!', invoice)
-                res.json(invoiceDeleteSuccessMongoDbErrorResponse.toObject());
-             }
+         else {
+             console.log(invoice);
+             invoice.set({
+                isDisabled: true
+             });
+
+             invoice.save(function(err, savedInvoice) {
+                if (err) { 
+                    console.log(err);
+                    const invoiceSavedMongoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err)
+                    res.status(500).send(invoiceSavedMongoDbErrorResponse.toObject());
+                }else { 
+                    console.log(savedInvoice);
+                    const invoiceSavedResponse = new BaseResponse('200', 'Successful!', savedInvoice);
+                    res.json(invoiceSavedResponse.toObject());
+                 }
          })
+        }
      })
     } catch(e) {
         console.log(e);
-        const invoiceDeleteMongoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err)
-        res.status(500).sedn(invoiceDeleteMongoDbErrorResponse.toObject());
+        const invoiceDeleteMongoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error', e.message)
+        res.status(500).send(invoiceDeleteCatchErrorResponse.toObject());
     }
- })
+ });
 
 module.exports = router; 

@@ -25,7 +25,9 @@ const ErrorResponse = require('../services/error-response');
 
 router.get('/', async(req, res) => {
     try{
-        Invoice.find({}).where('isDisabled').equals(false).exec(function(err, invoice){
+        Invoice.find({})
+        //.where('isDisabled').equals(false)
+        .exec(function(err, invoice){
 
         if(err){
             console.log(err);

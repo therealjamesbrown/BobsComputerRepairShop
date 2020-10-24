@@ -19,8 +19,9 @@ let Schema = mongoose.Schema
 
 // defines a new schema with id; questionsId and answer.
 let SecurityQuestionSchema = new Schema({
-    questionId: String,
-    answer: String
+    questionId: { type: String },  //SK added brackets, was questionId: string,
+    answer: {type: String },  //SK added brackets, was answer: string
+    isDisabled: {type: Boolean, default: false} //added by SK 10/23/20
 }, {
     collection: "securityQuestions"
 })

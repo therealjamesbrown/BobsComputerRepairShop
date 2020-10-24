@@ -77,7 +77,8 @@ router.post('/', async(req, res) => {
     try
     {
         let newSecurityQuestion = {
-            text: req.body.text
+            questionId: req.body.questionId,
+            answer: req.body.answer
         };
 
         SecurityQuestion.create(newSecurityQuestion, function(err, securityQuestion) {
@@ -109,7 +110,7 @@ router.post('/', async(req, res) => {
 * Created by SK
 */
 
-router.put('/:_id', async(req,res) => { //double check this works /:_id JB
+router.put('/:id', async(req,res) => { //double check this works /:_id JB //SK crashed server with underscore, removed
     try 
     {
         SecurityQuestion.findOne({'_id': req.params.id}, function(err, securityQuestion)  {
@@ -123,7 +124,8 @@ router.put('/:_id', async(req,res) => { //double check this works /:_id JB
             {   console.log(securityQuestion);
 
                 securityQuestion.set({
-                    text: req.body.text
+                    questionId: req.body.questionId,
+                    answer: req.body.answer
                 });
 
                 securityQuestion.save(function( err, savedSecurityQuestion) {

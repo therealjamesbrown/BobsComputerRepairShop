@@ -131,7 +131,7 @@ router.post('/', async(req, res) => {
 
 router.put('/:catalogItemId/update', async(req, res) =>{
   try{
-  Role.findOne({'_id': req.params.catalogItemId}, function(error, catalogItem){
+  Catalog.findOne({'_id': req.params.catalogItemId}, function(error, catalogItem){
       if(error){
           console.log(err);
           const updateCatalogItemMongoErrorResponse = new ErrorResponse('500', 'Internal Server Error!', error);
@@ -148,7 +148,7 @@ router.put('/:catalogItemId/update', async(req, res) =>{
                   const saveUpdatedCatalogItemErrorResponse = new ErrorResponse('500', 'Internal Server Error!', err);
                   res.status(500).send(saveUpdatedCatalogItemErrorResponse.toObject());
               } else {
-                  console.log(updatedRole);
+                  console.log(updatedCatalogItem);
                   const saveUpdatedCatalogItemSuccess = new BaseResponse('200', 'Success!', updatedCatalogItem);
                   res.json(saveUpdatedCatalogItemSuccess.toObject());
               }

@@ -26,7 +26,8 @@ let invoiceSchema = new Schema({
     lineItemTotal: { type: Number },
     total:         { type: Number },
     username:      { type: String },
-    orderDate:     { type: Date}
+    orderDate:     { type: Date},
+    isDisabled: {type: Boolean, default: false}  //added by SK 10/23/20 to allow us to do a soft delete vs hard delete
 }, { 
     collection: 'invoice'
 })

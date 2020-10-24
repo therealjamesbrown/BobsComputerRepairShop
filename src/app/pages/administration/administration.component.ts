@@ -11,6 +11,13 @@
  */
 
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+
+const httpOptions ={
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
 
 @Component({
   selector: 'app-administration',
@@ -18,10 +25,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./administration.component.css']
 })
 export class AdministrationComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  users: any
+  constructor(private http: HttpClient) { }
+  ngOnInit() {
+    this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(users => {
+      this.users = users.data;
+      console.log(this.users)
+    })
+   }
 }

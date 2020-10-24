@@ -13,6 +13,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { MatDialog } from '@angular/material/dialog'
+import { PostDialogComponent } from '../post-dialog/post-dialog.component'
+import { PutDialogComponent } from '../put-dialog/put-dialog.component'
+import { PatchDialogComponent } from '../patch-dialog/patch-dialog.component'
 
 const httpOptions ={
   headers: new HttpHeaders({
@@ -30,17 +33,16 @@ export class AdministrationComponent implements OnInit {
   constructor(public dialog: MatDialog, private http: HttpClient) { }
   ngOnInit() {
     this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(users => {
-      this.users = users.data
+      this.users = users.data;
     })
    }
    post() {
-     let postRef = this.dialog.
+     let postRef = this.dialog.open(PostDialogComponent)
    }
    update() {
-    console.log("UPDATE")
+    let putRef = this.dialog.open(PutDialogComponent)
    }
    delete() {
-     console.log("DELETE")
-
+    let patchRef = this.dialog.open(PatchDialogComponent)
    }
 }

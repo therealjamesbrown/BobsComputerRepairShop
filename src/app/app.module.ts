@@ -14,7 +14,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
@@ -42,9 +42,9 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { PricingComponent } from './pages/pricing/pricing.component';
 import { AboutComponent } from './pages/about/about.component';
 import { MatTableModule } from '@angular/material/table';
-import { PostDialogComponent } from './pages/administration/post-dialog/post-dialog.component';
-import { PutDialogComponent } from './pages/administration/put-dialog/put-dialog.component';
-import { PatchDialogComponent } from './pages/administration/patch-dialog/patch-dialog.component'
+import { PostDialogComponent } from './pages/post-dialog/post-dialog.component';
+import { PutDialogComponent } from './pages/put-dialog/put-dialog.component';
+import { PatchDialogComponent } from './pages/patch-dialog/patch-dialog.component';
 
 @NgModule({
   declarations: [

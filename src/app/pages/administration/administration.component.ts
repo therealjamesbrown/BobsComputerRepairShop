@@ -16,6 +16,7 @@ import { MatDialog } from '@angular/material/dialog'
 import { PostDialogComponent } from '../post-dialog/post-dialog.component'
 import { PutDialogComponent } from '../put-dialog/put-dialog.component'
 import { PatchDialogComponent } from '../patch-dialog/patch-dialog.component'
+import { Observable } from 'rxjs'
 
 const httpOptions ={
   headers: new HttpHeaders({
@@ -32,8 +33,8 @@ export class AdministrationComponent implements OnInit {
   users: any
   constructor(public dialog: MatDialog, private http: HttpClient) { }
   ngOnInit() {
-    this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(users => {
-      //this.users = users.data;
+    this.http.get<any>('http://localhost:3000/api/users', httpOptions).subscribe(users => {
+      this.users = users.data;
     })
    }
    post() {

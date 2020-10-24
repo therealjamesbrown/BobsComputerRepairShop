@@ -55,13 +55,18 @@ let BaseResponse = require('../services/error-response')
                   * If password is valid, return success
                   */
                 if(passwordIsValid) {
-
-                     //if the isDIsabled === true
-                     //query mongo and update isDisabled to false
-
-                    console.log('Login Successful!');
-                    const signinResponse = new BaseResponse('200', 'Login Successful', user);
-                    res.json(signinResponse.toObject());
+                        if (user.isDisabled == true) {
+                            user.set({
+                                isDisabled: false,
+                            })
+                            user.save()
+                            const signinResponse = new BaseResponse('200', 'Re-enabled and logged in', user);
+                            res.json(signinResponse.toObject());
+                        } else {
+                            console.log('Login Successful!');
+                            const signinResponse = new BaseResponse('200', 'Login Successful', user);
+                            res.json(signinResponse.toObject());
+                        }
                 }
 
                 /**

@@ -2,9 +2,11 @@
     padding: 5px;
   }
 
+.nav{
+}
 mat-toolbar{
     padding-top: 10px;
-    background-color: white;
+    background-color: #5472d3;
   }
   
   .navbar-link {
@@ -14,7 +16,8 @@ mat-toolbar{
     padding-left: 10px;
     padding-right: 10px;
     text-decoration: none;
-    color: black;
+    color: white;
+    background-color: #5472d3;
   }
   
   .main-content {
@@ -27,6 +30,7 @@ mat-toolbar{
     bottom: 0;
     width: 100%;
     font-weight: 100;
+    background-color: #5472d3;
   }
 
 
@@ -35,7 +39,9 @@ mat-toolbar{
     font-size: 16px;
     letter-spacing: 3px;
     font-weight: 100;
-    padding-top: 10px
+    padding-top: 10px;
+    background-color: #5472d3;
+    color: white;
   }
 
   

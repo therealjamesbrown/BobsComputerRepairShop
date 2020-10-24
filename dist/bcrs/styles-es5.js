@@ -547,12 +547,12 @@
       var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(true); // Module
 
 
-      ___CSS_LOADER_EXPORT___.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nhtml, body { height: 100%; }\n\nbody { margin: 0; font-family: Roboto, \"Helvetica Neue\", sans-serif; \nbackground-color: #0d47a1;}\n", "", {
+      ___CSS_LOADER_EXPORT___.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nhtml, body { height: 100%; }\n\nbody { margin: 0; font-family: Roboto, \"Helvetica Neue\", sans-serif; \nbackground-color: #5472d3;}\n", "", {
         "version": 3,
         "sources": ["webpack://src/styles.css"],
         "names": [],
         "mappings": "AAAA,8EAA8E;;AAE9E,aAAa,YAAY,EAAE;;AAC3B,OAAO,SAAS,EAAE,iDAAiD;AACnE,yBAAyB,CAAC",
-        "sourcesContent": ["/* You can add global styles to this file, and also import other style files */\n\nhtml, body { height: 100%; }\nbody { margin: 0; font-family: Roboto, \"Helvetica Neue\", sans-serif; \nbackground-color: #0d47a1;}\n"],
+        "sourcesContent": ["/* You can add global styles to this file, and also import other style files */\n\nhtml, body { height: 100%; }\nbody { margin: 0; font-family: Roboto, \"Helvetica Neue\", sans-serif; \nbackground-color: #5472d3;}\n"],
         "sourceRoot": ""
       }]); // Exports
 

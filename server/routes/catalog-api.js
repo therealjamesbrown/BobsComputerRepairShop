@@ -174,7 +174,7 @@ router.put('/:catalogItemId/update', async(req, res) =>{
       Catalog.findOne({'_id': req.params._id}, function(error, item){
         if(error){
           console.log(error);
-          const deleteTaskMongoErrorReponse = new ErrorResponse('500', 'Internal Server Error', err);
+          const deleteTaskMongoErrorResponse = new ErrorResponse('500', 'Internal Server Error', err);  //sk fixed typo 'Reponse' to 'Response'
           res.status(500).send(deleteTaskMongoErrorResponse.toObject()); //sk fixed typo 'Reponse' to 'Response'
         } else {
           item.set({

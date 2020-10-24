@@ -28,8 +28,8 @@ let BaseResponse = require('../services/error-response')
      try {
         User.findOne({ 'username': req.body.username }, function(err, user) {
             if (err) {
-                const singinMongoDbErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
-                res.status(500).json(singinMongoDbErrorMessage.toObject());
+                const singinMongoDbErrorMessage = new ErrorResponse('500', 'Internal Server Error', err) //**this should be 'signin' */
+                res.status(500).json(singinMongoDbErrorMessage.toObject());  //**this should be 'signin' */
             } 
             /**
                  * 

@@ -33,14 +33,14 @@ router.get('/', async(req, res) => {
             res.status(500).send(invoiceFindAllMongoDbErrorResponse.toObject());
         } else {
             console.log(invoice);
-            const invoiceFindAllMongoDbErrorResponse = new BaseResponse('200', 'Successful!', invoice);
-            res.json(invoiceFindAllMongoDbErrorResponse.toObject());
+            const invoiceFindAllMongoDbSuccessResponse = new BaseResponse('200', 'Successful!', invoice);
+            res.json(invoiceFindAllMongoDbSuccessResponse.toObject());
         }
         })
     } catch(e){
         console.log(e);
-        const invoiceFindAllMongoDbErrorResponse = new ErrorResopnse('500', 'Internal Server Error', e.message);
-        res.status(500).send(invoiceFindAllMongoDbErrorResponse.toObject());
+        const invoiceFindAllCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error', e.message);
+        res.status(500).send(invoiceFindAllCatchErrorResponse.toObject());
     }
 }) 
 
@@ -156,7 +156,34 @@ router.put('/:id', function(req, res) {
 /**
  * 
  * --Delete Invoice--
- * 
+ * Completed by SK
  */
+
+router.patch('/:id', function(req, res) {
+    try { 
+    Invoice.findOne({ "_id": req.params.id }, function(err, invoice) {
+         if (err){
+             const invoiceDeleteMongoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err)
+             res.status(500).send(invoiceDeleteMongoDbErrorResponse.toObject());
+         }
+         else invoice.remove(function(err) {
+             if (err) { 
+                console.log(err);
+                const invoiceDeleteMongoDbErrorResponse = new BaseResponse('500', 'Internal Server Error', err)
+                res.json(invoiceDeleteMongoDbErrorResponse)
+            }
+             else { 
+                console.log(invoice);
+                const invoiceDeleteSuccessMongoDbErrorResponse = new BaseResponse('200', 'Delete Successful!', invoice)
+                res.json(invoiceDeleteSuccessMongoDbErrorResponse.toObject());
+             }
+         })
+     })
+    } catch(e) {
+        console.log(e);
+        const invoiceDeleteMongoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err)
+        res.status(500).sedn(invoiceDeleteMongoDbErrorResponse.toObject());
+    }
+ })
 
 module.exports = router; 

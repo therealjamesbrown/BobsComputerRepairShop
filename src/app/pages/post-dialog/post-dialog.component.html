@@ -1,1 +1,51 @@
-<p>post-dialog works!</p>
+<mat-card class="text-center">
+    <mat-card-content>
+        <form (ngSubmit)="createUser()" [formGroup]="createUserForm">
+        <mat-card-title>
+            <h1>Create User</h1>
+        </mat-card-title>
+            <mat-form-field>
+                <mat-label>Username</mat-label>
+                <br>
+                <input class="text-center" placeholder="Ex. rjackson25" formControlName="username" />
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <br>
+                <input class="text-center" placeholder="Ex. Tom" formControlName="firstName" />
+            </mat-form-field>
+            <br>
+            <mat-form-filed>
+                <mat-label>Last Name</mat-label>
+                <br>
+                <input class="text-center" placeholder="Ex. Jerry" formControlName="phoneNumber" />
+            </mat-form-filed>
+            <br>
+            <mat-form-filed>
+                <mat-label>Address</mat-label>
+                <br>
+                <input class="text-center" placeholder="Ex. 123 Test Street" formControlName="address" />
+            </mat-form-filed>
+            <br>
+            <mat-form-filed>
+                <mat-label>Email</mat-label>
+                <br>
+                <input class="text-center" placeholder="Ex. hello@google.com" formControlName="email" />
+            </mat-form-filed>
+            <br>
+            <mat-form-filed>
+                <mat-label>Phone Number</mat-label>
+                <br>
+                <input class="text-center" placeholder="Ex. (555) 555-5555" formControlName="phoneNumber" />
+            </mat-form-filed>
+            <br>
+            <br>
+            <mat-form-actions class="mt-5">
+                <button class="btn btn-danger" (click)="cancel()" mat-dialog-close>Cancel</button>
+                <button type="submit" class="btn btn-success" mat-dialog-close>Create User</button>
+            </mat-form-actions>
+            <br>
+        </form>
+    </mat-card-content>
+    </mat-card>

@@ -13,8 +13,7 @@ const express = require('express');
 const User = require('../models/user');
 const router = express.Router();
 var bcrypt = require('bcryptjs');
-let bodyParser = require('body-parser')
-let cors = require('cors')
+let bodyParser = require('body-parser');
 
 //bring in our base and error response classes
 const BaseResponse = require('../services/base-response');
@@ -23,8 +22,7 @@ const ErrorResponse = require('../services/error-response');
 const saltRounds = 10; //set the number of times the password is getting salted
 // router middleware
 router.use(bodyParser.json())
-router.use(bodyParser.urlencoded({ extended: false }))
-router.use(cors())
+router.use(bodyParser.urlencoded({ extended: false }));
 /**
  * 
  * --Find All Users--

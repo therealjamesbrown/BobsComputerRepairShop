@@ -33,7 +33,7 @@ export class AdministrationComponent implements OnInit {
   constructor(public dialog: MatDialog, private http: HttpClient) { }
   ngOnInit() {
     this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(users => {
-      this.users = users.data;
+      //this.users = users.data;
     })
    }
    post() {

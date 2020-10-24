@@ -12,6 +12,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { MatDialog } from '@angular/material/dialog'
 
 const httpOptions ={
   headers: new HttpHeaders({
@@ -26,11 +27,20 @@ const httpOptions ={
 })
 export class AdministrationComponent implements OnInit {
   users: any
-  constructor(private http: HttpClient) { }
+  constructor(public dialog: MatDialog, private http: HttpClient) { }
   ngOnInit() {
     this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(users => {
-      this.users = users.data;
-      console.log(this.users)
+      this.users = users.data
     })
+   }
+   post() {
+     let postRef = this.dialog.
+   }
+   update() {
+    console.log("UPDATE")
+   }
+   delete() {
+     console.log("DELETE")
+
    }
 }

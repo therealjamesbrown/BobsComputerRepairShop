@@ -41,7 +41,10 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PricingComponent } from './pages/pricing/pricing.component';
 import { AboutComponent } from './pages/about/about.component';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
+import { PostDialogComponent } from './pages/administration/post-dialog/post-dialog.component';
+import { PutDialogComponent } from './pages/administration/put-dialog/put-dialog.component';
+import { PatchDialogComponent } from './pages/administration/patch-dialog/patch-dialog.component'
 
 @NgModule({
   declarations: [
@@ -55,7 +58,10 @@ import { MatTableModule } from '@angular/material/table'
     ProfileComponent,
     ContactComponent,
     PricingComponent,
-    AboutComponent
+    AboutComponent,
+    PostDialogComponent,
+    PutDialogComponent,
+    PatchDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -76,9 +82,10 @@ import { MatTableModule } from '@angular/material/table'
     MatDialogModule,
     MatMenuModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    MatIconModule
   ],
-  providers: [],
+  providers: [ CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -176,7 +176,7 @@ router.put('/:id', function(req, res) {
 
  //question from SK - I did a soft delete, thinking you wouldn't want to actual delete any records from your system, only inactivate; however we
  //would probably want to set isDisabled: false on the model
-router.delete('/:id', function(req, res) {
+router.patch('/:id', function(req, res) {
     try { 
     Invoice.findOne({ "_id": req.params.id }, function(err, invoice) {
          if (err){

@@ -161,7 +161,7 @@ router.put('/:id', async(req,res) => { //double check this works /:_id JB //SK c
  * 
  */
 
- router.delete('/:id', function(req, res) {
+ router.patch('/:id', function(req, res) {
     try { 
     SecurityQuestion.findOne({ "_id": req.params.id }, function(err, securityQuestion) {
          if (err) { 

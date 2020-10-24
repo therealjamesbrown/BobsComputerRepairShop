@@ -153,7 +153,7 @@ router.put('/:roleId/update', async(req, res) =>{
  * 
  */
 
- router.delete('/:id', function(req, res) {
+ router.patch('/:id', function(req, res) {
     try { 
     // Finds the user
     Role.findOne({ "_id": req.params.id }, function(err, user) {

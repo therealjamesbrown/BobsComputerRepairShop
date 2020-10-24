@@ -163,14 +163,17 @@ router.put('/:id', async(req, res) => {
  * --Delete User--
  * 
  */
-router.delete('/:id', function(req, res) {
+router.patch('/:id', function(req, res) {
 try {
     User.findOne({ "_id": req.params.id }, function(err, user) {
         if (err) { 
             const ErrorMessage = new ErrorResponse('500', 'Internal Server Erorr', err)
             console.log(ErrorMessage.toObject())
         } else {
-            user.remove(function() {
+            user.set({
+                isDisabled: true
+            })
+            user.save(function() {
             const SuccessMessage = new BaseResponse('200', 'DELETE Request Success', user)
             res.json(SuccessMessage.toObject())
     })}})} catch (e) {

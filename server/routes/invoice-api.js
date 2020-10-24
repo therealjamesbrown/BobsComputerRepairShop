@@ -87,9 +87,27 @@ router.get('/:_id', async(req, res) => {
 /**
  * 
  * --Find Invoice by username--
- * 
+ * Created by JB
  */
 
+router.get('/user/:username', function(req, res){
+    try {
+       Invoice.find({'username': req.params.username}, function(error, invoices){
+           if(error){
+               console.log(error);
+               const findInvoiceByUserNameMongoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error!', error);
+               res.status(500).send(findInvoiceByUserNameMongoDbErrorResponse.toObject());
+           } else {
+               const findInvoiceByUserNameMongoDbSuccess = new BaseResponse('200', 'Successful GET Request', invoices);
+               res.json(findInvoiceByUserNameMongoDbSuccess.toObject());
+           }
+       })
+    } catch (e) {
+        console.log(e);
+        const findInvoiceByUserNameCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error!', e.message);
+        res.status(500).send(findInvoiceByUserNameCatchErrorResponse.toObject());
+    }
+})
 
 
  /**
@@ -113,8 +131,8 @@ router.post('/', function(req, res) {
                 const ErrorMessage = new ErrorResponse('500', 'internal server error', err)
                 res.json(ErrorMessages) 
             } else { 
-                const SuccessMessage = new BaseResponse('200', 'Successful POST Request', err)
-                res.json(SuccessMessage)
+                const SuccessMessage = new BaseResponse('200', 'Successful POST Request', invoice) //JB fixed error with invoice. current value in thir param: err, updated to "invoice", so object gets returnerd.
+                res.json(SuccessMessage.toObject());//jb updated to use agreed upon syntax
             }
         })
     } catch (e) {

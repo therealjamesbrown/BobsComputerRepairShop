@@ -31,6 +31,9 @@ let BaseResponse = require('../services/error-response')
                 const singinMongoDbErrorMessage = new ErrorResponse('500', 'Internal Server Error', err) //**this should be 'signin' */
                 res.status(500).json(singinMongoDbErrorMessage.toObject());  //**this should be 'signin' */
             } 
+
+
+           
             /**
                  * 
                  * Begin JB changes
@@ -52,6 +55,10 @@ let BaseResponse = require('../services/error-response')
                   * If password is valid, return success
                   */
                 if(passwordIsValid) {
+
+                     //if the isDIsabled === true
+                     //query mongo and update isDisabled to false
+
                     console.log('Login Successful!');
                     const signinResponse = new BaseResponse('200', 'Login Successful', user);
                     res.json(signinResponse.toObject());

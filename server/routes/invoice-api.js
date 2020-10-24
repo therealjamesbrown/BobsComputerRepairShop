@@ -105,7 +105,6 @@ router.get('/:_id', async(req, res) => {
 * --CREATE Invoice-- 
 * 
 */
-
 router.post('/', function(req, res) {
     // Creates the Invoice
    try {
@@ -129,7 +128,6 @@ router.post('/', function(req, res) {
 * --Update Invoice-- 
 * 
 */
-
 router.put('/:id', function(req, res) {
     try {
     // Find Invoice By Id

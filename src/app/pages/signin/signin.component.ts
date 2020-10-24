@@ -49,6 +49,7 @@ export class SigninComponent implements OnInit {
 
     console.log(username);
     console.log(password);
+    
 
     this.http.post('/api/session/signin', {
       username,

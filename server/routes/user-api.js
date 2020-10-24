@@ -168,11 +168,11 @@ try {
     User.findOne({ "_id": req.params.id }, function(err, user) {
         if (err) { 
             const ErrorMessage = new ErrorResponse('500', 'Internal Server Erorr', err)
-            console.log(ErrorMessage)
+            console.log(ErrorMessage.toObject())
         } else {
             user.remove(function() {
             const SuccessMessage = new BaseResponse('200', 'DELETE Request Success', user)
-            res.json(SuccessMessage)
+            res.json(SuccessMessage.toObject())
     })}})} catch (e) {
             const ErrorMessage = new ErrorResponse('500', 'Internal Server Erorr', err)
             res.json(ErrorMessage)

@@ -1,6 +1,10 @@
+h1{
+    text-align: center;
+}
+
 .outerContainer {
     width: 90%;
-    margin: 10% auto;
+    margin: 0 auto;
 }
 
 .childColumnContainers{

@@ -20,8 +20,29 @@ const ErrorResponse = require('../services/error-response');
 /**
  * 
  * --Find All Invoices--
- * 
+ * Completed by SK
  */
+
+router.get('/', async(req, res) => {
+    try{
+        Invoice.find({}).where('isDisabled').equals(false).exec(function(err, invoice){
+
+        if(err){
+            console.log(err);
+            const invoiceFindAllMongoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err)
+            res.status(500).send(invoiceFindAllMongoDbErrorResponse.toObject());
+        } else {
+            console.log(invoice);
+            const invoiceFindAllMongoDbErrorResponse = new BaseResponse('200', 'Successful!', invoice);
+            res.json(invoiceFindAllMongoDbErrorResponse.toObject());
+        }
+        })
+    } catch(e){
+        console.log(e);
+        const invoiceFindAllMongoDbErrorResponse = new ErrorResopnse('500', 'Internal Server Error', e.message);
+        res.status(500).send(invoiceFindAllMongoDbErrorResponse.toObject());
+    }
+}) 
 
 
 

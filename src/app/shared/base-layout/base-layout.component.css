@@ -1,9 +1,11 @@
+.pageContainer{
+  position: relative;
+}
+
 .navbar-container {
     padding: 5px;
   }
 
-.nav{
-}
 mat-toolbar{
     padding-top: 10px;
     background-color: #5472d3;

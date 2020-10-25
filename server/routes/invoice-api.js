@@ -113,9 +113,28 @@ router.get('/user/:username', function(req, res){
  /**
  * 
  * --FindPurchasesByService (purchases-graph)--
- * 
+ * Created by JB
  */
- 
+router.post('/purchases', function(req, res){
+    try {
+        Invoice.find({'lineItem.title': req.body.title}, function(error, purchases){
+            if(error){
+                console.log(error);
+                const findPurchasesByServiceMongoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error!', error);
+                res.status(500).send(findPurchasesByServiceMongoDbErrorResponse.toObject());
+            } else {
+                const findPurchasesByServiceMongoDbSuccess = new BaseResponse('200', 'Successful GET Request', purchases);
+                res.json(findPurchasesByServiceMongoDbSuccess.toObject());
+            }
+        })
+     } catch (e) {
+         console.log(e);
+         const findPurchasesByServiceCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error!', e.message);
+         res.status(500).send(findPurchasesByServiceCatchErrorResponse.toObject());
+     }
+})
+
+
 
 
 /**

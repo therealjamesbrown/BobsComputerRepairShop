@@ -4,7 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    "Access-Control-Allow-Origin": '*'
   })
 }
 
@@ -20,6 +21,7 @@ export class PostDialogComponent implements OnInit {
   ngOnInit() {
     this.createUserForm = this.fb.group({
       username: [null, Validators.compose([Validators.required])],
+      password:  [null, Validators.compose([Validators.required])],
       firstName: [null, Validators.compose([Validators.required])],
       lastName: [null, Validators.compose([Validators.required])],
       address: [null, Validators.compose([Validators.required])],
@@ -30,6 +32,7 @@ export class PostDialogComponent implements OnInit {
   createUser() {
     let newUser = {
       username: this.createUserForm.get('username').value,
+      password: this.createUserForm.get('password').value,
       firstName: this.createUserForm.get('firstName').value,
       lastName: this.createUserForm.get('lastName').value,
       address: this.createUserForm.get('address').value,

@@ -22,7 +22,8 @@ import { CookieService } from 'ngx-cookie-service';
 
 const httpOptions ={
   headers: new HttpHeaders({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*'
   })
 }
 
@@ -47,8 +48,8 @@ export class AdministrationComponent implements OnInit {
 
   ngOnInit() {
     //Begin Brendans code
-    this.http.get<any>('http://localhost:3000/api/users', httpOptions).subscribe(users => {
-      this.users = users.data;
+    this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(data => {
+      this.users = data['data'];
     })
     //end Brendans code
    }

@@ -1,3 +1,15 @@
+/**
+ * 
+ * ================================
+ * ; Title: purchasegraph.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Modified by: James Brown
+ * ; Date: 10/25/2020
+ * ; Description: component responsible for purchase graph
+ * ================================
+ * 
+ */
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

@@ -51,6 +51,7 @@ import { PurchasegraphComponent } from './pages/administration/purchasegraph/pur
 import { SecurityquestionmanagementComponent } from './pages/administration/securityquestionmanagement/securityquestionmanagement.component';
 import { UsermanagementComponent } from './pages/administration/usermanagement/usermanagement.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

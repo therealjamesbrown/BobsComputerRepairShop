@@ -32,7 +32,7 @@ export class SecurityQuestionService {
    * 
    */
     findAllSecurityQuestions(): Observable<any> {
-      return this.http.get('/api/security-questions');
+      return this.http.get('/api/securityQuestions');
     }
    /**
    * 
@@ -41,7 +41,7 @@ export class SecurityQuestionService {
    */
 
   findSecurityQuestionById(questionId: string): Observable<any> {
-    return this.http.get('/api/security-questions/' + questionId);
+    return this.http.get('/api/securityQuestions/' + questionId);
   }
   
 
@@ -75,10 +75,10 @@ export class SecurityQuestionService {
    * Delete Security Question
    * 
    */
-
-   deleteSecurityQuestion(questionId: string): Observable<any> {
-     return this.http.delete('/api/security-questions/' + questionId);
-   }
+//Sarah WIP
+//   deleteSecurityQuestion(questionId: string): Observable<any> {
+//     return this.http.delete('/api/security-questions/' + questionId);
+//   }
 
 }
 

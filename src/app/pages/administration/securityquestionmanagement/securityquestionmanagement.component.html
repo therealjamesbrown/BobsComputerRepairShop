@@ -1,1 +1,21 @@
-<p>securityquestionmanagement works!</p>
+<!--<p>securityquestionmanagement works!</p>-->
+
+<div fxLayout="column">
+    <mat-card>
+        <mat-card-content *ngIf="securityQuestions">
+        <table mat-table [dataSource]="securityQuestions">
+            <ng-container matColumnDef="question">
+                <th mat-header-cell *matHeaderCellDef>Question</th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.text}}
+                </td>
+            </ng-container>
+
+ <!--          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>--> 
+            
+        </table>
+    </mat-card-content>
+    </mat-card>
+    
+</div>

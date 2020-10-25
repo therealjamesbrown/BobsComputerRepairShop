@@ -32,7 +32,7 @@ actions: string[] = ['update', 'disable'];
       */
      this.roleServce.findAllRoles().subscribe(res => {
        this.roles = res['data'];
-       console.log(this.roles);
+       //console.log(this.roles);
      }, err => {
        console.log(err);
      })
@@ -52,4 +52,14 @@ actions: string[] = ['update', 'disable'];
    */
  
 
+   //createRoleDialog
+
+   
+   //editRoleDialog
+
+
+   //deleteRoleDialog
+
+
+   
 }

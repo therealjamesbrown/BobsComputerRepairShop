@@ -35,7 +35,7 @@ const ErrorResponse = require('../services/error-response');
             res.json(SuccessMessage)
         }})} catch (e) {
         const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
-        res.json(ErrorMessage)
+        res.json(ErrorMessage.toObject());
      }
  })
 

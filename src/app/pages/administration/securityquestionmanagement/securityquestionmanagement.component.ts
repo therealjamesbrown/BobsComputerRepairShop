@@ -24,24 +24,26 @@ import { SecurityQuestion } from '../interfaces/security-question.interface';
 })
 export class SecurityquestionmanagementComponent implements OnInit {
 
-  securityQuestions: SecurityQuestion;
+  securityQuestions: SecurityQuestion[];
   questionId: string;
-//  displayedColumns = ['question'];
+ displayedColumns = ['question'];
 
-  constructor(private http: HttpClient, private dialog: MatDialog, private SecurityQuestionService: SecurityQuestionService) { 
+  constructor(private http: HttpClient, private dialog: MatDialog, private securityQuestionService: SecurityQuestionService) { 
     /**
      * Find all Security Questions
      */
 
-    this.SecurityQuestionService.findAllSecurityQuestions().subscribe(res => {
+    this.securityQuestionService.findAllSecurityQuestions().subscribe(res => {
       this.securityQuestions = res['data'];
+      console.log(res);
+      console.log(this.securityQuestionService);
     }, err => {
       console.log(err);
     })
 
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
      /**

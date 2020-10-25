@@ -32,7 +32,7 @@ export class SecurityQuestionService {
    * 
    */
     findAllSecurityQuestions(): Observable<any> {
-      return this.http.get('/api/securityQuestions');
+      return this.http.get(`/api/securityQuestions/`);
     }
    /**
    * 

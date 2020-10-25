@@ -50,7 +50,7 @@ export class AdministrationComponent implements OnInit {
      * Find all Users
      */
 
-     
+
      /**
      * Find all Security Questions
      */
@@ -94,28 +94,28 @@ export class AdministrationComponent implements OnInit {
 
    /**
     * 
-    * SECITION FOR USER MANAGEMENT API CALLS
+    * SECITION FOR USER MANAGEMENT API CALLS (create, update, delete)
     * 
     */
 
 
     /**
     * 
-    * SECITION FOR SECURITY QUESTION API CALLS
+    * SECITION FOR SECURITY QUESTION API CALLS (create, update, delete)
     * 
     */
 
   /**
    * 
    * 
-   * SECTION FOR ROLE API
+   * SECTION FOR ROLE API (create, update, delete)
    * 
    */
 
 
   /**
    * 
-   * SECTION FOR CATALOG APIS 
+   * SECTION FOR CATALOG APIS (create, update, delete)
    * 
    * 
    */
@@ -123,7 +123,7 @@ export class AdministrationComponent implements OnInit {
 
   /**
    * 
-   * SECTION FOR PURCHASES APIS
+   * SECTION FOR PURCHASES APIS (create, update, delete)
    * 
    */
   

@@ -23,6 +23,88 @@
     },
 
     /***/
+    "04DA":
+    /*!***************************************************************************************!*\
+      !*** ./src/app/pages/administration/catalogmanagement/catalogmanagement.component.ts ***!
+      \***************************************************************************************/
+
+    /*! exports provided: CatalogmanagementComponent */
+
+    /***/
+    function DA(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "CatalogmanagementComponent", function () {
+        return CatalogmanagementComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+
+      var CatalogmanagementComponent = /*#__PURE__*/function () {
+        function CatalogmanagementComponent() {
+          /**
+             *
+             * Find all Catalog Items
+             */
+
+          _classCallCheck(this, CatalogmanagementComponent);
+        }
+
+        _createClass(CatalogmanagementComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }]);
+
+        return CatalogmanagementComponent;
+      }();
+
+      CatalogmanagementComponent.ɵfac = function CatalogmanagementComponent_Factory(t) {
+        return new (t || CatalogmanagementComponent)();
+      };
+
+      CatalogmanagementComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: CatalogmanagementComponent,
+        selectors: [["app-catalogmanagement"]],
+        decls: 2,
+        vars: 0,
+        template: function CatalogmanagementComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "catalogmanagement works!");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+        },
+        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkbWluaXN0cmF0aW9uL2NhdGFsb2dtYW5hZ2VtZW50L2NhdGFsb2dtYW5hZ2VtZW50LmNvbXBvbmVudC5jc3MifQ== */"]
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CatalogmanagementComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'app-catalogmanagement',
+            templateUrl: './catalogmanagement.component.html',
+            styleUrls: ['./catalogmanagement.component.css']
+          }]
+        }], function () {
+          return [];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
     "1LmZ":
     /*!**********************************************!*\
       !*** ./src/app/pages/home/home.component.ts ***!
@@ -225,9 +307,39 @@
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      var _usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      /*! ./usermanagement/usermanagement.component */
+      "kSsb");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! @angular/common */
       "ofXK");
+      /* harmony import */
+
+
+      var _securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+      /*! ./securityquestionmanagement/securityquestionmanagement.component */
+      "jy4n");
+      /* harmony import */
+
+
+      var _rolemanagement_rolemanagement_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+      /*! ./rolemanagement/rolemanagement.component */
+      "NkPC");
+      /* harmony import */
+
+
+      var _catalogmanagement_catalogmanagement_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+      /*! ./catalogmanagement/catalogmanagement.component */
+      "04DA");
+      /* harmony import */
+
+
+      var _purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+      /*! ./purchasegraph/purchasegraph.component */
+      "cq0S");
       /**
        *
        * ================================
@@ -241,7 +353,7 @@
        */
 
 
-      function AdministrationComponent_tr_31_Template(rf, ctx) {
+      function AdministrationComponent_tr_33_Template(rf, ctx) {
         if (rf & 1) {
           var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
@@ -287,7 +399,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "button", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AdministrationComponent_tr_31_Template_button_click_14_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AdministrationComponent_tr_33_Template_button_click_14_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3);
 
             var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
@@ -305,7 +417,7 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "button", 12);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AdministrationComponent_tr_31_Template_button_click_17_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AdministrationComponent_tr_33_Template_button_click_17_listener() {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3);
 
             var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
@@ -365,33 +477,10 @@
         function AdministrationComponent(dialog, http, roleService, cookieService) {
           _classCallCheck(this, AdministrationComponent);
 
-          /**All find all operations need to go here since
-             we are loading them each time the user visits the admin page.
-          */
           this.dialog = dialog;
           this.http = http;
           this.roleService = roleService;
           this.cookieService = cookieService;
-          /**
-           * Find all Users
-           */
-
-          /**
-          * Find all Security Questions
-          */
-
-          /**
-           * Find All Roles
-           */
-
-          /**
-           *
-           * Find all Catalog Items
-           */
-
-          /**
-           * Find All purchases
-           */
         }
 
         _createClass(AdministrationComponent, [{
@@ -433,7 +522,7 @@
       AdministrationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: AdministrationComponent,
         selectors: [["app-administration"]],
-        decls: 48,
+        decls: 55,
         vars: 1,
         consts: [["fxLayout", "column", 1, "outerContainer"], ["fxFlex", ""], [1, "mat-elevation-z8"], ["fxLayout", "column"], ["fxFlex", "", 1, "childColumnContainers"], ["mat-button", "", "id", "post", 3, "click"], [1, "table", 2, "text-align", "center"], ["scope", "col"], [4, "ngFor", "ngForOf"], ["fxLayout", "row"], ["fxFlex", "", 1, "childRowContainers"], ["scope", "row"], ["mat-button", "", 3, "click"], [1, "material-icons"]],
         template: function AdministrationComponent_Template(rf, ctx) {
@@ -456,71 +545,75 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "p");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 1);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "User Management");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "User Management");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "button", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "button", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AdministrationComponent_Template_button_click_10_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function AdministrationComponent_Template_button_click_11_listener() {
               return ctx.post();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-icon");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-icon");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "open_in_new");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "open_in_new");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "table", 6);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "thead");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "tr");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "th", 7);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "Username");
-
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](14, "app-usermanagement");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "table", 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "thead");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "tr");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "th", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "First Name");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Username");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "th", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "Last Name");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "First Name");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "th", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Phone Number");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Last Name");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "th", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "Address");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "Phone Number");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "th", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "Email");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](27, "Address");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "th", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29, "Actions");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29, "Email");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "th", 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "Actions");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -528,35 +621,9 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "tbody");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "tbody");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](31, AdministrationComponent_tr_31_Template, 20, 6, "tr", 8);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "div", 4);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "div", 9);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "div", 10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "p");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](36, "Security Questions");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "div", 10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "p");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](39, "Role Management");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](33, AdministrationComponent_tr_33_Template, 20, 6, "tr", 8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -566,52 +633,90 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](34, "div", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "div", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](35, "div", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "div", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "div", 10);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](43, "p");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](37, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](44, "Catalog");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](38, "Security Questions");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "div", 10);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "p");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](47, "Purchases");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](39, "app-securityquestionmanagement");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](40, "div", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](42, "Role Management");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](43, "app-rolemanagement");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](44, "div", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](45, "div", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](46, "div", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](47, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](48, "Catalog");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](49, "app-catalogmanagement");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](50, "div", 10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](51, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](52, "Purchases");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](53, "app-purchasegraph");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](54, "br");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](31);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](33);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.users);
           }
         },
-        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_8__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_8__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardContent"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIcon"], _angular_common__WEBPACK_IMPORTED_MODULE_12__["NgForOf"]],
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_8__["DefaultLayoutDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_8__["DefaultFlexDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardContent"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIcon"], _usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_12__["UsermanagementComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_13__["NgForOf"], _securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_14__["SecurityquestionmanagementComponent"], _rolemanagement_rolemanagement_component__WEBPACK_IMPORTED_MODULE_15__["RolemanagementComponent"], _catalogmanagement_catalogmanagement_component__WEBPACK_IMPORTED_MODULE_16__["CatalogmanagementComponent"], _purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_17__["PurchasegraphComponent"]],
         styles: ["#post[_ngcontent-%COMP%] {\n    float: right;\n}\nh1[_ngcontent-%COMP%]{\n    text-align: center;\n    color: white;\n}\np[_ngcontent-%COMP%]{\n    font-weight: 500;\n    font-size: 15px;\n}\n.outerContainer[_ngcontent-%COMP%] {\n    width: 90%;\n    margin: 0 auto;\n}\n.childColumnContainers[_ngcontent-%COMP%]{\n    margin-top: 10px;\n    margin-bottom: 5px;\n}\n.childRowContainers[_ngcontent-%COMP%]{\n\n}\n\n.userManagement[_ngcontent-%COMP%]{\n\n}\n.securityOptions[_ngcontent-%COMP%]{\n\n}\n.roleManagement[_ngcontent-%COMP%]{\n\n}\n.catalog[_ngcontent-%COMP%]{\n\n}\n.purchases[_ngcontent-%COMP%]{\n    \n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYWRtaW5pc3RyYXRpb24vYWRtaW5pc3RyYXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFlBQVk7QUFDaEI7QUFDQTtJQUNJLGtCQUFrQjtJQUNsQixZQUFZO0FBQ2hCO0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsZUFBZTtBQUNuQjtBQUVBO0lBQ0ksVUFBVTtJQUNWLGNBQWM7QUFDbEI7QUFFQTtJQUNJLGdCQUFnQjtJQUNoQixrQkFBa0I7QUFDdEI7QUFFQTs7QUFFQTtBQUVBOztFQUVFO0FBRUY7O0FBRUE7QUFFQTs7QUFFQTtBQUVBOztBQUVBO0FBRUE7O0FBRUE7QUFFQTs7QUFFQSIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkbWluaXN0cmF0aW9uL2FkbWluaXN0cmF0aW9uLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjcG9zdCB7XG4gICAgZmxvYXQ6IHJpZ2h0O1xufVxuaDF7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xuICAgIGNvbG9yOiB3aGl0ZTtcbn1cblxucHtcbiAgICBmb250LXdlaWdodDogNTAwO1xuICAgIGZvbnQtc2l6ZTogMTVweDtcbn1cblxuLm91dGVyQ29udGFpbmVyIHtcbiAgICB3aWR0aDogOTAlO1xuICAgIG1hcmdpbjogMCBhdXRvO1xufVxuXG4uY2hpbGRDb2x1bW5Db250YWluZXJze1xuICAgIG1hcmdpbi10b3A6IDEwcHg7XG4gICAgbWFyZ2luLWJvdHRvbTogNXB4O1xufVxuXG4uY2hpbGRSb3dDb250YWluZXJze1xuXG59XG5cbi8qKlxuU3R5bGluZyBmb3IgRWFjaCBjb250YWluZXJcbioqL1xuXG4udXNlck1hbmFnZW1lbnR7XG5cbn1cblxuLnNlY3VyaXR5T3B0aW9uc3tcblxufVxuXG4ucm9sZU1hbmFnZW1lbnR7XG5cbn1cblxuLmNhdGFsb2d7XG5cbn1cblxuLnB1cmNoYXNlc3tcbiAgICBcbn0iXX0= */"]
       });
       /*@__PURE__*/
@@ -871,6 +976,87 @@
           }, {
             type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_2__["CookieService"]
           }];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
+    "NkPC":
+    /*!*********************************************************************************!*\
+      !*** ./src/app/pages/administration/rolemanagement/rolemanagement.component.ts ***!
+      \*********************************************************************************/
+
+    /*! exports provided: RolemanagementComponent */
+
+    /***/
+    function NkPC(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "RolemanagementComponent", function () {
+        return RolemanagementComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+
+      var RolemanagementComponent = /*#__PURE__*/function () {
+        function RolemanagementComponent() {
+          /**
+            * Find All Roles
+            */
+
+          _classCallCheck(this, RolemanagementComponent);
+        }
+
+        _createClass(RolemanagementComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }]);
+
+        return RolemanagementComponent;
+      }();
+
+      RolemanagementComponent.ɵfac = function RolemanagementComponent_Factory(t) {
+        return new (t || RolemanagementComponent)();
+      };
+
+      RolemanagementComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: RolemanagementComponent,
+        selectors: [["app-rolemanagement"]],
+        decls: 2,
+        vars: 0,
+        template: function RolemanagementComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "rolemanagement works!");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+        },
+        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkbWluaXN0cmF0aW9uL3JvbGVtYW5hZ2VtZW50L3JvbGVtYW5hZ2VtZW50LmNvbXBvbmVudC5jc3MifQ== */"]
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](RolemanagementComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'app-rolemanagement',
+            templateUrl: './rolemanagement.component.html',
+            styleUrls: ['./rolemanagement.component.css']
+          }]
+        }], function () {
+          return [];
         }, null);
       })();
       /***/
@@ -1835,6 +2021,36 @@
       var _pages_patch_dialog_patch_dialog_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(
       /*! ./pages/patch-dialog/patch-dialog.component */
       "jY8k");
+      /* harmony import */
+
+
+      var _pages_administration_rolemanagement_rolemanagement_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(
+      /*! ./pages/administration/rolemanagement/rolemanagement.component */
+      "NkPC");
+      /* harmony import */
+
+
+      var _pages_administration_catalogmanagement_catalogmanagement_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(
+      /*! ./pages/administration/catalogmanagement/catalogmanagement.component */
+      "04DA");
+      /* harmony import */
+
+
+      var _pages_administration_purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(
+      /*! ./pages/administration/purchasegraph/purchasegraph.component */
+      "cq0S");
+      /* harmony import */
+
+
+      var _pages_administration_securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(
+      /*! ./pages/administration/securityquestionmanagement/securityquestionmanagement.component */
+      "jy4n");
+      /* harmony import */
+
+
+      var _pages_administration_usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(
+      /*! ./pages/administration/usermanagement/usermanagement.component */
+      "kSsb");
       /**
        *
        * ================================
@@ -1866,7 +2082,7 @@
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _shared_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_6__["BaseLayoutComponent"], _shared_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_7__["AuthLayoutComponent"], _pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_14__["SigninComponent"], _pages_administration_administration_component__WEBPACK_IMPORTED_MODULE_24__["AdministrationComponent"], _pages_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_25__["NotFoundComponent"], _pages_profile_profile_component__WEBPACK_IMPORTED_MODULE_26__["ProfileComponent"], _pages_contact_contact_component__WEBPACK_IMPORTED_MODULE_27__["ContactComponent"], _pages_pricing_pricing_component__WEBPACK_IMPORTED_MODULE_28__["PricingComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_29__["AboutComponent"], _pages_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_31__["PostDialogComponent"], _pages_put_dialog_put_dialog_component__WEBPACK_IMPORTED_MODULE_32__["PutDialogComponent"], _pages_patch_dialog_patch_dialog_component__WEBPACK_IMPORTED_MODULE_33__["PatchDialogComponent"]],
+          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _shared_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_6__["BaseLayoutComponent"], _shared_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_7__["AuthLayoutComponent"], _pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_14__["SigninComponent"], _pages_administration_administration_component__WEBPACK_IMPORTED_MODULE_24__["AdministrationComponent"], _pages_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_25__["NotFoundComponent"], _pages_profile_profile_component__WEBPACK_IMPORTED_MODULE_26__["ProfileComponent"], _pages_contact_contact_component__WEBPACK_IMPORTED_MODULE_27__["ContactComponent"], _pages_pricing_pricing_component__WEBPACK_IMPORTED_MODULE_28__["PricingComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_29__["AboutComponent"], _pages_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_31__["PostDialogComponent"], _pages_put_dialog_put_dialog_component__WEBPACK_IMPORTED_MODULE_32__["PutDialogComponent"], _pages_patch_dialog_patch_dialog_component__WEBPACK_IMPORTED_MODULE_33__["PatchDialogComponent"], _pages_administration_rolemanagement_rolemanagement_component__WEBPACK_IMPORTED_MODULE_34__["RolemanagementComponent"], _pages_administration_catalogmanagement_catalogmanagement_component__WEBPACK_IMPORTED_MODULE_35__["CatalogmanagementComponent"], _pages_administration_purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_36__["PurchasegraphComponent"], _pages_administration_securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_37__["SecurityquestionmanagementComponent"], _pages_administration_usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_38__["UsermanagementComponent"]],
           imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ReactiveFormsModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_16__["MatInputModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__["MatFormFieldModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__["MatSnackBarModule"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_20__["MatDividerModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_22__["MatMenuModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_23__["MatListModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_30__["MatTableModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"]]
         });
       })();
@@ -1877,12 +2093,93 @@
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
           args: [{
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _shared_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_6__["BaseLayoutComponent"], _shared_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_7__["AuthLayoutComponent"], _pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_14__["SigninComponent"], _pages_administration_administration_component__WEBPACK_IMPORTED_MODULE_24__["AdministrationComponent"], _pages_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_25__["NotFoundComponent"], _pages_profile_profile_component__WEBPACK_IMPORTED_MODULE_26__["ProfileComponent"], _pages_contact_contact_component__WEBPACK_IMPORTED_MODULE_27__["ContactComponent"], _pages_pricing_pricing_component__WEBPACK_IMPORTED_MODULE_28__["PricingComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_29__["AboutComponent"], _pages_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_31__["PostDialogComponent"], _pages_put_dialog_put_dialog_component__WEBPACK_IMPORTED_MODULE_32__["PutDialogComponent"], _pages_patch_dialog_patch_dialog_component__WEBPACK_IMPORTED_MODULE_33__["PatchDialogComponent"]],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _shared_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_6__["BaseLayoutComponent"], _shared_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_7__["AuthLayoutComponent"], _pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_14__["SigninComponent"], _pages_administration_administration_component__WEBPACK_IMPORTED_MODULE_24__["AdministrationComponent"], _pages_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_25__["NotFoundComponent"], _pages_profile_profile_component__WEBPACK_IMPORTED_MODULE_26__["ProfileComponent"], _pages_contact_contact_component__WEBPACK_IMPORTED_MODULE_27__["ContactComponent"], _pages_pricing_pricing_component__WEBPACK_IMPORTED_MODULE_28__["PricingComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_29__["AboutComponent"], _pages_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_31__["PostDialogComponent"], _pages_put_dialog_put_dialog_component__WEBPACK_IMPORTED_MODULE_32__["PutDialogComponent"], _pages_patch_dialog_patch_dialog_component__WEBPACK_IMPORTED_MODULE_33__["PatchDialogComponent"], _pages_administration_rolemanagement_rolemanagement_component__WEBPACK_IMPORTED_MODULE_34__["RolemanagementComponent"], _pages_administration_catalogmanagement_catalogmanagement_component__WEBPACK_IMPORTED_MODULE_35__["CatalogmanagementComponent"], _pages_administration_purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_36__["PurchasegraphComponent"], _pages_administration_securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_37__["SecurityquestionmanagementComponent"], _pages_administration_usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_38__["UsermanagementComponent"]],
             imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ReactiveFormsModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_16__["MatInputModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__["MatFormFieldModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__["MatSnackBarModule"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_20__["MatDividerModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_22__["MatMenuModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_23__["MatListModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_30__["MatTableModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"]],
             providers: [ngx_cookie_service__WEBPACK_IMPORTED_MODULE_18__["CookieService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
           }]
         }], null, null);
+      })();
+      /***/
+
+    },
+
+    /***/
+    "cq0S":
+    /*!*******************************************************************************!*\
+      !*** ./src/app/pages/administration/purchasegraph/purchasegraph.component.ts ***!
+      \*******************************************************************************/
+
+    /*! exports provided: PurchasegraphComponent */
+
+    /***/
+    function cq0S(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "PurchasegraphComponent", function () {
+        return PurchasegraphComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+
+      var PurchasegraphComponent = /*#__PURE__*/function () {
+        function PurchasegraphComponent() {
+          /**
+             * Find All purchases
+             */
+
+          _classCallCheck(this, PurchasegraphComponent);
+        }
+
+        _createClass(PurchasegraphComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }]);
+
+        return PurchasegraphComponent;
+      }();
+
+      PurchasegraphComponent.ɵfac = function PurchasegraphComponent_Factory(t) {
+        return new (t || PurchasegraphComponent)();
+      };
+
+      PurchasegraphComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: PurchasegraphComponent,
+        selectors: [["app-purchasegraph"]],
+        decls: 2,
+        vars: 0,
+        template: function PurchasegraphComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "purchasegraph works!");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+        },
+        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkbWluaXN0cmF0aW9uL3B1cmNoYXNlZ3JhcGgvcHVyY2hhc2VncmFwaC5jb21wb25lbnQuY3NzIn0= */"]
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](PurchasegraphComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'app-purchasegraph',
+            templateUrl: './purchasegraph.component.html',
+            styleUrls: ['./purchasegraph.component.css']
+          }]
+        }], function () {
+          return [];
+        }, null);
       })();
       /***/
 
@@ -2252,6 +2549,168 @@
             selector: 'app-patch-dialog',
             templateUrl: './patch-dialog.component.html',
             styleUrls: ['./patch-dialog.component.css']
+          }]
+        }], function () {
+          return [];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
+    "jy4n":
+    /*!*********************************************************************************************************!*\
+      !*** ./src/app/pages/administration/securityquestionmanagement/securityquestionmanagement.component.ts ***!
+      \*********************************************************************************************************/
+
+    /*! exports provided: SecurityquestionmanagementComponent */
+
+    /***/
+    function jy4n(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "SecurityquestionmanagementComponent", function () {
+        return SecurityquestionmanagementComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+
+      var SecurityquestionmanagementComponent = /*#__PURE__*/function () {
+        function SecurityquestionmanagementComponent() {
+          /**
+           * Find all Security Questions
+           */
+
+          _classCallCheck(this, SecurityquestionmanagementComponent);
+        }
+
+        _createClass(SecurityquestionmanagementComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }]);
+
+        return SecurityquestionmanagementComponent;
+      }();
+
+      SecurityquestionmanagementComponent.ɵfac = function SecurityquestionmanagementComponent_Factory(t) {
+        return new (t || SecurityquestionmanagementComponent)();
+      };
+
+      SecurityquestionmanagementComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: SecurityquestionmanagementComponent,
+        selectors: [["app-securityquestionmanagement"]],
+        decls: 2,
+        vars: 0,
+        template: function SecurityquestionmanagementComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "securityquestionmanagement works!");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+        },
+        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkbWluaXN0cmF0aW9uL3NlY3VyaXR5cXVlc3Rpb25tYW5hZ2VtZW50L3NlY3VyaXR5cXVlc3Rpb25tYW5hZ2VtZW50LmNvbXBvbmVudC5jc3MifQ== */"]
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SecurityquestionmanagementComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'app-securityquestionmanagement',
+            templateUrl: './securityquestionmanagement.component.html',
+            styleUrls: ['./securityquestionmanagement.component.css']
+          }]
+        }], function () {
+          return [];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
+    "kSsb":
+    /*!*********************************************************************************!*\
+      !*** ./src/app/pages/administration/usermanagement/usermanagement.component.ts ***!
+      \*********************************************************************************/
+
+    /*! exports provided: UsermanagementComponent */
+
+    /***/
+    function kSsb(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "UsermanagementComponent", function () {
+        return UsermanagementComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+
+      var UsermanagementComponent = /*#__PURE__*/function () {
+        function UsermanagementComponent() {
+          /**
+          * Find all Users
+          */
+
+          _classCallCheck(this, UsermanagementComponent);
+        }
+
+        _createClass(UsermanagementComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }]);
+
+        return UsermanagementComponent;
+      }();
+
+      UsermanagementComponent.ɵfac = function UsermanagementComponent_Factory(t) {
+        return new (t || UsermanagementComponent)();
+      };
+
+      UsermanagementComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: UsermanagementComponent,
+        selectors: [["app-usermanagement"]],
+        decls: 2,
+        vars: 0,
+        template: function UsermanagementComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "usermanagement works!");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+        },
+        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkbWluaXN0cmF0aW9uL3VzZXJtYW5hZ2VtZW50L3VzZXJtYW5hZ2VtZW50LmNvbXBvbmVudC5jc3MifQ== */"]
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UsermanagementComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'app-usermanagement',
+            templateUrl: './usermanagement.component.html',
+            styleUrls: ['./usermanagement.component.css']
           }]
         }], function () {
           return [];

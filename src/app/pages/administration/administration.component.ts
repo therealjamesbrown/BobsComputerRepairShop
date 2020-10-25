@@ -37,36 +37,10 @@ export class AdministrationComponent implements OnInit {
   
   //Variable Declaration
   users: any
-  userId: string;
 
 
   constructor(public dialog: MatDialog, private http: HttpClient, private roleService: RoleService, private cookieService: CookieService) { 
 
-    /**All find all operations need to go here since 
-       we are loading them each time the user visits the admin page.
-    */
-
-    /**
-     * Find all Users
-     */
-
-
-     /**
-     * Find all Security Questions
-     */
-
-     /**
-      * Find All Roles
-      */
-
-      /**
-       * 
-       * Find all Catalog Items
-       */
-
-      /**
-       * Find All purchases
-       */
   }
 
 
@@ -91,40 +65,5 @@ export class AdministrationComponent implements OnInit {
    ///**End Brendans code */
 
 
-
-   /**
-    * 
-    * SECITION FOR USER MANAGEMENT API CALLS (create, update, delete)
-    * 
-    */
-
-
-    /**
-    * 
-    * SECITION FOR SECURITY QUESTION API CALLS (create, update, delete)
-    * 
-    */
-
-  /**
-   * 
-   * 
-   * SECTION FOR ROLE API (create, update, delete)
-   * 
-   */
-
-
-  /**
-   * 
-   * SECTION FOR CATALOG APIS (create, update, delete)
-   * 
-   * 
-   */
-
-
-  /**
-   * 
-   * SECTION FOR PURCHASES APIS (create, update, delete)
-   * 
-   */
   
 }

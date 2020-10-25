@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogmanagementComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    /**
+       * 
+       * Find all Catalog Items
+       */
+      
+  }
 
   ngOnInit(): void {
   }
+
+    /**
+   * 
+   * SECTION FOR CATALOG APIS (create, update, delete)
+   * You'll need to import http client and the related service
+   * 
+   */
 
 }

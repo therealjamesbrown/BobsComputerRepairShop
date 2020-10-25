@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecurityquestionmanagementComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    /**
+     * Find all Security Questions
+     */
+
+  }
 
   ngOnInit(): void {
   }
+
+     /**
+    * 
+    * SECITION FOR SECURITY QUESTION API CALLS (create, update, delete)
+    * You'll need to import http client and the related service
+    */
 
 }

@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RolemanagementComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    /**
+      * Find All Roles
+      */
+  }
 
   ngOnInit(): void {
   }
+
+  /**
+   * 
+   * 
+   * SECTION FOR ROLE API (create, update, delete)
+   * You'll need to import http client and the related service
+   */
 
 }

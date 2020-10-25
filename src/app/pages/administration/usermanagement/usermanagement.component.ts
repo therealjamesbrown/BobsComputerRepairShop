@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsermanagementComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+     /**
+     * Find all Users
+     */
+
+  }
 
   ngOnInit(): void {
   }
+
+  /**
+    * 
+    * SECITION FOR USER MANAGEMENT API CALLS (create, update, delete)
+    * You'll need to import http client and the related service
+    * 
+    */
+
 
 }

@@ -15,6 +15,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { MatSnackBar, 
+  MatSnackBarVerticalPosition 
+ } from '@angular/material/snack-bar'
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -31,8 +34,13 @@ export class SigninComponent implements OnInit {
 
   form: FormGroup;
   errorMessage: string;
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
-  constructor(private router: Router, private cookieService: CookieService, private fb: FormBuilder, private http: HttpClient) { 
+  constructor(private router: Router, 
+    private cookieService: CookieService, 
+    private fb: FormBuilder, 
+    private http: HttpClient,
+    private _snackBar: MatSnackBar) { 
 
   }
 
@@ -62,8 +70,16 @@ export class SigninComponent implements OnInit {
         this.router.navigate(['/']);
       }
     }, err => {
-      console.log(err);
-      this.errorMessage = err.error.message;
+      this.errorMessage = 'Invalid username or password. Try again.';
+        this.openSnackBar(this.errorMessage);
+    });
+  }
+
+  openSnackBar(errorMessage: string) {
+    this._snackBar.open(errorMessage, 'Close', {
+      duration: 7000,
+      verticalPosition: 'top',
+      panelClass: 'error'
     });
   }
 }

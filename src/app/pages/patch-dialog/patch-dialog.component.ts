@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { CookieService } from 'ngx-cookie-service'
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -14,16 +15,17 @@ const httpOptions = {
 })
 export class PatchDialogComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private cookieService: CookieService, private http: HttpClient) { }
 
   ngOnInit() { }
   cancel() {
 
   }
   delete() {
-    //this.http.delete('http://localhost:3000/api/users/:id', httpOptions).subscribe(err => {
-  //  if (err) console.log(err)
-    //  else console.log("DELETE Success")
-    // }) 
+    let id = this.cookieService.get('deleteId')
+    this.http.patch(`http://localhost:3000/api/users/${id}`, httpOptions).subscribe(err => {
+      if (err) console.log(err)
+     else console.log("DELETE Success")
+   }) 
   }
 }

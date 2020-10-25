@@ -1,13 +1,13 @@
 <mat-card class="text-center">
     <mat-card-content>
-        <form (ngSubmit)="updateUser()" [formGroup]="updateUserForm">
+        <form (ngSubmit)="updateUser()" [formGroup]="updatedUserForm">
         <mat-card-title>
             <h1>Update User</h1>
         </mat-card-title>
             <mat-form-field>
                 <mat-label>Username: </mat-label>
                 <br>
-                <input matInput class="text-center" placeholder="Ex. rjackson25" formControlName="username" />
+                <input matInput class="text-center" formControlName="username" />
             </mat-form-field>
             <br>
             <mat-form-field>
@@ -47,7 +47,7 @@
             </mat-form-field>
             <br>
             <mat-dialog-actions>
-                <button class="btn btn-danger" (click)="cancel()" mat-dialog-close>Cancel</button>
+                <button class="btn btn-danger" mat-dialog-close>Cancel</button>
                 <button type="submit" class="btn btn-success" mat-dialog-close>Update User</button>
             </mat-dialog-actions>
             <br>

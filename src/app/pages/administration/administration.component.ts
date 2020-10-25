@@ -19,7 +19,7 @@ import { PatchDialogComponent } from '../patch-dialog/patch-dialog.component'
 import { RoleService } from './services/role.service';
 import { CookieService } from 'ngx-cookie-service';
 
-const httpOptions ={
+const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*'
@@ -55,13 +55,15 @@ export class AdministrationComponent implements OnInit {
 
    /**Begin Brendans code */
    post() {
-     let postRef = this.dialog.open(PostDialogComponent)
+     this.dialog.open(PostDialogComponent)
    }
-   update(id) {
-    let putRef = this.dialog.open(PutDialogComponent)
+   update(user) {
+    this.cookieService.set('updateId', user._id)
+    this.dialog.open(PutDialogComponent)
    }
-   delete() {
-    let patchRef = this.dialog.open(PatchDialogComponent)
+   delete(user) {
+    this.cookieService.set('deleteId', user._id)
+    this.dialog.open(PatchDialogComponent)
    }
    ///**End Brendans code */
 

@@ -36,13 +36,13 @@ try {
     User.find({}, function(err, user) {
         if (err) { 
             const ErrorMessage = new ErrorResponse('500', 'Internal Server Erorr', err)
-            res.json(ErrorMessage) 
+            res.json(ErrorMessage.toObject()) 
         } else { 
             const SuccessMessage = new BaseResponse('200', 'GET Request Success', user)
-            res.json(SuccessMessage) }
+            res.json(SuccessMessage.toObject()) }
     })} catch (e) {
         const ErrorMessage = new ErrorResponse('500', 'Internal Server Erorr', err)
-        res.json(ErrorMessage)
+        res.json(ErrorMessage.toObject())
     }
  })
 
@@ -183,7 +183,7 @@ try {
             res.json(SuccessMessage.toObject())
     })}})} catch (e) {
             const ErrorMessage = new ErrorResponse('500', 'Internal Server Erorr', err)
-            res.json(ErrorMessage)
+            res.json(ErrorMessage.toObject())
     }   
 })
 

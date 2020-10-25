@@ -156,7 +156,7 @@ router.post('/', function(req, res) {
         })
     } catch (e) {
         const ErrorMessage = new ErrorResponse('500', 'internal server error', err)
-        res.json(ErrorMessage)
+        res.json(ErrorMessage.toObject())
     } 
 })
 
@@ -191,17 +191,17 @@ router.put('/:id', function(req, res) {
             updatedInvoice.save(function(err, Invoice) {
                 if (err) {
                      const ErrorMessage = new ErrorResponse('500', 'Interna; Server Error', err)
-                     res.json(ErrorMessage)
+                     res.json(ErrorMessage.toObject())
                 } else { 
                     const SuccessMessage = new BaseResponse('200', 'Internal Server Error', invoice)
-                    res.json(SuccessMessage)
+                    res.json(SuccessMessage.toObject())
                 }
             })
         }
     })
 } catch (e) {
     const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
-    res.json(ErrorMessage)
+    res.json(ErrorMessage.toObject())
 }
 })
 
@@ -241,7 +241,7 @@ router.patch('/:id', function(req, res) {
     } catch(e) {
         console.log(e);
         const invoiceDeleteMongoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error', e.message)
-        res.status(500).send(invoiceDeleteCatchErrorResponse.toObject());
+        res.status(500).send(invoiceDeleteMongoDbErrorResponse.toObject());
     }
  });
 

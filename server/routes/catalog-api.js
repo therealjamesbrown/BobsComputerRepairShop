@@ -71,13 +71,13 @@ router.get('/', async(req, res) => {
       Catalog.findOne({ "_id": req.params.id }, function(err, item) {
         if (err) {
           const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err);
-          res.json(ErorrMessage)
+          res.json(ErrorMessage.toObject())
         }
         // output the single item
   
         else { 
           const SuccessMessage = new BaseResponse('200', 'Successful GET Request', item)
-                res.json(SuccessMessage)
+                res.json(SuccessMessage.toObject())
       }})
     } catch (e) {
       console.log(e)

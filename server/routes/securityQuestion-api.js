@@ -29,10 +29,10 @@ const ErrorResponse = require('../services/error-response');
      SecurityQuestion.find({}, function(err, securityQuestion) {
          if (err) { 
             const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err) 
-            res.json(ErrorMessage)
+            res.json(ErrorMessage.toObject())
          } else { 
             const SuccessMessage = new BaseResponse('200', 'GET Request Success', securityQuestion)
-            res.json(SuccessMessage)
+            res.json(SuccessMessage.toObject())
         }})} catch (e) {
         const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
         res.json(ErrorMessage.toObject());
@@ -166,7 +166,7 @@ router.put('/:id', async(req,res) => { //double check this works /:_id JB //SK c
     SecurityQuestion.findOne({ "_id": req.params.id }, function(err, securityQuestion) {
          if (err) { 
             const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
-             res.json(ErrorMessage) 
+             res.json(ErrorMessage.toObject()) 
          } else { 
              securityQuestion.remove(function() {
                 const SuccessMessage = new BaseResponse('200', 'Delete Request Successful', securityQuestion)
@@ -176,7 +176,7 @@ router.put('/:id', async(req,res) => { //double check this works /:_id JB //SK c
             })
         } catch(e) {
         const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
-        res.json(ErrorMessage)
+        res.json(ErrorMessage.toObject())
      }
  })
 

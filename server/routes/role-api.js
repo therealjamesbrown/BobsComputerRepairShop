@@ -159,23 +159,23 @@ router.put('/:roleId/update', async(req, res) =>{
     Role.findOne({ "_id": req.params.id }, function(err, user) {
          if (err){
              const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
-             res.json(ErrorMessage)
+             res.json(ErrorMessage.toObject())
          }
         // Removes the user
          else user.remove(function(err) {
              if (err) { 
                 const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
-                res.json(ErrorMessage)
+                res.json(ErrorMessage.toObject())
             }
              else { 
                 const BaseMessage = new BaseResponse('200', 'Delete Successful!', user)
-                res.json(BaseMessage)
+                res.json(BaseMessage.toObject())
              }
          })
      })
     } catch(e) {
         const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
-        res.json(ErrorMessage)
+        res.json(ErrorMessage.toObject())
     }
  })
 

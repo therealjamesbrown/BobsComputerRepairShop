@@ -16,7 +16,6 @@ import { MatDialog } from '@angular/material/dialog'
 import { PostDialogComponent } from '../post-dialog/post-dialog.component'
 import { PutDialogComponent } from '../put-dialog/put-dialog.component'
 import { PatchDialogComponent } from '../patch-dialog/patch-dialog.component'
-import { Observable } from 'rxjs'
 import { RoleService } from './services/role.service';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -58,7 +57,7 @@ export class AdministrationComponent implements OnInit {
    post() {
      let postRef = this.dialog.open(PostDialogComponent)
    }
-   update() {
+   update(id) {
     let putRef = this.dialog.open(PutDialogComponent)
    }
    delete() {

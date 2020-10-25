@@ -4,6 +4,8 @@
 h1{
     text-align: center;
     color: white;
+    font-weight: 200;
+    font-size: 50px;
 }
 
 p{
@@ -22,8 +24,8 @@ p{
 }
 
 .childRowContainers{
-
 }
+
 
 /**
 Styling for Each container

@@ -30,28 +30,52 @@ export class RoleService {
    * Find All Roles
    * 
    */
+   findAllRoles(): Observable<any>{
+     return this.http.get(`/api/roles/`);
+   }
 
    /**
    * 
    * Find Role By ID
    * 
    */
+  findRoleById(roleId: string): Observable<any>{
+    return this.http.get(`/api/roles/${roleId}`)
+  }
+
 
    /**
     * 
     * Create Role
     * 
     */
+createRole(text: Role): Observable<any>{
+  return this.http.post(`/api/roles/`, {
+    text: text 
+  })
+}
+
 
   /**
    * 
    * Update Role
    * 
    */
+updateRole(roleId: String, text: Role, isDisabled: Boolean){
+  return this.http.put(`/api/roles/${roleId}`, {
+    text,
+    isDisabled
+  })
+}
 
   /**
    * 
    * Delete Role
    * 
    */
+  deleteRole(roleId: String, isDisabled: Boolean): Observable<any>{
+    return this.http.patch(`/api/roles/${roleId}`,{
+      isDisabled
+    })
+  }
 }

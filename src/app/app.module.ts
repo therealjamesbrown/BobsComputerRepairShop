@@ -50,6 +50,7 @@ import { CatalogmanagementComponent } from './pages/administration/catalogmanage
 import { PurchasegraphComponent } from './pages/administration/purchasegraph/purchasegraph.component';
 import { SecurityquestionmanagementComponent } from './pages/administration/securityquestionmanagement/securityquestionmanagement.component';
 import { UsermanagementComponent } from './pages/administration/usermanagement/usermanagement.component';
+import {MatPaginator} from '@angular/material/paginator';
 
 
 @NgModule({

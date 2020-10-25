@@ -45,6 +45,11 @@ import { MatTableModule } from '@angular/material/table';
 import { PostDialogComponent } from './pages/post-dialog/post-dialog.component';
 import { PutDialogComponent } from './pages/put-dialog/put-dialog.component';
 import { PatchDialogComponent } from './pages/patch-dialog/patch-dialog.component';
+import { RolemanagementComponent } from './pages/administration/rolemanagement/rolemanagement.component';
+import { CatalogmanagementComponent } from './pages/administration/catalogmanagement/catalogmanagement.component';
+import { PurchasegraphComponent } from './pages/administration/purchasegraph/purchasegraph.component';
+import { SecurityquestionmanagementComponent } from './pages/administration/securityquestionmanagement/securityquestionmanagement.component';
+import { UsermanagementComponent } from './pages/administration/usermanagement/usermanagement.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +66,12 @@ import { PatchDialogComponent } from './pages/patch-dialog/patch-dialog.componen
     AboutComponent,
     PostDialogComponent,
     PutDialogComponent,
-    PatchDialogComponent
+    PatchDialogComponent,
+    RolemanagementComponent,
+    CatalogmanagementComponent,
+    PurchasegraphComponent,
+    SecurityquestionmanagementComponent,
+    UsermanagementComponent
   ],
   imports: [
     BrowserModule,

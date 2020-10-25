@@ -9,8 +9,10 @@
 
 <!--USER management column-->
     <div fxFlex class="childColumnContainers">
+        <div fxFlex>
         <p>User Management</p><button mat-button id="post" (click)="post()"><mat-icon>open_in_new</mat-icon></button>
-      <table class="table" style="text-align: center">
+      <app-usermanagement></app-usermanagement>
+        <table class="table" style="text-align: center">
             <thead>
             <tr>
                     <th scope="col">Username</th>
@@ -34,6 +36,7 @@
                 </tr>
             </tbody>
         </table>
+        </div>
     </div>
 
 
@@ -45,11 +48,13 @@
             <div fxFlex class="childRowContainers">
 <!--Security questions go here-->
                <p>Security Questions</p>
+               <app-securityquestionmanagement></app-securityquestionmanagement>
             </div>
 
             <div fxFlex class="childRowContainers">
 <!--Role Management Goes here-->
                 <p>Role Management</p>
+               <app-rolemanagement></app-rolemanagement>
             </div>
         </div>
     </div>
@@ -64,11 +69,13 @@
             <div fxFlex class="childRowContainers">
 <!--Catalog Goes here-->
                <p>Catalog</p>
+               <app-catalogmanagement></app-catalogmanagement>
             </div>
 
             <div fxFlex class="childRowContainers">
 <!--Purchases Graph goes here-->
                 <p>Purchases</p>
+                <app-purchasegraph></app-purchasegraph>
             </div>
         </div>
     </div>

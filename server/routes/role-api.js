@@ -30,7 +30,7 @@ const serverSuccess = "Success!"
 
 router.get('/', async(req, res) => {
     try {
-      Role.find({}).where('isDisabled').equals(false).exec(function(err, roles) {  //JB & BM - do we only want to see active roles or all roles?
+      Role.find({}).exec(function(err, roles) {  //JB & BM - do we only want to see active roles or all roles?
         if (err) {
           console.log(err);
           const userFindAllMongodbErrorResponse = new ErrorResponse(500, internalServerError, err);

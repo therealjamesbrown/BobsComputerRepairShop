@@ -57,6 +57,8 @@ import { DeleteRecordDialogComponentComponent } from './pages/administration/rol
 import { CreateRoleDialogComponent } from './pages/administration/dialogs/create-role-dialog/create-role-dialog.component';
 import { CreateSecurityquestionDialogComponent } from './pages/administration/dialogs/create-securityquestion-dialog/create-securityquestion-dialog.component';
 import { DeleteSecurityquestionDialogComponent } from './pages/administration/dialogs/delete-securityquestion-dialog/delete-securityquestion-dialog.component';
+import { UpdateRoleDialogComponent } from './pages/administration/dialogs/update-role-dialog/update-role-dialog.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -83,7 +85,8 @@ import { DeleteSecurityquestionDialogComponent } from './pages/administration/di
     DeleteRecordDialogComponentComponent,
     CreateRoleDialogComponent,
     CreateSecurityquestionDialogComponent,
-    DeleteSecurityquestionDialogComponent
+    DeleteSecurityquestionDialogComponent,
+    UpdateRoleDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -107,7 +110,8 @@ import { DeleteSecurityquestionDialogComponent } from './pages/administration/di
     MatTableModule,
     MatIconModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatSelectModule
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]

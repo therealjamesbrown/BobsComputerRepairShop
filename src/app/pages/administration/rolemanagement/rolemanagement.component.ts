@@ -19,6 +19,7 @@ import { HttpClient } from '@angular/common/http';
 import {MatTableDataSource} from '@angular/material/table';
 import { DeleteRecordDialogComponentComponent } from './delete-record-dialog-component/delete-record-dialog-component.component';
 import { CreateRoleDialogComponent } from '../dialogs/create-role-dialog/create-role-dialog.component';
+import { UpdateRoleDialogComponent } from '../dialogs/update-role-dialog/update-role-dialog.component';
 
 //todo create a taskDialogComponent
 
@@ -73,7 +74,7 @@ export class RolemanagementComponent implements OnInit {
         //update the list
         this.roleServce.findAllRoles().subscribe(res => {
           this.roleDataSource = res['data'];
-          console.log(this.roleDataSource);
+          //console.log(this.roleDataSource);
         }, err => {
           console.log(err);
         })
@@ -82,8 +83,29 @@ export class RolemanagementComponent implements OnInit {
    }
 
    
-   //editRoleDialog
+   //updateRoleDialog
+   updateRole(data){
+     console.log(data);
+     const dialogRef = this.dialog.open(UpdateRoleDialogComponent, {
+       data: {
+         data,
+         dialogHeader: 'Updating Role'
+       },
+       disableClose: true,
+       width:'800px'
+     });
 
+     dialogRef.afterClosed().subscribe(result => {
+       if(result === 'update') {
+        this.roleServce.findAllRoles().subscribe(res => {
+          this.roleDataSource = res['data'];
+          //console.log(this.roleDataSource);
+        }, err => {
+          console.log(err);
+        })
+       }
+     })
+   }
 
    //deleteRoleDialog
   deleteRole(roleId){
@@ -100,7 +122,7 @@ export class RolemanagementComponent implements OnInit {
      dialogRef.afterClosed().subscribe(result => {
        if (result === 'confirm') {
          this.roleServce.deleteRole(roleId).subscribe(res => {
-           console.log('Role successfully deleted')
+           //console.log('Role successfully deleted')
            //make another call to update the list
            this.roleServce.findAllRoles().subscribe(res => {
             this.roleDataSource = res['data'];

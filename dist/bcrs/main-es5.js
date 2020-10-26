@@ -1016,7 +1016,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "button", 7);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Sign-in");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Create");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1384,9 +1384,7 @@
             text: [this.text, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
             roleId: [this.roleId],
             isDisabled: [this.isDisabled, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
-          }); //console.log(data);
-          //console.log(this.roleId);
-          //console.log(this.isDisabled);
+          });
         }
 
         _createClass(UpdateRoleDialogComponent, [{
@@ -1398,10 +1396,6 @@
             var text = this.updateRoleForm.controls.text.value;
             var roleId = this.updateRoleForm.controls.roleId.value;
             var isDisabled = this.selected;
-            console.log(isDisabled);
-            console.log(isDisabled);
-            console.log(isDisabled);
-            console.log(isDisabled);
             this.roleServce.updateRole(roleId, text, isDisabled).subscribe(function (res) {
               text;
               roleId;

@@ -488,7 +488,7 @@ CreateRoleDialogComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Cancel");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "button", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Sign-in");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Create");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -678,9 +678,6 @@ class UpdateRoleDialogComponent {
             roleId: [this.roleId],
             isDisabled: [this.isDisabled, _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
         });
-        //console.log(data);
-        //console.log(this.roleId);
-        //console.log(this.isDisabled);
     }
     ngOnInit() {
     }
@@ -688,10 +685,6 @@ class UpdateRoleDialogComponent {
         const text = this.updateRoleForm.controls.text.value;
         const roleId = this.updateRoleForm.controls.roleId.value;
         const isDisabled = this.selected;
-        console.log(isDisabled);
-        console.log(isDisabled);
-        console.log(isDisabled);
-        console.log(isDisabled);
         this.roleServce.updateRole(roleId, text, isDisabled).subscribe(res => {
             text;
             roleId;

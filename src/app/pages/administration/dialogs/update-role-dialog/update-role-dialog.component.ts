@@ -39,10 +39,6 @@ export class UpdateRoleDialogComponent implements OnInit {
       roleId: [this.roleId],
       isDisabled: [this.isDisabled, Validators.required]
     });
-    //console.log(data);
-    //console.log(this.roleId);
-    //console.log(this.isDisabled);
-
   }
   
 
@@ -53,10 +49,7 @@ updateRole(){
   const text = this.updateRoleForm.controls.text.value;
   const roleId = this.updateRoleForm.controls.roleId.value;
   const isDisabled = this.selected;
-  console.log(isDisabled);
-  console.log(isDisabled);
-  console.log(isDisabled);
-  console.log(isDisabled);
+
   this.roleServce.updateRole(roleId, text, isDisabled).subscribe( res => {
     text
     roleId
@@ -65,5 +58,4 @@ updateRole(){
     console.log(err);
   })
 }
-
 }

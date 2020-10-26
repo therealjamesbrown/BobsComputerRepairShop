@@ -56,6 +56,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { DeleteRecordDialogComponentComponent } from './pages/administration/rolemanagement/delete-record-dialog-component/delete-record-dialog-component.component';
 import { CreateRoleDialogComponent } from './pages/administration/dialogs/create-role-dialog/create-role-dialog.component';
 import { CreateSecurityquestionDialogComponent } from './pages/administration/dialogs/create-securityquestion-dialog/create-securityquestion-dialog.component';
+import { DeleteSecurityquestionDialogComponent } from './pages/administration/dialogs/delete-securityquestion-dialog/delete-securityquestion-dialog.component';
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import { CreateSecurityquestionDialogComponent } from './pages/administration/di
     UsermanagementComponent,
     DeleteRecordDialogComponentComponent,
     CreateRoleDialogComponent,
-    CreateSecurityquestionDialogComponent
+    CreateSecurityquestionDialogComponent,
+    DeleteSecurityquestionDialogComponent
   ],
   imports: [
     BrowserModule,

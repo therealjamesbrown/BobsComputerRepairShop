@@ -17,7 +17,7 @@ import { MatTableModule } from '@angular/material/table';
 import { SecurityQuestionService } from '../services/security-question.service';
 import { SecurityQuestion } from '../interfaces/security-question.interface';
 import { FormGroup } from '@angular/forms';
-import { PatchDialogComponent } from './patch-dialog/patch-dialog.component';
+import { DeleteSecurityquestionDialogComponent } from '../dialogs/delete-securityquestion-dialog/delete-securityquestion-dialog.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -66,7 +66,7 @@ export class SecurityquestionmanagementComponent implements OnInit {
   //deleteRoleDialog
 
   deleteSecurityQuestion(questionId){
-  const dialogRef = this.dialog.open(PatchDialogComponent, {
+  const dialogRef = this.dialog.open(DeleteSecurityquestionDialogComponent, {
     data: {
       questionId,
       dialogHeader: 'Delete Security Question',

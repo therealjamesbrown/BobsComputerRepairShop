@@ -27,7 +27,7 @@ import { Router } from '@angular/router';
 })
 export class SecurityquestionmanagementComponent implements OnInit {
   securityQuestions: SecurityQuestion[];
-  questionId: string;
+  //questionId: string;
   displayedColumns: string[] = ["question", "status", "action"];
 
   constructor(
@@ -70,11 +70,25 @@ export class SecurityquestionmanagementComponent implements OnInit {
     data: {
       questionId,
       dialogHeader: 'Delete Security Question',
-      dialogBody: `Are you sure you want to delete security question ` + questionId + `?`
+      dialogBody: `Are you sure you want to disable security question ` + questionId + `?`
     },
     disableClose: true,
     width: '800px'
   });
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result == 'confirm') {
+      this.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(res => {
+        console.log('Security question successfully deleted')
+        this.securityQuestionService.findAllSecurityQuestions().subscribe(res=> {
+          this.securityQuestions = res['data'];
+          console.log(this.securityQuestions);
+        }, err => {
+          console.log(err);
+        })
+      })
+    }
+  })
 
 }
   

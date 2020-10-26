@@ -13,7 +13,7 @@ const express = require('express');
 const User = require('../models/user');
 const router = express.Router();
 var bcrypt = require('bcryptjs');
-let cors = require('cors')
+//let cors = require('cors')
 let bodyParser = require('body-parser');
 //let cors = require('cors') --SK this breaks the application, commented out 10/25/2020
 
@@ -23,7 +23,7 @@ const ErrorResponse = require('../services/error-response');
 //const { try } = require('bluebird'); //SK commented this out 10/22/20 at 10pm; no idea why this is here - I think it populates when you type 'try'
 const saltRounds = 10; //set the number of times the password is getting salted
 
-router.use(cors()) //--SK this breaks the application, commented out 10/25/2020 // not having this breaks the application for me
+//router.use(cors()) //--SK this breaks the application, commented out 10/25/2020 // not having this breaks the application for me
 router.use(bodyParser.json())
 router.use(bodyParser.urlencoded({ extended: false }));
 

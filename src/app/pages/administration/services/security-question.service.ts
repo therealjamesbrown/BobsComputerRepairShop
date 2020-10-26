@@ -76,9 +76,10 @@ export class SecurityQuestionService {
    * 
    */
 
-   deleteSecurityQuestion(_id: string, isDisabled: Boolean): Observable<any> {
-     return this.http.patch('/api/security-questions/' + _id, {
-       isDisabled: true
+   deleteSecurityQuestion(questionId: string): Observable<any> {
+     return this.http.patch('/api/security-questions/' + questionId, {
+       //isDisabled: true
+       questionId
      });
    }
 

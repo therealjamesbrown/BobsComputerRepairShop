@@ -8,12 +8,6 @@ h1{
     font-size: 50px;
 }
 
-p{
-    font-weight: 500;
-    font-size: 15px;
-    padding-bottom: 15px;
-}
-
 .outerContainer {
     width: 90%;
     margin: 0 auto;
@@ -25,11 +19,6 @@ p{
 }
 
 .childRowContainers{
-}
-
-.crudButton{
-    float: right;
-    padding-bottom: 2px;
 }
 
 /**

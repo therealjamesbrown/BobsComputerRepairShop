@@ -58,8 +58,14 @@ export class RolemanagementComponent implements OnInit {
      });
 
      dialogRef.afterClosed().subscribe(result => {
-       if (result === 'confirm'){
-         //this.roleServce.createRole()
+       if (result === 'create'){
+        //update the list
+        this.roleServce.findAllRoles().subscribe(res => {
+          this.roleDataSource = res['data'];
+          console.log(this.roleDataSource);
+        }, err => {
+          console.log(err);
+        })
        }
      })
    }

@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Role } from '../../interfaces/role.interface';
+import { RoleService } from 'src/app/pages/administration/services/role.service';
+
 
 @Component({
   selector: 'app-create-role-dialog',
@@ -7,9 +13,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateRoleDialogComponent implements OnInit {
 
-  constructor() { }
+constructor(private roleServce: RoleService, private http: HttpClient, private fb: FormBuilder, private dialogRef: MatDialogRef<CreateRoleDialogComponent>, @Inject(MAT_DIALOG_DATA) data) { }
+
+//bring in our interface
+text: any;
+createRoleForm: FormGroup;
+enteredText:any [];
 
   ngOnInit(): void {
+    this.createRoleForm = this.fb.group({
+      text: ['', Validators.required]
+    })
   }
 
+  //create the role and insert it into the db
+ createRole(){
+  
+  const text = this.createRoleForm.controls.text.value;
+  console.log(text);
+  this.roleServce.createRole(text).subscribe( res => {
+    text
+  }, err => {
+    console.log(err)
+  })
+}
 }

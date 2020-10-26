@@ -483,6 +483,42 @@ PatchDialogComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 
 /***/ }),
 
+/***/ "7CSw":
+/*!*************************************************************************************************!*\
+  !*** ./src/app/pages/administration/dialogs/create-role-dialog/create-role-dialog.component.ts ***!
+  \*************************************************************************************************/
+/*! exports provided: CreateRoleDialogComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateRoleDialogComponent", function() { return CreateRoleDialogComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class CreateRoleDialogComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+CreateRoleDialogComponent.ɵfac = function CreateRoleDialogComponent_Factory(t) { return new (t || CreateRoleDialogComponent)(); };
+CreateRoleDialogComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CreateRoleDialogComponent, selectors: [["app-create-role-dialog"]], decls: 2, vars: 0, template: function CreateRoleDialogComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "create-role-dialog works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkbWluaXN0cmF0aW9uL2RpYWxvZ3MvY3JlYXRlLXJvbGUtZGlhbG9nL2NyZWF0ZS1yb2xlLWRpYWxvZy5jb21wb25lbnQuY3NzIn0= */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CreateRoleDialogComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-create-role-dialog',
+                templateUrl: './create-role-dialog.component.html',
+                styleUrls: ['./create-role-dialog.component.css']
+            }]
+    }], function () { return []; }, null); })();
+
+
+/***/ }),
+
 /***/ "AytR":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -1347,6 +1383,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @angular/material/paginator */ "M9IT");
 /* harmony import */ var _angular_material_sort__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @angular/material/sort */ "Dh3D");
 /* harmony import */ var _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./pages/administration/rolemanagement/delete-record-dialog-component/delete-record-dialog-component.component */ "jRvU");
+/* harmony import */ var _pages_administration_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./pages/administration/dialogs/create-role-dialog/create-role-dialog.component */ "7CSw");
 /**
  *
  * ================================
@@ -1358,6 +1395,7 @@ __webpack_require__.r(__webpack_exports__);
  * ================================
  *
  */
+
 
 
 
@@ -1447,7 +1485,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _pages_administration_purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_36__["PurchasegraphComponent"],
         _pages_administration_securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_37__["SecurityquestionmanagementComponent"],
         _pages_administration_usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_38__["UsermanagementComponent"],
-        _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_41__["DeleteRecordDialogComponentComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_41__["DeleteRecordDialogComponentComponent"],
+        _pages_administration_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_42__["CreateRoleDialogComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
         _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
         _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"],
@@ -1492,7 +1531,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _pages_administration_purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_36__["PurchasegraphComponent"],
                     _pages_administration_securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_37__["SecurityquestionmanagementComponent"],
                     _pages_administration_usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_38__["UsermanagementComponent"],
-                    _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_41__["DeleteRecordDialogComponentComponent"]
+                    _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_41__["DeleteRecordDialogComponentComponent"],
+                    _pages_administration_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_42__["CreateRoleDialogComponent"]
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],

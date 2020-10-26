@@ -53,7 +53,8 @@ import { UsermanagementComponent } from './pages/administration/usermanagement/u
 import {MatPaginator} from '@angular/material/paginator';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { DeleteRecordDialogComponentComponent } from './pages/administration/rolemanagement/delete-record-dialog-component/delete-record-dialog-component.component'
+import { DeleteRecordDialogComponentComponent } from './pages/administration/rolemanagement/delete-record-dialog-component/delete-record-dialog-component.component';
+import { CreateRoleDialogComponent } from './pages/administration/dialogs/create-role-dialog/create-role-dialog.component';
 
 
 @NgModule({
@@ -77,7 +78,8 @@ import { DeleteRecordDialogComponentComponent } from './pages/administration/rol
     PurchasegraphComponent,
     SecurityquestionmanagementComponent,
     UsermanagementComponent,
-    DeleteRecordDialogComponentComponent
+    DeleteRecordDialogComponentComponent,
+    CreateRoleDialogComponent
   ],
   imports: [
     BrowserModule,

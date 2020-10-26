@@ -1001,6 +1001,83 @@
     },
 
     /***/
+    "7CSw":
+    /*!*************************************************************************************************!*\
+      !*** ./src/app/pages/administration/dialogs/create-role-dialog/create-role-dialog.component.ts ***!
+      \*************************************************************************************************/
+
+    /*! exports provided: CreateRoleDialogComponent */
+
+    /***/
+    function CSw(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "CreateRoleDialogComponent", function () {
+        return CreateRoleDialogComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+
+      var CreateRoleDialogComponent = /*#__PURE__*/function () {
+        function CreateRoleDialogComponent() {
+          _classCallCheck(this, CreateRoleDialogComponent);
+        }
+
+        _createClass(CreateRoleDialogComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }]);
+
+        return CreateRoleDialogComponent;
+      }();
+
+      CreateRoleDialogComponent.ɵfac = function CreateRoleDialogComponent_Factory(t) {
+        return new (t || CreateRoleDialogComponent)();
+      };
+
+      CreateRoleDialogComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: CreateRoleDialogComponent,
+        selectors: [["app-create-role-dialog"]],
+        decls: 2,
+        vars: 0,
+        template: function CreateRoleDialogComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "create-role-dialog works!");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+        },
+        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkbWluaXN0cmF0aW9uL2RpYWxvZ3MvY3JlYXRlLXJvbGUtZGlhbG9nL2NyZWF0ZS1yb2xlLWRpYWxvZy5jb21wb25lbnQuY3NzIn0= */"]
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CreateRoleDialogComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'app-create-role-dialog',
+            templateUrl: './create-role-dialog.component.html',
+            styleUrls: ['./create-role-dialog.component.css']
+          }]
+        }], function () {
+          return [];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
     "AytR":
     /*!*****************************************!*\
       !*** ./src/environments/environment.ts ***!
@@ -2761,6 +2838,12 @@
       var _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(
       /*! ./pages/administration/rolemanagement/delete-record-dialog-component/delete-record-dialog-component.component */
       "jRvU");
+      /* harmony import */
+
+
+      var _pages_administration_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(
+      /*! ./pages/administration/dialogs/create-role-dialog/create-role-dialog.component */
+      "7CSw");
       /**
        *
        * ================================
@@ -2792,7 +2875,7 @@
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _shared_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_6__["BaseLayoutComponent"], _shared_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_7__["AuthLayoutComponent"], _pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_14__["SigninComponent"], _pages_administration_administration_component__WEBPACK_IMPORTED_MODULE_24__["AdministrationComponent"], _pages_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_25__["NotFoundComponent"], _pages_profile_profile_component__WEBPACK_IMPORTED_MODULE_26__["ProfileComponent"], _pages_contact_contact_component__WEBPACK_IMPORTED_MODULE_27__["ContactComponent"], _pages_pricing_pricing_component__WEBPACK_IMPORTED_MODULE_28__["PricingComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_29__["AboutComponent"], _pages_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_31__["PostDialogComponent"], _pages_put_dialog_put_dialog_component__WEBPACK_IMPORTED_MODULE_32__["PutDialogComponent"], _pages_patch_dialog_patch_dialog_component__WEBPACK_IMPORTED_MODULE_33__["PatchDialogComponent"], _pages_administration_rolemanagement_rolemanagement_component__WEBPACK_IMPORTED_MODULE_34__["RolemanagementComponent"], _pages_administration_catalogmanagement_catalogmanagement_component__WEBPACK_IMPORTED_MODULE_35__["CatalogmanagementComponent"], _pages_administration_purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_36__["PurchasegraphComponent"], _pages_administration_securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_37__["SecurityquestionmanagementComponent"], _pages_administration_usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_38__["UsermanagementComponent"], _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_41__["DeleteRecordDialogComponentComponent"]],
+          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _shared_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_6__["BaseLayoutComponent"], _shared_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_7__["AuthLayoutComponent"], _pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_14__["SigninComponent"], _pages_administration_administration_component__WEBPACK_IMPORTED_MODULE_24__["AdministrationComponent"], _pages_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_25__["NotFoundComponent"], _pages_profile_profile_component__WEBPACK_IMPORTED_MODULE_26__["ProfileComponent"], _pages_contact_contact_component__WEBPACK_IMPORTED_MODULE_27__["ContactComponent"], _pages_pricing_pricing_component__WEBPACK_IMPORTED_MODULE_28__["PricingComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_29__["AboutComponent"], _pages_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_31__["PostDialogComponent"], _pages_put_dialog_put_dialog_component__WEBPACK_IMPORTED_MODULE_32__["PutDialogComponent"], _pages_patch_dialog_patch_dialog_component__WEBPACK_IMPORTED_MODULE_33__["PatchDialogComponent"], _pages_administration_rolemanagement_rolemanagement_component__WEBPACK_IMPORTED_MODULE_34__["RolemanagementComponent"], _pages_administration_catalogmanagement_catalogmanagement_component__WEBPACK_IMPORTED_MODULE_35__["CatalogmanagementComponent"], _pages_administration_purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_36__["PurchasegraphComponent"], _pages_administration_securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_37__["SecurityquestionmanagementComponent"], _pages_administration_usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_38__["UsermanagementComponent"], _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_41__["DeleteRecordDialogComponentComponent"], _pages_administration_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_42__["CreateRoleDialogComponent"]],
           imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ReactiveFormsModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_16__["MatInputModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__["MatFormFieldModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__["MatSnackBarModule"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_20__["MatDividerModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_22__["MatMenuModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_23__["MatListModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_30__["MatTableModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_39__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_40__["MatSortModule"]]
         });
       })();
@@ -2803,7 +2886,7 @@
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
           args: [{
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _shared_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_6__["BaseLayoutComponent"], _shared_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_7__["AuthLayoutComponent"], _pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_14__["SigninComponent"], _pages_administration_administration_component__WEBPACK_IMPORTED_MODULE_24__["AdministrationComponent"], _pages_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_25__["NotFoundComponent"], _pages_profile_profile_component__WEBPACK_IMPORTED_MODULE_26__["ProfileComponent"], _pages_contact_contact_component__WEBPACK_IMPORTED_MODULE_27__["ContactComponent"], _pages_pricing_pricing_component__WEBPACK_IMPORTED_MODULE_28__["PricingComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_29__["AboutComponent"], _pages_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_31__["PostDialogComponent"], _pages_put_dialog_put_dialog_component__WEBPACK_IMPORTED_MODULE_32__["PutDialogComponent"], _pages_patch_dialog_patch_dialog_component__WEBPACK_IMPORTED_MODULE_33__["PatchDialogComponent"], _pages_administration_rolemanagement_rolemanagement_component__WEBPACK_IMPORTED_MODULE_34__["RolemanagementComponent"], _pages_administration_catalogmanagement_catalogmanagement_component__WEBPACK_IMPORTED_MODULE_35__["CatalogmanagementComponent"], _pages_administration_purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_36__["PurchasegraphComponent"], _pages_administration_securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_37__["SecurityquestionmanagementComponent"], _pages_administration_usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_38__["UsermanagementComponent"], _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_41__["DeleteRecordDialogComponentComponent"]],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _shared_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_6__["BaseLayoutComponent"], _shared_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_7__["AuthLayoutComponent"], _pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_14__["SigninComponent"], _pages_administration_administration_component__WEBPACK_IMPORTED_MODULE_24__["AdministrationComponent"], _pages_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_25__["NotFoundComponent"], _pages_profile_profile_component__WEBPACK_IMPORTED_MODULE_26__["ProfileComponent"], _pages_contact_contact_component__WEBPACK_IMPORTED_MODULE_27__["ContactComponent"], _pages_pricing_pricing_component__WEBPACK_IMPORTED_MODULE_28__["PricingComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_29__["AboutComponent"], _pages_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_31__["PostDialogComponent"], _pages_put_dialog_put_dialog_component__WEBPACK_IMPORTED_MODULE_32__["PutDialogComponent"], _pages_patch_dialog_patch_dialog_component__WEBPACK_IMPORTED_MODULE_33__["PatchDialogComponent"], _pages_administration_rolemanagement_rolemanagement_component__WEBPACK_IMPORTED_MODULE_34__["RolemanagementComponent"], _pages_administration_catalogmanagement_catalogmanagement_component__WEBPACK_IMPORTED_MODULE_35__["CatalogmanagementComponent"], _pages_administration_purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_36__["PurchasegraphComponent"], _pages_administration_securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_37__["SecurityquestionmanagementComponent"], _pages_administration_usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_38__["UsermanagementComponent"], _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_41__["DeleteRecordDialogComponentComponent"], _pages_administration_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_42__["CreateRoleDialogComponent"]],
             imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ReactiveFormsModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_16__["MatInputModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__["MatFormFieldModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__["MatSnackBarModule"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_20__["MatDividerModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_22__["MatMenuModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_23__["MatListModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_30__["MatTableModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_39__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_40__["MatSortModule"]],
             providers: [ngx_cookie_service__WEBPACK_IMPORTED_MODULE_18__["CookieService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]

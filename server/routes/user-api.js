@@ -12,13 +12,10 @@
 const express = require('express');
 const User = require('../models/user');
 const router = express.Router();
-<<<<<<< HEAD
 var bcrypt = require('bcryptjs')
-=======
 //let cors = require('cors')
 let bodyParser = require('body-parser');
 //let cors = require('cors') --SK this breaks the application, commented out 10/25/2020
->>>>>>> 67ff2d17da4453f7f62e4148900d856df438e33c
 
 //bring in our base and error response classes
 const BaseResponse = require('../services/base-response');

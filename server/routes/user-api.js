@@ -15,7 +15,6 @@ const router = express.Router();
 <<<<<<< HEAD
 var bcrypt = require('bcryptjs')
 =======
-var bcrypt = require('bcryptjs');
 //let cors = require('cors')
 let bodyParser = require('body-parser');
 //let cors = require('cors') --SK this breaks the application, commented out 10/25/2020

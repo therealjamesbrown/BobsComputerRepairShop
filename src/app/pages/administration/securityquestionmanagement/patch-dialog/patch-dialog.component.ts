@@ -1,3 +1,15 @@
+/**
+ * 
+ * ================================
+ * ; Title: patch-dialog.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Modified by: Sarah Kovar
+ * ; Date: 10/26/2020
+ * ; Description: Security Question Soft Delete Dialog Component
+ * ================================
+ * 
+ */
+
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';

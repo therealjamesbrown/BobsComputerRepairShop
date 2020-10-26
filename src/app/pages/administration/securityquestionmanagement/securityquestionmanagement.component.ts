@@ -26,7 +26,7 @@ export class SecurityquestionmanagementComponent implements OnInit {
 
   securityQuestions: SecurityQuestion[];
   questionId: string;
- displayedColumns = ['question'];
+  displayedColumns: string[] = ['question', 'status', 'action'];
 
   constructor(private http: HttpClient, private dialog: MatDialog, private securityQuestionService: SecurityQuestionService) { 
     /**
@@ -36,7 +36,7 @@ export class SecurityquestionmanagementComponent implements OnInit {
     this.securityQuestionService.findAllSecurityQuestions().subscribe(res => {
       this.securityQuestions = res['data'];
       console.log(res);
-      console.log(this.securityQuestionService);
+      //console.log(this.securityQuestionService);
     }, err => {
       console.log(err);
     })
@@ -48,8 +48,17 @@ export class SecurityquestionmanagementComponent implements OnInit {
 
      /**
     * 
-    * SECITION FOR SECURITY QUESTION API CALLS (create, update, delete)
+    * SECTION FOR SECURITY QUESTION API CALLS (create, update, delete)
     * You'll need to import http client and the related service
     */
+
+   //createRoleDialog
+
+   
+   //editRoleDialog
+
+
+   //deleteRoleDialog
+
 
 }

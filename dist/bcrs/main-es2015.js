@@ -612,7 +612,7 @@ function RolemanagementComponent_td_3_Template(rf, ctx) { if (rf & 1) {
 } }
 function RolemanagementComponent_th_5_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Status ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " isDisabled? ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function RolemanagementComponent_td_6_Template(rf, ctx) { if (rf & 1) {
@@ -709,6 +709,7 @@ class RolemanagementComponent {
             if (result === 'confirm') {
                 this.roleServce.deleteRole(roleId).subscribe(res => {
                     console.log('Role successfully deleted');
+                    //make another call to update the list
                     this.roleServce.findAllRoles().subscribe(res => {
                         this.roleDataSource = res['data'];
                         console.log(this.roleDataSource);
@@ -1943,7 +1944,7 @@ function SecurityquestionmanagementComponent_td_3_Template(rf, ctx) { if (rf & 1
 } }
 function SecurityquestionmanagementComponent_th_5_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Status ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " isDisabled? ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 function SecurityquestionmanagementComponent_td_6_Template(rf, ctx) { if (rf & 1) {

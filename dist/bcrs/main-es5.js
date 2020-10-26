@@ -1245,7 +1245,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Status ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " isDisabled? ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -1415,7 +1415,7 @@
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'confirm') {
                 _this3.roleServce.deleteRole(roleId).subscribe(function (res) {
-                  console.log('Role successfully deleted');
+                  console.log('Role successfully deleted'); //make another call to update the list
 
                   _this3.roleServce.findAllRoles().subscribe(function (res) {
                     _this3.roleDataSource = res['data'];
@@ -3647,7 +3647,7 @@
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Status ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " isDisabled? ");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }

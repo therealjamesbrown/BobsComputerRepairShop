@@ -22,6 +22,7 @@ import { Router } from '@angular/router';
 })
 export class PatchDialogComponent implements OnInit {
 
+  recordId: string;
   _id: string;
   dialogHeader: string;
   dialogBody: string;
@@ -29,6 +30,7 @@ export class PatchDialogComponent implements OnInit {
   constructor(private dialogRef: MatDialogRef<PatchDialogComponent>, private router: Router,  @Inject(MAT_DIALOG_DATA) data) { 
 
     this._id = data._id;
+    this.recordId = data.recordId;
     this.dialogHeader = data.dialogHeader;
     this.dialogBody = data.dialogBody;
 }

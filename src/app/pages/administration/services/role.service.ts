@@ -73,9 +73,9 @@ updateRole(roleId: String, text: Role, isDisabled: Boolean){
    * Delete Role
    * 
    */
-  deleteRole(roleId: String, isDisabled: Boolean): Observable<any>{
+  deleteRole(roleId: String): Observable<any>{
     return this.http.patch(`/api/roles/${roleId}`,{
-      isDisabled
+      roleId
     })
   }
 }

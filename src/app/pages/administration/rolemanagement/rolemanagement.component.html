@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="roles" class="mat-elevation-z8">
+<table mat-table [dataSource]="roleDataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -28,7 +28,7 @@
               <mat-icon>edit</mat-icon>
               <span>Edit</span>
             </button>
-            <button mat-menu-item>
+            <button mat-menu-item (click)="deleteRole(element._id)">
               <mat-icon>delete</mat-icon>
               <span>Delete</span>
             </button>

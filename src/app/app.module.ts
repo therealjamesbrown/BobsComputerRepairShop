@@ -51,7 +51,9 @@ import { PurchasegraphComponent } from './pages/administration/purchasegraph/pur
 import { SecurityquestionmanagementComponent } from './pages/administration/securityquestionmanagement/securityquestionmanagement.component';
 import { UsermanagementComponent } from './pages/administration/usermanagement/usermanagement.component';
 import {MatPaginator} from '@angular/material/paginator';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { DeleteRecordDialogComponentComponent } from './pages/administration/rolemanagement/delete-record-dialog-component/delete-record-dialog-component.component'
 
 
 @NgModule({
@@ -75,7 +77,7 @@ import {MatPaginator} from '@angular/material/paginator';
     PurchasegraphComponent,
     SecurityquestionmanagementComponent,
     UsermanagementComponent,
-
+    DeleteRecordDialogComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +99,9 @@ import {MatPaginator} from '@angular/material/paginator';
     MatMenuModule,
     MatListModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]

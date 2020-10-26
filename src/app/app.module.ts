@@ -53,6 +53,7 @@ import { UsermanagementComponent } from './pages/administration/usermanagement/u
 import {MatPaginator} from '@angular/material/paginator';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +74,8 @@ import {MatPaginator} from '@angular/material/paginator';
     CatalogmanagementComponent,
     PurchasegraphComponent,
     SecurityquestionmanagementComponent,
-    UsermanagementComponent
+    UsermanagementComponent,
+
   ],
   imports: [
     BrowserModule,

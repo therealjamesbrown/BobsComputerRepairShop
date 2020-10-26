@@ -40,8 +40,8 @@ export class SecurityQuestionService {
    * 
    */
 
-  findSecurityQuestionById(questionId: string): Observable<any> {
-    return this.http.get('/api/securityQuestions/' + questionId);
+  findSecurityQuestionById(_id: string): Observable<any> {
+    return this.http.get('/api/securityQuestions/' + _id);
   }
   
 
@@ -51,34 +51,36 @@ export class SecurityQuestionService {
     * 
     */
 
-//Sarah WIP
-//   createSecurityQuestion(newSecurityQuestion: SecurityQuestion): Observable<any> {
-//    return this.http.get('/api/security-questions', {
-//      text: newSecurityQuestion.text
-//    })
-//  }
+
+   createSecurityQuestion(newSecurityQuestion: SecurityQuestion): Observable<any> {
+    return this.http.post('/api/security-questions/', {
+      questionId: newSecurityQuestion.questionId
+    })
+  }
 
   /**
    * 
    * Update Security Question
    * 
    */
-//Sarah WIP
-//   updateSecurityQuestion(questionId: string, updatedSecurityQuestion: SecurityQuestion): Observable<any> {
-//    return this.http.get('/api/security-questions/'+ questionId, {
-//      text: updatedSecurityQuestion.text
-//    })
-//  }
+
+   updateSecurityQuestion(questionId: string, updatedSecurityQuestion: SecurityQuestion): Observable<any> {
+   return this.http.put('/api/security-questions/'+ questionId, {
+    questionId: updatedSecurityQuestion.questionId
+    })
+  }
 
   /**
    * 
    * Delete Security Question
    * 
    */
-//Sarah WIP
-//   deleteSecurityQuestion(questionId: string): Observable<any> {
-//     return this.http.delete('/api/security-questions/' + questionId);
-//   }
+
+   deleteSecurityQuestion(_id: string, isDisabled: Boolean): Observable<any> {
+     return this.http.patch('/api/security-questions/' + _id, {
+       isDisabled: true
+     });
+   }
 
 }
 

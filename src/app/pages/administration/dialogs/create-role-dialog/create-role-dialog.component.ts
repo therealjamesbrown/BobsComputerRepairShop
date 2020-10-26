@@ -1,3 +1,14 @@
+/**
+ * 
+ * ================================
+ * ; Title: createRoledialog.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Date: 10/14/2020
+ * ; Description: component for creating role
+ * ================================
+ * 
+ */
+
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';

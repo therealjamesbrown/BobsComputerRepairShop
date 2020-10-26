@@ -1,3 +1,14 @@
+/**
+ * 
+ * ================================
+ * ; Title: rolemanagement.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Date: 10/14/2020
+ * ; Description: component for managing the role management table
+ * ================================
+ * 
+ */
+
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { RoleService } from 'src/app/pages/administration/services/role.service';

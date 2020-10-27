@@ -47,15 +47,235 @@
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
+      /* harmony import */
+
+
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/common/http */
+      "tk/3");
+      /* harmony import */
+
+
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/material/dialog */
+      "0IaG");
+      /* harmony import */
+
+
+      var _services_catalog_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ../services/catalog.service */
+      "ta4s");
+      /* harmony import */
+
+
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @angular/material/button */
+      "bTqV");
+      /* harmony import */
+
+
+      var _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/material/icon */
+      "NFeN");
+      /* harmony import */
+
+
+      var _angular_material_table__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! @angular/material/table */
+      "+0xr");
+      /* harmony import */
+
+
+      var _angular_material_menu__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! @angular/material/menu */
+      "STbY");
+
+      function CatalogmanagementComponent_th_7_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Title ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function CatalogmanagementComponent_td_8_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var element_r10 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r10.title, " ");
+        }
+      }
+
+      function CatalogmanagementComponent_th_10_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Price ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function CatalogmanagementComponent_td_11_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var element_r11 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r11.price, " ");
+        }
+      }
+
+      function CatalogmanagementComponent_th_13_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "th", 11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " isDisabled? ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      }
+
+      function CatalogmanagementComponent_td_14_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var element_r12 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", element_r12.isDisabled, " ");
+        }
+      }
+
+      function CatalogmanagementComponent_th_16_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "th", 11);
+        }
+      }
+
+      function CatalogmanagementComponent_td_17_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "button", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-icon");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "more_vert");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "mat-menu", null, 14);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "button", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-icon");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, "edit");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "span");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Edit");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "button", 15);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-icon");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "delete");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "span");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Delete");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var _r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("matMenuTriggerFor", _r14);
+        }
+      }
+
+      function CatalogmanagementComponent_tr_18_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 16);
+        }
+      }
+
+      function CatalogmanagementComponent_tr_19_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 17);
+        }
+      }
 
       var CatalogmanagementComponent = /*#__PURE__*/function () {
-        function CatalogmanagementComponent() {
+        function CatalogmanagementComponent(http, dialog, catalogServce) {
+          var _this = this;
+
+          _classCallCheck(this, CatalogmanagementComponent);
+
+          this.http = http;
+          this.dialog = dialog;
+          this.catalogServce = catalogServce;
+          this.displayedColumns = ['title', 'price', 'status', 'action'];
+          this.actions = ['update', 'disable'];
           /**
              *
              * Find all Catalog Items
              */
 
-          _classCallCheck(this, CatalogmanagementComponent);
+          this.catalogServce.findAllCatalogItems().subscribe(function (res) {
+            _this.catalogDataSource = res['data'];
+            console.log(_this.catalogDataSource);
+          }, function (err) {
+            console.log(err);
+          });
         }
 
         _createClass(CatalogmanagementComponent, [{
@@ -67,24 +287,90 @@
       }();
 
       CatalogmanagementComponent.ɵfac = function CatalogmanagementComponent_Factory(t) {
-        return new (t || CatalogmanagementComponent)();
+        return new (t || CatalogmanagementComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_catalog_service__WEBPACK_IMPORTED_MODULE_3__["CatalogService"]));
       };
 
       CatalogmanagementComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: CatalogmanagementComponent,
         selectors: [["app-catalogmanagement"]],
-        decls: 2,
-        vars: 0,
+        decls: 20,
+        vars: 3,
+        consts: [["mat-button", "", 1, "crudButton"], [1, "material-icons"], ["mat-table", "", 1, "mat-elevation-z8", 3, "dataSource"], ["matColumnDef", "title"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "price"], ["matColumnDef", "status"], ["matColumnDef", "action"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["mat-header-cell", ""], ["mat-cell", ""], ["mat-icon-button", "", "aria-label", "Actions button", 3, "matMenuTriggerFor"], ["menu", "matMenu"], ["mat-menu-item", ""], ["mat-header-row", ""], ["mat-row", ""]],
         template: function CatalogmanagementComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "catalogmanagement works!");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Items");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "button", 0);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-icon", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, "library_add");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "table", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](6, 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, CatalogmanagementComponent_th_7_Template, 2, 0, "th", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, CatalogmanagementComponent_td_8_Template, 2, 1, "td", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](9, 6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, CatalogmanagementComponent_th_10_Template, 2, 0, "th", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, CatalogmanagementComponent_td_11_Template, 2, 1, "td", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](12, 7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](13, CatalogmanagementComponent_th_13_Template, 2, 0, "th", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](14, CatalogmanagementComponent_td_14_Template, 2, 1, "td", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](15, 8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](16, CatalogmanagementComponent_th_16_Template, 1, 0, "th", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](17, CatalogmanagementComponent_td_17_Template, 16, 1, "td", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](18, CatalogmanagementComponent_tr_18_Template, 1, 0, "tr", 9);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](19, CatalogmanagementComponent_tr_19_Template, 1, 0, "tr", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("dataSource", ctx.catalogDataSource);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("matHeaderRowDef", ctx.displayedColumns);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("matRowDefColumns", ctx.displayedColumns);
+          }
         },
-        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkbWluaXN0cmF0aW9uL2NhdGFsb2dtYW5hZ2VtZW50L2NhdGFsb2dtYW5hZ2VtZW50LmNvbXBvbmVudC5jc3MifQ== */"]
+        directives: [_angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButton"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_5__["MatIcon"], _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatTable"], _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatColumnDef"], _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatHeaderCellDef"], _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatCellDef"], _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatHeaderRowDef"], _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatRowDef"], _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatHeaderCell"], _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatCell"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_7__["MatMenuTrigger"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_7__["_MatMenu"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_7__["MatMenuItem"], _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatHeaderRow"], _angular_material_table__WEBPACK_IMPORTED_MODULE_6__["MatRow"]],
+        styles: ["table[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n\nth[_ngcontent-%COMP%]{\n  background-color: #0d47a1;\n  color: white;\n  border-radius: 1px;\n}\n\n.crudButton[_ngcontent-%COMP%]{\n  float: right;\n  margin-bottom: 5px;\n}\n\np[_ngcontent-%COMP%]{\n  font-weight: 500;\n  font-size: 15px;\n  padding-bottom: 15px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYWRtaW5pc3RyYXRpb24vY2F0YWxvZ21hbmFnZW1lbnQvY2F0YWxvZ21hbmFnZW1lbnQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7RUFDYjs7QUFFRjtFQUNFLHlCQUF5QjtFQUN6QixZQUFZO0VBQ1osa0JBQWtCO0FBQ3BCOztBQUVBO0VBQ0UsWUFBWTtFQUNaLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixlQUFlO0VBQ2Ysb0JBQW9CO0FBQ3RCIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvYWRtaW5pc3RyYXRpb24vY2F0YWxvZ21hbmFnZW1lbnQvY2F0YWxvZ21hbmFnZW1lbnQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInRhYmxlIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgfVxuXG50aHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzBkNDdhMTtcbiAgY29sb3I6IHdoaXRlO1xuICBib3JkZXItcmFkaXVzOiAxcHg7XG59XG5cbi5jcnVkQnV0dG9ue1xuICBmbG9hdDogcmlnaHQ7XG4gIG1hcmdpbi1ib3R0b206IDVweDtcbn1cblxucHtcbiAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgZm9udC1zaXplOiAxNXB4O1xuICBwYWRkaW5nLWJvdHRvbTogMTVweDtcbn1cbiJdfQ== */"]
       });
       /*@__PURE__*/
 
@@ -97,7 +383,13 @@
             styleUrls: ['./catalogmanagement.component.css']
           }]
         }], function () {
-          return [];
+          return [{
+            type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+          }, {
+            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"]
+          }, {
+            type: _services_catalog_service__WEBPACK_IMPORTED_MODULE_3__["CatalogService"]
+          }];
         }, null);
       })();
       /***/
@@ -380,13 +672,15 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "div", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "p");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "mat-card");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "Catalog");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "mat-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](25, "app-catalogmanagement");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](25, "app-catalogmanagement");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1673,7 +1967,7 @@
 
       var RolemanagementComponent = /*#__PURE__*/function () {
         function RolemanagementComponent(http, dialog, roleServce) {
-          var _this = this;
+          var _this2 = this;
 
           _classCallCheck(this, RolemanagementComponent);
 
@@ -1687,8 +1981,8 @@
             */
 
           this.roleServce.findAllRoles().subscribe(function (res) {
-            _this.roleDataSource = res['data'];
-            console.log(_this.roleDataSource);
+            _this2.roleDataSource = res['data'];
+            console.log(_this2.roleDataSource);
           }, function (err) {
             console.log(err);
           });
@@ -1708,7 +2002,7 @@
         }, {
           key: "createRole",
           value: function createRole() {
-            var _this2 = this;
+            var _this3 = this;
 
             var dialogRef = this.dialog.open(_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_2__["CreateRoleDialogComponent"], {
               data: {},
@@ -1718,8 +2012,8 @@
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'create') {
                 //update the list
-                _this2.roleServce.findAllRoles().subscribe(function (res) {
-                  _this2.roleDataSource = res['data']; //console.log(this.roleDataSource);
+                _this3.roleServce.findAllRoles().subscribe(function (res) {
+                  _this3.roleDataSource = res['data']; //console.log(this.roleDataSource);
                 }, function (err) {
                   console.log(err);
                 });
@@ -1730,7 +2024,7 @@
         }, {
           key: "updateRole",
           value: function updateRole(data) {
-            var _this3 = this;
+            var _this4 = this;
 
             console.log(data);
             var dialogRef = this.dialog.open(_dialogs_update_role_dialog_update_role_dialog_component__WEBPACK_IMPORTED_MODULE_3__["UpdateRoleDialogComponent"], {
@@ -1743,8 +2037,8 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'update') {
-                _this3.roleServce.findAllRoles().subscribe(function (res) {
-                  _this3.roleDataSource = res['data']; //console.log(this.roleDataSource);
+                _this4.roleServce.findAllRoles().subscribe(function (res) {
+                  _this4.roleDataSource = res['data']; //console.log(this.roleDataSource);
                 }, function (err) {
                   console.log(err);
                 });
@@ -1755,7 +2049,7 @@
         }, {
           key: "deleteRole",
           value: function deleteRole(roleId) {
-            var _this4 = this;
+            var _this5 = this;
 
             var dialogRef = this.dialog.open(_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_1__["DeleteRecordDialogComponentComponent"], {
               data: {
@@ -1768,12 +2062,12 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'confirm') {
-                _this4.roleServce.deleteRole(roleId).subscribe(function (res) {
+                _this5.roleServce.deleteRole(roleId).subscribe(function (res) {
                   //console.log('Role successfully deleted')
                   //make another call to update the list
-                  _this4.roleServce.findAllRoles().subscribe(function (res) {
-                    _this4.roleDataSource = res['data'];
-                    console.log(_this4.roleDataSource);
+                  _this5.roleServce.findAllRoles().subscribe(function (res) {
+                    _this5.roleDataSource = res['data'];
+                    console.log(_this5.roleDataSource);
                   }, function (err) {
                     console.log(err);
                   });
@@ -2336,7 +2630,7 @@
         }, {
           key: "signin",
           value: function signin() {
-            var _this5 = this;
+            var _this6 = this;
 
             var username = this.form.controls.userName.value;
             var password = this.form.controls.password.value;
@@ -2350,14 +2644,14 @@
 
               if (res['data'].username) {
                 //user authenticated
-                _this5.cookieService.set('sessionuser', res['data'].username, 1);
+                _this6.cookieService.set('sessionuser', res['data'].username, 1);
 
-                _this5.router.navigate(['/']);
+                _this6.router.navigate(['/']);
               }
             }, function (err) {
-              _this5.errorMessage = 'Invalid username or password. Try again.';
+              _this6.errorMessage = 'Invalid username or password. Try again.';
 
-              _this5.openSnackBar(_this5.errorMessage);
+              _this6.openSnackBar(_this6.errorMessage);
             });
           }
         }, {
@@ -4354,7 +4648,7 @@
 
       var SecurityquestionmanagementComponent = /*#__PURE__*/function () {
         function SecurityquestionmanagementComponent(http, dialog, securityQuestionService) {
-          var _this6 = this;
+          var _this7 = this;
 
           _classCallCheck(this, SecurityquestionmanagementComponent);
 
@@ -4367,7 +4661,7 @@
 
           this.displayedColumns = ["question", "status", "action"];
           this.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-            _this6.securityQuestions = res["data"];
+            _this7.securityQuestions = res["data"];
             console.log(res); //console.log(this.securityQuestionService);
           }, function (err) {
             console.log(err);
@@ -4389,7 +4683,7 @@
         }, {
           key: "deleteSecurityQuestion",
           value: function deleteSecurityQuestion(questionId) {
-            var _this7 = this;
+            var _this8 = this;
 
             var dialogRef = this.dialog.open(_dialogs_delete_securityquestion_dialog_delete_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_1__["DeleteSecurityquestionDialogComponent"], {
               data: {
@@ -4402,12 +4696,12 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result == 'confirm') {
-                _this7.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
+                _this8.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
                   console.log('Security question successfully deleted');
 
-                  _this7.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                    _this7.securityQuestions = res['data'];
-                    console.log(_this7.securityQuestions);
+                  _this8.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                    _this8.securityQuestions = res['data'];
+                    console.log(_this8.securityQuestions);
                   }, function (err) {
                     console.log(err);
                   });
@@ -5018,12 +5312,16 @@
         _createClass(UserManagementComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this8 = this;
+            var _this9 = this;
 
             //Begin Brendans code
             this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
+<<<<<<< Updated upstream
               _this8.users = data['data'];
               console.log(_this8.users);
+=======
+              _this9.users = data['data'];
+>>>>>>> Stashed changes
             }); //end Brendans code
           }
           /**Begin Brendans code */
@@ -5376,6 +5674,152 @@
           }]
         }], function () {
           return [];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
+    "ta4s":
+    /*!******************************************************************!*\
+      !*** ./src/app/pages/administration/services/catalog.service.ts ***!
+      \******************************************************************/
+
+    /*! exports provided: CatalogService */
+
+    /***/
+    function ta4s(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "CatalogService", function () {
+        return CatalogService;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/common/http */
+      "tk/3");
+      /**
+       *
+       * ================================
+       * ; Title: catalog.service.ts
+       * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+       * ; Modified by: Sarah Kovar
+       * ; Date: 10/27/2020
+       * ; Description: service for catalog api requests
+       * ================================
+       *
+       */
+
+
+      var CatalogService = /*#__PURE__*/function () {
+        function CatalogService(http) {
+          _classCallCheck(this, CatalogService);
+
+          this.http = http;
+        }
+        /**
+           *
+           * Find All Items
+           *
+           */
+
+
+        _createClass(CatalogService, [{
+          key: "findAllCatalogItems",
+          value: function findAllCatalogItems() {
+            return this.http.get('/api/catalog/');
+          }
+          /**
+           *
+           * Find Item By Id
+           *
+           */
+
+        }, {
+          key: "findCatalogItemById",
+          value: function findCatalogItemById(catalogId) {
+            return this.http.get("/api/catalog/".concat(catalogId));
+          }
+          /**
+           *
+           * Create Item
+           *
+           */
+
+        }, {
+          key: "createCatalogItem",
+          value: function createCatalogItem(title, price) {
+            return this.http.post('/api/catalog/', {
+              title: title,
+              price: price
+            });
+          }
+          /**
+           *
+           * Update Item
+           *
+           */
+
+        }, {
+          key: "updateCatalogItem",
+          value: function updateCatalogItem(catalogId, title, price, isDisabled) {
+            return this.http.put("/api/catalog/".concat(catalogId, "/update"), {
+              title: title,
+              price: price,
+              isDisabled: isDisabled
+            });
+          }
+          /**
+           *
+           * Delete Item
+           *
+           */
+
+        }, {
+          key: "deleteCatalogItem",
+          value: function deleteCatalogItem(catalogId) {
+            return this.http.patch("/api/catalog/".concat(catalogId), {//nothing needs to be passed since we have the disable written at the api level
+            });
+          }
+        }]);
+
+        return CatalogService;
+      }();
+
+      CatalogService.ɵfac = function CatalogService_Factory(t) {
+        return new (t || CatalogService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
+      };
+
+      CatalogService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: CatalogService,
+        factory: CatalogService.ɵfac,
+        providedIn: 'root'
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](CatalogService, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+          args: [{
+            providedIn: 'root'
+          }]
+        }], function () {
+          return [{
+            type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+          }];
         }, null);
       })();
       /***/

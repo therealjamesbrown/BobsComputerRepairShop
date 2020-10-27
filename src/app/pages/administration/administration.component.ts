@@ -13,9 +13,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { MatDialog } from '@angular/material/dialog'
-import { PostDialogComponent } from '../post-dialog/post-dialog.component'
-import { PutDialogComponent } from '../put-dialog/put-dialog.component'
-import { PatchDialogComponent } from '../patch-dialog/patch-dialog.component'
+import { PostDialogComponent } from '../administration/dialogs/user-admin-post-dialog/post-dialog.component'
+import { PutDialogComponent } from '../administration/dialogs/user-admin-put-dialog/put-dialog.component'
+import { PatchDialogComponent } from '../administration/dialogs/user-admin-patch-dialog/patch-dialog.component'
 import { RoleService } from './services/role.service';
 import { CookieService } from 'ngx-cookie-service';
 

@@ -1,0 +1,26 @@
+<table class="table" style="text-align: center">
+    <thead>
+    <tr>
+            <th scope="col">Username</th>
+            <th scope="col">First Name</th>  
+            <th scope="col">Last Name</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Address</th>
+            <th scope="col">Email</th>
+            <th scope="col">Disabled</th>
+            <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td scope="row">{{ user.username }}</td>
+            <td scope="row">{{ user.firstName }}</td>
+            <td scope="row">{{ user.lastName }}</td>
+            <td scope="row">{{ user.phoneNumber }}</td>
+            <td scope="row">{{ user.address }}</td>
+            <td scope="row">{{ user.email }}</td>
+            <td scopr="row">{{ user.isDisabled }}</td>
+            <td scope="row"><button mat-button (click)='update(user)'><mat-icon class="material-icons">update</mat-icon></button><button mat-button (click)="delete(user)"><mat-icon class="material-icons">delete</mat-icon></button></td>
+        </tr>
+    </tbody>
+</table>

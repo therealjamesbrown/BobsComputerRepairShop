@@ -61,7 +61,7 @@ createRole(text: Role): Observable<any>{
    * Update Role
    * 
    */
-updateRole(roleId: String, text: Role, isDisabled: Boolean){
+updateRole(roleId: String, text: Role, isDisabled: Boolean): Observable<any>{
   return this.http.put(`/api/roles/${roleId}/update`, {
     text,
     isDisabled

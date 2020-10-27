@@ -27,4 +27,8 @@ export class AdministrationComponent implements OnInit {
 
   constructor() { }
   ngOnInit() { }   
+  post(){
+  
+  }
 }
+

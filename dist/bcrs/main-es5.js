@@ -295,9 +295,6 @@
         _createClass(AdministrationComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {}
-        }, {
-          key: "post",
-          value: function post() {}
         }]);
 
         return AdministrationComponent;

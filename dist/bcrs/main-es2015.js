@@ -147,8 +147,6 @@ __webpack_require__.r(__webpack_exports__);
 class AdministrationComponent {
     constructor() { }
     ngOnInit() { }
-    post() {
-    }
 }
 AdministrationComponent.ɵfac = function AdministrationComponent_Factory(t) { return new (t || AdministrationComponent)(); };
 AdministrationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AdministrationComponent, selectors: [["app-administration"]], decls: 30, vars: 0, consts: [["fxLayout", "column", 1, "outerContainer"], ["fxFlex", ""], [1, "mat-elevation-z8"], ["fxLayout", "column"], ["fxFlex", "", 1, "childColumnContainers"], ["fxLayout", "row", "fxLayoutGap", "10px"], ["fxFlex", "", 1, "childRowContainers"]], template: function AdministrationComponent_Template(rf, ctx) { if (rf & 1) {

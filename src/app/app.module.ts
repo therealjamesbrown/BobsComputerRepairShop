@@ -49,7 +49,7 @@ import { RolemanagementComponent } from './pages/administration/rolemanagement/r
 import { CatalogmanagementComponent } from './pages/administration/catalogmanagement/catalogmanagement.component';
 import { PurchasegraphComponent } from './pages/administration/purchasegraph/purchasegraph.component';
 import { SecurityquestionmanagementComponent } from './pages/administration/securityquestionmanagement/securityquestionmanagement.component';
-import { UsermanagementComponent } from '../app/pages/administration/usermanagement/usermanagement.component';
+import { UserManagementComponent } from '../app/pages/administration/usermanagement/usermanagement.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { DeleteRecordDialogComponentComponent } from './pages/administration/rolemanagement/delete-record-dialog-component/delete-record-dialog-component.component';

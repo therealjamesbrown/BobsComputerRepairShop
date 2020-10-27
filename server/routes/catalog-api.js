@@ -140,7 +140,8 @@ router.put('/:catalogItemId/update', async(req, res) =>{
 
           catalogItem.set({
               title: req.body.title,
-              price: req.body.price
+              price: req.body.price,
+              isDisabled: req.body.isDisabled //10:27 - JB added disabled so we can enable/disable from the edit screen. this is line with the rest of apis.
           });
           catalogItem.save(function(err, updatedCatalogItem){
               if(err){
@@ -178,7 +179,7 @@ router.put('/:catalogItemId/update', async(req, res) =>{
           res.status(500).send(deleteTaskMongoErrorResponse.toObject()); //sk fixed typo 'Reponse' to 'Response'
         } else {
           item.set({
-            isDisabled: req.body.isDisabled
+            isDisabled: true
           });
 
           item.save(function(err, updatedItem){

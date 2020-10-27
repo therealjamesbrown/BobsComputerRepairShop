@@ -1,4 +1,4 @@
-<p>Items<button mat-button class="crudButton"><mat-icon class="material-icons">library_add</mat-icon></button></p> 
+<p>Items<button mat-button class="crudButton" (click)="createCatalogItem()"><mat-icon class="material-icons">library_add</mat-icon></button></p> 
 
 <table mat-table [dataSource]="catalogDataSource" class="mat-elevation-z8">
 
@@ -32,7 +32,7 @@
             <mat-icon>more_vert</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item >
+            <button mat-menu-item (click)="updateCatalogItem(element)">
               <mat-icon>edit</mat-icon>
               <span>Edit</span>
             </button>

@@ -57,8 +57,8 @@ export class CatalogService {
      * Update Item
      * 
      */
-    updateCatalogItem(catalogId: string, title: string, price:number, isDisabled: boolean): Observable<any>{
-      return this.http.put(`/api/catalog/${catalogId}/update`,{
+    updateCatalogItem(catalogItemId: string, title: string, price:number, isDisabled: boolean): Observable<any>{
+      return this.http.put(`/api/catalog/${catalogItemId}/update`,{
         title,
         price,
         isDisabled

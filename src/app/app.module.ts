@@ -59,7 +59,9 @@ import { DeleteSecurityquestionDialogComponent } from './pages/administration/di
 import { UpdateRoleDialogComponent } from './pages/administration/dialogs/update-role-dialog/update-role-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MoreVertDialogComponent } from './pages/administration/dialogs/user-options-dialog/dialogs/more-vert-dialog/more-vert-dialog.component';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { CreateCatalogItemComponent } from './pages/administration/dialogs/create-catalog-item/create-catalog-item.component';
+import { UpdateCatalogItemComponent } from './pages/administration/dialogs/update-catalog-item/update-catalog-item.component'
 
 @NgModule({
   declarations: [
@@ -87,7 +89,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle'
     CreateSecurityquestionDialogComponent,
     DeleteSecurityquestionDialogComponent,
     UpdateRoleDialogComponent,
-    MoreVertDialogComponent
+    MoreVertDialogComponent,
+    CreateCatalogItemComponent,
+    UpdateCatalogItemComponent
   ],
   imports: [
     BrowserModule,

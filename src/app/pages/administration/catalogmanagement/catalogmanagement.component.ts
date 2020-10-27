@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { CreateCatalogItemComponent } from '../dialogs/create-catalog-item/create-catalog-item.component';
+import { UpdateCatalogItemComponent } from '../dialogs/update-catalog-item/update-catalog-item.component';
 import { Catalog } from '../interfaces/catalog.interface';
 import { CatalogService } from '../services/catalog.service';
 
@@ -38,4 +40,54 @@ export class CatalogmanagementComponent implements OnInit {
    * 
    */
 
+  //createItem
+  createCatalogItem(){
+    const dialogRef = this.dialog.open(CreateCatalogItemComponent, {
+      data: {
+
+      },
+      disableClose: true,
+      width: '800px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 'create'){
+        //refresh the list
+        this.catalogServce.findAllCatalogItems().subscribe(res => {
+          this.catalogDataSource = res['data'];
+          console.log(this.catalogDataSource);
+        }, err => {
+          console.log(err);
+        })
+      }
+    })
+  }
+
+  //updateItem
+  updateCatalogItem(data){
+    console.log(data);
+    const dialogRef = this.dialog.open(UpdateCatalogItemComponent, {
+      data: {
+        data,
+        dialogHeader: 'Update Catalog Item'
+      },
+      disableClose: true,
+      width: '800px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result === 'update'){
+        //refresh the list
+        
+        this.catalogServce.findAllCatalogItems().subscribe(res => {
+          this.catalogDataSource = res['data'];
+          console.log(this.catalogDataSource);
+        }, err => {
+          console.log(err);
+        })
+      }
+    })
+  }
+
+  //deleteItem
 }

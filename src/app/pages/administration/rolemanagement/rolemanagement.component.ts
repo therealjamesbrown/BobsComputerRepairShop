@@ -44,7 +44,7 @@ export class RolemanagementComponent implements OnInit {
       */
      this.roleServce.findAllRoles().subscribe(res => {
        this.roleDataSource = res['data'];
-       console.log(this.roleDataSource);
+       //console.log(this.roleDataSource);
      }, err => {
        console.log(err);
      })

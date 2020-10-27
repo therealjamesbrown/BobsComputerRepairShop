@@ -3,7 +3,6 @@ table {
 } #post {
    float: right;
 } th {
-    text-align: center;
     color: white;
     background: hsl(216, 85%, 34%);
 } button {

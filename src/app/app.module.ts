@@ -80,7 +80,7 @@ import { MatSelectModule } from '@angular/material/select';
     CatalogmanagementComponent,
     PurchasegraphComponent,
     SecurityquestionmanagementComponent,
-    UsermanagementComponent,
+    UserManagementComponent,
     DeleteRecordDialogComponentComponent,
     CreateRoleDialogComponent,
     CreateSecurityquestionDialogComponent,

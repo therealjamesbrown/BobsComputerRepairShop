@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserManagementComponent } from './usermanagement.component';
+import { MoreVertDialogComponent } from './more-vert-dialog.component';
 
-describe('UsermanagementComponent', () => {
-  let component: UserManagementComponent;
-  let fixture: ComponentFixture<UserManagementComponent>;
+describe('MoreVertDialogComponent', () => {
+  let component: MoreVertDialogComponent;
+  let fixture: ComponentFixture<MoreVertDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserManagementComponent ]
+      declarations: [ MoreVertDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserManagementComponent);
+    fixture = TestBed.createComponent(MoreVertDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

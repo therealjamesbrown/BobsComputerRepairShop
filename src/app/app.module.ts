@@ -58,6 +58,7 @@ import { CreateSecurityquestionDialogComponent } from './pages/administration/di
 import { DeleteSecurityquestionDialogComponent } from './pages/administration/dialogs/delete-securityquestion-dialog/delete-securityquestion-dialog.component';
 import { UpdateRoleDialogComponent } from './pages/administration/dialogs/update-role-dialog/update-role-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MoreVertDialogComponent } from './pages/administration/dialogs/user-options-dialog/dialogs/more-vert-dialog/more-vert-dialog.component';
 
 
 @NgModule({
@@ -85,7 +86,8 @@ import { MatSelectModule } from '@angular/material/select';
     CreateRoleDialogComponent,
     CreateSecurityquestionDialogComponent,
     DeleteSecurityquestionDialogComponent,
-    UpdateRoleDialogComponent
+    UpdateRoleDialogComponent,
+    MoreVertDialogComponent
   ],
   imports: [
     BrowserModule,

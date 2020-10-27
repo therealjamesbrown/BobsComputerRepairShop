@@ -22,7 +22,7 @@ export class PatchDialogComponent implements OnInit {
 
   }
   delete() {
-    let id = this.cookieService.get('deleteId')
+    let id = this.cookieService.get('id')
     this.http.patch(`http://localhost:3000/api/users/${id}`, httpOptions).subscribe(err => {
       if (err) console.log(err)
      else console.log("DELETE Success")

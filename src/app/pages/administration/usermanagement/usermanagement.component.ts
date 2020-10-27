@@ -6,6 +6,7 @@ import { PutDialogComponent } from '../dialogs/user-admin-put-dialog/put-dialog.
 import { PatchDialogComponent } from '../dialogs/user-admin-patch-dialog/patch-dialog.component'
 import { RoleService } from '../services/role.service';
 import { CookieService } from 'ngx-cookie-service';
+import { MoreVertDialogComponent } from '../dialogs/user-options-dialog/dialogs/more-vert-dialog/more-vert-dialog.component'
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -22,7 +23,7 @@ export class UserManagementComponent implements OnInit {
   
   //Variable Declaration
   users: any
-
+  displayedColumns: any = [ 'username', 'fistName', 'lastName', 'phoneNumber', 'address','isDisabled', 'actions']
 
   constructor(public dialog: MatDialog, private http: HttpClient, private roleService: RoleService, private cookieService: CookieService) { }
 
@@ -31,6 +32,7 @@ export class UserManagementComponent implements OnInit {
     //Begin Brendans code
     this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(data => {
       this.users = data['data'];
+      console.log(this.users)
     })
     //end Brendans code
    }
@@ -39,12 +41,8 @@ export class UserManagementComponent implements OnInit {
    post() {
      this.dialog.open(PostDialogComponent)
    }
-   update(user) {
-    this.cookieService.set('updateId', user._id)
-    this.dialog.open(PutDialogComponent)
-   }
-   delete(user) {
-    this.cookieService.set('deleteId', user._id)
-    this.dialog.open(PatchDialogComponent)
-   }
+  options(user) {
+    this.cookieService.set('id', user._id)
+    this.dialog.open(MoreVertDialogComponent)
+  }
   }

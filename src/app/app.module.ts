@@ -59,7 +59,7 @@ import { DeleteSecurityquestionDialogComponent } from './pages/administration/di
 import { UpdateRoleDialogComponent } from './pages/administration/dialogs/update-role-dialog/update-role-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MoreVertDialogComponent } from './pages/administration/dialogs/user-options-dialog/dialogs/more-vert-dialog/more-vert-dialog.component';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 
 @NgModule({
   declarations: [
@@ -112,7 +112,8 @@ import { MoreVertDialogComponent } from './pages/administration/dialogs/user-opt
     MatIconModule,
     MatPaginatorModule,
     MatSortModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSlideToggleModule
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]

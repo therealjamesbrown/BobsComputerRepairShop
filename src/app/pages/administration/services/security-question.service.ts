@@ -53,7 +53,7 @@ export class SecurityQuestionService {
 
 
    createSecurityQuestion(newSecurityQuestion: SecurityQuestion): Observable<any> {
-    return this.http.post('/api/security-questions/', {
+    return this.http.post('/api/securityQuestions/', {
       questionId: newSecurityQuestion.questionId
     })
   }
@@ -65,7 +65,7 @@ export class SecurityQuestionService {
    */
 
    updateSecurityQuestion(questionId: string, updatedSecurityQuestion: SecurityQuestion): Observable<any> {
-   return this.http.put('/api/security-questions/'+ questionId, {
+   return this.http.put('/api/securityQuestions/'+ questionId, {
     questionId: updatedSecurityQuestion.questionId
     })
   }
@@ -77,7 +77,7 @@ export class SecurityQuestionService {
    */
 
    deleteSecurityQuestion(questionId: string): Observable<any> {
-     return this.http.patch('/api/security-questions/' + questionId, {
+     return this.http.patch('/api/securityQuestions/' + questionId, {
        //isDisabled: true
        questionId
      });

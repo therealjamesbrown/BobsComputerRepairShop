@@ -81,7 +81,7 @@ export class SecurityquestionmanagementComponent implements OnInit {
   dialogRef.afterClosed().subscribe(result => {
     if (result == 'confirm') {
       console.log(questionId._id)
-      this.securityQuestionService.deleteSecurityQuestion(questionId.__id).subscribe(res => {
+      this.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(res => {
         console.log('Security question successfully disabled')
         this.securityQuestionService.findAllSecurityQuestions().subscribe(res=> {
           this.securityQuestions = res['data'];

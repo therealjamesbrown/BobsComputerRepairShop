@@ -50,7 +50,16 @@ export class UserManagementComponent implements OnInit {
 
    /**Begin Brendans code */
    post() {
-     this.dialog.open(PostDialogComponent)
+     const dialogRef = this.dialog.open(PostDialogComponent, {
+      disableClose: true,
+      width:'800px'});
+      //added by JB 10/28. After user is submitted, refresh the user list.
+      dialogRef.afterClosed().subscribe(result => {
+        this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(data => {
+      this.users = data['data'];
+      console.log(this.users)
+    })
+      })
    }
   options(user) {
     this.cookieService.set('id', user._id)

@@ -4254,7 +4254,7 @@
         }, {
           key: "createSecurityQuestion",
           value: function createSecurityQuestion(newSecurityQuestion) {
-            return this.http.post('/api/security-questions/', {
+            return this.http.post('/api/securityQuestions/', {
               questionId: newSecurityQuestion.questionId
             });
           }
@@ -4267,7 +4267,7 @@
         }, {
           key: "updateSecurityQuestion",
           value: function updateSecurityQuestion(questionId, updatedSecurityQuestion) {
-            return this.http.put('/api/security-questions/' + questionId, {
+            return this.http.put('/api/securityQuestions/' + questionId, {
               questionId: updatedSecurityQuestion.questionId
             });
           }
@@ -4280,7 +4280,7 @@
         }, {
           key: "deleteSecurityQuestion",
           value: function deleteSecurityQuestion(questionId) {
-            return this.http.patch('/api/security-questions/' + questionId, {
+            return this.http.patch('/api/securityQuestions/' + questionId, {
               //isDisabled: true
               questionId: questionId
             });
@@ -5671,7 +5671,7 @@
               if (result == 'confirm') {
                 console.log(questionId._id);
 
-                _this11.securityQuestionService.deleteSecurityQuestion(questionId.__id).subscribe(function (res) {
+                _this11.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
                   console.log('Security question successfully disabled');
 
                   _this11.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {

@@ -2174,7 +2174,7 @@ class SecurityQuestionService {
      *
      */
     createSecurityQuestion(newSecurityQuestion) {
-        return this.http.post('/api/security-questions/', {
+        return this.http.post('/api/securityQuestions/', {
             questionId: newSecurityQuestion.questionId
         });
     }
@@ -2184,7 +2184,7 @@ class SecurityQuestionService {
      *
      */
     updateSecurityQuestion(questionId, updatedSecurityQuestion) {
-        return this.http.put('/api/security-questions/' + questionId, {
+        return this.http.put('/api/securityQuestions/' + questionId, {
             questionId: updatedSecurityQuestion.questionId
         });
     }
@@ -2194,7 +2194,7 @@ class SecurityQuestionService {
      *
      */
     deleteSecurityQuestion(questionId) {
-        return this.http.patch('/api/security-questions/' + questionId, {
+        return this.http.patch('/api/securityQuestions/' + questionId, {
             //isDisabled: true
             questionId
         });
@@ -2992,7 +2992,7 @@ class SecurityquestionmanagementComponent {
         dialogRef.afterClosed().subscribe(result => {
             if (result == 'confirm') {
                 console.log(questionId._id);
-                this.securityQuestionService.deleteSecurityQuestion(questionId.__id).subscribe(res => {
+                this.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(res => {
                     console.log('Security question successfully disabled');
                     this.securityQuestionService.findAllSecurityQuestions().subscribe(res => {
                         this.securityQuestions = res['data'];

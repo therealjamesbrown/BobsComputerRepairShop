@@ -1,3 +1,16 @@
+/**
+ * 
+ * ================================
+ * ; Title: updateCatalogItemDialog.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Date: 10/14/2020
+ * ; Description: component for updating item
+ * ================================
+ * 
+ */
+
+
+
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';

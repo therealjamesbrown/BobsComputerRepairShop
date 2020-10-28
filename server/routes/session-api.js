@@ -89,38 +89,29 @@ let BaseResponse = require('../services/error-response')
 
  // Password Reset Route
  router.put('/users/:username/reset-password', function(req, res) {
- try 
- {
+    // Find a user by username
     User.findOne({ "username": req.body.username }, function(err, user) {
         if (err) {
-            const ErrorMessage = ErrorResponse('500', 'Internal Server Error', err) 
-            res.json(ErrorMessage.toObject())
+            const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+            res.status(500).json(ErrorMessage.toObject())
         } else {
-            bcrypt.hashSync(req.body.password, saltRounds, function(err, hashedPassword) {
-                if (err) {
+            // Hash the new password
+            let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds)
+                     // Update the Password
             user.set({
-                password: hashedPassword
-            })
+                        password: hashedPassword
+                    })
             user.save(function(err, user) {
-                if (err) {
-                    const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
-                    res.status(500).json(ErrorMessage.toObject)
-                } else {
-                    const SuccessMessage = new BaseResonse('200', 'PUT Request Success', user)
-                    res.json(SuccessMessage.toObject())
-                    } 
-                })
-            } else {
-                const SuccessMessage = new BaseResonse('200', 'PUT Request Success', hashedPassword)
-                res.json(SuccessMessage.toObject())
-            }
+                        if (err) {
+                            const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+                            res.status(500).json(ErrorMessage.toObject())
+                        } else {
+                            const SuccessMessage = new BaseResponse('200', 'PUT Request Success', user)
+                            res.status(200).json(SuccessMessage.toObject())
+                        }
             })
         }
     })
- } catch (e) {
-     const ErrorMessage = new ErrorReponse('500', 'Internal Server Error', err)
-     re.json(ErrorMessage.toObject())
- }
  })
 
  module.exports = router;

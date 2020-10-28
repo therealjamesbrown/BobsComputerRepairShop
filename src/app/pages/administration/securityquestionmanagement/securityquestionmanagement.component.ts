@@ -18,6 +18,8 @@ import { SecurityQuestionService } from '../services/security-question.service';
 import { SecurityQuestion } from '../interfaces/security-question.interface';
 import { FormGroup } from '@angular/forms';
 import { DeleteSecurityquestionDialogComponent } from '../dialogs/delete-securityquestion-dialog/delete-securityquestion-dialog.component';
+import { CreateSecurityquestionDialogComponent } from '../dialogs/create-securityquestion-dialog/create-securityquestion-dialog.component';
+//import { UpdateSecurityquestionDialogComponent } from '../dialogs/create-securityquestion-dialog/create-securityquestion-dialog.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -69,7 +71,7 @@ export class SecurityquestionmanagementComponent implements OnInit {
   const dialogRef = this.dialog.open(DeleteSecurityquestionDialogComponent, {
     data: {
       questionId,
-      dialogHeader: 'Delete Security Question',
+      dialogHeader: 'Disabling Question',
       dialogBody: `Are you sure you want to disable security question ` + questionId + `?`
     },
     disableClose: true,
@@ -78,8 +80,9 @@ export class SecurityquestionmanagementComponent implements OnInit {
 
   dialogRef.afterClosed().subscribe(result => {
     if (result == 'confirm') {
-      this.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(res => {
-        console.log('Security question successfully deleted')
+      console.log(questionId._id)
+      this.securityQuestionService.deleteSecurityQuestion(questionId.__id).subscribe(res => {
+        console.log('Security question successfully disabled')
         this.securityQuestionService.findAllSecurityQuestions().subscribe(res=> {
           this.securityQuestions = res['data'];
           console.log(this.securityQuestions);

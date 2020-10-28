@@ -125,7 +125,8 @@ router.put('/:id', async(req,res) => { //double check this works /:_id JB //SK c
 
                 securityQuestion.set({
                     questionId: req.body.questionId,
-                    answer: req.body.answer
+                    answer: req.body.answer,
+                    isDisabled: req.body.isDisabled
                 });
 
                 securityQuestion.save(function( err, savedSecurityQuestion) {

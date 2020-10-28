@@ -19,7 +19,7 @@ import { SecurityQuestion } from '../interfaces/security-question.interface';
 import { FormGroup } from '@angular/forms';
 import { DeleteSecurityquestionDialogComponent } from '../dialogs/delete-securityquestion-dialog/delete-securityquestion-dialog.component';
 import { CreateSecurityquestionDialogComponent } from '../dialogs/create-securityquestion-dialog/create-securityquestion-dialog.component';
-//import { UpdateSecurityquestionDialogComponent } from '../dialogs/create-securityquestion-dialog/create-securityquestion-dialog.component';
+import { UpdateSecurityquestionDialogComponent } from '../dialogs/update-securityquestion-dialog/update-securityquestion-dialog.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -73,7 +73,7 @@ export class SecurityquestionmanagementComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result === 'create'){
-       //update the list
+
        this.securityQuestionService.findAllSecurityQuestions().subscribe(res => {
          this.securityQuestions = res['data'];
          console.log(this.securityQuestions);
@@ -86,7 +86,33 @@ export class SecurityquestionmanagementComponent implements OnInit {
 
 
 
-  //editSecurityQuestionDialog
+  //updateSecurityQuestionDialog
+
+ updateSecurityQuestion(data){
+  console.log(data);
+  const dialogRef = this.dialog.open(UpdateSecurityquestionDialogComponent, {
+    data: {
+      data,
+      dialogHeader: 'Update Security Question'
+    },
+    disableClose: true,
+    width: '800px'
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    if(result === 'update'){
+      
+      this.securityQuestionService.findAllSecurityQuestions().subscribe(res => {
+        this.securityQuestions = res['data'];
+        console.log(this.securityQuestions);
+      }, err => {
+        console.log(err);
+      })
+    }
+  })
+}
+
+
 
   //deleteSecurityQuestionDialog
 
@@ -95,7 +121,7 @@ export class SecurityquestionmanagementComponent implements OnInit {
     data: {
       questionId,
       dialogHeader: 'Disabling Question',
-      dialogBody: `Are you sure you want to disable security question ` + questionId + `?`
+      dialogBody: `Are you sure you want to disable security question ${questionId}?`
     },
     disableClose: true,
     width: '800px'
@@ -103,7 +129,7 @@ export class SecurityquestionmanagementComponent implements OnInit {
 
   dialogRef.afterClosed().subscribe(result => {
     if (result == 'confirm') {
-      console.log(questionId._id)
+      console.log(questionId)
       this.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(res => {
         console.log('Security question successfully disabled')
         this.securityQuestionService.findAllSecurityQuestions().subscribe(res=> {

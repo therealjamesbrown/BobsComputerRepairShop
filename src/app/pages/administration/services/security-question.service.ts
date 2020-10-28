@@ -63,11 +63,14 @@ export class SecurityQuestionService {
    * 
    */
 
-   updateSecurityQuestion(questionId: string, isDisabled: boolean): Observable<any> {
-   return this.http.put('/api/securityQuestions/'+ questionId, {
-    questionId
+   updateSecurityQuestion(_id: string, questionId: string, isDisabled: boolean): Observable<any> {
+   return this.http.put('/api/securityQuestions/'+ _id, {
+    questionId,
+    isDisabled
     })
   }
+
+
 
 
   /**

@@ -1,3 +1,14 @@
+/**
+ * 
+ * ================================
+ * ; Title: usermanagement.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Date: 10/14/2020
+ * ; Description: User mgmt component
+ * ================================
+ * 
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { MatDialog } from '@angular/material/dialog'

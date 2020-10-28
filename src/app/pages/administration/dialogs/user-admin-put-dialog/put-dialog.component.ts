@@ -1,3 +1,14 @@
+/**
+ * 
+ * ================================
+ * ; Title: put-dialog.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Date: 10/14/2020
+ * ; Description: User put dialog component
+ * ================================
+ * 
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms'
 import { HttpClient, HttpHeaders } from '@angular/common/http'

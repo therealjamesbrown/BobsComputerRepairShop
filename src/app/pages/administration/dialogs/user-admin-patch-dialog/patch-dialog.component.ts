@@ -1,3 +1,14 @@
+/**
+ * 
+ * ================================
+ * ; Title: patch-dialog.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Date: 10/14/2020
+ * ; Description: User patch dialog component
+ * ================================
+ * 
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { CookieService } from 'ngx-cookie-service'

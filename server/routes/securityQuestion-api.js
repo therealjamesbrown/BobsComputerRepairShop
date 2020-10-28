@@ -171,10 +171,15 @@ router.put('/:id', async(req,res) => { //double check this works /:_id JB //SK c
              securityQuestion.set({
                  isDisabled: true
              })
-             securityQuestion.save(function(err, securiyQuestion) {
-                 const SuccessMessage = new SuccessReponse('200', 'Internal Server Error', securityQuestion)
-                 res.json(SuccessMessage.toObject())
-             }) 
+             securityQuestion.save(function(err, securityQuestion) {
+                 if (err) { 
+                     const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', securityQuestion)
+                     res.json(ErrorMessage.toObject())
+                 } else {
+                    const SuccessMessage = new BaseResponse('200', 'PATCH Request Success', securityQuestion)
+                    res.json(SuccessMessage.toObject())
+                    }
+                }) 
             }
             })
         } catch(e) {

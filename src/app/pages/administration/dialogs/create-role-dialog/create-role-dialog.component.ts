@@ -24,7 +24,12 @@ import { RoleService } from 'src/app/pages/administration/services/role.service'
 })
 export class CreateRoleDialogComponent implements OnInit {
 
-constructor(private roleServce: RoleService, private http: HttpClient, private fb: FormBuilder, private dialogRef: MatDialogRef<CreateRoleDialogComponent>, @Inject(MAT_DIALOG_DATA) data) { }
+constructor(
+  private roleServce: RoleService, 
+  private http: HttpClient, 
+  private fb: FormBuilder, 
+  private dialogRef: MatDialogRef<CreateRoleDialogComponent>, 
+  @Inject(MAT_DIALOG_DATA) data) { }
 
 //bring in our interface
 text: any;
@@ -46,6 +51,7 @@ enteredText:any [];
     text
   }, err => {
     console.log(err)
+    alert(`There was an issue creating the role. Please ensure the role doesnt already exist. If this issue is reoccurring, please contact the system admin.`);
   })
 }
 }

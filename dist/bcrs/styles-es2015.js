@@ -7,8 +7,8 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/brendanmulhern/Desktop/BobsComputerRepairShop/src/custom-theme.scss */"E2ln");
-module.exports = __webpack_require__(/*! /Users/brendanmulhern/Desktop/BobsComputerRepairShop/src/styles.css */"OmL/");
+__webpack_require__(/*! /Users/james/Desktop/school/web-450/web-450/BobsComputerRepairShop/src/custom-theme.scss */"E2ln");
+module.exports = __webpack_require__(/*! /Users/james/Desktop/school/web-450/web-450/BobsComputerRepairShop/src/styles.css */"OmL/");
 
 
 /***/ }),

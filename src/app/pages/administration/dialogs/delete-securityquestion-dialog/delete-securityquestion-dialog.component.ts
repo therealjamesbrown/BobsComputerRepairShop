@@ -21,7 +21,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class DeleteSecurityquestionDialogComponent implements OnInit {
 
-  recordId: string;
+  questionId: string;
   //_id: string;
   dialogHeader: string;
   dialogBody: string;
@@ -31,7 +31,7 @@ export class DeleteSecurityquestionDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) data) { 
 
     //this._id = data._id;
-    this.recordId = data._id;
+    this.questionId = data._id;
     this.dialogHeader = data.dialogHeader;
     this.dialogBody = data.dialogBody;
   }

@@ -29,7 +29,7 @@ import { Router } from '@angular/router';
 })
 export class SecurityquestionmanagementComponent implements OnInit {
   securityQuestions: SecurityQuestion[];
-  //questionId: string;
+  questionId: string;
   displayedColumns: string[] = ["question", "status", "action"];
 
   constructor(
@@ -61,11 +61,34 @@ export class SecurityquestionmanagementComponent implements OnInit {
    * You'll need to import http client and the related service
    */
 
-  //createRoleDialog
+  //createSecurityQuestionDialog
+  createSecurityQuestion(){
+    const dialogRef = this.dialog.open(CreateSecurityquestionDialogComponent, {
+      data: {
+        
+      },
+      disableClose: true,
+      width: "800px"
+    });
 
-  //editRoleDialog
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 'create'){
+       //update the list
+       this.securityQuestionService.findAllSecurityQuestions().subscribe(res => {
+         this.securityQuestions = res['data'];
+         console.log(this.securityQuestions);
+       }, err => {
+         console.log(err);
+       })
+      }
+    })
+  }
 
-  //deleteRoleDialog
+
+
+  //editSecurityQuestionDialog
+
+  //deleteSecurityQuestionDialog
 
   deleteSecurityQuestion(questionId){
   const dialogRef = this.dialog.open(DeleteSecurityquestionDialogComponent, {

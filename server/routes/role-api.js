@@ -162,16 +162,20 @@ router.put('/:roleId/update', async(req, res) =>{
              res.json(ErrorMessage.toObject())
          }
         // Removes the user
-         else user.remove(function(err) {
-             if (err) { 
-                const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
-                res.json(ErrorMessage.toObject())
-            }
-             else { 
-                const BaseMessage = new BaseResponse('200', 'Delete Successful!', user)
-                res.json(BaseMessage.toObject())
-             }
+         else { 
+             user.set({
+             isDisabled: true
          })
+            user.save(function(err, user) {
+                if (err) {
+                    const ErrorMessage = new ErrorReponse('500', 'Internal Server Error', err)
+                    res.json(ErrorMessage.toObject())
+                } else {
+                    const SuccessMessage = new BaseResponse('200', 'PATCH Request Success', user)
+                    res.status(200).json(SuccessMessage.toObject())
+                }
+            })
+        }
      })
     } catch(e) {
         const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)

@@ -97,12 +97,23 @@ let BaseResponse = require('../services/error-response')
             res.json(ErrorMessage.toObject())
         } else {
             bcrypt.hashSync(req.body.password, saltRounds, function(err, hashedPassword) {
+                if (err) {
             user.set({
                 password: hashedPassword
             })
-            user.save()
-            const SuccessMessage = new SuccessResponse('200', 'PUT Request Success', user)
-            res.json(SuccessMessage.toObject())
+            user.save(function(err, user) {
+                if (err) {
+                    const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+                    res.status(500).json(ErrorMessage.toObject)
+                } else {
+                    const SuccessMessage = new BaseResonse('200', 'PUT Request Success', user)
+                    res.json(SuccessMessage.toObject())
+                    } 
+                })
+            } else {
+                const SuccessMessage = new BaseResonse('200', 'PUT Request Success', hashedPassword)
+                res.json(SuccessMessage.toObject())
+            }
             })
         }
     })

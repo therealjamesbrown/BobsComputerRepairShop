@@ -168,10 +168,13 @@ router.put('/:id', async(req,res) => { //double check this works /:_id JB //SK c
             const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
              res.json(ErrorMessage.toObject()) 
          } else { 
-             securityQuestion.remove(function() {
-                const SuccessMessage = new BaseResponse('200', 'Delete Request Successful', securityQuestion)
-                res.json(securityQuestion)
-             })    
+             securityQuestion.set({
+                 isDisabled: true
+             })
+             securityQuestion.save(function(err, securiyQuestion) {
+                 const SuccessMessage = new SuccessReponse('200', 'Internal Server Error', securityQuestion)
+                 res.json(SuccessMessage.toObject())
+             }) 
             }
             })
         } catch(e) {

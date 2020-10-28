@@ -12,7 +12,7 @@
 
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-delete-securityquestion-dialog',
@@ -22,15 +22,16 @@ import { Router } from '@angular/router';
 export class DeleteSecurityquestionDialogComponent implements OnInit {
 
   recordId: string;
-  _id: string;
+  //_id: string;
   dialogHeader: string;
   dialogBody: string;
 
 
-  constructor(private dialogRef: MatDialogRef<DeleteSecurityquestionDialogComponent>, private router: Router,  @Inject(MAT_DIALOG_DATA) data) { 
+  constructor(private dialogRef: MatDialogRef<DeleteSecurityquestionDialogComponent>,   
+    @Inject(MAT_DIALOG_DATA) data) { 
 
-    this._id = data._id;
-    this.recordId = data.recordId;
+    //this._id = data._id;
+    this.recordId = data._id;
     this.dialogHeader = data.dialogHeader;
     this.dialogBody = data.dialogBody;
   }

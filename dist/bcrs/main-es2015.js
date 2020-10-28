@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/james/Desktop/school/web-450/web-450/BobsComputerRepairShop/src/main.ts */"zUnb");
+module.exports = __webpack_require__(/*! /Users/brendanmulhern/Desktop/BobsComputerRepairShop/src/main.ts */"zUnb");
 
 
 /***/ }),
@@ -2174,7 +2174,7 @@ class SecurityQuestionService {
      *
      */
     createSecurityQuestion(newSecurityQuestion) {
-        return this.http.post('/api/security-questions/', {
+        return this.http.post('/api/securityQuestions/', {
             questionId: newSecurityQuestion.questionId
         });
     }
@@ -2184,7 +2184,7 @@ class SecurityQuestionService {
      *
      */
     updateSecurityQuestion(questionId, updatedSecurityQuestion) {
-        return this.http.put('/api/security-questions/' + questionId, {
+        return this.http.put('/api/securityQuestions/' + questionId, {
             questionId: updatedSecurityQuestion.questionId
         });
     }
@@ -2194,7 +2194,7 @@ class SecurityQuestionService {
      *
      */
     deleteSecurityQuestion(questionId) {
-        return this.http.patch('/api/security-questions/' + questionId, {
+        return this.http.patch('/api/securityQuestions/' + questionId, {
             //isDisabled: true
             questionId
         });

@@ -17,7 +17,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       module.exports = __webpack_require__(
-      /*! /Users/james/Desktop/school/web-450/web-450/BobsComputerRepairShop/src/main.ts */
+      /*! /Users/brendanmulhern/Desktop/BobsComputerRepairShop/src/main.ts */
       "zUnb");
       /***/
     },
@@ -4254,7 +4254,7 @@
         }, {
           key: "createSecurityQuestion",
           value: function createSecurityQuestion(newSecurityQuestion) {
-            return this.http.post('/api/security-questions/', {
+            return this.http.post('/api/securityQuestions/', {
               questionId: newSecurityQuestion.questionId
             });
           }
@@ -4267,7 +4267,7 @@
         }, {
           key: "updateSecurityQuestion",
           value: function updateSecurityQuestion(questionId, updatedSecurityQuestion) {
-            return this.http.put('/api/security-questions/' + questionId, {
+            return this.http.put('/api/securityQuestions/' + questionId, {
               questionId: updatedSecurityQuestion.questionId
             });
           }
@@ -4280,7 +4280,7 @@
         }, {
           key: "deleteSecurityQuestion",
           value: function deleteSecurityQuestion(questionId) {
-            return this.http.patch('/api/security-questions/' + questionId, {
+            return this.http.patch('/api/securityQuestions/' + questionId, {
               //isDisabled: true
               questionId: questionId
             });

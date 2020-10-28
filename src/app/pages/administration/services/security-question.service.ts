@@ -51,12 +51,11 @@ export class SecurityQuestionService {
     * 
     */
 
-
-   createSecurityQuestion(newSecurityQuestion: SecurityQuestion): Observable<any> {
-    return this.http.post('/api/securityQuestions/', {
-      questionId: newSecurityQuestion.questionId
-    })
-  }
+ createSecurityQuestion(questionId: string): Observable<any> {
+  return this.http.post('/api/securityQuestions/', {
+    questionId
+  })
+}
 
   /**
    * 
@@ -64,11 +63,15 @@ export class SecurityQuestionService {
    * 
    */
 
-   updateSecurityQuestion(questionId: string, updatedSecurityQuestion: SecurityQuestion): Observable<any> {
-   return this.http.put('/api/securityQuestions/'+ questionId, {
-    questionId: updatedSecurityQuestion.questionId
+   updateSecurityQuestion(_id: string, questionId: string, isDisabled: boolean): Observable<any> {
+   return this.http.put('/api/securityQuestions/'+ _id, {
+    questionId,
+    isDisabled
     })
   }
+
+
+
 
   /**
    * 

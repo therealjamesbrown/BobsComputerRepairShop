@@ -1,3 +1,14 @@
+/**
+ * 
+ * ================================
+ * ; Title: usermanagement.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Date: 10/14/2020
+ * ; Description: User mgmt component
+ * ================================
+ * 
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { MatDialog } from '@angular/material/dialog'
@@ -39,7 +50,16 @@ export class UserManagementComponent implements OnInit {
 
    /**Begin Brendans code */
    post() {
-     this.dialog.open(PostDialogComponent)
+     const dialogRef = this.dialog.open(PostDialogComponent, {
+      disableClose: true,
+      width:'800px'});
+      //added by JB 10/28. After user is submitted, refresh the user list.
+      dialogRef.afterClosed().subscribe(result => {
+        this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(data => {
+      this.users = data['data'];
+      console.log(this.users)
+    })
+      })
    }
   options(user) {
     this.cookieService.set('id', user._id)

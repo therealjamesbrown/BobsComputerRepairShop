@@ -1,3 +1,14 @@
+/**
+ * 
+ * ================================
+ * ; Title: post-dialog.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Date: 10/14/2020
+ * ; Description: User post dialog component
+ * ================================
+ * 
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms'
 import { HttpClient, HttpHeaders } from '@angular/common/http'

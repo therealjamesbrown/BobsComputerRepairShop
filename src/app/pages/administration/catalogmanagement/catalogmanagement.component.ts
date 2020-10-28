@@ -1,3 +1,14 @@
+/**
+ * 
+ * ================================
+ * ; Title: catalogmanagement.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Date: 10/14/2020
+ * ; Description: component responsible for catalog page
+ * ================================
+ * 
+ */
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';

@@ -1,5 +1,5 @@
 <!--JB moved this p tag and button in here for grouping purposes-->
-<p>Security Questions<button id="add"><mat-icon class="matieral-icons">library_add</mat-icon></button></p> 
+<p>Security Questions<button mat-button class="crudButton" (click)="createSecurityQuestion()"><mat-icon class="material-icons">library_add</mat-icon></button></p> 
 
 
 <table mat-table [dataSource]="securityQuestions" class="mat-elevation-z8">
@@ -20,13 +20,13 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item (click)="updateSecurityQuestion(element)">
           <mat-icon>edit</mat-icon>
           <span>Edit</span>
         </button>
         <button mat-menu-item (click)="deleteSecurityQuestion(element._id)">
           <mat-icon>delete</mat-icon>
-          <span>Delete</span>
+          <span>Disable</span>
         </button>
       </mat-menu>
     </td>

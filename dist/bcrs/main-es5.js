@@ -1300,16 +1300,149 @@
       var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/material/button */
       "bTqV");
+      /* harmony import */
 
-      function CreateAccountComponent_ng_template_8_Template(rf, ctx) {
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
+      /* harmony import */
+
+
+      var _angular_material_select__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      /*! @angular/material/select */
+      "d3UM");
+      /* harmony import */
+
+
+      var _angular_material_core__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
+      /*! @angular/material/core */
+      "FKr1");
+      /**
+       *
+       * ================================
+       * ; Title: signin.component.ts
+       * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+       * ; Modified by: James Brown
+       * ; Date: 10/14/2020
+       * ; Description: component responsible for handling signin form
+       * ; Reference: Google Material Docs: https://material.angular.io/components/stepper/overview
+       * ================================
+       *
+       */
+
+
+      function CreateAccountComponent_ng_template_10_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, "Register Account");
         }
       }
 
-      function CreateAccountComponent_ng_template_55_Template(rf, ctx) {
+      function CreateAccountComponent_mat_select_47_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, "You're Signed In!");
+          var _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-select", 24);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueChange", function CreateAccountComponent_mat_select_47_Template_mat_select_valueChange_0_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r7);
+
+            var ctx_r6 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+
+            return ctx_r6.securityQuestion1 = $event;
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-option");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var question_r5 = ctx.$implicit;
+
+          var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx_r2.securityQuestion1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](question_r5.questionId);
+        }
+      }
+
+      function CreateAccountComponent_mat_select_53_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r10 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-select", 24);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueChange", function CreateAccountComponent_mat_select_53_Template_mat_select_valueChange_0_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r10);
+
+            var ctx_r9 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+
+            return ctx_r9.securityQuestion2 = $event;
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-option");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var question_r8 = ctx.$implicit;
+
+          var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx_r3.securityQuestion2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](question_r8.questionId);
+        }
+      }
+
+      function CreateAccountComponent_mat_select_59_Template(rf, ctx) {
+        if (rf & 1) {
+          var _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-select", 24);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("valueChange", function CreateAccountComponent_mat_select_59_Template_mat_select_valueChange_0_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r13);
+
+            var ctx_r12 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+
+            return ctx_r12.securityQuestion3 = $event;
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-option");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var question_r11 = ctx.$implicit;
+
+          var ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", ctx_r4.securityQuestion3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](question_r11.questionId);
         }
       }
 
@@ -1326,6 +1459,8 @@
         _createClass(CreateAccountComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
+            var _this5 = this;
+
             this.firstFormGroup = this.fb.group({
               username: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
               password: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
@@ -1335,14 +1470,27 @@
               address: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
             });
             this.secondFormGroup = this.fb.group({
+              securityQuestion1: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+              securityQuestion1Answer: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+              securityQuestion2: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+              securityQuestion2Answer: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+              securityQuestion3: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+              securityQuestion3Answer: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
+            });
+            this.thirdFormGroup = this.fb.group({
               username: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
               password: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
+            });
+            this.http.get('/api/securityQuestions').subscribe(function (res) {
+              _this5.questions = res['data'];
             });
           }
         }, {
           key: "registerAccount",
           value: function registerAccount() {
-            var newUser = {
+            var _this6 = this;
+
+            this.newUser = {
               username: this.firstFormGroup.get('username').value,
               password: this.firstFormGroup.get('password').value,
               firstName: this.firstFormGroup.get('firstName').value,
@@ -1350,39 +1498,45 @@
               phoneNumber: this.firstFormGroup.get('phoneNumber').value,
               address: this.firstFormGroup.get('address').value
             };
-            this.http.post('/api/users', newUser).subscribe(function (err) {
+            this.http.post('/api/users', this.newUser).subscribe(function (err) {
               if (err) {
                 console.log(err);
               } else {
-                console.log(newUser);
+                console.log(_this6.newUser);
               }
             });
             this.firstFormGroup.reset();
           }
         }, {
+          key: "setSecurityQuestions",
+          value: function setSecurityQuestions() {
+            var newSecurityQuestions = {
+              securityQuestion1: this.secondFormGroup.get('securityQuestion1').value,
+              secuirtyQuestion1Answer: this.secondFormGroup.get('securityQuestion1Answer').value,
+              securityQuestion2: this.secondFormGroup.get('securityQuestion2').value,
+              securityQuestion2Answer: this.secondFormGroup.get('securiyQuestion2Answer').value,
+              securityQuestion3: this.secondFormGroup.get('securityQuestion2').value,
+              secuirtyQuestion3Answer: this.secondFormGroup.get('secuirtyQuestionAnswer3').value
+            };
+            console.log(newSecurityQuestions);
+          }
+        }, {
           key: "signIn",
           value: function signIn() {
-            var _this5 = this;
+            var _this7 = this;
 
             var signInUser = {
-              username: this.secondFormGroup.get('username').value,
-              password: this.secondFormGroup.get('password').value
+              username: this.thirdFormGroup.get('username').value,
+              password: this.thirdFormGroup.get('password').value
             };
-            this.http.post('session/signin', signInUser).subscribe(function (err) {
-              if (err) {
-                console.log(err);
-              } else {
-                _this5.cookieService.set('sessionuser', signInUser.username, 1);
+            this.http.post('/api/session/signin', signInUser).subscribe(function (res) {
+              if (res['data'].username) {
+                _this7.cookieService.set('sessionuser', res['data'].username, 1);
 
-                console.log(signInUser);
+                _this7.router.navigate(['/']);
               }
             });
             this.secondFormGroup.reset();
-          }
-        }, {
-          key: "go",
-          value: function go() {
-            this.router.navigate(['/']);
           }
         }]);
 
@@ -1402,9 +1556,9 @@
             displayDefaultIndicatorType: false
           }
         }])],
-        decls: 58,
-        vars: 4,
-        consts: [["color", "primary", 2, "text-align", "center"], ["stepper", ""], [3, "stepControl"], [3, "formGroup"], ["matStepLabel", ""], ["matInput", "", "placeholder", "Ex. thespidermonkey25", "formControlName", "username", "required", ""], ["matInput", "", "placeholder", "Ex. root", "formControlName", "password", "required", ""], ["matInput", "", "placeholder", "Ex. Peter", "formControlName", "firstName", "required", ""], ["matInput", "", "placeholder", "Ex. Parker", "formControlName", "lastName", "required", ""], ["matInput", "", "placeholder", "Ex. 867 5309", "formControlName", "phoneNumber", "required", ""], ["matInput", "", "placehodler", "Ex. 12 Brooklyn Street", "formControlName", "address", "required", ""], ["routerLink", "/session/signin"], ["mat-button", "", "matStepperNext", "", 3, "click"], ["label", "Sign In", 3, "stepControl"], ["matInput", "", "formControlName", "username", "placeholder", "Ex. spidermonkey25", "required", ""], ["matInput", "", "formControlName", "password", "placeholder", "Ex. Password", "required", ""], ["mat-button", "", "matStepperPrevious", ""], ["mat-button", "", 3, "click"]],
+        decls: 84,
+        vars: 9,
+        consts: [["color", "primary", 2, "text-align", "center"], ["stepper", ""], [3, "stepControl"], [2, "text-align", "center"], [3, "formGroup"], ["matStepLabel", ""], ["matInput", "", "placeholder", "Ex. thespidermonkey25", "formControlName", "username", "required", ""], ["matInput", "", "placeholder", "Ex. root", "formControlName", "password", "required", ""], ["matInput", "", "placeholder", "Ex. Peter", "formControlName", "firstName", "required", ""], ["matInput", "", "placeholder", "Ex. Parker", "formControlName", "lastName", "required", ""], ["matInput", "", "placeholder", "Ex. 867 5309", "formControlName", "phoneNumber", "required", ""], ["matInput", "", "placehodler", "Ex. 12 Brooklyn Street", "formControlName", "address", "required", ""], ["routerLink", "/session/signin"], ["mat-button", "", "matStepperNext", "", 3, "click"], ["label", "Security Questions", 3, "stepControl"], ["appearance", "fill"], [3, "value", "valueChange", 4, "ngFor", "ngForOf"], ["matInput", "", "placeholder", "Answer", "formControlName", "securityQuestion1Answer", "required", ""], ["matInput", "", "placeholder", "Answer", "formControlName", "securityQuestion2Answer", "required", ""], ["matInput", "", "placeholder", "Answer", "formControlName", "securityQuestion3Answer", "required", ""], ["mat-button", "", "matStepperPrevious", ""], ["label", "Sign In", 3, "stepControl"], ["matInput", "", "formControlName", "username", "placeholder", "Ex. spidermonkey25", "required", ""], ["matInput", "", "formControlName", "password", "placeholder", "Ex. Password", "required", ""], [3, "value", "valueChange"]],
         template: function CreateAccountComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-card");
@@ -1425,97 +1579,103 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "mat-step", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "form", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "h1", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](8, CreateAccountComponent_ng_template_8_Template, 1, 0, "ng-template", 4);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "mat-form-field");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "mat-label");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Username");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](8, "Sign Up");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](12, "input", 5);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "form", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](10, CreateAccountComponent_ng_template_10_Template, 1, 0, "ng-template", 5);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](11, "mat-form-field");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](12, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](13, "Username");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "mat-form-field");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "mat-label");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, "Password");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](14, "input", 6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](16, "input", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](15, "mat-form-field");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](17, "Password");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](17, "mat-form-field");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "mat-label");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](19, "First Name");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](18, "input", 7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](20, "input", 7);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "mat-form-field");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](21, "First Name");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "mat-form-field");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "mat-label");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](23, "Last Name");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](22, "input", 8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](24, "input", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](23, "mat-form-field");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](24, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](25, "Last Name");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](25, "mat-form-field");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](26, "mat-label");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](27, "Phone Number");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](26, "input", 9);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](28, "input", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](27, "mat-form-field");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](28, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](29, "Phone Number");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](29, "mat-form-field");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "mat-label");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](31, "Address");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](30, "input", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](32, "input", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](31, "mat-form-field");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](32, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](33, "Address");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](33, "div");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](34, "a", 11);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](35, "Sign In");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](34, "input", 11);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "button", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](35, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function CreateAccountComponent_Template_button_click_36_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "a", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](37, "Sign In");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](38, "button", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function CreateAccountComponent_Template_button_click_38_listener() {
               return ctx.registerAccount();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](37, "Create Account");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](39, "Create Account");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -1525,71 +1685,141 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](38, "mat-step", 13);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](40, "mat-step", 14);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](39, "form", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](41, "form", 4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](40, "mat-form-field");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](42, "h1", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](41, "mat-label");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](42, "Username");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](43, "Security Questions");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](43, "input", 14);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](44, "mat-form-field", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](45, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](46, "Please Choose A Question:");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](44, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](47, CreateAccountComponent_mat_select_47_Template, 3, 2, "mat-select", 16);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](45, "mat-form-field");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](46, "mat-label");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](47, "Password");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](48, "input", 17);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](48, "input", 15);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](49, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](50, "mat-form-field", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](51, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](52, "Please Choose A Question:");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](49, "div");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](53, CreateAccountComponent_mat_select_53_Template, 3, 2, "mat-select", 16);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](50, "button", 16);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](51, "Create Account");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](54, "input", 18);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](52, "button", 12);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](55, "br");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function CreateAccountComponent_Template_button_click_52_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](56, "mat-form-field", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](57, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](58, "Please Choose A Question:");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](59, CreateAccountComponent_mat_select_59_Template, 3, 2, "mat-select", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](60, "input", 19);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](61, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](62, "button", 20);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](63, "Back");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](64, "button", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function CreateAccountComponent_Template_button_click_64_listener() {
+              return ctx.setSecurityQuestions();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](65, "Set");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](66, "mat-step", 21);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](67, "h1", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](68, "Sign In");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](69, "form", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](70, "mat-form-field");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](71, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](72, "Username");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](73, "input", 22);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](74, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](75, "mat-form-field");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](76, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](77, "Password");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](78, "input", 23);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](79, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](80, "button", 20);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](81, "Create Account");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](82, "button", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function CreateAccountComponent_Template_button_click_82_listener() {
               return ctx.signIn();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](53, "Sign In");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](83, "Sign In");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](54, "mat-step");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](55, CreateAccountComponent_ng_template_55_Template, 1, 0, "ng-template", 4);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](56, "button", 17);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function CreateAccountComponent_Template_button_click_56_listener() {
-              return ctx.go();
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](57, "Go To Account Area");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -1603,7 +1833,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("stepControl", ctx.firstFormGroup);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.firstFormGroup);
 
@@ -1614,10 +1844,30 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.secondFormGroup);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.questions);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.questions);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx.questions);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("stepControl", ctx.thirdFormGroup);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.thirdFormGroup);
           }
         },
-        directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardTitle"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__["MatHorizontalStepper"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__["MatStep"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__["MatStepLabel"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_9__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["RequiredValidator"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLinkWithHref"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButton"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__["MatStepperNext"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__["MatStepperPrevious"]],
-        styles: ["mat-horizontal-stepper[_ngcontent-%COMP%] {\n    margin-top: 100px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvY3JlYXRlLWFjY291bnQvY3JlYXRlLWFjY291bnQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGlCQUFpQjtBQUNyQiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2NyZWF0ZS1hY2NvdW50L2NyZWF0ZS1hY2NvdW50LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJtYXQtaG9yaXpvbnRhbC1zdGVwcGVyIHtcbiAgICBtYXJnaW4tdG9wOiAxMDBweDtcbn0iXX0= */"]
+        directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardTitle"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__["MatHorizontalStepper"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__["MatStep"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__["MatStepLabel"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_9__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["RequiredValidator"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLinkWithHref"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButton"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__["MatStepperNext"], _angular_common__WEBPACK_IMPORTED_MODULE_11__["NgForOf"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__["MatStepperPrevious"], _angular_material_select__WEBPACK_IMPORTED_MODULE_12__["MatSelect"], _angular_material_core__WEBPACK_IMPORTED_MODULE_13__["MatOption"]],
+        styles: ["mat-horizontal-stepper[_ngcontent-%COMP%] {\n    margin-top: 100px;\n    text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvY3JlYXRlLWFjY291bnQvY3JlYXRlLWFjY291bnQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGlCQUFpQjtJQUNqQixrQkFBa0I7QUFDdEIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9jcmVhdGUtYWNjb3VudC9jcmVhdGUtYWNjb3VudC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsibWF0LWhvcml6b250YWwtc3RlcHBlciB7XG4gICAgbWFyZ2luLXRvcDogMTAwcHg7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xufSJdfQ== */"]
       });
       /*@__PURE__*/
 
@@ -3370,7 +3620,7 @@
 
       var RolemanagementComponent = /*#__PURE__*/function () {
         function RolemanagementComponent(http, dialog, roleServce) {
-          var _this6 = this;
+          var _this8 = this;
 
           _classCallCheck(this, RolemanagementComponent);
 
@@ -3384,7 +3634,7 @@
             */
 
           this.roleServce.findAllRoles().subscribe(function (res) {
-            _this6.roleDataSource = res['data']; //console.log(this.roleDataSource);
+            _this8.roleDataSource = res['data']; //console.log(this.roleDataSource);
           }, function (err) {
             console.log(err);
           });
@@ -3404,7 +3654,7 @@
         }, {
           key: "createRole",
           value: function createRole() {
-            var _this7 = this;
+            var _this9 = this;
 
             var dialogRef = this.dialog.open(_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_2__["CreateRoleDialogComponent"], {
               data: {},
@@ -3414,8 +3664,8 @@
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'create') {
                 //update the list
-                _this7.roleServce.findAllRoles().subscribe(function (res) {
-                  _this7.roleDataSource = res['data']; //console.log(this.roleDataSource);
+                _this9.roleServce.findAllRoles().subscribe(function (res) {
+                  _this9.roleDataSource = res['data']; //console.log(this.roleDataSource);
                 }, function (err) {
                   console.log(err);
                 });
@@ -3426,7 +3676,7 @@
         }, {
           key: "updateRole",
           value: function updateRole(data) {
-            var _this8 = this;
+            var _this10 = this;
 
             console.log(data);
             var dialogRef = this.dialog.open(_dialogs_update_role_dialog_update_role_dialog_component__WEBPACK_IMPORTED_MODULE_3__["UpdateRoleDialogComponent"], {
@@ -3439,8 +3689,8 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'update') {
-                _this8.roleServce.findAllRoles().subscribe(function (res) {
-                  _this8.roleDataSource = res['data']; //console.log(this.roleDataSource);
+                _this10.roleServce.findAllRoles().subscribe(function (res) {
+                  _this10.roleDataSource = res['data']; //console.log(this.roleDataSource);
                 }, function (err) {
                   console.log(err);
                 });
@@ -3451,7 +3701,7 @@
         }, {
           key: "deleteRole",
           value: function deleteRole(roleId) {
-            var _this9 = this;
+            var _this11 = this;
 
             var dialogRef = this.dialog.open(_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_1__["DeleteRecordDialogComponentComponent"], {
               data: {
@@ -3464,12 +3714,12 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'confirm') {
-                _this9.roleServce.deleteRole(roleId).subscribe(function (res) {
+                _this11.roleServce.deleteRole(roleId).subscribe(function (res) {
                   //console.log('Role successfully deleted')
                   //make another call to update the list
-                  _this9.roleServce.findAllRoles().subscribe(function (res) {
-                    _this9.roleDataSource = res['data'];
-                    console.log(_this9.roleDataSource);
+                  _this11.roleServce.findAllRoles().subscribe(function (res) {
+                    _this11.roleDataSource = res['data'];
+                    console.log(_this11.roleDataSource);
                   }, function (err) {
                     console.log(err);
                   });
@@ -4323,7 +4573,7 @@
         }, {
           key: "signin",
           value: function signin() {
-            var _this10 = this;
+            var _this12 = this;
 
             var username = this.form.controls.userName.value;
             var password = this.form.controls.password.value;
@@ -4337,14 +4587,14 @@
 
               if (res['data'].username) {
                 //user authenticated
-                _this10.cookieService.set('sessionuser', res['data'].username, 1);
+                _this12.cookieService.set('sessionuser', res['data'].username, 1);
 
-                _this10.router.navigate(['/']);
+                _this12.router.navigate(['/']);
               }
             }, function (err) {
-              _this10.errorMessage = 'Invalid username or password. Try again.';
+              _this12.errorMessage = 'Invalid username or password. Try again.';
 
-              _this10.openSnackBar(_this10.errorMessage);
+              _this12.openSnackBar(_this12.errorMessage);
             });
           }
         }, {
@@ -5543,6 +5793,12 @@
       var _angular_material_stepper__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(
       /*! @angular/material/stepper */
       "xHqg");
+      /* harmony import */
+
+
+      var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(
+      /*! @angular/cdk/scrolling */
+      "vxfF");
       /**
        *
        * ================================
@@ -5569,13 +5825,13 @@
           return new (t || AppModule)();
         },
         providers: [ngx_cookie_service__WEBPACK_IMPORTED_MODULE_18__["CookieService"]],
-        imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ReactiveFormsModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_16__["MatInputModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__["MatFormFieldModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__["MatSnackBarModule"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_20__["MatDividerModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_22__["MatMenuModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_23__["MatListModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_30__["MatTableModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_39__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_40__["MatSortModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_46__["MatSelectModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_48__["MatSlideToggleModule"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_54__["MatStepperModule"]]]
+        imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ReactiveFormsModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_16__["MatInputModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__["MatFormFieldModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__["MatSnackBarModule"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_20__["MatDividerModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_22__["MatMenuModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_23__["MatListModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_30__["MatTableModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_39__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_40__["MatSortModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_46__["MatSelectModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_48__["MatSlideToggleModule"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_54__["MatStepperModule"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_55__["ScrollingModule"]]]
       });
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
           declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _shared_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_6__["BaseLayoutComponent"], _shared_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_7__["AuthLayoutComponent"], _pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_14__["SigninComponent"], _pages_administration_administration_component__WEBPACK_IMPORTED_MODULE_24__["AdministrationComponent"], _pages_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_25__["NotFoundComponent"], _pages_profile_profile_component__WEBPACK_IMPORTED_MODULE_26__["ProfileComponent"], _pages_contact_contact_component__WEBPACK_IMPORTED_MODULE_27__["ContactComponent"], _pages_pricing_pricing_component__WEBPACK_IMPORTED_MODULE_28__["PricingComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_29__["AboutComponent"], _app_pages_administration_dialogs_user_admin_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_31__["PostDialogComponent"], _app_pages_administration_dialogs_user_admin_put_dialog_put_dialog_component__WEBPACK_IMPORTED_MODULE_32__["PutDialogComponent"], _app_pages_administration_dialogs_user_admin_patch_dialog_patch_dialog_component__WEBPACK_IMPORTED_MODULE_33__["PatchDialogComponent"], _pages_administration_rolemanagement_rolemanagement_component__WEBPACK_IMPORTED_MODULE_34__["RolemanagementComponent"], _pages_administration_catalogmanagement_catalogmanagement_component__WEBPACK_IMPORTED_MODULE_35__["CatalogmanagementComponent"], _pages_administration_purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_36__["PurchasegraphComponent"], _pages_administration_securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_37__["SecurityquestionmanagementComponent"], _app_pages_administration_usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_38__["UserManagementComponent"], _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_41__["DeleteRecordDialogComponentComponent"], _pages_administration_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_42__["CreateRoleDialogComponent"], _pages_administration_dialogs_create_securityquestion_dialog_create_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_43__["CreateSecurityquestionDialogComponent"], _pages_administration_dialogs_delete_securityquestion_dialog_delete_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_44__["DeleteSecurityquestionDialogComponent"], _pages_administration_dialogs_update_role_dialog_update_role_dialog_component__WEBPACK_IMPORTED_MODULE_45__["UpdateRoleDialogComponent"], _pages_administration_dialogs_user_options_dialog_dialogs_more_vert_dialog_more_vert_dialog_component__WEBPACK_IMPORTED_MODULE_47__["MoreVertDialogComponent"], _pages_administration_dialogs_create_catalog_item_create_catalog_item_component__WEBPACK_IMPORTED_MODULE_49__["CreateCatalogItemComponent"], _pages_administration_dialogs_update_catalog_item_update_catalog_item_component__WEBPACK_IMPORTED_MODULE_50__["UpdateCatalogItemComponent"], _pages_administration_dialogs_delete_catalog_item_delete_catalog_item_component__WEBPACK_IMPORTED_MODULE_51__["DeleteCatalogItemComponent"], _pages_administration_dialogs_update_securityquestion_dialog_update_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_52__["UpdateSecurityquestionDialogComponent"], _pages_create_account_create_account_component__WEBPACK_IMPORTED_MODULE_53__["CreateAccountComponent"]],
-          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ReactiveFormsModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_16__["MatInputModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__["MatFormFieldModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__["MatSnackBarModule"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_20__["MatDividerModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_22__["MatMenuModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_23__["MatListModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_30__["MatTableModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_39__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_40__["MatSortModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_46__["MatSelectModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_48__["MatSlideToggleModule"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_54__["MatStepperModule"]]
+          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ReactiveFormsModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_16__["MatInputModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__["MatFormFieldModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__["MatSnackBarModule"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_20__["MatDividerModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_22__["MatMenuModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_23__["MatListModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_30__["MatTableModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_39__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_40__["MatSortModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_46__["MatSelectModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_48__["MatSlideToggleModule"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_54__["MatStepperModule"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_55__["ScrollingModule"]]
         });
       })();
       /*@__PURE__*/
@@ -5586,7 +5842,7 @@
           type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
           args: [{
             declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _shared_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_6__["BaseLayoutComponent"], _shared_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_7__["AuthLayoutComponent"], _pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_14__["SigninComponent"], _pages_administration_administration_component__WEBPACK_IMPORTED_MODULE_24__["AdministrationComponent"], _pages_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_25__["NotFoundComponent"], _pages_profile_profile_component__WEBPACK_IMPORTED_MODULE_26__["ProfileComponent"], _pages_contact_contact_component__WEBPACK_IMPORTED_MODULE_27__["ContactComponent"], _pages_pricing_pricing_component__WEBPACK_IMPORTED_MODULE_28__["PricingComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_29__["AboutComponent"], _app_pages_administration_dialogs_user_admin_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_31__["PostDialogComponent"], _app_pages_administration_dialogs_user_admin_put_dialog_put_dialog_component__WEBPACK_IMPORTED_MODULE_32__["PutDialogComponent"], _app_pages_administration_dialogs_user_admin_patch_dialog_patch_dialog_component__WEBPACK_IMPORTED_MODULE_33__["PatchDialogComponent"], _pages_administration_rolemanagement_rolemanagement_component__WEBPACK_IMPORTED_MODULE_34__["RolemanagementComponent"], _pages_administration_catalogmanagement_catalogmanagement_component__WEBPACK_IMPORTED_MODULE_35__["CatalogmanagementComponent"], _pages_administration_purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_36__["PurchasegraphComponent"], _pages_administration_securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_37__["SecurityquestionmanagementComponent"], _app_pages_administration_usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_38__["UserManagementComponent"], _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_41__["DeleteRecordDialogComponentComponent"], _pages_administration_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_42__["CreateRoleDialogComponent"], _pages_administration_dialogs_create_securityquestion_dialog_create_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_43__["CreateSecurityquestionDialogComponent"], _pages_administration_dialogs_delete_securityquestion_dialog_delete_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_44__["DeleteSecurityquestionDialogComponent"], _pages_administration_dialogs_update_role_dialog_update_role_dialog_component__WEBPACK_IMPORTED_MODULE_45__["UpdateRoleDialogComponent"], _pages_administration_dialogs_user_options_dialog_dialogs_more_vert_dialog_more_vert_dialog_component__WEBPACK_IMPORTED_MODULE_47__["MoreVertDialogComponent"], _pages_administration_dialogs_create_catalog_item_create_catalog_item_component__WEBPACK_IMPORTED_MODULE_49__["CreateCatalogItemComponent"], _pages_administration_dialogs_update_catalog_item_update_catalog_item_component__WEBPACK_IMPORTED_MODULE_50__["UpdateCatalogItemComponent"], _pages_administration_dialogs_delete_catalog_item_delete_catalog_item_component__WEBPACK_IMPORTED_MODULE_51__["DeleteCatalogItemComponent"], _pages_administration_dialogs_update_securityquestion_dialog_update_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_52__["UpdateSecurityquestionDialogComponent"], _pages_create_account_create_account_component__WEBPACK_IMPORTED_MODULE_53__["CreateAccountComponent"]],
-            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ReactiveFormsModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_16__["MatInputModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__["MatFormFieldModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__["MatSnackBarModule"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_20__["MatDividerModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_22__["MatMenuModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_23__["MatListModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_30__["MatTableModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_39__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_40__["MatSortModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_46__["MatSelectModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_48__["MatSlideToggleModule"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_54__["MatStepperModule"]],
+            imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ReactiveFormsModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_16__["MatInputModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__["MatFormFieldModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__["MatSnackBarModule"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_20__["MatDividerModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_22__["MatMenuModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_23__["MatListModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_30__["MatTableModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_39__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_40__["MatSortModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_46__["MatSelectModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_48__["MatSlideToggleModule"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_54__["MatStepperModule"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_55__["ScrollingModule"]],
             providers: [ngx_cookie_service__WEBPACK_IMPORTED_MODULE_18__["CookieService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
           }]
@@ -6458,7 +6714,7 @@
 
       var SecurityquestionmanagementComponent = /*#__PURE__*/function () {
         function SecurityquestionmanagementComponent(http, dialog, securityQuestionService) {
-          var _this11 = this;
+          var _this13 = this;
 
           _classCallCheck(this, SecurityquestionmanagementComponent);
 
@@ -6470,7 +6726,7 @@
           this.securityQuestionService = securityQuestionService;
           this.displayedColumns = ["question", "status", "action"];
           this.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-            _this11.securityQuestions = res["data"];
+            _this13.securityQuestions = res["data"];
             console.log(res); //console.log(this.securityQuestionService);
           }, function (err) {
             console.log(err);
@@ -6490,7 +6746,7 @@
         }, {
           key: "createSecurityQuestion",
           value: function createSecurityQuestion() {
-            var _this12 = this;
+            var _this14 = this;
 
             var dialogRef = this.dialog.open(_dialogs_create_securityquestion_dialog_create_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_2__["CreateSecurityquestionDialogComponent"], {
               data: {},
@@ -6499,9 +6755,9 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'create') {
-                _this12.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                  _this12.securityQuestions = res['data'];
-                  console.log(_this12.securityQuestions);
+                _this14.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                  _this14.securityQuestions = res['data'];
+                  console.log(_this14.securityQuestions);
                 }, function (err) {
                   console.log(err);
                 });
@@ -6512,7 +6768,7 @@
         }, {
           key: "updateSecurityQuestion",
           value: function updateSecurityQuestion(data) {
-            var _this13 = this;
+            var _this15 = this;
 
             console.log(data);
             var dialogRef = this.dialog.open(_dialogs_update_securityquestion_dialog_update_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_3__["UpdateSecurityquestionDialogComponent"], {
@@ -6525,9 +6781,9 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'update') {
-                _this13.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                  _this13.securityQuestions = res['data'];
-                  console.log(_this13.securityQuestions);
+                _this15.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                  _this15.securityQuestions = res['data'];
+                  console.log(_this15.securityQuestions);
                 }, function (err) {
                   console.log(err);
                 });
@@ -6538,7 +6794,7 @@
         }, {
           key: "deleteSecurityQuestion",
           value: function deleteSecurityQuestion(questionId) {
-            var _this14 = this;
+            var _this16 = this;
 
             var dialogRef = this.dialog.open(_dialogs_delete_securityquestion_dialog_delete_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_1__["DeleteSecurityquestionDialogComponent"], {
               data: {
@@ -6553,12 +6809,12 @@
               if (result == 'confirm') {
                 console.log(questionId);
 
-                _this14.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
+                _this16.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
                   console.log('Security question successfully disabled');
 
-                  _this14.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                    _this14.securityQuestions = res['data'];
-                    console.log(_this14.securityQuestions);
+                  _this16.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                    _this16.securityQuestions = res['data'];
+                    console.log(_this16.securityQuestions);
                   }, function (err) {
                     console.log(err);
                   });
@@ -7185,12 +7441,12 @@
         _createClass(UserManagementComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this15 = this;
+            var _this17 = this;
 
             //Begin Brendans code
             this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
-              _this15.users = data['data'];
-              console.log(_this15.users);
+              _this17.users = data['data'];
+              console.log(_this17.users);
             }); //end Brendans code
           }
           /**Begin Brendans code */
@@ -7198,7 +7454,7 @@
         }, {
           key: "post",
           value: function post() {
-            var _this16 = this;
+            var _this18 = this;
 
             var dialogRef = this.dialog.open(_dialogs_user_admin_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_2__["PostDialogComponent"], {
               disableClose: true,
@@ -7206,9 +7462,9 @@
             }); //added by JB 10/28. After user is submitted, refresh the user list.
 
             dialogRef.afterClosed().subscribe(function (result) {
-              _this16.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
-                _this16.users = data['data'];
-                console.log(_this16.users);
+              _this18.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
+                _this18.users = data['data'];
+                console.log(_this18.users);
               });
             });
           }

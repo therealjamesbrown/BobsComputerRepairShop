@@ -5,6 +5,7 @@
 </mat-card>
 <mat-horizontal-stepper #stepper>
     <mat-step [stepControl]="firstFormGroup">
+       <h1 style="text-align: center;">Sign Up</h1>
         <form [formGroup]="firstFormGroup">
             <ng-template matStepLabel>Register Account</ng-template>
             <mat-form-field>
@@ -37,25 +38,54 @@
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Sign In">
+    <mat-step [stepControl]="secondFormGroup" label="Security Questions">
         <form [formGroup]="secondFormGroup">
-            <mat-form-field>
-                <mat-label>Username</mat-label>
-                <input matInput formControlName="username" placeholder="Ex. spidermonkey25" required>
-            </mat-form-field>
-            <br>
-            <mat-form-field>
-                <mat-label>Password</mat-label>
-                <input matInput formControlName="password" placeholder="Ex. Password" required>
-            </mat-form-field>
-            <div>
-                <button mat-button matStepperPrevious>Create Account</button>
-                <button mat-button (click)="signIn()" matStepperNext>Sign In</button>
-            </div>
-        </form>
+        <h1 style="text-align: center;">Security Questions</h1>
+        <mat-form-field appearance="fill">
+            <mat-label>Please Choose A Question:</mat-label>
+            <mat-select [(value)]="securityQuestion1" *ngFor="let question of questions">
+                <mat-option>{{ question.questionId }}</mat-option>
+            </mat-select>
+            <input matInput placeholder="Answer" formControlName="securityQuestion1Answer" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Please Choose A Question:</mat-label>
+            <mat-select [(value)]="securityQuestion2" *ngFor="let question of questions">
+                <mat-option>{{ question.questionId }}</mat-option>
+            </mat-select>
+            <input matInput placeholder="Answer" formControlName="securityQuestion2Answer" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Please Choose A Question:</mat-label>
+            <mat-select [(value)]="securityQuestion3" *ngFor="let question of questions">
+                <mat-option>{{ question.questionId }}</mat-option>
+            </mat-select>
+            <input matInput placeholder="Answer" formControlName="securityQuestion3Answer" required>
+        </mat-form-field>
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="setSecurityQuestions()" matStepperNext>Set</button>
+        </div>
+    </form>
     </mat-step>
-    <mat-step>
-        <ng-template matStepLabel>You're Signed In!</ng-template>
-        <button mat-button (click)="go()">Go To Account Area</button>
-    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup" label="Sign In">
+        <h1 style="text-align: center;">Sign In</h1>
+        <form [formGroup]="thirdFormGroup">
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" placeholder="Ex. spidermonkey25" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" placeholder="Ex. Password" required>
+        </mat-form-field>
+        <div>
+            <button mat-button matStepperPrevious>Create Account</button>
+            <button mat-button (click)="signIn()" matStepperNext>Sign In</button>
+        </div>
+    </form>
+</mat-step>
 </mat-horizontal-stepper>

@@ -66,6 +66,7 @@ import { DeleteCatalogItemComponent } from './pages/administration/dialogs/delet
 import { UpdateSecurityquestionDialogComponent } from './pages/administration/dialogs/update-securityquestion-dialog/update-securityquestion-dialog.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component'
 import { MatStepperModule } from '@angular/material/stepper'
+import { ScrollingModule } from '@angular/cdk/scrolling'
 @NgModule({
   declarations: [
     AppComponent,
@@ -124,7 +125,8 @@ import { MatStepperModule } from '@angular/material/stepper'
     MatSortModule,
     MatSelectModule,
     MatSlideToggleModule,
-    MatStepperModule
+    MatStepperModule,
+    ScrollingModule
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]

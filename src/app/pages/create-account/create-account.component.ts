@@ -26,7 +26,10 @@ import { CookieService } from 'ngx-cookie-service'
 })
 export class CreateAccountComponent implements OnInit {
   firstFormGroup: FormGroup
-  secondFormGroup:FormGroup
+  secondFormGroup: FormGroup
+  thirdFormGroup: FormGroup
+  newUser: any
+  questions: any
   constructor(private cookieService: CookieService, private router: Router, private http: HttpClient, private fb: FormBuilder) { }
   ngOnInit() {
     this.firstFormGroup = this.fb.group({
@@ -38,12 +41,23 @@ export class CreateAccountComponent implements OnInit {
       address: new FormControl(null, Validators.required)
     })
     this.secondFormGroup = this.fb.group({
+      securityQuestion1: new FormControl(null, Validators.required),
+      securityQuestion1Answer: new FormControl(null, Validators.required),
+      securityQuestion2: new FormControl(null, Validators.required),
+      securityQuestion2Answer: new FormControl(null, Validators.required),
+      securityQuestion3: new FormControl(null, Validators.required),
+      securityQuestion3Answer: new FormControl(null, Validators.required),
+    })
+    this.thirdFormGroup = this.fb.group({
       username: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required)
     })
+    this.http.get('/api/securityQuestions').subscribe(res => {
+      this.questions = res['data']
+    })
   }
   registerAccount() {
-    let newUser = {
+    this.newUser = {
       username: this.firstFormGroup.get('username').value,
       password: this.firstFormGroup.get('password').value,
       firstName: this.firstFormGroup.get('firstName').value,
@@ -51,31 +65,37 @@ export class CreateAccountComponent implements OnInit {
       phoneNumber: this.firstFormGroup.get('phoneNumber').value,
       address: this.firstFormGroup.get('address').value
     }
-    this.http.post('/api/users', newUser).subscribe(err => {
+    this.http.post('/api/users', this.newUser).subscribe(err => {
       if (err) {
         console.log(err)
       } else {
-        console.log(newUser)
+        console.log(this.newUser)
       }
     })
     this.firstFormGroup.reset()
   }
+  setSecurityQuestions() {
+   let newSecurityQuestions = {
+     securityQuestion1: this.secondFormGroup.get('securityQuestion1').value,
+     secuirtyQuestion1Answer: this.secondFormGroup.get('securityQuestion1Answer').value,
+     securityQuestion2: this.secondFormGroup.get('securityQuestion2').value,
+     securityQuestion2Answer: this.secondFormGroup.get('securiyQuestion2Answer').value,
+     securityQuestion3: this.secondFormGroup.get('securityQuestion2').value,
+     secuirtyQuestion3Answer: this.secondFormGroup.get('secuirtyQuestionAnswer3').value
+   }
+   console.log(newSecurityQuestions)
+  }
   signIn() {
    let signInUser = {
-     username: this.secondFormGroup.get('username').value,
-     password: this.secondFormGroup.get('password').value
+     username: this.thirdFormGroup.get('username').value,
+     password: this.thirdFormGroup.get('password').value
    }
-   this.http.post('session/signin', signInUser).subscribe(err => {
-     if (err) {
-       console.log(err)
-     } else {
-      this.cookieService.set('sessionuser', signInUser.username, 1)
-       console.log(signInUser)
-     }
+   this.http.post('/api/session/signin', signInUser).subscribe(res => {
+    if (res['data'].username) {
+      this.cookieService.set('sessionuser', res['data'].username, 1)
+      this.router.navigate(['/'])
+    }
    })
    this.secondFormGroup.reset()
-  }
-  go() {
-    this.router.navigate(['/'])
   }
 }

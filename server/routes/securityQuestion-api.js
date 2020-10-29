@@ -38,12 +38,6 @@ const ErrorResponse = require('../services/error-response');
         res.json(ErrorMessage.toObject());
      }
  })
-/**
- * 
- * --Find securityQuestion by ID--
- * 
- */
-
 
 
 /**

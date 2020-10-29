@@ -87,6 +87,87 @@ let BaseResponse = require('../services/error-response')
      }
  })
 
+
+
+
+ 
+/**
+ * 
+ * VERIFY USER API
+ * By JB
+ * 
+ */
+router.get('/verify/users/:username', async(req, res) => {
+    try {
+        User.findOne({'username': req.params.username}, function(err, user){
+            if(err){
+                console.log(err);
+                const verifyUserMongoDbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
+                res.status(500).send(verifyUserMongoDbErrorResponse.toObject());
+            } else {
+                console.log(user);
+                const verifyUserResponse = new BaseResponse('200', 'Success!', user);
+                res.json(verifyUserResponse.toObject());
+            }
+        })
+
+    } catch(e){
+        console.log(e);
+        const verifyUserCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error', e.message);
+        res.status(500).send(verifyUserCatchErrorResponse.toObject());
+    }
+})
+
+
+
+/**
+ * 
+ * VERIFY SECURITY QUESTIONS
+ * by JB
+ * 
+ */
+router.post('/verify/users/:username/security-questions', async(req, res) => {
+    try{
+        User.findOne({'username': req.params.username}, function(err, user){
+            if(err){
+                console.log(err);
+                const verifySecurityQuestionsMondoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err);
+                res.status(500).send(verifySecurityQuestionsMondoDbErrorResponse.toObject());
+            } else {
+                
+                //Find the selected security question objects in the DB and assign them to a variable
+                const selectedSecurityQuestionOne = user.securityQuestions.find(question => question.questionText === req.body.questionText1); 
+                const selectedSecurityQuestionTwo = user.securityQuestions.find(question2 => question2.questionText === req.body.questionText2);
+                const selectedSecurityQuestionThree = user.securityQuestions.find(question3 => question3.questionText === req.body.questionText3);
+
+
+                //Take the object from above and compare the answer from the db to the answer from the user.
+                const isValidAnswerOne = selectedSecurityQuestionOne.answerText === req.body.answerText1;
+                const isValidAnswerTwo = selectedSecurityQuestionTwo.answerText === req.body.answerText2;
+                const isValidAnswerThree = selectedSecurityQuestionThree.answerText === req.body.answerText3;
+
+                //Check if all three questions are correct. If so, return a success.
+                if(isValidAnswerOne && isValidAnswerTwo && isValidAnswerThree){
+                    console.log(`User ${user.username} answer their security questions correctly.`);
+                    const validSecurityQuestionResponse = new BaseResponse('200', 'Success!', user);
+                    res.json(validSecurityQuestionResponse.toObject());
+                    //else return a success with failure.
+                } else {
+                    console.log(`User ${user.username} did not answer their security questions correctly.`);
+                    const invalidSecurityQuestionsResponse = new BaseResponse('200', 'Error', user);
+                    res.json(invalidSecurityQuestionsResponse.toObject());
+                }
+            }
+        })
+
+    } catch(e){
+        console.log(e);
+        const verifySecurityQuestionsCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error', e.message);
+        res.status(500).send(verifySecurityQuestionsCatchErrorResponse.toObject());
+    }
+});
+
+
  // Password Reset Route
  router.put('/users/:username/reset-password', function(req, res) {
     // Find a user by username

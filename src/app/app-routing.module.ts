@@ -23,6 +23,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { PricingComponent } from './pages/pricing/pricing.component';
 import { AboutComponent } from './pages/about/about.component';
+import { CreateAccountComponent } from './pages/create-account/create-account.component';
 
 const routes: Routes = [
   {
@@ -58,7 +59,7 @@ const routes: Routes = [
         component: NotFoundComponent
       }
     ],
-    // canActivate: [AuthGuard]
+        canActivate: [AuthGuard]
   },
   {
     path: 'session',
@@ -67,6 +68,10 @@ const routes: Routes = [
       {
         path: 'signin',
         component: SigninComponent
+      },
+      {
+        path:'createAccount',
+        component: CreateAccountComponent
       }
     ]
   },

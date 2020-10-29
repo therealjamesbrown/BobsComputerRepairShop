@@ -53,3 +53,7 @@ mat-form-field{
 mat-card{
     border-radius: 10px;
 }
+
+#createAccount {
+    margin-top: 17px;
+}

@@ -63,8 +63,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CreateCatalogItemComponent } from './pages/administration/dialogs/create-catalog-item/create-catalog-item.component';
 import { UpdateCatalogItemComponent } from './pages/administration/dialogs/update-catalog-item/update-catalog-item.component';
 import { DeleteCatalogItemComponent } from './pages/administration/dialogs/delete-catalog-item/delete-catalog-item.component';
-import { UpdateSecurityquestionDialogComponent } from './pages/administration/dialogs/update-securityquestion-dialog/update-securityquestion-dialog.component'
-
+import { UpdateSecurityquestionDialogComponent } from './pages/administration/dialogs/update-securityquestion-dialog/update-securityquestion-dialog.component';
+import { CreateAccountComponent } from './pages/create-account/create-account.component'
+import { MatStepperModule } from '@angular/material/stepper'
 @NgModule({
   declarations: [
     AppComponent,
@@ -95,7 +96,8 @@ import { UpdateSecurityquestionDialogComponent } from './pages/administration/di
     CreateCatalogItemComponent,
     UpdateCatalogItemComponent,
     DeleteCatalogItemComponent,
-    UpdateSecurityquestionDialogComponent
+    UpdateSecurityquestionDialogComponent,
+    CreateAccountComponent
   ],
   imports: [
     BrowserModule,
@@ -121,7 +123,8 @@ import { UpdateSecurityquestionDialogComponent } from './pages/administration/di
     MatPaginatorModule,
     MatSortModule,
     MatSelectModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatStepperModule
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]

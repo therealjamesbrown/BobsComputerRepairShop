@@ -1,6 +1,9 @@
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
+import { HttpClient } from '@angular/common/http'
+import { Router } from '@angular/router'
+import { CookieService } from 'ngx-cookie-service'
 @Component({
   selector: 'app-create-account',
   templateUrl: './create-account.component.html',
@@ -12,21 +15,55 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 export class CreateAccountComponent implements OnInit {
   firstFormGroup: FormGroup
   secondFormGroup:FormGroup
-  constructor(private fb: FormBuilder) { }
+  constructor(private cookieService: CookieService, private router: Router, private http: HttpClient, private fb: FormBuilder) { }
   ngOnInit() {
     this.firstFormGroup = this.fb.group({
-      firstCtrl: new FormControl(null, Validators.required)
+      username: new FormControl(null, Validators.required),
+      password: new FormControl(null, Validators.required),
+      firstName: new FormControl(null, Validators.required),
+      lastName: new FormControl(null, Validators.required),
+      phoneNumber: new FormControl(null, Validators.required),
+      address: new FormControl(null, Validators.required)
     })
     this.secondFormGroup = this.fb.group({
-      secondCtrl: new FormControl(null, Validators.required)
+      username: new FormControl(null, Validators.required),
+      password: new FormControl(null, Validators.required)
     })
   }
-  formSubmitOne() {
-    let firstInput = this.firstFormGroup.get('firstCtrl').value
-    console.log(firstInput)
+  registerAccount() {
+    let newUser = {
+      username: this.firstFormGroup.get('username').value,
+      password: this.firstFormGroup.get('password').value,
+      firstName: this.firstFormGroup.get('firstName').value,
+      lastName: this.firstFormGroup.get('lastName').value,
+      phoneNumber: this.firstFormGroup.get('phoneNumber').value,
+      address: this.firstFormGroup.get('address').value
+    }
+    this.http.post('/api/users', newUser).subscribe(err => {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log(newUser)
+      }
+    })
+    this.firstFormGroup.reset()
   }
-  formSubmitTwo() {
-    let secondInput = this.secondFormGroup.get('secondCtrl').value
-    console.log(secondInput)
+  signIn() {
+   let signInUser = {
+     username: this.secondFormGroup.get('username').value,
+     password: this.secondFormGroup.get('password').value
+   }
+   this.http.post('session/signin', signInUser).subscribe(err => {
+     if (err) {
+       console.log(err)
+     } else {
+      this.cookieService.set('sessionuser', signInUser.username, 1)
+       console.log(signInUser)
+     }
+   })
+   this.secondFormGroup.reset()
+  }
+  go() {
+    this.router.navigate(['/'])
   }
 }

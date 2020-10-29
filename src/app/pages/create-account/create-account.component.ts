@@ -22,7 +22,7 @@ export class CreateAccountComponent implements OnInit {
     })
   }
   formSubmitOne() {
-    let firstInput = this.firstFormGroup.get('fistCtrl').value
+    let firstInput = this.firstFormGroup.get('firstCtrl').value
     console.log(firstInput)
   }
   formSubmitTwo() {

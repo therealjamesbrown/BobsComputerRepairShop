@@ -12,8 +12,8 @@
                 <input matInput placeholder="Last name, Fist name" formControlName="firstCtrl" required>
             </mat-form-field>
             <div>
-                <a routeLink="/session/signin">Back To Sign In</a>
-                <button mat-button matStepperNext>Next</button>
+                <a routerLink="/session/signin">Back To Sign In</a>
+                <button mat-button type="submit" matStepperNext>Next</button>
             </div>
         </form>
     </mat-step>
@@ -25,12 +25,12 @@
             </mat-form-field>
             <div>
                 <button mat-button matStepperPrevious>Back</button>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-button type="submit" matStepperNext>Next</button>
             </div>
         </form>
     </mat-step>
     <mat-step>
-        <ng-template matStepLabel>Done</ng-template>
+        <ng-template matStepLabel>You're Signed In!</ng-template>
         <p>You are now done.</p>
         <div>
             <button mat-button matStepperPrevious>Back</button>

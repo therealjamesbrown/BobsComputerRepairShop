@@ -1,7 +1,7 @@
 /**
  * 
  * ================================
- * ; Title: securityQuestion-api.js
+ * ; Title: 
  * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
  * ; Date: 10/14/2020
  * ; Description: Application for Bobs Computer Repair Shop.
@@ -38,6 +38,12 @@ const ErrorResponse = require('../services/error-response');
         res.json(ErrorMessage.toObject());
      }
  })
+/**
+ * 
+ * --Find securityQuestion by ID--
+ * 
+ */
+
 
 
 /**
@@ -67,6 +73,7 @@ router.get('/:_id', async(req, res) => {
         res.status(500).send(findSecurityQuestionCatchError.toObject());
     }
 })
+
 
 /**
 * 
@@ -125,8 +132,7 @@ router.put('/:id', async(req,res) => { //double check this works /:_id JB //SK c
 
                 securityQuestion.set({
                     questionId: req.body.questionId,
-                    answer: req.body.answer,
-                    isDisabled: req.body.isDisabled
+                    answer: req.body.answer
                 });
 
                 securityQuestion.save(function( err, savedSecurityQuestion) {

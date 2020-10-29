@@ -75,7 +75,28 @@ router.get('/:id', async(req, res) => {
       res.status(500).send(errorCatchResponse.toObject());
     }
   });
+/**
+ * 
+ * --Find Security Questions by ID--
+ * Created by BM
+ */
 
+router.get('/securityQuestions/findById', function(req, res) {
+    try {
+    User.findOne({ "username": req.body.username }, function(err, user) {
+        if (err) {
+            const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+            res.json(ErrorMessage.toObject())
+        } else {
+            const SuccessMessage = new BaseResponse('200', 'GET Request Success', user.username/* Will Be selectedSecuriyQuestions */)
+            res.json(SuccessMessage.toObject())
+        }   
+    })
+} catch (e) {
+    const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', e)
+    res.json(ErrorMessage.toObject())
+}
+})
 
 /**
 * 

@@ -1,3 +1,15 @@
+/**
+ * 
+ * ================================
+ * ; Title: signin.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Modified by: James Brown
+ * ; Date: 10/14/2020
+ * ; Description: component responsible for handling signin form
+ * ; Reference: Google Material Docs: https://material.angular.io/components/stepper/overview
+ * ================================
+ * 
+ */
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'

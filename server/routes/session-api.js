@@ -90,7 +90,7 @@ let BaseResponse = require('../services/error-response')
  // Password Reset Route
  router.put('/users/:username/reset-password', function(req, res) {
     // Find a user by username
-    User.findOne({ "username": req.body.username }, function(err, user) {
+    User.findOne({ "username": req.params.username }, function(err, user) {
         if (err) {
             const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
             res.status(500).json(ErrorMessage.toObject())

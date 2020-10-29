@@ -5,36 +5,57 @@
 </mat-card>
 <mat-horizontal-stepper #stepper>
     <mat-step [stepControl]="firstFormGroup">
-        <form [formGroup]="firstFormGroup" (ngSubmit)="formSubmitOne">
-            <ng-template matStepLabel>Fill out your name</ng-template>
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Register Account</ng-template>
             <mat-form-field>
-                <mat-label>Name</mat-label>
-                <input matInput placeholder="Last name, Fist name" formControlName="firstCtrl" required>
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Ex. thespidermonkey25" formControlName="username" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Ex. root" formControlName="password" required> 
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="Ex. Peter" formControlName="firstName" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Ex. Parker" formControlName="lastName" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Phone Number</mat-label>
+                <input matInput placeholder="Ex. 867 5309" formControlName="phoneNumber" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Address</mat-label>
+                <input matInput placehodler="Ex. 12 Brooklyn Street" formControlName="address" required>
             </mat-form-field>
             <div>
-                <a routerLink="/session/signin">Back To Sign In</a>
-                <button mat-button type="submit" matStepperNext>Next</button>
+                <a routerLink="/session/signin">Sign In</a>
+                <button mat-button (click)="registerAccount()" matStepperNext>Create Account</button>
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
-        <form [formGroup]="secondFormGroup" (ngSubmit)="formSubmitTwo">
+    <mat-step [stepControl]="secondFormGroup" label="Sign In">
+        <form [formGroup]="secondFormGroup">
             <mat-form-field>
-                <mat-label>Address</mat-label>
-                <input matInput formControlName="secondCtrl" placeholder="Ex. 123 Test Street" required>
+                <mat-label>Username</mat-label>
+                <input matInput formControlName="username" placeholder="Ex. spidermonkey25" required>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" placeholder="Ex. Password" required>
             </mat-form-field>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button type="submit" matStepperNext>Next</button>
+                <button mat-button matStepperPrevious>Create Account</button>
+                <button mat-button (click)="signIn()" matStepperNext>Sign In</button>
             </div>
         </form>
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>You're Signed In!</ng-template>
-        <p>You are now done.</p>
-        <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
-         </div>
+        <button mat-button (click)="go()">Go To Account Area</button>
     </mat-step>
 </mat-horizontal-stepper>

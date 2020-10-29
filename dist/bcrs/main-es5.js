@@ -1255,56 +1255,71 @@
       /* harmony import */
 
 
-      var _angular_material_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-      /*! @angular/material/card */
-      "Wp6s");
+      var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ngx-cookie-service */
+      "b6Qw");
       /* harmony import */
 
 
-      var _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-      /*! @angular/material/stepper */
-      "xHqg");
-      /* harmony import */
-
-
-      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-      /*! @angular/material/form-field */
-      "kmnG");
-      /* harmony import */
-
-
-      var _angular_material_input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-      /*! @angular/material/input */
-      "qFsG");
-      /* harmony import */
-
-
-      var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/router */
       "tyNb");
       /* harmony import */
 
 
-      var _angular_material_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/common/http */
+      "tk/3");
+      /* harmony import */
+
+
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! @angular/material/card */
+      "Wp6s");
+      /* harmony import */
+
+
+      var _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! @angular/material/stepper */
+      "xHqg");
+      /* harmony import */
+
+
+      var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! @angular/material/form-field */
+      "kmnG");
+      /* harmony import */
+
+
+      var _angular_material_input__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+      /*! @angular/material/input */
+      "qFsG");
+      /* harmony import */
+
+
+      var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/material/button */
       "bTqV");
 
       function CreateAccountComponent_ng_template_8_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, "Fill out your name");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, "Register Account");
         }
       }
 
-      function CreateAccountComponent_ng_template_30_Template(rf, ctx) {
+      function CreateAccountComponent_ng_template_55_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](0, "You're Signed In!");
         }
       }
 
       var CreateAccountComponent = /*#__PURE__*/function () {
-        function CreateAccountComponent(fb) {
+        function CreateAccountComponent(cookieService, router, http, fb) {
           _classCallCheck(this, CreateAccountComponent);
 
+          this.cookieService = cookieService;
+          this.router = router;
+          this.http = http;
           this.fb = fb;
         }
 
@@ -1312,23 +1327,62 @@
           key: "ngOnInit",
           value: function ngOnInit() {
             this.firstFormGroup = this.fb.group({
-              firstCtrl: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
+              username: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+              password: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+              firstName: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+              lastName: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+              phoneNumber: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+              address: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
             });
             this.secondFormGroup = this.fb.group({
-              secondCtrl: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
+              username: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
+              password: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
             });
           }
         }, {
-          key: "formSubmitOne",
-          value: function formSubmitOne() {
-            var firstInput = this.firstFormGroup.get('firstCtrl').value;
-            console.log(firstInput);
+          key: "registerAccount",
+          value: function registerAccount() {
+            var newUser = {
+              username: this.firstFormGroup.get('username').value,
+              password: this.firstFormGroup.get('password').value,
+              firstName: this.firstFormGroup.get('firstName').value,
+              lastName: this.firstFormGroup.get('lastName').value,
+              phoneNumber: this.firstFormGroup.get('phoneNumber').value,
+              address: this.firstFormGroup.get('address').value
+            };
+            this.http.post('/api/users', newUser).subscribe(function (err) {
+              if (err) {
+                console.log(err);
+              } else {
+                console.log(newUser);
+              }
+            });
+            this.firstFormGroup.reset();
           }
         }, {
-          key: "formSubmitTwo",
-          value: function formSubmitTwo() {
-            var secondInput = this.secondFormGroup.get('secondCtrl').value;
-            console.log(secondInput);
+          key: "signIn",
+          value: function signIn() {
+            var _this5 = this;
+
+            var signInUser = {
+              username: this.secondFormGroup.get('username').value,
+              password: this.secondFormGroup.get('password').value
+            };
+            this.http.post('session/signin', signInUser).subscribe(function (err) {
+              if (err) {
+                console.log(err);
+              } else {
+                _this5.cookieService.set('sessionuser', signInUser.username, 1);
+
+                console.log(signInUser);
+              }
+            });
+            this.secondFormGroup.reset();
+          }
+        }, {
+          key: "go",
+          value: function go() {
+            this.router.navigate(['/']);
           }
         }]);
 
@@ -1336,7 +1390,7 @@
       }();
 
       CreateAccountComponent.ɵfac = function CreateAccountComponent_Factory(t) {
-        return new (t || CreateAccountComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]));
+        return new (t || CreateAccountComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]));
       };
 
       CreateAccountComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({
@@ -1348,13 +1402,11 @@
             displayDefaultIndicatorType: false
           }
         }])],
-        decls: 38,
+        decls: 58,
         vars: 4,
-        consts: [["color", "primary", 2, "text-align", "center"], ["stepper", ""], [3, "stepControl"], [3, "formGroup", "ngSubmit"], ["matStepLabel", ""], ["matInput", "", "placeholder", "Last name, Fist name", "formControlName", "firstCtrl", "required", ""], ["routerLink", "/session/signin"], ["mat-button", "", "type", "submit", "matStepperNext", ""], ["label", "Fill out your address", 3, "stepControl"], ["matInput", "", "formControlName", "secondCtrl", "placeholder", "Ex. 123 Test Street", "required", ""], ["mat-button", "", "matStepperPrevious", ""], ["mat-button", "", 3, "click"]],
+        consts: [["color", "primary", 2, "text-align", "center"], ["stepper", ""], [3, "stepControl"], [3, "formGroup"], ["matStepLabel", ""], ["matInput", "", "placeholder", "Ex. thespidermonkey25", "formControlName", "username", "required", ""], ["matInput", "", "placeholder", "Ex. root", "formControlName", "password", "required", ""], ["matInput", "", "placeholder", "Ex. Peter", "formControlName", "firstName", "required", ""], ["matInput", "", "placeholder", "Ex. Parker", "formControlName", "lastName", "required", ""], ["matInput", "", "placeholder", "Ex. 867 5309", "formControlName", "phoneNumber", "required", ""], ["matInput", "", "placehodler", "Ex. 12 Brooklyn Street", "formControlName", "address", "required", ""], ["routerLink", "/session/signin"], ["mat-button", "", "matStepperNext", "", 3, "click"], ["label", "Sign In", 3, "stepControl"], ["matInput", "", "formControlName", "username", "placeholder", "Ex. spidermonkey25", "required", ""], ["matInput", "", "formControlName", "password", "placeholder", "Ex. Password", "required", ""], ["mat-button", "", "matStepperPrevious", ""], ["mat-button", "", 3, "click"]],
         template: function CreateAccountComponent_Template(rf, ctx) {
           if (rf & 1) {
-            var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-card");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "mat-card-title");
@@ -1375,17 +1427,13 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](7, "form", 3);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngSubmit", function CreateAccountComponent_Template_form_ngSubmit_7_listener() {
-              return ctx.formSubmitOne;
-            });
-
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](8, CreateAccountComponent_ng_template_8_Template, 1, 0, "ng-template", 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](9, "mat-form-field");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](10, "mat-label");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Name");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](11, "Username");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -1393,97 +1441,155 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "div");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](13, "mat-form-field");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "a", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](14, "mat-label");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, "Back To Sign In");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](16, "button", 7);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](17, "Next");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](15, "Password");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](16, "input", 6);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](17, "mat-form-field");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "mat-step", 8);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](18, "mat-label");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](19, "form", 3);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("ngSubmit", function CreateAccountComponent_Template_form_ngSubmit_19_listener() {
-              return ctx.formSubmitTwo;
-            });
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](20, "mat-form-field");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "mat-label");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](22, "Address");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](19, "First Name");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](23, "input", 9);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](20, "input", 7);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](24, "div");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](21, "mat-form-field");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](25, "button", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](22, "mat-label");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](26, "Back");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](27, "button", 7);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](28, "Next");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](23, "Last Name");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](24, "input", 8);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](25, "mat-form-field");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](26, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](27, "Phone Number");
+
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](29, "mat-step");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](28, "input", 9);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](30, CreateAccountComponent_ng_template_30_Template, 1, 0, "ng-template", 4);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](31, "p");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](29, "mat-form-field");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](32, "You are now done.");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](30, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](31, "Address");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](32, "input", 10);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](33, "div");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](34, "button", 10);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](34, "a", 11);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](35, "Back");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](35, "Sign In");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "button", 11);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "button", 12);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function CreateAccountComponent_Template_button_click_36_listener() {
-              _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r3);
-
-              var _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵreference"](5);
-
-              return _r0.reset();
+              return ctx.registerAccount();
             });
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](37, "Reset");
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](37, "Create Account");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](38, "mat-step", 13);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](39, "form", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](40, "mat-form-field");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](41, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](42, "Username");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](43, "input", 14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](44, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](45, "mat-form-field");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](46, "mat-label");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](47, "Password");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](48, "input", 15);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](49, "div");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](50, "button", 16);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](51, "Create Account");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](52, "button", 12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function CreateAccountComponent_Template_button_click_52_listener() {
+              return ctx.signIn();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](53, "Sign In");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](54, "mat-step");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](55, CreateAccountComponent_ng_template_55_Template, 1, 0, "ng-template", 4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](56, "button", 17);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function CreateAccountComponent_Template_button_click_56_listener() {
+              return ctx.go();
+            });
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](57, "Go To Account Area");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -1501,7 +1607,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.firstFormGroup);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](11);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](31);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("stepControl", ctx.secondFormGroup);
 
@@ -1510,7 +1616,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("formGroup", ctx.secondFormGroup);
           }
         },
-        directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_3__["MatCardTitle"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__["MatHorizontalStepper"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__["MatStep"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__["MatStepLabel"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_6__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["RequiredValidator"], _angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterLinkWithHref"], _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButton"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__["MatStepperNext"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_4__["MatStepperPrevious"]],
+        directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardTitle"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__["MatHorizontalStepper"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__["MatStep"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroupDirective"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__["MatStepLabel"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatFormField"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_8__["MatLabel"], _angular_material_input__WEBPACK_IMPORTED_MODULE_9__["MatInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlName"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["RequiredValidator"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterLinkWithHref"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButton"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__["MatStepperNext"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_7__["MatStepperPrevious"]],
         styles: ["mat-horizontal-stepper[_ngcontent-%COMP%] {\n    margin-top: 100px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvY3JlYXRlLWFjY291bnQvY3JlYXRlLWFjY291bnQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGlCQUFpQjtBQUNyQiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2NyZWF0ZS1hY2NvdW50L2NyZWF0ZS1hY2NvdW50LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJtYXQtaG9yaXpvbnRhbC1zdGVwcGVyIHtcbiAgICBtYXJnaW4tdG9wOiAxMDBweDtcbn0iXX0= */"]
       });
       /*@__PURE__*/
@@ -1531,6 +1637,12 @@
           }]
         }], function () {
           return [{
+            type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"]
+          }, {
+            type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
+          }, {
+            type: _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClient"]
+          }, {
             type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]
           }];
         }, null);
@@ -3258,7 +3370,7 @@
 
       var RolemanagementComponent = /*#__PURE__*/function () {
         function RolemanagementComponent(http, dialog, roleServce) {
-          var _this5 = this;
+          var _this6 = this;
 
           _classCallCheck(this, RolemanagementComponent);
 
@@ -3272,7 +3384,7 @@
             */
 
           this.roleServce.findAllRoles().subscribe(function (res) {
-            _this5.roleDataSource = res['data']; //console.log(this.roleDataSource);
+            _this6.roleDataSource = res['data']; //console.log(this.roleDataSource);
           }, function (err) {
             console.log(err);
           });
@@ -3292,7 +3404,7 @@
         }, {
           key: "createRole",
           value: function createRole() {
-            var _this6 = this;
+            var _this7 = this;
 
             var dialogRef = this.dialog.open(_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_2__["CreateRoleDialogComponent"], {
               data: {},
@@ -3302,8 +3414,8 @@
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'create') {
                 //update the list
-                _this6.roleServce.findAllRoles().subscribe(function (res) {
-                  _this6.roleDataSource = res['data']; //console.log(this.roleDataSource);
+                _this7.roleServce.findAllRoles().subscribe(function (res) {
+                  _this7.roleDataSource = res['data']; //console.log(this.roleDataSource);
                 }, function (err) {
                   console.log(err);
                 });
@@ -3314,7 +3426,7 @@
         }, {
           key: "updateRole",
           value: function updateRole(data) {
-            var _this7 = this;
+            var _this8 = this;
 
             console.log(data);
             var dialogRef = this.dialog.open(_dialogs_update_role_dialog_update_role_dialog_component__WEBPACK_IMPORTED_MODULE_3__["UpdateRoleDialogComponent"], {
@@ -3327,8 +3439,8 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'update') {
-                _this7.roleServce.findAllRoles().subscribe(function (res) {
-                  _this7.roleDataSource = res['data']; //console.log(this.roleDataSource);
+                _this8.roleServce.findAllRoles().subscribe(function (res) {
+                  _this8.roleDataSource = res['data']; //console.log(this.roleDataSource);
                 }, function (err) {
                   console.log(err);
                 });
@@ -3339,7 +3451,7 @@
         }, {
           key: "deleteRole",
           value: function deleteRole(roleId) {
-            var _this8 = this;
+            var _this9 = this;
 
             var dialogRef = this.dialog.open(_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_1__["DeleteRecordDialogComponentComponent"], {
               data: {
@@ -3352,12 +3464,12 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'confirm') {
-                _this8.roleServce.deleteRole(roleId).subscribe(function (res) {
+                _this9.roleServce.deleteRole(roleId).subscribe(function (res) {
                   //console.log('Role successfully deleted')
                   //make another call to update the list
-                  _this8.roleServce.findAllRoles().subscribe(function (res) {
-                    _this8.roleDataSource = res['data'];
-                    console.log(_this8.roleDataSource);
+                  _this9.roleServce.findAllRoles().subscribe(function (res) {
+                    _this9.roleDataSource = res['data'];
+                    console.log(_this9.roleDataSource);
                   }, function (err) {
                     console.log(err);
                   });
@@ -4211,7 +4323,7 @@
         }, {
           key: "signin",
           value: function signin() {
-            var _this9 = this;
+            var _this10 = this;
 
             var username = this.form.controls.userName.value;
             var password = this.form.controls.password.value;
@@ -4225,14 +4337,14 @@
 
               if (res['data'].username) {
                 //user authenticated
-                _this9.cookieService.set('sessionuser', res['data'].username, 1);
+                _this10.cookieService.set('sessionuser', res['data'].username, 1);
 
-                _this9.router.navigate(['/']);
+                _this10.router.navigate(['/']);
               }
             }, function (err) {
-              _this9.errorMessage = 'Invalid username or password. Try again.';
+              _this10.errorMessage = 'Invalid username or password. Try again.';
 
-              _this9.openSnackBar(_this9.errorMessage);
+              _this10.openSnackBar(_this10.errorMessage);
             });
           }
         }, {
@@ -6346,7 +6458,7 @@
 
       var SecurityquestionmanagementComponent = /*#__PURE__*/function () {
         function SecurityquestionmanagementComponent(http, dialog, securityQuestionService) {
-          var _this10 = this;
+          var _this11 = this;
 
           _classCallCheck(this, SecurityquestionmanagementComponent);
 
@@ -6358,7 +6470,7 @@
           this.securityQuestionService = securityQuestionService;
           this.displayedColumns = ["question", "status", "action"];
           this.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-            _this10.securityQuestions = res["data"];
+            _this11.securityQuestions = res["data"];
             console.log(res); //console.log(this.securityQuestionService);
           }, function (err) {
             console.log(err);
@@ -6378,7 +6490,7 @@
         }, {
           key: "createSecurityQuestion",
           value: function createSecurityQuestion() {
-            var _this11 = this;
+            var _this12 = this;
 
             var dialogRef = this.dialog.open(_dialogs_create_securityquestion_dialog_create_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_2__["CreateSecurityquestionDialogComponent"], {
               data: {},
@@ -6387,9 +6499,9 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'create') {
-                _this11.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                  _this11.securityQuestions = res['data'];
-                  console.log(_this11.securityQuestions);
+                _this12.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                  _this12.securityQuestions = res['data'];
+                  console.log(_this12.securityQuestions);
                 }, function (err) {
                   console.log(err);
                 });
@@ -6400,7 +6512,7 @@
         }, {
           key: "updateSecurityQuestion",
           value: function updateSecurityQuestion(data) {
-            var _this12 = this;
+            var _this13 = this;
 
             console.log(data);
             var dialogRef = this.dialog.open(_dialogs_update_securityquestion_dialog_update_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_3__["UpdateSecurityquestionDialogComponent"], {
@@ -6413,9 +6525,9 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'update') {
-                _this12.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                  _this12.securityQuestions = res['data'];
-                  console.log(_this12.securityQuestions);
+                _this13.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                  _this13.securityQuestions = res['data'];
+                  console.log(_this13.securityQuestions);
                 }, function (err) {
                   console.log(err);
                 });
@@ -6426,7 +6538,7 @@
         }, {
           key: "deleteSecurityQuestion",
           value: function deleteSecurityQuestion(questionId) {
-            var _this13 = this;
+            var _this14 = this;
 
             var dialogRef = this.dialog.open(_dialogs_delete_securityquestion_dialog_delete_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_1__["DeleteSecurityquestionDialogComponent"], {
               data: {
@@ -6441,12 +6553,12 @@
               if (result == 'confirm') {
                 console.log(questionId);
 
-                _this13.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
+                _this14.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
                   console.log('Security question successfully disabled');
 
-                  _this13.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                    _this13.securityQuestions = res['data'];
-                    console.log(_this13.securityQuestions);
+                  _this14.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                    _this14.securityQuestions = res['data'];
+                    console.log(_this14.securityQuestions);
                   }, function (err) {
                     console.log(err);
                   });
@@ -7073,12 +7185,12 @@
         _createClass(UserManagementComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this14 = this;
+            var _this15 = this;
 
             //Begin Brendans code
             this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
-              _this14.users = data['data'];
-              console.log(_this14.users);
+              _this15.users = data['data'];
+              console.log(_this15.users);
             }); //end Brendans code
           }
           /**Begin Brendans code */
@@ -7086,7 +7198,7 @@
         }, {
           key: "post",
           value: function post() {
-            var _this15 = this;
+            var _this16 = this;
 
             var dialogRef = this.dialog.open(_dialogs_user_admin_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_2__["PostDialogComponent"], {
               disableClose: true,
@@ -7094,9 +7206,9 @@
             }); //added by JB 10/28. After user is submitted, refresh the user list.
 
             dialogRef.afterClosed().subscribe(function (result) {
-              _this15.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
-                _this15.users = data['data'];
-                console.log(_this15.users);
+              _this16.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
+                _this16.users = data['data'];
+                console.log(_this16.users);
               });
             });
           }

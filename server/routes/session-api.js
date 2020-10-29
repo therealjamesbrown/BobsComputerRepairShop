@@ -87,6 +87,41 @@ let BaseResponse = require('../services/error-response')
      }
  })
 
+
+
+
+ 
+/**
+ * 
+ * VERIFY USER API
+ * By JB
+ * 
+ */
+router.get('/verify/users/:username', async(req, res) => {
+    try {
+        User.findOne({'username': req.params.username}, function(err, user){
+            if(err){
+                console.log(err);
+                const verifyUserMongoDbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
+                res.status(500).send(verifyUserMongoDbErrorResponse.toObject());
+            } else {
+                console.log(user);
+                const verifyUserResponse = new BaseResponse('200', 'Success!', user);
+                res.json(verifyUserResponse.toObject());
+            }
+        })
+
+    } catch(e){
+        console.log(e);
+        const verifyUserCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error', e.message);
+        res.status(500).send(verifyUserCatchErrorResponse.toObject());
+    }
+})
+
+
+
+
+
  // Password Reset Route
  router.put('/users/:username/reset-password', function(req, res) {
     // Find a user by username

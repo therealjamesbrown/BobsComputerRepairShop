@@ -75,6 +75,36 @@ router.get('/:id', async(req, res) => {
       res.status(500).send(errorCatchResponse.toObject());
     }
   });
+
+
+/**
+ * 
+ * FindSelectedSecurityQuestion
+ * 
+ */
+router.get('/:username/security-questions', async(req, res) => {
+    try {
+        User.findOne({'username': req.params.username}, function(err, user) {
+            if(err){
+                console.log(err);
+                const findSelectedSecurityQuestionsMongoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err);
+                res.status(500).send(findSelectedSecurityQuestionsMongoDbErrorResponse.toObject());
+            } else {
+                console.log(user);
+                const findSelectedSecurityQuestionsResponse = new BaseResponse('200', 'Query Successful', user.securityQuestions);
+                res.json(findSelectedSecurityQuestionsResponse.toObject());
+            }
+        })
+    } catch(e) {
+        console.log(e);
+        const findSelectedSecurityQuestionsCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error', e.message);
+        res.status(500).send(findSelectedSecurityQuestionsCatchErrorResponse.toObject());
+    }
+})
+
+
+
+
 /**
  * 
  * --Find Security Questions by ID--

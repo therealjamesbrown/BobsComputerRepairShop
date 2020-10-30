@@ -7,7 +7,7 @@
             <h1> Welcome, {{user}}!</h1>
           </div>
 
-          <div fxFlex class="childColumnContainers" *ngIf="!(hide)">
+          <div fxFlex class="childColumnContainers" *ngIf="ad != false && !adCookie">
             <mat-card>
               <mat-card-content class="ad" (click)="hideAd()">
                 Ad goes here
@@ -40,6 +40,18 @@
               </div>
             </div>
           </div>
+
+
+
+          <div fxFlex class="childColumnContainers">
+            <mat-card>
+              <mat-card-content class="ad">
+                <h3>Purchases By Graph</h3>
+                Coming soon
+              </mat-card-content>
+            </mat-card>
+          </div>
+
 
           <div fxFlex class="childColumnContainers">
             <mat-card>

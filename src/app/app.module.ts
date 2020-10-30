@@ -70,7 +70,7 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { CreateorderComponent } from './pages/home/createorder/createorder.component';
 import { OrderhistoryComponent } from './pages/home/orderhistory/orderhistory.component';
-
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -139,7 +139,8 @@ import { OrderhistoryComponent } from './pages/home/orderhistory/orderhistory.co
   providers: [ {
     provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
   },
-  CookieService ],
+  CookieService,
+  DatePipe  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

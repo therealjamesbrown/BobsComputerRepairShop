@@ -7,9 +7,9 @@
             <h1> Welcome, {{user}}!</h1>
           </div>
 
-          <div fxFlex class="childColumnContainers">
+          <div fxFlex class="childColumnContainers" *ngIf="!(hide)">
             <mat-card>
-              <mat-card-content class="ad">
+              <mat-card-content class="ad" (click)="hideAd()">
                 Ad goes here
                 <button 
                 mat-raised-button 
@@ -21,7 +21,7 @@
           </div>
 
           <div fxFlex class="childColumnContainers">
-            <div fxLayout="row" fxLayoutGap="10px">
+            <div fxLayout="row wrap" fxLayoutGap="10px">
               <div fxFlex>
                 <mat-card>
                   <mat-card-content>
@@ -44,8 +44,8 @@
           <div fxFlex class="childColumnContainers">
             <mat-card>
               <mat-card-content class="ad">
-                
-                <p>Contact</p>
+                <h3>Questions?</h3>
+                <p routerLink="/contact" class="contact">Contact</p>
               </mat-card-content>
             </mat-card>
           </div>

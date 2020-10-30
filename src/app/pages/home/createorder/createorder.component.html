@@ -1,4 +1,4 @@
-<p>Items</p> 
+<p>Create Order</p> 
 
 <table mat-table [dataSource]="catalogDataSource" class="mat-elevation-z8">
 
@@ -17,13 +17,11 @@
         <td mat-cell *matCellDef="let element"> {{element.price | currency}} </td>
       </ng-container>
 
-    <!-- Status Column-->
+    <!-- Checkbox Column -->
     <ng-container matColumnDef="select">
-        <th mat-header-cell *matHeaderCellDef></th>
-        <td mat-cell *matCellDef="let element">
-            <mat-checkbox fxFlex class="checkbox primary" appearance="fill" >
-                <input type="checkbox"/> 
-               </mat-checkbox>
+        <th mat-header-cell *matHeaderCellDef> Select </th>
+        <td mat-cell *matCellDef="let element"> 
+            <mat-checkbox></mat-checkbox>
         </td>
       </ng-container>
   

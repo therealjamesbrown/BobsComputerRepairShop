@@ -22,7 +22,8 @@ import { CookieService } from 'ngx-cookie-service';
 export class HomeComponent implements OnInit {
 //get the user and welcome them
 user: any = this.CookieService.get('sessionuser');
-
+ad: any;
+hide = false;
 
   constructor(private CookieService: CookieService) {
   
@@ -30,5 +31,9 @@ user: any = this.CookieService.get('sessionuser');
 
   ngOnInit(): void {
   }
+
+hideAd(){
+ this.hide = !this.hide
+}
 
 }

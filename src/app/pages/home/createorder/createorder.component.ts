@@ -13,8 +13,9 @@ import { Catalog } from '../../administration/interfaces/catalog.interface';
 })
 export class CreateorderComponent implements OnInit {
   catalogDataSource: Catalog[];
-  displayedColumns: string[] = ['title', 'price'];
+  displayedColumns: string[] = ['title', 'price', 'select'];
   actions: string[] = ['update', 'disable'];
+  checked: any = false;
 
   constructor(private http: HttpClient, private catalogService: CatalogService) {
 

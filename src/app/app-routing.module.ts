@@ -27,7 +27,7 @@ import { ErrorComponent } from './pages/error/error.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 const routes: Routes = [
-  {
+  {//path for logged in users
     path: '',
     component: BaseLayoutComponent,
     children: [
@@ -62,7 +62,7 @@ const routes: Routes = [
     ],
         canActivate: [AuthGuard]
   },
-  {
+  {//path for not logged in users
     path: 'session',
     component: AuthLayoutComponent,
     children: [

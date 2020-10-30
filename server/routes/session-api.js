@@ -88,6 +88,69 @@ let BaseResponse = require('../services/error-response')
  })
 
 
+ /**
+* 
+* --Create User for Registration --
+* Added by SK
+*/
+router.post('/register', async(req, res) => {
+    try{
+
+        User.findOne({'userName': req.body.username}, function(err, user)
+        {
+            if (err)
+            {
+                console.log(err);
+                const registerUserMongoDbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
+                res.status(500).send(registerUserMongoDbErrorResponse.toObject());
+            }
+            else 
+            {
+                if (!user)
+                {
+                    let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds);
+                    standardRole = {
+                        role: 'standard'
+                    }
+
+            let registeredUser = {
+            username:    req.body.username,
+            password:    hashedPassword,
+            firstName:   req.body.firstName,
+            lastName:    req.body.lastName,
+            phoneNumber: req.body.phoneNumber,
+            address:     req.body.address,
+            email:       req.body.email,
+            role:        standardRole, 
+            securityQuestions: req.body.securityQuestions
+        };
+
+        User.create(registeredUser, function(err, newUser){
+            if(err){
+                console.log(err);
+                const newUserMongoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error!', err);
+                res.status(500).send(newUserMongoDbErrorResponse.toObject());
+            } else {
+                console.log(newUser);
+                const registeredUserResponse = new BaseResponse('200', 'Success!', newUser);
+                res.json(registeredUserResponse.toObject());
+            }
+        })
+    }
+    else {
+        console.log('The provided username already exists in our system');
+        const userAlreadyExistsErrorResponse = new ErrorResponse('500', 'User already exists in our system', null);
+        res.status(500).send(userAlreadyExistsErrorResponse.toObject());
+    }
+}
+        })
+        
+    } catch(e){
+        console.log(e);
+        const registerUserCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error', e.message);
+        res.status(500).send(registerUserCatchErrorResponse.toObject());
+    }
+});
 
 
  

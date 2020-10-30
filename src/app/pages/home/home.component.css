@@ -1,14 +1,21 @@
-.main-welcome {
-    margin-top: 30px;
-  }
-  
-  .title {
-    text-align: center;
-    font-weight: lighter;
-  }
-  
-  .subtitle {
-    text-align: center;
-    font-size: 14px;
-  }
-  
+.outerContainer {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.childColumnContainers{
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.ad{
+  text-align: center;
+}
+
+.adButton{
+  float: right;
+  width: 1px;
+  background-color: #0d48a156;
+  color: rgba(255, 255, 255, 0.61);
+}
+

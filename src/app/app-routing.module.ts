@@ -20,7 +20,6 @@ import { AuthGuard } from './shared/auth.guard';
 import { AdministrationComponent } from './pages/administration/administration.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { PricingComponent } from './pages/pricing/pricing.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
 import { ErrorComponent } from './pages/error/error.component';
@@ -38,10 +37,6 @@ const routes: Routes = [
       {
         path: 'about',
         component: AboutComponent
-      },
-      {
-        path: 'pricing',
-        component: PricingComponent
       },
       {
         path: 'contact',

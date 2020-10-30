@@ -38,7 +38,6 @@ import { MatListModule } from '@angular/material/list';
 import { AdministrationComponent } from './pages/administration/administration.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { PricingComponent } from './pages/pricing/pricing.component';
 import { AboutComponent } from './pages/about/about.component';
 import { MatTableModule } from '@angular/material/table';
 import { PostDialogComponent } from '../app/pages/administration/dialogs/user-admin-post-dialog/post-dialog.component';
@@ -49,7 +48,6 @@ import { CatalogmanagementComponent } from './pages/administration/catalogmanage
 import { PurchasegraphComponent } from './pages/administration/purchasegraph/purchasegraph.component';
 import { SecurityquestionmanagementComponent } from './pages/administration/securityquestionmanagement/securityquestionmanagement.component';
 import { UserManagementComponent } from '../app/pages/administration/usermanagement/usermanagement.component';
-import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { DeleteRecordDialogComponentComponent } from './pages/administration/rolemanagement/delete-record-dialog-component/delete-record-dialog-component.component';
 import { CreateRoleDialogComponent } from './pages/administration/dialogs/create-role-dialog/create-role-dialog.component';
@@ -69,7 +67,9 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ErrorInterceptor } from './shared/error.interceptor';
 import { ErrorComponent } from './pages/error/error.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { CreateorderComponent } from './pages/home/createorder/createorder.component';
+import { OrderhistoryComponent } from './pages/home/orderhistory/orderhistory.component';
 
 
 
@@ -83,7 +83,6 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
     AdministrationComponent,
     ProfileComponent,
     ContactComponent,
-    PricingComponent,
     AboutComponent,
     PostDialogComponent,
     PutDialogComponent,
@@ -105,7 +104,9 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
     UpdateSecurityquestionDialogComponent,
     CreateAccountComponent,
     ErrorComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    CreateorderComponent,
+    OrderhistoryComponent
   ],
   imports: [
     BrowserModule,

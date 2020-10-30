@@ -12,6 +12,7 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-home',
@@ -19,8 +20,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+//get the user and welcome them
+user: any = this.CookieService.get('sessionuser');
 
-  constructor() { }
+
+  constructor(private CookieService: CookieService) {
+  
+   }
 
   ngOnInit(): void {
   }

@@ -1,8 +1,56 @@
-<div fxLayout="column" class="main-welcome">
-  <h1 class="title">
-    Welcome to WEB 450's - Bob's Computer Repair Shop <br />
-    <span class="subtitle">
-      Pay close attention to the requirements, double and triple check the files for code attribution, and do not wait unitl the last minute to begin working on each item.
-    </span>
-  </h1>
+<div fxLayout="column" class="outerContainer">
+  <div fxFlex>
+    <mat-card>
+      <mat-card-content>
+        <div fxLayout="column">
+          <div fxFlex class="childColumnContainers">
+            <h1> Welcome, {{user}}!</h1>
+          </div>
+
+          <div fxFlex class="childColumnContainers">
+            <mat-card>
+              <mat-card-content class="ad">
+                Ad goes here
+                <button 
+                mat-raised-button 
+                class="adButton">X</button>
+                <br>
+                <p>Terms and conditions apply.</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+
+          <div fxFlex class="childColumnContainers">
+            <div fxLayout="row" fxLayoutGap="10px">
+              <div fxFlex>
+                <mat-card>
+                  <mat-card-content>
+                    <app-createorder></app-createorder>
+                  </mat-card-content>
+                </mat-card>
+              
+              </div>
+              <div fxFlex>
+                <mat-card>
+                  <mat-card-content>
+                    <app-orderhistory></app-orderhistory>
+                  </mat-card-content>
+                </mat-card>
+                
+              </div>
+            </div>
+          </div>
+
+          <div fxFlex class="childColumnContainers">
+            <mat-card>
+              <mat-card-content class="ad">
+                
+                <p>Contact</p>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

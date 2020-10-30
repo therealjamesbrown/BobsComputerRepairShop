@@ -23,7 +23,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SigninComponent } from './pages/signin/signin.component';
 import { MatCardModule } from '@angular/material/card';
@@ -36,7 +36,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { AdministrationComponent } from './pages/administration/administration.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PricingComponent } from './pages/pricing/pricing.component';
@@ -64,9 +63,16 @@ import { CreateCatalogItemComponent } from './pages/administration/dialogs/creat
 import { UpdateCatalogItemComponent } from './pages/administration/dialogs/update-catalog-item/update-catalog-item.component';
 import { DeleteCatalogItemComponent } from './pages/administration/dialogs/delete-catalog-item/delete-catalog-item.component';
 import { UpdateSecurityquestionDialogComponent } from './pages/administration/dialogs/update-securityquestion-dialog/update-securityquestion-dialog.component';
-import { CreateAccountComponent } from './pages/create-account/create-account.component'
-import { MatStepperModule } from '@angular/material/stepper'
-import { ScrollingModule } from '@angular/cdk/scrolling'
+import { CreateAccountComponent } from './pages/create-account/create-account.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { ErrorInterceptor } from './shared/error.interceptor';
+import { ErrorComponent } from './pages/error/error.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +81,6 @@ import { ScrollingModule } from '@angular/cdk/scrolling'
     AuthLayoutComponent,
     SigninComponent,
     AdministrationComponent,
-    NotFoundComponent,
     ProfileComponent,
     ContactComponent,
     PricingComponent,
@@ -98,7 +103,9 @@ import { ScrollingModule } from '@angular/cdk/scrolling'
     UpdateCatalogItemComponent,
     DeleteCatalogItemComponent,
     UpdateSecurityquestionDialogComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    ErrorComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -128,7 +135,10 @@ import { ScrollingModule } from '@angular/cdk/scrolling'
     MatStepperModule,
     ScrollingModule
   ],
-  providers: [ CookieService ],
+  providers: [ {
+    provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
+  },
+  CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

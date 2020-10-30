@@ -18,12 +18,13 @@ import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component'
 import { SigninComponent } from './pages/signin/signin.component';
 import { AuthGuard } from './shared/auth.guard';
 import { AdministrationComponent } from './pages/administration/administration.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { PricingComponent } from './pages/pricing/pricing.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
+import { ErrorComponent } from './pages/error/error.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 const routes: Routes = [
   {
@@ -56,7 +57,7 @@ const routes: Routes = [
       },
       {
         path: 'not-found',
-        component: NotFoundComponent
+        component: NotfoundComponent
       }
     ],
         canActivate: [AuthGuard]
@@ -72,12 +73,20 @@ const routes: Routes = [
       {
         path:'createAccount',
         component: CreateAccountComponent
+      },
+      {
+        path: '404',
+        component: NotfoundComponent
+      },
+      {
+        path: '500',
+        component: ErrorComponent
       }
     ]
   },
   {
     path: '**',
-    redirectTo: '/not-found'
+    redirectTo: 'session/404'
   }
 ];
 

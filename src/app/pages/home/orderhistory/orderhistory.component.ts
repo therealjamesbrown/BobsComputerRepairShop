@@ -16,6 +16,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CookieService } from 'ngx-cookie-service';
 import { Invoice } from '../../../shared/invoice.interface';
 import { PurchasehistoryService } from '../../services/purchasehistory.service';
+import { ViewtransactiondialogComponent } from '../dialogs/orderhistory/viewtransactiondialog/viewtransactiondialog.component';
 
 
 @Component({
@@ -38,6 +39,7 @@ export class OrderhistoryComponent implements OnInit {
    
   this.purchaseHistoryService.findAllPurchasesByUserName(this.username).subscribe(res => {
     this.purchaseHistoryDataSource = res['data'];
+    //console.log(this.purchaseHistoryDataSource);
   }, err => {
     console.log(err);
   })
@@ -49,7 +51,16 @@ export class OrderhistoryComponent implements OnInit {
 
 //view transaction details
 viewTransactionDetails(transaction){
-  //const dialogRef = this.dialog.open()
+  console.log(transaction);
+  const dialogRef = this.dialog.open(ViewtransactiondialogComponent, {
+    data: transaction,
+    disableClose: true,
+    width: '800px'
+  })
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('closed');
+  })
 }
 
 }

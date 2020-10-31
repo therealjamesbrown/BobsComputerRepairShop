@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-card-content>
+<h1 mat-dialog-title>Transaction Details</h1>
+<mat-dialog-content class="mat-typography">
+  <mat-list>
+      <div FxLayout="column">
+      <div fxFlex class="lineItemOuter">
+      <mat-list-item>Line Items:
+          <mat-list class="innerLineItem">
+              <div fxLayout="column">
+                <div fxFlex *ngFor="let item of transaction.lineItem">
+                    <mat-list-item>Title:{{item.title}}<br />Amount:{{item.price | currency}}</mat-list-item>
+                </div>
+            </div>
+          </mat-list>
+        </mat-list-item>
+    </div>
+    <div fxFlex>
+      <mat-list-item>Line Item Total: {{transaction.lineItemTotal | currency}}</mat-list-item>
+      <mat-list-item>Order Date: {{transaction.orderDate}}</mat-list-item>
+      <mat-list-item>Parts Amount: {{transaction.partsAmount | currency}}</mat-list-item>
+      <mat-list-item>Labor Amount: {{transaction.laborAmount | currency}}</mat-list-item>
+    </div>
+</div>
+  </mat-list>
+<h3 align="end"><strong>Grand Total: {{transaction.total | currency}}</strong></h3>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button [mat-dialog-close]="false" color="primary">Close</button>
+</mat-dialog-actions>
+</mat-card-content>
+</mat-card>

@@ -71,6 +71,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { CreateorderComponent } from './pages/home/createorder/createorder.component';
 import { OrderhistoryComponent } from './pages/home/orderhistory/orderhistory.component';
 import { DatePipe } from '@angular/common';
+import { VerifyUsernameComponent } from './pages/reset-password/verify-username/verify-username.component';
+import { VerifySecurityQuestionsComponent } from './pages/reset-password/verify-security-questions/verify-security-questions.component'; 
+import { ResetPasswordComponent } from './pages/reset-password/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -106,7 +109,10 @@ import { DatePipe } from '@angular/common';
     ErrorComponent,
     NotfoundComponent,
     CreateorderComponent,
-    OrderhistoryComponent
+    OrderhistoryComponent,
+    VerifyUsernameComponent,
+    VerifySecurityQuestionsComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

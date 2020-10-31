@@ -1,3 +1,15 @@
+/**
+ * 
+ * ================================
+ * ; Title: viewTransactionDialog.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Modified by: James Brown
+ * ; Date: 10/14/2020
+ * ; Description: component responsible for viewing a sepcific transaction
+ * ================================
+ * 
+ */
+
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 

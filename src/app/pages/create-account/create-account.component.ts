@@ -30,6 +30,9 @@ export class CreateAccountComponent implements OnInit {
   thirdFormGroup: FormGroup
   newUser: any
   questions: any
+  securityQuestion1: any
+  securityQuestion2: any
+  securityQuestion3: any
   constructor(private cookieService: CookieService, private router: Router, private http: HttpClient, private fb: FormBuilder) { }
   ngOnInit() {
     this.firstFormGroup = this.fb.group({
@@ -76,14 +79,14 @@ export class CreateAccountComponent implements OnInit {
   }
   setSecurityQuestions() {
    let newSecurityQuestions = {
-     securityQuestion1: this.secondFormGroup.get('securityQuestion1').value,
+     securityQuestion1: this.securityQuestion1,
      secuirtyQuestion1Answer: this.secondFormGroup.get('securityQuestion1Answer').value,
-     securityQuestion2: this.secondFormGroup.get('securityQuestion2').value,
+     securityQuestion2: this.securityQuestion2,
      securityQuestion2Answer: this.secondFormGroup.get('securiyQuestion2Answer').value,
-     securityQuestion3: this.secondFormGroup.get('securityQuestion2').value,
-     secuirtyQuestion3Answer: this.secondFormGroup.get('secuirtyQuestionAnswer3').value
+     securityQuestion3: this.securityQuestion3,
+     secuirtyQuestion3Answer: this.secondFormGroup.get('secuirtyQuestion3Answer').value
    }
-   console.log(newSecurityQuestions)
+   console.log(newSecurityQuestions.securityQuestion1)
   }
   signIn() {
    let signInUser = {

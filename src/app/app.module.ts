@@ -71,6 +71,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { CreateorderComponent } from './pages/home/createorder/createorder.component';
 import { OrderhistoryComponent } from './pages/home/orderhistory/orderhistory.component';
 import { DatePipe } from '@angular/common';
+import { DialogsComponent } from './pages/home/dialogs/dialogs.component';
 
 
 @NgModule({
@@ -106,7 +107,8 @@ import { DatePipe } from '@angular/common';
     ErrorComponent,
     NotfoundComponent,
     CreateorderComponent,
-    OrderhistoryComponent
+    OrderhistoryComponent,
+    DialogsComponent
   ],
   imports: [
     BrowserModule,

@@ -12,10 +12,11 @@
 
 
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { CookieService } from 'ngx-cookie-service';
 import { Invoice } from '../../../shared/invoice.interface';
 import { PurchasehistoryService } from '../../services/purchasehistory.service';
-import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-orderhistory',
@@ -28,14 +29,15 @@ export class OrderhistoryComponent implements OnInit {
   actions: string[] = ['update', 'disable'];
   checked: any = false;
   username: string = this.cookieService.get('sessionuser');
-  
+  dateFormatted;
 
-  constructor(private cookieService: CookieService, private purchaseHistoryService: PurchasehistoryService, private datePipe: DatePipe) {
-    console.log(this.username);
+  constructor(
+    private cookieService: CookieService, 
+    private purchaseHistoryService: PurchasehistoryService,
+    private dialog: MatDialog) {
+   
   this.purchaseHistoryService.findAllPurchasesByUserName(this.username).subscribe(res => {
     this.purchaseHistoryDataSource = res['data'];
-    this.purchaseHistoryDataSource
-    console.log(this.purchaseHistoryDataSource);
   }, err => {
     console.log(err);
   })
@@ -44,5 +46,10 @@ export class OrderhistoryComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+//view transaction details
+viewTransactionDetails(transaction){
+  //const dialogRef = this.dialog.open()
+}
 
 }

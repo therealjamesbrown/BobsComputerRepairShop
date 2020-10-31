@@ -74,6 +74,7 @@ import { DatePipe } from '@angular/common';
 import { VerifyUsernameComponent } from './pages/reset-password/verify-username/verify-username.component';
 import { VerifySecurityQuestionsComponent } from './pages/reset-password/verify-security-questions/verify-security-questions.component'; 
 import { ResetPasswordComponent } from './pages/reset-password/reset-password/reset-password.component';
+import { DialogsComponent } from './pages/home/dialogs/dialogs.component';
 
 
 @NgModule({
@@ -112,7 +113,8 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password/re
     OrderhistoryComponent,
     VerifyUsernameComponent,
     VerifySecurityQuestionsComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    DialogsComponent
   ],
   imports: [
     BrowserModule,

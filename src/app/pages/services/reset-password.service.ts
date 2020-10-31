@@ -16,7 +16,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../../shared/user.interface';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -30,8 +29,8 @@ export class ResetPasswordService {
    * Verify user by username
    * 
    */
-    verifyUsername(): Observable<any> {
-      return this.http.get(`/api/session/verify/users/` /*+ username*/ );
+    verifyUsername(username): Observable<any> {
+      return this.http.get(`/api/session/verify/users/${username}`);
     }
    
 
@@ -40,25 +39,26 @@ export class ResetPasswordService {
     /**
    * 
    * Find an verify security questions by username
+   * //NOT CORRECT YET
    * 
    */
 
-  verifySecurityQuestions(_id: string): Observable<any> {
-    return this.http.get('/api/securityQuestions/' + _id);
+  verifySecurityQuestions(username): Observable<any> {
+    return this.http.get(`/api/session/verify/users/${username}/security-questions`);
   }
-  
+ 
 
  
   /**
    * 
    * Update Password by username
+   * //NOT CORRECT YET
    * 
    */
 
-   updateSecurityQuestion(_id: string, questionId: string, isDisabled: boolean): Observable<any> {
-   return this.http.put('/api/securityQuestions/'+ _id, {
-    questionId,
-    isDisabled
+   updatePassword(password): Observable<any> {
+   return this.http.put('/api/securityQuestions/'+ password, {
+    password
     })
   }
 

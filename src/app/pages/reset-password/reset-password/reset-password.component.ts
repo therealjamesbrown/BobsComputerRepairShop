@@ -15,6 +15,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+//import { UserInterface } from '../../../shared/user.interface';
 import { ViewChild } from '@angular/core';
 import { VerifySecurityQuestionsComponent } from '../verify-security-questions/verify-security-questions.component';
 import { VerifyUsernameComponent } from '../verify-username/verify-username.component';  
@@ -58,6 +59,7 @@ export class ResetPasswordComponent implements OnInit {
 constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private fb: FormBuilder, private cookieService: CookieService) {
    this.isAuthenticated = this.route.snapshot.queryParamMap.get('isAuthenticated');
    this.username = this.route.snapshot.queryParamMap.get('username');
+   console.log(this.username);
 
 //   if(!this.isAuthenticated) {
 //     this.router.navigate(['/session/signin'])
@@ -71,7 +73,7 @@ constructor(private http: HttpClient, private route: ActivatedRoute, private rou
  }
 
  resetPassword() {
-   this.http.post('api/session/users/' + this.username + '/reset-password', {
+   this.http.post('/api/session/users/' + this.username + '/reset-password', {
      password: this.form3.controls['password'].value
    }).subscribe(res => {
      //user authenticated

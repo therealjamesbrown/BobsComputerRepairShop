@@ -37,6 +37,11 @@ export class PurchasehistoryService {
    /**
     * 
     * Archive Transactions
-    * Still need to write the api
+    * 
     */
+    archiveTransaction(invoideId): Observable<any>{
+      return this.http.patch(`/api/invoices/${invoideId}`,{
+        //no need to pass any body
+      })
+    }
 }

@@ -2,7 +2,7 @@
 
 
 
-<table mat-table [dataSource]="purchaseHistoryDataSource" class="mat-elevation-z8">
+<table mat-table [dataSource]="nonArchivedPurchaseHistoryDataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -32,7 +32,7 @@
               <mat-icon>edit</mat-icon>
               <span>View Details</span>
             </button>
-            <button mat-menu-item>
+            <button mat-menu-item (click)="archiveTransraction(element._id)">
               <mat-icon>delete</mat-icon>
               <span>Archive</span>
             </button>

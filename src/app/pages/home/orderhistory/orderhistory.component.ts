@@ -32,6 +32,7 @@ export class OrderhistoryComponent implements OnInit {
   checked: any = false;
   username: string = this.cookieService.get('sessionuser');
   dateFormatted;
+  nonArchivedPurchaseHistoryDataSource: any;
 
   constructor(
     private cookieService: CookieService, 
@@ -40,7 +41,17 @@ export class OrderhistoryComponent implements OnInit {
    
   //populate all the transactions for a user, but we'll filter out the archived ones on the html side
   this.purchaseHistoryService.findAllPurchasesByUserName(this.username).subscribe(res => {
+    
+    //pull back all transactions
     this.purchaseHistoryDataSource = res['data'];
+
+    //filter out the archived transractions and push them into a new datasource array
+    this.nonArchivedPurchaseHistoryDataSource = [];
+    for(let item of this.purchaseHistoryDataSource){
+      if(item.isDisabled != true ){
+        this.nonArchivedPurchaseHistoryDataSource.push(item);
+      }
+    }
     //console.log(this.purchaseHistoryDataSource);
   }, err => {
     console.log(err);
@@ -51,9 +62,11 @@ export class OrderhistoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
-//view transaction details for one transaction
+/*
+Function that allows us to view transaction details for one transaction.
+*/
 viewTransactionDetails(transaction){
-  console.log(transaction);
+  //console.log(transaction);
   const dialogRef = this.dialog.open(ViewtransactiondialogComponent, {
     data: transaction,
     disableClose: true,
@@ -61,11 +74,16 @@ viewTransactionDetails(transaction){
   })
 
   dialogRef.afterClosed().subscribe(result => {
-    console.log('closed');
+   // console.log('closed');
   })
 }
 
-//view all transactions
+
+/**
+ * 
+ * Function that launches a dialog to show all the users transactions
+ * 
+ */
 viewAllTransactions(){
   const dialogRef = this.dialog.open(ViewAllTransactionsDialogComponent, {
     disableClose: true,
@@ -73,8 +91,38 @@ viewAllTransactions(){
   })
 
   dialogRef.afterClosed().subscribe(result => {
-    console.log('closed.')
+    //console.log('closed.')
   })
 }
 
+
+/**
+ * 
+ * Function that archives a transaction
+ * 
+ */
+archiveTransraction(invoiceId){
+  console.log(invoiceId);
+  this.purchaseHistoryService.archiveTransaction(invoiceId).subscribe(res => {
+    //after patch refresh the data.
+    this.purchaseHistoryService.findAllPurchasesByUserName(this.username).subscribe( res => {
+      //pull back all transactions
+    this.purchaseHistoryDataSource = res['data'];
+
+    //filter out the archived transractions and push them into a new datasource array
+    this.nonArchivedPurchaseHistoryDataSource = [];
+    for(let item of this.purchaseHistoryDataSource){
+      if(item.isDisabled != true ){
+        this.nonArchivedPurchaseHistoryDataSource.push(item);
+      }
+    }
+    })
+    
+   
+  }, err => {
+    console.log(err);
+  })
+
+  
+}
 }

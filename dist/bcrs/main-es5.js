@@ -2170,6 +2170,18 @@
           value: function findAllPurchasesByUserName(username) {
             return this.http.get("/api/invoices/user/".concat(username));
           }
+          /**
+           *
+           * Archive Transactions
+           *
+           */
+
+        }, {
+          key: "archiveTransaction",
+          value: function archiveTransaction(invoideId) {
+            return this.http.patch("/api/invoices/".concat(invoideId), {//no need to pass any body
+            });
+          }
         }]);
 
         return PurchasehistoryService;
@@ -5037,7 +5049,17 @@
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "button", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "button", 13);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function OrderhistoryComponent_td_13_Template_button_click_11_listener() {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r13);
+
+            var element_r10 = ctx.$implicit;
+
+            var ctx_r14 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return ctx_r14.archiveTransraction(element_r10._id);
+          });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "mat-icon");
 
@@ -5069,13 +5091,13 @@
 
       function OrderhistoryComponent_tr_14_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 14);
         }
       }
 
       function OrderhistoryComponent_tr_15_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 16);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 15);
         }
       }
 
@@ -5094,7 +5116,28 @@
           this.username = this.cookieService.get('sessionuser'); //populate all the transactions for a user, but we'll filter out the archived ones on the html side
 
           this.purchaseHistoryService.findAllPurchasesByUserName(this.username).subscribe(function (res) {
-            _this13.purchaseHistoryDataSource = res['data']; //console.log(this.purchaseHistoryDataSource);
+            //pull back all transactions
+            _this13.purchaseHistoryDataSource = res['data']; //filter out the archived transractions and push them into a new datasource array
+
+            _this13.nonArchivedPurchaseHistoryDataSource = [];
+
+            var _iterator2 = _createForOfIteratorHelper(_this13.purchaseHistoryDataSource),
+                _step2;
+
+            try {
+              for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+                var item = _step2.value;
+
+                if (item.isDisabled != true) {
+                  _this13.nonArchivedPurchaseHistoryDataSource.push(item);
+                }
+              } //console.log(this.purchaseHistoryDataSource);
+
+            } catch (err) {
+              _iterator2.e(err);
+            } finally {
+              _iterator2.f();
+            }
           }, function (err) {
             console.log(err);
           });
@@ -5102,21 +5145,28 @@
 
         _createClass(OrderhistoryComponent, [{
           key: "ngOnInit",
-          value: function ngOnInit() {} //view transaction details for one transaction
+          value: function ngOnInit() {}
+          /*
+          Function that allows us to view transaction details for one transaction.
+          */
 
         }, {
           key: "viewTransactionDetails",
           value: function viewTransactionDetails(transaction) {
-            console.log(transaction);
+            //console.log(transaction);
             var dialogRef = this.dialog.open(_dialogs_orderhistory_viewtransactiondialog_viewtransactiondialog_component__WEBPACK_IMPORTED_MODULE_2__["ViewtransactiondialogComponent"], {
               data: transaction,
               disableClose: true,
               width: '800px'
             });
-            dialogRef.afterClosed().subscribe(function (result) {
-              console.log('closed');
+            dialogRef.afterClosed().subscribe(function (result) {// console.log('closed');
             });
-          } //view all transactions
+          }
+          /**
+           *
+           * Function that launches a dialog to show all the users transactions
+           *
+           */
 
         }, {
           key: "viewAllTransactions",
@@ -5125,8 +5175,48 @@
               disableClose: true,
               width: '800px'
             });
-            dialogRef.afterClosed().subscribe(function (result) {
-              console.log('closed.');
+            dialogRef.afterClosed().subscribe(function (result) {//console.log('closed.')
+            });
+          }
+          /**
+           *
+           * Function that archives a transaction
+           *
+           */
+
+        }, {
+          key: "archiveTransraction",
+          value: function archiveTransraction(invoiceId) {
+            var _this14 = this;
+
+            console.log(invoiceId);
+            this.purchaseHistoryService.archiveTransaction(invoiceId).subscribe(function (res) {
+              //after patch refresh the data.
+              _this14.purchaseHistoryService.findAllPurchasesByUserName(_this14.username).subscribe(function (res) {
+                //pull back all transactions
+                _this14.purchaseHistoryDataSource = res['data']; //filter out the archived transractions and push them into a new datasource array
+
+                _this14.nonArchivedPurchaseHistoryDataSource = [];
+
+                var _iterator3 = _createForOfIteratorHelper(_this14.purchaseHistoryDataSource),
+                    _step3;
+
+                try {
+                  for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+                    var item = _step3.value;
+
+                    if (item.isDisabled != true) {
+                      _this14.nonArchivedPurchaseHistoryDataSource.push(item);
+                    }
+                  }
+                } catch (err) {
+                  _iterator3.e(err);
+                } finally {
+                  _iterator3.f();
+                }
+              });
+            }, function (err) {
+              console.log(err);
             });
           }
         }]);
@@ -5143,7 +5233,7 @@
         selectors: [["app-orderhistory"]],
         decls: 16,
         vars: 3,
-        consts: [["mat-raised-button", "", 1, "crudButton", 3, "click"], ["mat-table", "", 1, "mat-elevation-z8", 3, "dataSource"], ["matColumnDef", "date"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "amount"], ["matColumnDef", "action"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["mat-header-cell", ""], ["mat-cell", ""], ["mat-icon-button", "", "aria-label", "Actions button", 3, "matMenuTriggerFor"], ["menu", "matMenu"], ["mat-menu-item", "", 3, "click"], ["mat-menu-item", ""], ["mat-header-row", ""], ["mat-row", ""]],
+        consts: [["mat-raised-button", "", 1, "crudButton", 3, "click"], ["mat-table", "", 1, "mat-elevation-z8", 3, "dataSource"], ["matColumnDef", "date"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "amount"], ["matColumnDef", "action"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["mat-header-cell", ""], ["mat-cell", ""], ["mat-icon-button", "", "aria-label", "Actions button", 3, "matMenuTriggerFor"], ["menu", "matMenu"], ["mat-menu-item", "", 3, "click"], ["mat-header-row", ""], ["mat-row", ""]],
         template: function OrderhistoryComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
@@ -5198,7 +5288,7 @@
           if (rf & 2) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("dataSource", ctx.purchaseHistoryDataSource);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("dataSource", ctx.nonArchivedPurchaseHistoryDataSource);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](10);
 
@@ -5883,7 +5973,7 @@
         }, {
           key: "signin",
           value: function signin() {
-            var _this14 = this;
+            var _this15 = this;
 
             var username = this.form.controls.userName.value;
             var password = this.form.controls.password.value; //console.log(username);
@@ -5897,14 +5987,14 @@
 
               if (res['data'].username) {
                 //user authenticated
-                _this14.cookieService.set('sessionuser', res['data'].username, 1);
+                _this15.cookieService.set('sessionuser', res['data'].username, 1);
 
-                _this14.router.navigate(['/']);
+                _this15.router.navigate(['/']);
               }
             }, function (err) {
-              _this14.errorMessage = 'Invalid username or password. Try again.';
+              _this15.errorMessage = 'Invalid username or password. Try again.';
 
-              _this14.openSnackBar(_this14.errorMessage);
+              _this15.openSnackBar(_this15.errorMessage);
             });
           }
         }, {
@@ -6238,7 +6328,7 @@
 
       var CreateorderComponent = /*#__PURE__*/function () {
         function CreateorderComponent(http, catalogService) {
-          var _this15 = this;
+          var _this16 = this;
 
           _classCallCheck(this, CreateorderComponent);
 
@@ -6254,7 +6344,7 @@
            */
 
           this.catalogService.findAllCatalogItems().subscribe(function (res) {
-            _this15.catalogDataSource = res['data'];
+            _this16.catalogDataSource = res['data'];
           }, function (err) {
             console.log(err);
           });
@@ -7893,15 +7983,15 @@
         _createClass(ErrorInterceptor, [{
           key: "intercept",
           value: function intercept(req, next) {
-            var _this16 = this;
+            var _this17 = this;
 
             return next.handle(req).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err) {
               if ([404].indexOf(err.status) !== -1) {
-                _this16.router.navigate(['/session/404']);
+                _this17.router.navigate(['/session/404']);
               }
 
               if ([500].indexOf(err.status) !== -1) {
-                _this16.router.navigate(['/session/500']);
+                _this17.router.navigate(['/session/500']);
               } //otherwise, catch error and trhow
 
 
@@ -8799,7 +8889,7 @@
 
       var SecurityquestionmanagementComponent = /*#__PURE__*/function () {
         function SecurityquestionmanagementComponent(http, dialog, securityQuestionService) {
-          var _this17 = this;
+          var _this18 = this;
 
           _classCallCheck(this, SecurityquestionmanagementComponent);
 
@@ -8811,7 +8901,7 @@
           this.securityQuestionService = securityQuestionService;
           this.displayedColumns = ["question", "status", "action"];
           this.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-            _this17.securityQuestions = res["data"];
+            _this18.securityQuestions = res["data"];
             console.log(res); //console.log(this.securityQuestionService);
           }, function (err) {
             console.log(err);
@@ -8831,7 +8921,7 @@
         }, {
           key: "createSecurityQuestion",
           value: function createSecurityQuestion() {
-            var _this18 = this;
+            var _this19 = this;
 
             var dialogRef = this.dialog.open(_dialogs_create_securityquestion_dialog_create_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_2__["CreateSecurityquestionDialogComponent"], {
               data: {},
@@ -8840,9 +8930,9 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'create') {
-                _this18.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                  _this18.securityQuestions = res['data'];
-                  console.log(_this18.securityQuestions);
+                _this19.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                  _this19.securityQuestions = res['data'];
+                  console.log(_this19.securityQuestions);
                 }, function (err) {
                   console.log(err);
                 });
@@ -8853,7 +8943,7 @@
         }, {
           key: "updateSecurityQuestion",
           value: function updateSecurityQuestion(data) {
-            var _this19 = this;
+            var _this20 = this;
 
             console.log(data);
             var dialogRef = this.dialog.open(_dialogs_update_securityquestion_dialog_update_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_3__["UpdateSecurityquestionDialogComponent"], {
@@ -8866,9 +8956,9 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'update') {
-                _this19.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                  _this19.securityQuestions = res['data'];
-                  console.log(_this19.securityQuestions);
+                _this20.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                  _this20.securityQuestions = res['data'];
+                  console.log(_this20.securityQuestions);
                 }, function (err) {
                   console.log(err);
                 });
@@ -8879,7 +8969,7 @@
         }, {
           key: "deleteSecurityQuestion",
           value: function deleteSecurityQuestion(questionId) {
-            var _this20 = this;
+            var _this21 = this;
 
             var dialogRef = this.dialog.open(_dialogs_delete_securityquestion_dialog_delete_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_1__["DeleteSecurityquestionDialogComponent"], {
               data: {
@@ -8894,12 +8984,12 @@
               if (result == 'confirm') {
                 console.log(questionId);
 
-                _this20.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
+                _this21.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
                   console.log('Security question successfully disabled');
 
-                  _this20.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                    _this20.securityQuestions = res['data'];
-                    console.log(_this20.securityQuestions);
+                  _this21.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                    _this21.securityQuestions = res['data'];
+                    console.log(_this21.securityQuestions);
                   }, function (err) {
                     console.log(err);
                   });
@@ -9526,12 +9616,12 @@
         _createClass(UserManagementComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this21 = this;
+            var _this22 = this;
 
             //Begin Brendans code
             this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
-              _this21.users = data['data'];
-              console.log(_this21.users);
+              _this22.users = data['data'];
+              console.log(_this22.users);
             }); //end Brendans code
           }
           /**Begin Brendans code */
@@ -9539,7 +9629,7 @@
         }, {
           key: "post",
           value: function post() {
-            var _this22 = this;
+            var _this23 = this;
 
             var dialogRef = this.dialog.open(_dialogs_user_admin_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_2__["PostDialogComponent"], {
               disableClose: true,
@@ -9547,9 +9637,9 @@
             }); //added by JB 10/28. After user is submitted, refresh the user list.
 
             dialogRef.afterClosed().subscribe(function (result) {
-              _this22.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
-                _this22.users = data['data'];
-                console.log(_this22.users);
+              _this23.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
+                _this23.users = data['data'];
+                console.log(_this23.users);
               });
             });
           }
@@ -9806,14 +9896,14 @@
         }, {
           key: "validateUsername",
           value: function validateUsername() {
-            var _this23 = this;
+            var _this24 = this;
 
             var username = this.form.controls['username'].value;
             this.http.get('/api/session/verify/users/' + username).subscribe(function (res) {
               console.log(res['data'].username);
 
               if (res) {
-                _this23.router.navigate(['/session/verify-security-questions'], {
+                _this24.router.navigate(['/session/verify-security-questions'], {
                   queryParams: {
                     username: username
                   },
@@ -10029,9 +10119,9 @@
       AboutComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: AboutComponent,
         selectors: [["app-about"]],
-        decls: 35,
+        decls: 36,
         vars: 2,
-        consts: [["fxLayout", "column", 1, "outerContainer"], ["fxFlex", ""], ["src", "./assets/about2.png", 1, "logo"], ["fxLayout", "column"], ["src", "./assets/bob.jpg"], ["src", "./assets/index.jpg"], [3, "inset"]],
+        consts: [["fxLayout", "column", 1, "outerContainer"], ["fxFlex", ""], ["src", "./assets/about2.png", 1, "logo"], ["fxLayout", "column"], ["src", "./assets/bob.jpg", 2, "float", "left", "width", "200px", "padding-right", "10px"], ["src", "./assets/index.jpg", 2, "float", "right", "width", "200px", "padding-left", "10px"], [3, "inset"]],
         template: function AboutComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -10064,41 +10154,37 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "img", 5);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "p");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "br");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "strong");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "Bob's Computer Repair Shop has been in existence since 2020.");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "strong");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, " It was founded primary for the reason being that people needed their computers fixed. Bob has the technical training requisite to be able to deliver a quality computer fix. Services offered include the fixing of broken computers; fixing of broken routers and phones. Bob really has a great skill of fixing things and is able to help you today! If you ever are in need of a computer fix or find yourself in a computer bind Bob will be there to save you time and money! Bob has the requisite skills in order to fix your computer!");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Bob's Computer Repair Shop has been in existence since 2020.");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "mat-divider", 6);
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "p");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "How did Bob get into this business? It all started when Bob set out to build his own computer for online gaming. During this process, he sourced parts online and compiled the computer, piece by piece. It was during this project that Bob realized that he really enjoyed creating and repairing hardware. Since Bob enjoyed this activity so much, he began to repair all his friends devices. It got to the point where Bob was repairing devices almost 7 days a week. At this point, Bob came to the realization that he needed to make this business legitimate. Fast forward a few years later, Bob now has his own company, Bob's Computer Repair Shop. ");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, " It was founded primary for the reason being that people needed their computers fixed. Bob has the technical training requisite to be able to deliver a quality computer fix. Services offered include the fixing of broken computers; fixing of broken routers and phones. Bob really has a great skill of fixing things and is able to help you today! If you ever are in need of a computer fix or find yourself in a computer bind Bob will be there to save you time and money! Bob has the requisite skills in order to fix your computer!");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](20, "mat-divider", 6);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](18, "mat-divider", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "p");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "p");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "Bob has been in the Technology Business for 10 Years and has seen the times evolve as technology has changed. Not many people have the skills Bob has in order to fix computers. Bob has a degree in Computer Fixing from a renowned university. ");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](23, "strong");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](24, "Bob has fixed over 1000 computers in his time as a Computer Technician.");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, "How did Bob get into this business? It all started when Bob set out to build his own computer for online gaming. During this process, he sourced parts online and compiled the computer, piece by piece. It was during this project that Bob realized that he really enjoyed creating and repairing hardware. Since Bob enjoyed this activity so much, he began to repair all his friends devices. It got to the point where Bob was repairing devices almost 7 days a week. At this point, Bob came to the realization that he needed to make this business legitimate. Fast forward a few years later, Bob now has his own company, Bob's Computer Repair Shop. ");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](21, "mat-divider", 6);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Bob has been in the Technology Business for 10 Years and has seen the times evolve as technology has changed. Not many people have the skills Bob has in order to fix computers. Bob has a degree in Computer Fixing from a renowned university. ");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "strong");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, "Bob has fixed over 1000 computers in his time as a Computer Technician.");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -10110,7 +10196,11 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](25, "br");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](26, "br");
 
@@ -10129,10 +10219,12 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](33, "br");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](34, "br");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](35, "br");
           }
 
           if (rf & 2) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](18);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("inset", true);
 
@@ -11367,7 +11459,7 @@
 
       var VerifySecurityQuestionsComponent = /*#__PURE__*/function () {
         function VerifySecurityQuestionsComponent(route, router, http, fb) {
-          var _this24 = this;
+          var _this25 = this;
 
           _classCallCheck(this, VerifySecurityQuestionsComponent);
 
@@ -11378,18 +11470,18 @@
           this.username = this.route.snapshot.queryParamMap.get('username');
           console.log(this.username);
           this.http.get('api/users/' + this.username + '/security-questions').subscribe(function (res) {
-            _this24.securityQuestions = res['data'];
-            console.log(_this24.securityQuestions);
+            _this25.securityQuestions = res['data'];
+            console.log(_this25.securityQuestions);
             console.log(res);
           }, function (err) {
             console.log(err);
           }, function () {
-            _this24.question1 = _this24.securityQuestions[0].questionText;
-            _this24.question2 = _this24.securityQuestions[1].questionText;
-            _this24.question3 = _this24.securityQuestions[2].questionText;
-            console.log(_this24.question1);
-            console.log(_this24.question2);
-            console.log(_this24.question3);
+            _this25.question1 = _this25.securityQuestions[0].questionText;
+            _this25.question2 = _this25.securityQuestions[1].questionText;
+            _this25.question3 = _this25.securityQuestions[2].questionText;
+            console.log(_this25.question1);
+            console.log(_this25.question2);
+            console.log(_this25.question3);
           });
         }
 
@@ -11405,7 +11497,7 @@
         }, {
           key: "verifySecurityQuestions",
           value: function verifySecurityQuestions() {
-            var _this25 = this;
+            var _this26 = this;
 
             var answerToSecurityQuestion1 = this.form.controls['answerToSecurityQuestion1'].value;
             var answerToSecurityQuestion2 = this.form.controls['answerToSecurityQuestion2'].value;
@@ -11422,10 +11514,10 @@
               console.log(res);
 
               if (res['message'] === 'success') {
-                _this25.router.navigate(['/session/reset-password', {
+                _this26.router.navigate(['/session/reset-password', {
                   queryParams: {
                     isAuthenticated: 'true',
-                    username: _this25.username
+                    username: _this26.username
                   },
                   skipLocationChange: true
                 }]);

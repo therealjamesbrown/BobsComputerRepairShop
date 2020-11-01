@@ -69,12 +69,19 @@ export class VerifyUsernameComponent implements OnInit {
 
   validateUsername() {
     const username = this.form1.controls['username'].value;
+    console.log(username);
 
     this.http.get('/api/session/verify/users/' + username).subscribe (res => {
-      console.log(res['data'].username);
-      if (res) {
+      //console.log(res['data'].username);
+      console.log(res);
+      //if we get data back, route to the next step
+      if (res['data']) {
         this.router.navigate(['/session/verify-security-questions'], {queryParams: {username: username}, skipLocationChange: true});
-
+        //else if there is not res data or its null, we'll handle it here and in the err
+      } else if(!res['data']){
+        this.errorMessage = 'Invalid username or password. Try again.';
+      this.openSnackBar(this.errorMessage);
+      console.log('first error fired');
       }
     }, err => {
       this.errorMessage = 'Invalid username or password. Try again.';

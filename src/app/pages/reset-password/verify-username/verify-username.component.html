@@ -11,10 +11,17 @@
                         <img src="./assets/logo.png" class="logo">
                     </div>
 
-                    <form [formGroup]="form" (ngSubmit)="validateUsername()" #validateUsernameForm>
+                    <!--Stepper-->
+                    <mat-horizontal-stepper #stepper>
+                        <mat-step [stepControl]="form1">
+
+                    <!--form-->    
+                    <form [formGroup]="form1" (ngSubmit)="validateUsername()" #validateUsernameForm>
+                        <ng-template matStepLabel>Verify Username</ng-template>
+
                         <mat-card-content fxLayout="column">
                             <mat-form-field fxFlex>
-                                <input matInput type="text" [formControl]="form.controls['username']"
+                                <input matInput type="text" [formControl]="form1.controls['username']"
                                     placeholder="username">
                             </mat-form-field>
                             <br><br>
@@ -24,6 +31,9 @@
                             </div>
                         </mat-card-content>
                     </form>
+
+                </mat-step>
+            </mat-horizontal-stepper>
 
                 </div>
             </mat-card-content>

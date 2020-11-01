@@ -13,6 +13,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+import { ViewChild } from '@angular/core';
+import { VerifyUsernameComponent } from '../verify-username/verify-username.component';  //add
+import { ResetPasswordComponent } from '../reset-password/reset-password.component'; //add
+
 //import { SecurityQuestion } from '../../administration/interfaces/security-question.interface';
 //import { SelectedSecurityQuestionSchema } from '../../../../../server/schemas/SelectedSecurityQuestionSchema';
 
@@ -21,7 +26,10 @@ import { Securityquestionpwdreset } from '../../../shared/securityquestionpwdres
 @Component({
   selector: 'app-verify-security-questions',
   templateUrl: './verify-security-questions.component.html',
-  styleUrls: ['./verify-security-questions.component.css']
+  styleUrls: ['./verify-security-questions.component.css'],
+  providers: [{
+    provide: STEPPER_GLOBAL_OPTIONS, useValue: { displayDefaultIndicatorType: false }
+  }]
 })
 export class VerifySecurityQuestionsComponent implements OnInit {
 
@@ -30,8 +38,27 @@ export class VerifySecurityQuestionsComponent implements OnInit {
   question2: string;
   question3: string;
   username: string;
-  form: FormGroup;
+  form2: FormGroup;
 
+  /*
+  //begin add
+  @ViewChild(VerifyUsernameComponent) stepOneComponent: VerifyUsernameComponent;
+  @ViewChild(VerifySecurityQuestionsComponent) stepTwoComponent: VerifySecurityQuestionsComponent;
+  @ViewChild(ResetPasswordComponent) stepThreeComponent: ResetPasswordComponent;
+
+  get frmStepOne() {
+     return this.stepOneComponent ? this.stepOneComponent.frmStepOne : null;
+  }
+
+  get frmStepTwo() {
+     return this.stepTwoComponent ? this.stepTwoComponent.frmStepTwo : null;
+  }
+
+  get frmStepThree() {
+     return this.stepThreeComponent ? this.stepThreeComponent.frmStepThree : null;
+  }
+//end add
+*/
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, private fb: FormBuilder) {
     this.username=this.route.snapshot.queryParamMap.get('username');
     console.log(this.username);
@@ -55,7 +82,7 @@ export class VerifySecurityQuestionsComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.form = this.fb.group({
+    this.form2 = this.fb.group({
       answerToSecurityQuestion1: [null, Validators.compose([Validators.required])],
       answerToSecurityQuestion2: [null, Validators.compose([Validators.required])],
       answerToSecurityQuestion3: [null, Validators.compose([Validators.required])]
@@ -63,9 +90,9 @@ export class VerifySecurityQuestionsComponent implements OnInit {
   }
 
    verifySecurityQuestions() {
-    const answerToSecurityQuestion1 = this.form.controls['answerToSecurityQuestion1'].value;
-    const answerToSecurityQuestion2 = this.form.controls['answerToSecurityQuestion2'].value;
-    const answerToSecurityQuestion3 = this.form.controls['answerToSecurityQuestion3'].value;
+    const answerToSecurityQuestion1 = this.form2.controls['answerToSecurityQuestion1'].value;
+    const answerToSecurityQuestion2 = this.form2.controls['answerToSecurityQuestion2'].value;
+    const answerToSecurityQuestion3 = this.form2.controls['answerToSecurityQuestion3'].value;
 
     console.log(answerToSecurityQuestion1 + answerToSecurityQuestion2 + answerToSecurityQuestion3);
 
@@ -78,10 +105,10 @@ export class VerifySecurityQuestionsComponent implements OnInit {
       answerText3: answerToSecurityQuestion3
     }).subscribe( res => {
       console.log(res);
-      if(res['message'] === 'success') {
+      if(res['message'] === 'Success!') {
         this.router.navigate(['/session/reset-password', {queryParams: {isAuthenticated: 'true', username: this.username}, skipLocationChange: true}])
       } else {
-        console.log('Unable to verify security question responses')
+        console.log('Unable to verify security question responses.')
       }
     })
   }

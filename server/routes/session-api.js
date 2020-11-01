@@ -163,11 +163,16 @@ router.post('/register', async(req, res) => {
 router.get('/verify/users/:username', async(req, res) => {
     try {
         User.findOne({'username': req.params.username}, function(err, user){
+            console.log(user);
             if(err){
                 console.log(err);
                 const verifyUserMongoDbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
                 res.status(500).send(verifyUserMongoDbErrorResponse.toObject());
-            } else {
+            } else if(!user){
+                const verifyUserDoesntExist = new BaseResponse('200', 'Success!', user);
+                res.json(verifyUserDoesntExist.toObject());
+            } 
+            else {
                 console.log(user);
                 const verifyUserResponse = new BaseResponse('200', 'Success!', user);
                 res.json(verifyUserResponse.toObject());

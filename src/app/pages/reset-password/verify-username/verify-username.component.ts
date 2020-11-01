@@ -9,12 +9,13 @@
  * 
  */
 
- //Begin Professor Krasso code
 
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatSnackBar, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-verify-username',
@@ -23,8 +24,10 @@ import { Router } from '@angular/router';
 })
 export class VerifyUsernameComponent implements OnInit {
   form: FormGroup;
+  //errorMessage: string;
+  //verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
-  constructor(private http: HttpClient, private fb: FormBuilder, private router: Router) { 
+  constructor(private http: HttpClient, private fb: FormBuilder, private router: Router, private _snackBar: MatSnackBar) { 
   }
   
   ngOnInit() {
@@ -38,18 +41,29 @@ export class VerifyUsernameComponent implements OnInit {
     const username = this.form.controls['username'].value;
 
     this.http.get('/api/session/verify/users/' + username).subscribe (res => {
+      console.log(res['data'].username);
       if (res) {
-        this.router.navigate(['/api/session/verify-security-questions'], {queryParams: {username: username}, skipLocationChange: true});
+        this.router.navigate(['/session/verify-security-questions'], {queryParams: {username: username}, skipLocationChange: true});
 
       }
     }, err => {
+      //this.errorMessage = 'Invalid username or password. Try again.';
+      //this.openSnackBar(this.errorMessage);
       console.log(err);
     });
   }
 
-}
-//End Professor Krasso code
+  /*
+    openSnackBar(errorMessage: string) {
+      this._snackBar.open(errorMessage, 'Close', {
+        duration: 7000,
+        verticalPosition: 'top',
+        panelClass: 'error'
+      });
+    
+    }*/
 
+}
 
 
 

@@ -1,0 +1,34 @@
+<!--Outer container-->
+<div fxLayout="column" class="singinOuterContainer">
+    <div fxFlex>
+        <h1>Reset Password</h1>
+        <mat-card class="mat-elevation-z8">
+            <mat-card-content>
+                <!--inner container-->
+                <div fxLayout="column" class="singinInnerContainer">
+                    <!--LOGO-->
+                    <div fxFlex>
+                        <img src="./assets/logo.png" class="logo">
+                    </div>
+
+                    <form [formGroup]="form" (ngSubmit)="validateUsername()" #validateUsernameForm>
+                        <mat-card-content fxLayout="column">
+                            <mat-form-field fxFlex>
+                                <input matInput type="text" [formControl]="form.controls['username']"
+                                    placeholder="username">
+                            </mat-form-field>
+                            <br><br>
+                            <div fxLayoutAlign="end">
+                                <button mat-raised-button color="primary" button routerLink="/session/signin">Cancel</button>
+                                <button mat-raised-button color="accent">Next</button>
+                            </div>
+                        </mat-card-content>
+                    </form>
+
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+

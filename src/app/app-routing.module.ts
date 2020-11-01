@@ -24,6 +24,9 @@ import { AboutComponent } from './pages/about/about.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { VerifyUsernameComponent } from './pages/reset-password/verify-username/verify-username.component';
+import { VerifySecurityQuestionsComponent } from './pages/reset-password/verify-security-questions/verify-security-questions.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password/reset-password.component';
 
 const routes: Routes = [
   {//path for logged in users
@@ -68,6 +71,18 @@ const routes: Routes = [
       {
         path:'createAccount',
         component: CreateAccountComponent
+      },
+      {
+        path: 'forgot',
+        component: VerifyUsernameComponent
+      }, 
+      {
+        path: 'verify-security-questions',
+        component: VerifySecurityQuestionsComponent
+      },
+      {
+        path: 'reset-password',
+        component: ResetPasswordComponent
       },
       {
         path: '404',

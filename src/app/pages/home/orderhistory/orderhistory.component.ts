@@ -16,6 +16,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CookieService } from 'ngx-cookie-service';
 import { Invoice } from '../../../shared/invoice.interface';
 import { PurchasehistoryService } from '../../services/purchasehistory.service';
+import { ViewAllTransactionsDialogComponent } from '../dialogs/orderhistory/view-all-transactions-dialog/view-all-transactions-dialog.component';
 import { ViewtransactiondialogComponent } from '../dialogs/orderhistory/viewtransactiondialog/viewtransactiondialog.component';
 
 
@@ -37,6 +38,7 @@ export class OrderhistoryComponent implements OnInit {
     private purchaseHistoryService: PurchasehistoryService,
     private dialog: MatDialog) {
    
+  //populate all the transactions for a user, but we'll filter out the archived ones on the html side
   this.purchaseHistoryService.findAllPurchasesByUserName(this.username).subscribe(res => {
     this.purchaseHistoryDataSource = res['data'];
     //console.log(this.purchaseHistoryDataSource);
@@ -49,7 +51,7 @@ export class OrderhistoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
-//view transaction details
+//view transaction details for one transaction
 viewTransactionDetails(transaction){
   console.log(transaction);
   const dialogRef = this.dialog.open(ViewtransactiondialogComponent, {
@@ -60,6 +62,18 @@ viewTransactionDetails(transaction){
 
   dialogRef.afterClosed().subscribe(result => {
     console.log('closed');
+  })
+}
+
+//view all transactions
+viewAllTransactions(){
+  const dialogRef = this.dialog.open(ViewAllTransactionsDialogComponent, {
+    disableClose: true,
+    width: '800px'
+  })
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('closed.')
   })
 }
 

@@ -34,7 +34,13 @@ h1{
   font-weight: 200;
 }
 
+.contactContainer{
+  background-color: #0d47a1;
+  color: white;
+}
+
 h3{
   margin-top: -5px;
   margin-bottom: -5px;
 }
+

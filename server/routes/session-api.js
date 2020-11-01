@@ -230,7 +230,7 @@ router.post('/verify/users/:username/security-questions', async(req, res) => {
     }
 });
 
-
+/*
  // Password Reset Route
  router.put('/users/:username/reset-password', function(req, res) {
     // Find a user by username
@@ -257,5 +257,53 @@ router.post('/verify/users/:username/security-questions', async(req, res) => {
         }
     })
  })
+*/
+
+  // Password Reset Route copied and modified by SK
+  router.post('/users/:username/reset-password', async(req, res) => {
+    
+    try
+    {
+        const password = req.body.password;
+    
+    User.findOne({ "username": req.params.username }, function(err, user) {
+        if (err) {
+            console.log(err);
+            const resetPasswordMongodbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err)
+            res.status(500).send(resetPasswordMongodbErrorResponse.toObject());
+        } 
+        else 
+        {
+            console.log(user);
+            // Hash the new password
+            let hashedPassword = bcrypt.hashSync(password, saltRounds)
+                     // Update the Password
+            user.set({
+                        password: hashedPassword
+                    });
+            user.save(function(err, updatedUser) {
+                        if (err) {
+                            console.log(err);
+                            const updatedUserMongodbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err)
+                            res.status(500).send(updatedUserMongodbErrorResponse.toObject())
+                        } 
+                        else 
+                        {
+                            console.log(updatedUser)
+                            const updatedPasswordResponse = new BaseResponse('200', 'Success!', updatedUser);
+                            res.json(updatedPasswordResponse.toObject());
+                        }
+            })
+        }
+    })
+ }
+ catch(e)
+ {
+     console.log(e);
+     const resetPasswordCatchError = new ErrorResponse('500', 'Internal server error', e);
+     res.status(500).send(resetPasswordCatchError.toObject());
+ }
+});
+
 
  module.exports = router;

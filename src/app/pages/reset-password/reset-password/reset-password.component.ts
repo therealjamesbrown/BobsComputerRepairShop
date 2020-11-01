@@ -10,10 +10,16 @@
  */
 
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { ViewChild } from '@angular/core';
 import { VerifySecurityQuestionsComponent } from '../verify-security-questions/verify-security-questions.component';
 import { VerifyUsernameComponent } from '../verify-username/verify-username.component';  
+
+
 
 @Component({
   selector: 'app-reset-password',
@@ -24,6 +30,10 @@ import { VerifyUsernameComponent } from '../verify-username/verify-username.comp
   }]
 })
 export class ResetPasswordComponent implements OnInit {
+
+   isAuthenticated: string;
+   username: string;
+   form3: FormGroup;
 
    
    /*//begin add
@@ -45,9 +55,31 @@ export class ResetPasswordComponent implements OnInit {
  //end add
  */
 
-  constructor() { }
+constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private fb: FormBuilder, private cookieService: CookieService) {
+   this.isAuthenticated = this.route.snapshot.queryParamMap.get('isAuthenticated');
+   this.username = this.route.snapshot.queryParamMap.get('username');
 
-  ngOnInit(): void {
+//   if(!this.isAuthenticated) {
+//     this.router.navigate(['/session/signin'])
+//   }
   }
+
+ ngOnInit() {
+   this.form3 = this.fb.group({
+     password: [null, Validators.compose([Validators.required])]
+   });
+ }
+
+ resetPassword() {
+   this.http.post('api/session/users/' + this.username + '/reset-password', {
+     password: this.form3.controls['password'].value
+   }).subscribe(res => {
+     //user authenticated
+     this.cookieService.set('sessionuser', this.username, 1);  
+     this.router.navigate(['/']);
+   }, err => {
+     console.log(err);
+   })
+ }
 
 }

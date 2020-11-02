@@ -20,5 +20,4 @@ export interface User {
     phoneNumber: { type: String };
     address: { type: String };
     email: { type: String };
-
 }

@@ -73,6 +73,7 @@ constructor(private http: HttpClient, private route: ActivatedRoute, private rou
  }
 
  resetPassword() {
+   console.log(this.username)
    this.http.post('/api/session/users/' + this.username + '/reset-password', {
      password: this.form3.controls['password'].value
    }).subscribe(res => {

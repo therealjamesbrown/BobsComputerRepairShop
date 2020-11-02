@@ -266,12 +266,10 @@ router.post('/verify/users/:username/security-questions', async(req, res) => {
 
   // Password Reset Route copied and modified by SK
   router.post('/users/:username/reset-password', async(req, res) => {
-    
     try
     {
         const password = req.body.password;
-        console.log('req body logging fired')
-    console.log(req.body);
+        //console.log('req body logging fired')
     User.findOne({ "username": req.params.username }, function(err, user) {
         if (err) {
             console.log(err);

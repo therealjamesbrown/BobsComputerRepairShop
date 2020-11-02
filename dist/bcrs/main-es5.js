@@ -34,19 +34,13 @@
       /* harmony import */
 
 
-      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! tslib */
-      "mrSG");
-      /* harmony import */
-
-
-      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
       /* harmony import */
 
 
-      var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! @angular/common/http */
       "tk/3");
       /**
@@ -89,24 +83,8 @@
         }, {
           key: "changeUserPassword",
           value: function changeUserPassword(username, password) {
-            var _this = this;
-
-            return this.http.post("api/session/users/".concat(username, "/reset-password"), function (req, res) {
-              return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(_this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-                return regeneratorRuntime.wrap(function _callee$(_context) {
-                  while (1) {
-                    switch (_context.prev = _context.next) {
-                      case 0:
-                        console.log(password);
-                        password;
-
-                      case 2:
-                      case "end":
-                        return _context.stop();
-                    }
-                  }
-                }, _callee);
-              }));
+            return this.http.post("/api/session/users/".concat(username, "/reset-password"), {
+              password: password
             });
           }
           /**
@@ -142,10 +120,10 @@
       }();
 
       UserprofileService.ɵfac = function UserprofileService_Factory(t) {
-        return new (t || UserprofileService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]));
+        return new (t || UserprofileService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
       };
 
-      UserprofileService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({
+      UserprofileService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
         token: UserprofileService,
         factory: UserprofileService.ɵfac,
         providedIn: 'root'
@@ -153,14 +131,14 @@
       /*@__PURE__*/
 
       (function () {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](UserprofileService, [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"],
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserprofileService, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
           args: [{
             providedIn: 'root'
           }]
         }], function () {
           return [{
-            type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+            type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
           }];
         }, null);
       })();
@@ -651,7 +629,7 @@
 
       var CatalogmanagementComponent = /*#__PURE__*/function () {
         function CatalogmanagementComponent(http, dialog, catalogServce) {
-          var _this2 = this;
+          var _this = this;
 
           _classCallCheck(this, CatalogmanagementComponent);
 
@@ -666,7 +644,7 @@
              */
 
           this.catalogServce.findAllCatalogItems().subscribe(function (res) {
-            _this2.catalogDataSource = res['data']; //console.log(this.catalogDataSource);
+            _this.catalogDataSource = res['data']; //console.log(this.catalogDataSource);
           }, function (err) {
             console.log(err);
           });
@@ -686,7 +664,7 @@
         }, {
           key: "createCatalogItem",
           value: function createCatalogItem() {
-            var _this3 = this;
+            var _this2 = this;
 
             var dialogRef = this.dialog.open(_dialogs_create_catalog_item_create_catalog_item_component__WEBPACK_IMPORTED_MODULE_1__["CreateCatalogItemComponent"], {
               data: {},
@@ -696,8 +674,8 @@
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'create') {
                 //refresh the list
-                _this3.catalogServce.findAllCatalogItems().subscribe(function (res) {
-                  _this3.catalogDataSource = res['data']; //console.log(this.catalogDataSource);
+                _this2.catalogServce.findAllCatalogItems().subscribe(function (res) {
+                  _this2.catalogDataSource = res['data']; //console.log(this.catalogDataSource);
                 }, function (err) {
                   console.log(err);
                 });
@@ -708,7 +686,7 @@
         }, {
           key: "updateCatalogItem",
           value: function updateCatalogItem(data) {
-            var _this4 = this;
+            var _this3 = this;
 
             console.log(data);
             var dialogRef = this.dialog.open(_dialogs_update_catalog_item_update_catalog_item_component__WEBPACK_IMPORTED_MODULE_3__["UpdateCatalogItemComponent"], {
@@ -722,9 +700,9 @@
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'update') {
                 //refresh the list
-                _this4.catalogServce.findAllCatalogItems().subscribe(function (res) {
-                  _this4.catalogDataSource = res['data'];
-                  console.log(_this4.catalogDataSource);
+                _this3.catalogServce.findAllCatalogItems().subscribe(function (res) {
+                  _this3.catalogDataSource = res['data'];
+                  console.log(_this3.catalogDataSource);
                 }, function (err) {
                   console.log(err);
                 });
@@ -735,7 +713,7 @@
         }, {
           key: "deleteCatalogItem",
           value: function deleteCatalogItem(catalogItem) {
-            var _this5 = this;
+            var _this4 = this;
 
             var dialogRef = this.dialog.open(_dialogs_delete_catalog_item_delete_catalog_item_component__WEBPACK_IMPORTED_MODULE_2__["DeleteCatalogItemComponent"], {
               data: {
@@ -750,10 +728,10 @@
               if (result === 'confirm') {
                 console.log(catalogItem._id);
 
-                _this5.catalogServce.deleteCatalogItem(catalogItem._id).subscribe(function (res) {
+                _this4.catalogServce.deleteCatalogItem(catalogItem._id).subscribe(function (res) {
                   //make another call to update the list
-                  _this5.catalogServce.findAllCatalogItems().subscribe(function (res) {
-                    _this5.catalogDataSource = res['data']; //console.log(this.catalogDataSource);
+                  _this4.catalogServce.findAllCatalogItems().subscribe(function (res) {
+                    _this4.catalogDataSource = res['data']; //console.log(this.catalogDataSource);
                   }, function (err) {
                     console.log(err);
                   });
@@ -1887,7 +1865,7 @@
         _createClass(CreateAccountComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this6 = this;
+            var _this5 = this;
 
             this.firstFormGroup = this.fb.group({
               username: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required),
@@ -1910,9 +1888,9 @@
               password: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
             });
             this.http.get('/api/securityQuestions').subscribe(function (res) {
-              _this6.securityQuestion1 = res['data'][0].questionId;
-              _this6.securityQuestion2 = res['data'][1].questionId;
-              _this6.securityQuestion3 = res['data'][2].questionId;
+              _this5.securityQuestion1 = res['data'][0].questionId;
+              _this5.securityQuestion2 = res['data'][1].questionId;
+              _this5.securityQuestion3 = res['data'][2].questionId;
             });
           }
         }, {
@@ -1930,7 +1908,7 @@
         }, {
           key: "setSecurityQuestions",
           value: function setSecurityQuestions() {
-            var _this7 = this;
+            var _this6 = this;
 
             this.newUser['securityQuestions'] = {
               Question1: this.securityQuestion1,
@@ -1945,14 +1923,14 @@
               if (err) {
                 console.log(err);
               } else {
-                console.log(_this7.newUser);
+                console.log(_this6.newUser);
               }
             });
           }
         }, {
           key: "signIn",
           value: function signIn() {
-            var _this8 = this;
+            var _this7 = this;
 
             var signInUser = {
               username: this.thirdFormGroup.get('username').value,
@@ -1960,9 +1938,9 @@
             };
             this.http.post('/api/session/signin', signInUser).subscribe(function (res) {
               if (res['data'].username) {
-                _this8.cookieService.set('sessionuser', res['data'].username, 1);
+                _this7.cookieService.set('sessionuser', res['data'].username, 1);
 
-                _this8.router.navigate(['/']);
+                _this7.router.navigate(['/']);
               }
             });
             this.secondFormGroup.reset();
@@ -2805,6 +2783,16 @@
             var password = this.form.controls.password.value;
             console.log(username);
             console.log(password);
+            /*
+              this.http.post(`/api/session/users/${username}/reset-password`, {
+                password
+              }).subscribe(res => {
+                console.log(res)
+              }, err => {
+                console.log(err);
+              })
+            */
+
             this.userProfileServce.changeUserPassword(username, password).subscribe(function (res) {
               console.log(res);
             }, function (err) {
@@ -2843,6 +2831,7 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "form", 3, 4);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngSubmit", function ChangePasswordComponent_Template_form_ngSubmit_6_listener() {
+              ctx.changePassword();
               return ctx.form.reset();
             });
 
@@ -3380,16 +3369,16 @@
         }, {
           key: "resetPassword",
           value: function resetPassword() {
-            var _this9 = this;
+            var _this8 = this;
 
             console.log(this.username);
             this.http.post('/api/session/users/' + this.username + '/reset-password', {
               password: this.form3.controls['password'].value
             }).subscribe(function (res) {
               //user authenticated
-              _this9.cookieService.set('sessionuser', _this9.username, 1);
+              _this8.cookieService.set('sessionuser', _this8.username, 1);
 
-              _this9.router.navigate(['/']);
+              _this8.router.navigate(['/']);
             }, function (err) {
               console.log(err);
             });
@@ -4368,7 +4357,7 @@
 
       var ViewAllTransactionsDialogComponent = /*#__PURE__*/function () {
         function ViewAllTransactionsDialogComponent(cookieService, purchaseHistoryService) {
-          var _this10 = this;
+          var _this9 = this;
 
           _classCallCheck(this, ViewAllTransactionsDialogComponent);
 
@@ -4379,8 +4368,8 @@
           this.checked = false;
           this.username = this.cookieService.get('sessionuser');
           this.purchaseHistoryService.findAllPurchasesByUserName(this.username).subscribe(function (res) {
-            _this10.allPurchaseHistoryDataSource = res['data'];
-            console.log(_this10.allPurchaseHistoryDataSource);
+            _this9.allPurchaseHistoryDataSource = res['data'];
+            console.log(_this9.allPurchaseHistoryDataSource);
           }, function (err) {
             console.log(err);
           });
@@ -5343,7 +5332,7 @@
 
       var RolemanagementComponent = /*#__PURE__*/function () {
         function RolemanagementComponent(http, dialog, roleServce) {
-          var _this11 = this;
+          var _this10 = this;
 
           _classCallCheck(this, RolemanagementComponent);
 
@@ -5357,7 +5346,7 @@
             */
 
           this.roleServce.findAllRoles().subscribe(function (res) {
-            _this11.roleDataSource = res['data']; //console.log(this.roleDataSource);
+            _this10.roleDataSource = res['data']; //console.log(this.roleDataSource);
           }, function (err) {
             console.log(err);
           });
@@ -5377,7 +5366,7 @@
         }, {
           key: "createRole",
           value: function createRole() {
-            var _this12 = this;
+            var _this11 = this;
 
             var dialogRef = this.dialog.open(_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_2__["CreateRoleDialogComponent"], {
               data: {},
@@ -5387,8 +5376,8 @@
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'create') {
                 //update the list
-                _this12.roleServce.findAllRoles().subscribe(function (res) {
-                  _this12.roleDataSource = res['data']; //console.log(this.roleDataSource);
+                _this11.roleServce.findAllRoles().subscribe(function (res) {
+                  _this11.roleDataSource = res['data']; //console.log(this.roleDataSource);
                 }, function (err) {
                   console.log(err);
                 });
@@ -5399,7 +5388,7 @@
         }, {
           key: "updateRole",
           value: function updateRole(data) {
-            var _this13 = this;
+            var _this12 = this;
 
             console.log(data);
             var dialogRef = this.dialog.open(_dialogs_update_role_dialog_update_role_dialog_component__WEBPACK_IMPORTED_MODULE_3__["UpdateRoleDialogComponent"], {
@@ -5412,8 +5401,8 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'update') {
-                _this13.roleServce.findAllRoles().subscribe(function (res) {
-                  _this13.roleDataSource = res['data']; //console.log(this.roleDataSource);
+                _this12.roleServce.findAllRoles().subscribe(function (res) {
+                  _this12.roleDataSource = res['data']; //console.log(this.roleDataSource);
                 }, function (err) {
                   console.log(err);
                 });
@@ -5424,7 +5413,7 @@
         }, {
           key: "deleteRole",
           value: function deleteRole(roleId) {
-            var _this14 = this;
+            var _this13 = this;
 
             var dialogRef = this.dialog.open(_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_1__["DeleteRecordDialogComponentComponent"], {
               data: {
@@ -5437,12 +5426,12 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'confirm') {
-                _this14.roleServce.deleteRole(roleId).subscribe(function (res) {
+                _this13.roleServce.deleteRole(roleId).subscribe(function (res) {
                   //console.log('Role successfully deleted')
                   //make another call to update the list
-                  _this14.roleServce.findAllRoles().subscribe(function (res) {
-                    _this14.roleDataSource = res['data'];
-                    console.log(_this14.roleDataSource);
+                  _this13.roleServce.findAllRoles().subscribe(function (res) {
+                    _this13.roleDataSource = res['data'];
+                    console.log(_this13.roleDataSource);
                   }, function (err) {
                     console.log(err);
                   });
@@ -5823,7 +5812,7 @@
 
       var OrderhistoryComponent = /*#__PURE__*/function () {
         function OrderhistoryComponent(cookieService, purchaseHistoryService, dialog) {
-          var _this15 = this;
+          var _this14 = this;
 
           _classCallCheck(this, OrderhistoryComponent);
 
@@ -5837,11 +5826,11 @@
 
           this.purchaseHistoryService.findAllPurchasesByUserName(this.username).subscribe(function (res) {
             //pull back all transactions
-            _this15.purchaseHistoryDataSource = res['data']; //filter out the archived transractions and push them into a new datasource array
+            _this14.purchaseHistoryDataSource = res['data']; //filter out the archived transractions and push them into a new datasource array
 
-            _this15.nonArchivedPurchaseHistoryDataSource = [];
+            _this14.nonArchivedPurchaseHistoryDataSource = [];
 
-            var _iterator2 = _createForOfIteratorHelper(_this15.purchaseHistoryDataSource),
+            var _iterator2 = _createForOfIteratorHelper(_this14.purchaseHistoryDataSource),
                 _step2;
 
             try {
@@ -5849,7 +5838,7 @@
                 var item = _step2.value;
 
                 if (item.isDisabled != true) {
-                  _this15.nonArchivedPurchaseHistoryDataSource.push(item);
+                  _this14.nonArchivedPurchaseHistoryDataSource.push(item);
                 }
               } //console.log(this.purchaseHistoryDataSource);
 
@@ -5907,18 +5896,18 @@
         }, {
           key: "archiveTransraction",
           value: function archiveTransraction(invoiceId) {
-            var _this16 = this;
+            var _this15 = this;
 
             console.log(invoiceId);
             this.purchaseHistoryService.archiveTransaction(invoiceId).subscribe(function (res) {
               //after patch refresh the data.
-              _this16.purchaseHistoryService.findAllPurchasesByUserName(_this16.username).subscribe(function (res) {
+              _this15.purchaseHistoryService.findAllPurchasesByUserName(_this15.username).subscribe(function (res) {
                 //pull back all transactions
-                _this16.purchaseHistoryDataSource = res['data']; //filter out the archived transractions and push them into a new datasource array
+                _this15.purchaseHistoryDataSource = res['data']; //filter out the archived transractions and push them into a new datasource array
 
-                _this16.nonArchivedPurchaseHistoryDataSource = [];
+                _this15.nonArchivedPurchaseHistoryDataSource = [];
 
-                var _iterator3 = _createForOfIteratorHelper(_this16.purchaseHistoryDataSource),
+                var _iterator3 = _createForOfIteratorHelper(_this15.purchaseHistoryDataSource),
                     _step3;
 
                 try {
@@ -5926,7 +5915,7 @@
                     var item = _step3.value;
 
                     if (item.isDisabled != true) {
-                      _this16.nonArchivedPurchaseHistoryDataSource.push(item);
+                      _this15.nonArchivedPurchaseHistoryDataSource.push(item);
                     }
                   }
                 } catch (err) {
@@ -6636,7 +6625,7 @@
 
       var UserdetailsComponent = /*#__PURE__*/function () {
         function UserdetailsComponent(dialog, userProfileService, cookieService) {
-          var _this17 = this;
+          var _this16 = this;
 
           _classCallCheck(this, UserdetailsComponent);
 
@@ -6650,13 +6639,13 @@
           this.cookieService = cookieService;
           this.username = this.cookieService.get('sessionuser');
           this.userProfileService.getUserDetails(this.username).subscribe(function (res) {
-            _this17.userDetailsDataSource = res['data'];
-            _this17.firstName = _this17.userDetailsDataSource.firstName;
-            _this17.lastName = _this17.userDetailsDataSource.lastName;
-            _this17.phone = _this17.userDetailsDataSource.phoneNumber;
-            _this17.address = _this17.userDetailsDataSource.address;
-            _this17.email = _this17.userDetailsDataSource.email;
-            _this17.dateCreated = _this17.userDetailsDataSource.date_created; //console.log(this.userDetailsDataSource);
+            _this16.userDetailsDataSource = res['data'];
+            _this16.firstName = _this16.userDetailsDataSource.firstName;
+            _this16.lastName = _this16.userDetailsDataSource.lastName;
+            _this16.phone = _this16.userDetailsDataSource.phoneNumber;
+            _this16.address = _this16.userDetailsDataSource.address;
+            _this16.email = _this16.userDetailsDataSource.email;
+            _this16.dateCreated = _this16.userDetailsDataSource.date_created; //console.log(this.userDetailsDataSource);
           });
         }
 
@@ -6986,7 +6975,7 @@
         }, {
           key: "signin",
           value: function signin() {
-            var _this18 = this;
+            var _this17 = this;
 
             var username = this.form.controls.userName.value;
             var password = this.form.controls.password.value; //console.log(username);
@@ -7000,14 +6989,14 @@
 
               if (res['data'].username) {
                 //user authenticated
-                _this18.cookieService.set('sessionuser', res['data'].username, 1);
+                _this17.cookieService.set('sessionuser', res['data'].username, 1);
 
-                _this18.router.navigate(['/']);
+                _this17.router.navigate(['/']);
               }
             }, function (err) {
-              _this18.errorMessage = 'Invalid username or password. Try again.';
+              _this17.errorMessage = 'Invalid username or password. Try again.';
 
-              _this18.openSnackBar(_this18.errorMessage);
+              _this17.openSnackBar(_this17.errorMessage);
             });
           }
         }, {
@@ -7341,7 +7330,7 @@
 
       var CreateorderComponent = /*#__PURE__*/function () {
         function CreateorderComponent(http, catalogService) {
-          var _this19 = this;
+          var _this18 = this;
 
           _classCallCheck(this, CreateorderComponent);
 
@@ -7357,7 +7346,7 @@
            */
 
           this.catalogService.findAllCatalogItems().subscribe(function (res) {
-            _this19.catalogDataSource = res['data'];
+            _this18.catalogDataSource = res['data'];
           }, function (err) {
             console.log(err);
           });
@@ -9096,15 +9085,15 @@
         _createClass(ErrorInterceptor, [{
           key: "intercept",
           value: function intercept(req, next) {
-            var _this20 = this;
+            var _this19 = this;
 
             return next.handle(req).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err) {
               if ([404].indexOf(err.status) !== -1) {
-                _this20.router.navigate(['/session/404']);
+                _this19.router.navigate(['/session/404']);
               }
 
               if ([500].indexOf(err.status) !== -1) {
-                _this20.router.navigate(['/session/500']);
+                _this19.router.navigate(['/session/500']);
               } //otherwise, catch error and trhow
 
 
@@ -10002,7 +9991,7 @@
 
       var SecurityquestionmanagementComponent = /*#__PURE__*/function () {
         function SecurityquestionmanagementComponent(http, dialog, securityQuestionService) {
-          var _this21 = this;
+          var _this20 = this;
 
           _classCallCheck(this, SecurityquestionmanagementComponent);
 
@@ -10014,7 +10003,7 @@
           this.securityQuestionService = securityQuestionService;
           this.displayedColumns = ["question", "status", "action"];
           this.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-            _this21.securityQuestions = res["data"];
+            _this20.securityQuestions = res["data"];
             console.log(res); //console.log(this.securityQuestionService);
           }, function (err) {
             console.log(err);
@@ -10034,7 +10023,7 @@
         }, {
           key: "createSecurityQuestion",
           value: function createSecurityQuestion() {
-            var _this22 = this;
+            var _this21 = this;
 
             var dialogRef = this.dialog.open(_dialogs_create_securityquestion_dialog_create_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_2__["CreateSecurityquestionDialogComponent"], {
               data: {},
@@ -10043,9 +10032,9 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'create') {
-                _this22.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                  _this22.securityQuestions = res['data'];
-                  console.log(_this22.securityQuestions);
+                _this21.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                  _this21.securityQuestions = res['data'];
+                  console.log(_this21.securityQuestions);
                 }, function (err) {
                   console.log(err);
                 });
@@ -10056,7 +10045,7 @@
         }, {
           key: "updateSecurityQuestion",
           value: function updateSecurityQuestion(data) {
-            var _this23 = this;
+            var _this22 = this;
 
             console.log(data);
             var dialogRef = this.dialog.open(_dialogs_update_securityquestion_dialog_update_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_3__["UpdateSecurityquestionDialogComponent"], {
@@ -10069,9 +10058,9 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'update') {
-                _this23.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                  _this23.securityQuestions = res['data'];
-                  console.log(_this23.securityQuestions);
+                _this22.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                  _this22.securityQuestions = res['data'];
+                  console.log(_this22.securityQuestions);
                 }, function (err) {
                   console.log(err);
                 });
@@ -10082,7 +10071,7 @@
         }, {
           key: "deleteSecurityQuestion",
           value: function deleteSecurityQuestion(questionId) {
-            var _this24 = this;
+            var _this23 = this;
 
             var dialogRef = this.dialog.open(_dialogs_delete_securityquestion_dialog_delete_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_1__["DeleteSecurityquestionDialogComponent"], {
               data: {
@@ -10097,12 +10086,12 @@
               if (result == 'confirm') {
                 console.log(questionId);
 
-                _this24.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
+                _this23.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
                   console.log('Security question successfully disabled');
 
-                  _this24.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                    _this24.securityQuestions = res['data'];
-                    console.log(_this24.securityQuestions);
+                  _this23.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                    _this23.securityQuestions = res['data'];
+                    console.log(_this23.securityQuestions);
                   }, function (err) {
                     console.log(err);
                   });
@@ -10729,12 +10718,12 @@
         _createClass(UserManagementComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this25 = this;
+            var _this24 = this;
 
             //Begin Brendans code
             this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
-              _this25.users = data['data'];
-              console.log(_this25.users);
+              _this24.users = data['data'];
+              console.log(_this24.users);
             }); //end Brendans code
           }
           /**Begin Brendans code */
@@ -10742,7 +10731,7 @@
         }, {
           key: "post",
           value: function post() {
-            var _this26 = this;
+            var _this25 = this;
 
             var dialogRef = this.dialog.open(_dialogs_user_admin_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_2__["PostDialogComponent"], {
               disableClose: true,
@@ -10750,9 +10739,9 @@
             }); //added by JB 10/28. After user is submitted, refresh the user list.
 
             dialogRef.afterClosed().subscribe(function (result) {
-              _this26.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
-                _this26.users = data['data'];
-                console.log(_this26.users);
+              _this25.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
+                _this25.users = data['data'];
+                console.log(_this25.users);
               });
             });
           }
@@ -11030,7 +11019,7 @@
         }, {
           key: "validateUsername",
           value: function validateUsername() {
-            var _this27 = this;
+            var _this26 = this;
 
             var username = this.form1.controls['username'].value;
             console.log(username);
@@ -11039,7 +11028,7 @@
               console.log(res); //if we get data back, route to the next step
 
               if (res['data']) {
-                _this27.router.navigate(['/session/verify-security-questions'], {
+                _this26.router.navigate(['/session/verify-security-questions'], {
                   queryParams: {
                     username: username
                   },
@@ -11047,16 +11036,16 @@
                 }); //else if there is not res data or its null, we'll handle it here and in the err
 
               } else if (!res['data']) {
-                _this27.errorMessage = 'Invalid username or password. Try again.';
+                _this26.errorMessage = 'Invalid username or password. Try again.';
 
-                _this27.openSnackBar(_this27.errorMessage);
+                _this26.openSnackBar(_this26.errorMessage);
 
                 console.log('first error fired');
               }
             }, function (err) {
-              _this27.errorMessage = 'Invalid username or password. Try again.';
+              _this26.errorMessage = 'Invalid username or password. Try again.';
 
-              _this27.openSnackBar(_this27.errorMessage);
+              _this26.openSnackBar(_this26.errorMessage);
 
               console.log(err);
             });
@@ -12921,7 +12910,7 @@
         // }
         //end add
         function VerifySecurityQuestionsComponent(route, router, http, fb) {
-          var _this28 = this;
+          var _this27 = this;
 
           _classCallCheck(this, VerifySecurityQuestionsComponent);
 
@@ -12932,7 +12921,7 @@
           this.username = this.route.snapshot.queryParamMap.get('username');
           console.log(this.username);
           this.http.get('api/users/' + this.username + '/security-questions').subscribe(function (res) {
-            _this28.questions = res['data']; //console.log(this.securityQuestions);
+            _this27.questions = res['data']; //console.log(this.securityQuestions);
 
             console.log(res);
           }, function (err) {
@@ -12940,9 +12929,9 @@
           }, function () {
             //console.log('i fired')
             //console.log(this.questions.securityQuestions[0].questionText);
-            _this28.question1 = _this28.questions.securityQuestions[0].questionText;
-            _this28.question2 = _this28.questions.securityQuestions[1].questionText;
-            _this28.question3 = _this28.questions.securityQuestions[2].questionText;
+            _this27.question1 = _this27.questions.securityQuestions[0].questionText;
+            _this27.question2 = _this27.questions.securityQuestions[1].questionText;
+            _this27.question3 = _this27.questions.securityQuestions[2].questionText;
             /*
                   console.log(this.question1);
                   console.log(this.question2);
@@ -12962,7 +12951,7 @@
         }, {
           key: "verifySecurityQuestions",
           value: function verifySecurityQuestions() {
-            var _this29 = this;
+            var _this28 = this;
 
             var answerToSecurityQuestion1 = this.form2.controls['answerToSecurityQuestion1'].value;
             var answerToSecurityQuestion2 = this.form2.controls['answerToSecurityQuestion2'].value;
@@ -12979,10 +12968,10 @@
               console.log(res);
 
               if (res['message'] === 'Success!') {
-                _this29.router.navigate(['/session/reset-password'], {
+                _this28.router.navigate(['/session/reset-password'], {
                   queryParams: {
                     isAuthenticated: 'true',
-                    username: _this29.username
+                    username: _this28.username
                   },
                   skipLocationChange: true
                 });

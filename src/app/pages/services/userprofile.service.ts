@@ -40,10 +40,9 @@ export class UserprofileService {
    * 
    */
    changeUserPassword(username: string, password:string): Observable<any>{
-     return this.http.post(`api/session/users/${username}/reset-password`, async(req, res) => {
-       console.log(password);
-      password
-     })
+     return this.http.post(`/api/session/users/${username}/reset-password`,{
+       password
+     });
    }
 
 

@@ -14,7 +14,7 @@
                   <mat-horizontal-stepper #stepper>
                     <mat-step [stepControl]="form2">-->
   
-        <form *ngIf="securityQuestions" [formGroup]="form2" (ngSubmit)="verifySecurityQuestions()" #usernameForm>
+        <form *ngIf="questions" [formGroup]="form2" (ngSubmit)="verifySecurityQuestions()" #usernameForm>
 
        <!--   <ng-template matStepLabel>Verify Security Questions</ng-template>-->
 

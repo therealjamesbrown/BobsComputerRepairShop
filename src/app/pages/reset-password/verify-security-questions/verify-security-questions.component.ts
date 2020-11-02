@@ -39,7 +39,7 @@ export class VerifySecurityQuestionsComponent implements OnInit {
   question3: string;
   username: string;
   form2: FormGroup;
-
+questions;
 
   //begin add
  // @ViewChild(VerifyUsernameComponent) stepOneComponent: VerifyUsernameComponent;
@@ -64,20 +64,22 @@ export class VerifySecurityQuestionsComponent implements OnInit {
     console.log(this.username);
 
     this.http.get('api/users/' + this.username + '/security-questions').subscribe(res => {
-      this.securityQuestions = res['data'];
-      console.log(this.securityQuestions);
+      this.questions = res['data'];
+      //console.log(this.securityQuestions);
       console.log(res);
     }, err => {
       console.log(err);
     }, () => {
-      this.question1 = this.securityQuestions[0].questionText;  
-      this.question2 = this.securityQuestions[1].questionText;
-      this.question3 = this.securityQuestions[2].questionText;
+      //console.log('i fired')
+      //console.log(this.questions.securityQuestions[0].questionText);
+      this.question1 = this.questions.securityQuestions[0].questionText;  
+      this.question2 = this.questions.securityQuestions[1].questionText;
+      this.question3 = this.questions.securityQuestions[2].questionText;
 
-
+/*
       console.log(this.question1);
       console.log(this.question2);
-      console.log(this.question3);
+      console.log(this.question3);*/
     });
    }
 

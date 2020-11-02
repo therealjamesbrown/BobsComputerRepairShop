@@ -79,6 +79,7 @@ import { ViewAllTransactionsDialogComponent } from './pages/home/dialogs/orderhi
 import { ResetPasswordProcessComponent } from './pages/reset-password/reset-password-process/reset-password-process.component';
 import { UserdetailsComponent } from './pages/profile/userdetails/userdetails.component';
 import { UpdateAccountComponent } from './pages/profile/update-account/update-account.component';
+import { ChangePasswordComponent } from './pages/profile/dialogs/change-password/change-password.component';
 
 
 
@@ -123,7 +124,8 @@ import { UpdateAccountComponent } from './pages/profile/update-account/update-ac
     ViewAllTransactionsDialogComponent,
     ResetPasswordProcessComponent,
     UserdetailsComponent,
-    UpdateAccountComponent
+    UpdateAccountComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,

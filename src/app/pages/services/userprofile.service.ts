@@ -28,7 +28,7 @@ export class UserprofileService {
    * GET USER DETAILS
    * 
    */
-  getUserDetails(username: string){
+  getUserDetails(username: string): Observable<any>{
     return this.http.get(`/api/users/username/${username}`);
   }
 
@@ -39,7 +39,12 @@ export class UserprofileService {
    * CHANGE PASSWORD
    * 
    */
-
+   changeUserPassword(username: string, password:string): Observable<any>{
+     return this.http.post(`api/session/users/${username}/reset-password`, async(req, res) => {
+       console.log(password);
+      password
+     })
+   }
 
 
   /**
@@ -47,18 +52,26 @@ export class UserprofileService {
    * CHANGE SECURITY QUESTIONS
    * 
    */
+  updateUserSecurityQuestions(){
 
+  }
 
   /**
    * 
    * CHANGE EMAIL
    * 
    */
+updateUserEmail(){
 
+}
 
   /**
    * 
    * CHANG ADDRESS
    * 
    */
+  updateUserStreetAddress(){
+    
+  }
+
 }

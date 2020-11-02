@@ -270,7 +270,8 @@ router.post('/verify/users/:username/security-questions', async(req, res) => {
     try
     {
         const password = req.body.password;
-    
+        console.log('req body logging fired')
+    console.log(req.body);
     User.findOne({ "username": req.params.username }, function(err, user) {
         if (err) {
             console.log(err);

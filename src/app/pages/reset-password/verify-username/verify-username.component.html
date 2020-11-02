@@ -1,4 +1,5 @@
 <!--Outer container-->
+
 <div fxLayout="column" class="singinOuterContainer">
     <div fxFlex>
         <h1>Reset Password</h1>
@@ -7,9 +8,9 @@
                 <!--inner container-->
                 <div fxLayout="column" class="singinInnerContainer">
                     <!--LOGO-->
-                    <div fxFlex>
+            <!--        <div fxFlex>
                         <img src="./assets/logo.png" class="logo">
-                    </div>
+                    </div>-->
 
                     <!--Stepper
                     <mat-horizontal-stepper #stepper>
@@ -17,7 +18,7 @@
 
                     <!--form-->    
                     <form [formGroup]="form1" (ngSubmit)="validateUsername()" #validateUsernameForm>
-                        <ng-template matStepLabel>Verify Username</ng-template>
+                      <!--  <ng-template matStepLabel>Verify Username</ng-template>-->
 
                         <mat-card-content fxLayout="column">
                             <mat-form-field fxFlex>

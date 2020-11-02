@@ -34,22 +34,22 @@ export class VerifyUsernameComponent implements OnInit {
   errorMessage: string;
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
-  /*
+ /*
 //begin add
   @ViewChild(VerifyUsernameComponent) stepOneComponent: VerifyUsernameComponent;
   @ViewChild(VerifySecurityQuestionsComponent) stepTwoComponent: VerifySecurityQuestionsComponent;
   @ViewChild(ResetPasswordComponent) stepThreeComponent: ResetPasswordComponent;
 
   get frmStepOne() {
-     return this.stepOneComponent ? this.stepOneComponent.frmStepOne : null;
+     return this.stepOneComponent ? this.stepOneComponent.form1 : null;
   }
 
   get frmStepTwo() {
-     return this.stepTwoComponent ? this.stepTwoComponent.frmStepTwo : null;
+     return this.stepTwoComponent ? this.stepTwoComponent.form2 : null;
   }
 
   get frmStepThree() {
-     return this.stepThreeComponent ? this.stepThreeComponent.frmStepThree : null;
+     return this.stepThreeComponent ? this.stepThreeComponent.form3 : null;
   }
 //end add
 */

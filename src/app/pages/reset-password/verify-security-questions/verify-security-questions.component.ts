@@ -40,25 +40,25 @@ export class VerifySecurityQuestionsComponent implements OnInit {
   username: string;
   form2: FormGroup;
 
-  /*
+
   //begin add
-  @ViewChild(VerifyUsernameComponent) stepOneComponent: VerifyUsernameComponent;
-  @ViewChild(VerifySecurityQuestionsComponent) stepTwoComponent: VerifySecurityQuestionsComponent;
-  @ViewChild(ResetPasswordComponent) stepThreeComponent: ResetPasswordComponent;
+ // @ViewChild(VerifyUsernameComponent) stepOneComponent: VerifyUsernameComponent;
+  //@ViewChild(VerifySecurityQuestionsComponent) stepTwoComponent: VerifySecurityQuestionsComponent;
+  //@ViewChild(ResetPasswordComponent) stepThreeComponent: ResetPasswordComponent;
 
-  get frmStepOne() {
-     return this.stepOneComponent ? this.stepOneComponent.frmStepOne : null;
-  }
+  //get frmStepOne() {
+  //   return this.stepOneComponent ? this.stepOneComponent.form1 : null;
+ // }
 
-  get frmStepTwo() {
-     return this.stepTwoComponent ? this.stepTwoComponent.frmStepTwo : null;
-  }
+  //get frmStepTwo() {
+  //   return this.stepTwoComponent ? this.stepTwoComponent.form2 : null;
+  //}
 
-  get frmStepThree() {
-     return this.stepThreeComponent ? this.stepThreeComponent.frmStepThree : null;
-  }
+  //get frmStepThree() {
+ //    return this.stepThreeComponent ? this.stepThreeComponent.form3 : null;
+ // }
 //end add
-*/
+
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, private fb: FormBuilder) {
     this.username=this.route.snapshot.queryParamMap.get('username');
     console.log(this.username);

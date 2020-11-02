@@ -10,9 +10,9 @@
                   <div fxFlex>
                       <img src="./assets/logo.png" class="logo">
                   </div>
-  
+  <!--
                   <mat-horizontal-stepper #stepper>
-                    <mat-step [stepControl]="form2">
+                    <mat-step [stepControl]="form2">-->
   
         <form *ngIf="securityQuestions" [formGroup]="form2" (ngSubmit)="verifySecurityQuestions()" #usernameForm>
 
@@ -53,9 +53,9 @@
             
           </mat-card-content>
         </form>
-
+<!--
       </mat-step>
-    </mat-horizontal-stepper>
+    </mat-horizontal-stepper>-->
 
     </div>
 

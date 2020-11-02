@@ -35,7 +35,7 @@
             </mat-form-field>
             <div>
                 <a routerLink="/session/signin">Sign In</a>
-                <button mat-button (click)="registerAccount()" matStepperNext>Create Account</button>
+                <button mat-button (click)="registerAccount()" matStepperNext>Next</button>
             </div>
         </form>
     </mat-step>
@@ -47,30 +47,30 @@
                 <mat-card-subtitle>So You Can Reset Your Password.</mat-card-subtitle>
                 <!-- Security Question 1 -->
                     <mat-label>Security Question 1</mat-label>
-                    <mat-select [(value)]="securityQuestion1">
-                        <mat-option *ngFor="let question of questions">{{ question.questionId }}</mat-option>
-                    </mat-select>
-                <input type="text" formControlName="securityQuestion1Answer" />
+                    <div>
+                        <mat-label>{{ securityQuestion1 }}</mat-label>
+                    </div>
+                <input matInput type="text" formControlName="securityQuestion1Answer" required>
                 <br>
                 <!-- Security Question 2 -->
                     <mat-label>Security Question 2</mat-label>
-                    <mat-select [(value)]="securityQuestion2">
-                        <mat-option *ngFor="let question of questions">{{ question.questionId }}</mat-option>
-                    </mat-select>
-                <input type="text" formControlName="securityQuestion2Answer" />
+                    <div>
+                        <mat-label>{{ securityQuestion2 }}</mat-label>
+                    </div>
+                <input matInput type="text" formControlName="securityQuestion2Answer" required>
                 <br>
                 <!-- Security Question 3 -->
                     <mat-label>Security Question 3</mat-label>
-                    <mat-select [(value)]="securityQuestion3">
-                        <mat-option *ngFor="let question of questions">{{ question.questionId }}</mat-option>
-                    </mat-select>
-                <input type="text" formControlName="securityQuestion3Answer" />
+                    <div>
+                        <mat-label>{{ securityQuestion3 }}</mat-label>
+                    </div>
+                <input matInput type="text" formControlName="securityQuestion3Answer" required>
             </mat-card-content>
             <br>
             <!-- Security Question 3 End -->
             <div>
                 <button mat-button matStepPrevious>Back</button>
-                <button type="submit" mat-button>Set Questions</button>
+                <button type="submit" mat-button matStepperNext>Set Questions</button>
             </div>
         </form>
     </mat-step>
@@ -88,7 +88,7 @@
             <input matInput formControlName="password" placeholder="Ex. Password" required>
         </mat-form-field>
         <div>
-            <button mat-button matStepperPrevious>Create Account</button>
+            <button mat-button matStepperPrevious>Back</button>
             <button mat-button (click)="signIn()" matStepperNext>Sign In</button>
         </div>
     </form>

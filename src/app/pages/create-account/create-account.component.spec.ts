@@ -19,7 +19,7 @@ describe('CreateAccountComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should be truthy', () => {
+    expect(component.securityQuestion1).toBeTruthy();
   });
 });

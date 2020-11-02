@@ -30,9 +30,9 @@ export class CreateAccountComponent implements OnInit {
   thirdFormGroup: FormGroup
   newUser: any
   questions: any
-  securityQuestion1: any
-  securityQuestion2: any
-  securityQuestion3: any
+  securityQuestion1: any = "What was your first car model?"
+  securityQuestion2: any = "What is your mother's maiden name?"
+  securityQuestion3: any = "What was the first book you have read?"
   constructor(private cookieService: CookieService, private router: Router, private http: HttpClient, private fb: FormBuilder) { }
   ngOnInit() {
     this.firstFormGroup = this.fb.group({
@@ -68,25 +68,24 @@ export class CreateAccountComponent implements OnInit {
       phoneNumber: this.firstFormGroup.get('phoneNumber').value,
       address: this.firstFormGroup.get('address').value
     }
-    this.http.post('/api/users', this.newUser).subscribe(err => {
-      if (err) {
-        console.log(err)
-      } else {
-        console.log(this.newUser)
-      }
-    })
-    this.firstFormGroup.reset()
   }
   setSecurityQuestions() {
-   let newSecurityQuestions = {
-     securityQuestion1: this.securityQuestion1,
-     secuirtyQuestion1Answer: this.secondFormGroup.get('securityQuestion1Answer').value,
-     securityQuestion2: this.securityQuestion2,
-     securityQuestion2Answer: this.secondFormGroup.get('securiyQuestion2Answer').value,
-     securityQuestion3: this.securityQuestion3,
-     secuirtyQuestion3Answer: this.secondFormGroup.get('secuirtyQuestion3Answer').value
+   this.newUser['securityQuestions'] = {
+     Question1: this.securityQuestion1,
+     Question1Answer: this.secondFormGroup.get('securityQuestion1Answer').value,
+     Question2: this.securityQuestion2,
+     Question2Answer: this.secondFormGroup.get('securityQuestion2Answer').value,
+     Question3: this.securityQuestion3,
+     Question3Answer: this.secondFormGroup.get('securityQuestion3Answer').value
    }
-   console.log(newSecurityQuestions.securityQuestion1)
+   console.log(this.newUser)
+   this.http.post('/api/users', this.newUser).subscribe(err => {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log(this.newUser)
+    }
+  })
   }
   signIn() {
    let signInUser = {

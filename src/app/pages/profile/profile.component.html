@@ -1,1 +1,24 @@
-<p>profile works!</p>
+<div fxLayout="column" class="outerContainer">
+    <mat-card>
+        <mat-card-content>
+            <div fxFlex class="childColumnContainers">
+                <div fxLayout="row wrap" fxLayoutGap="10px">
+                    <div fxFlex>
+                        <mat-card>
+                            <mat-card-content>
+                                <app-userdetails></app-userdetails>
+                            </mat-card-content>
+                    </mat-card>
+                    </div>
+                    <div fxFlex>
+                        <mat-card>
+                            <mat-card-content>
+                                <app-update-account></app-update-account>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

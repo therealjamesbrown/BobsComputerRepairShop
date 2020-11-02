@@ -1,0 +1,10 @@
+.outerContainer {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .childColumnContainers{
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  

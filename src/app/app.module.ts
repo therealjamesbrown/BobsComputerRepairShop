@@ -77,6 +77,8 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password/re
 import { ViewtransactiondialogComponent } from './pages/home/dialogs/orderhistory/viewtransactiondialog/viewtransactiondialog.component';
 import { ViewAllTransactionsDialogComponent } from './pages/home/dialogs/orderhistory/view-all-transactions-dialog/view-all-transactions-dialog.component';
 import { ResetPasswordProcessComponent } from './pages/reset-password/reset-password-process/reset-password-process.component';
+import { UserdetailsComponent } from './pages/profile/userdetails/userdetails.component';
+import { UpdateAccountComponent } from './pages/profile/update-account/update-account.component';
 
 
 
@@ -119,7 +121,9 @@ import { ResetPasswordProcessComponent } from './pages/reset-password/reset-pass
     ResetPasswordComponent,
     ViewtransactiondialogComponent,
     ViewAllTransactionsDialogComponent,
-    ResetPasswordProcessComponent
+    ResetPasswordProcessComponent,
+    UserdetailsComponent,
+    UpdateAccountComponent
   ],
   imports: [
     BrowserModule,

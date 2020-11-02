@@ -8,9 +8,9 @@
           </div>
 
           <div fxFlex class="childColumnContainers" *ngIf="ad != false && !adCookie">
-            <mat-card>
-              <mat-card-content class="ad" (click)="hideAd()">
-                Ad goes here
+            <mat-card class="ad">
+              <mat-card-content (click)="hideAd()" >
+                10% off this week only! This offer is automatically applied on new orders!
                 <button 
                 mat-raised-button 
                 class="adButton">X</button>
@@ -22,8 +22,8 @@
 
 
           <div fxFlex class="childColumnContainers">
-            <mat-card>
-              <mat-card-content class="ad">
+            <mat-card class="purchaseGraph">
+              <mat-card-content>
                 <h3>Purchases By Graph</h3>
                 Coming soon
               </mat-card-content>
@@ -55,7 +55,7 @@
 
           <div fxFlex class="childColumnContainers">
             <mat-card class="contactContainer">
-              <mat-card-content class="ad">
+              <mat-card-content class="questions">
                 <h3>Questions?</h3>
                 <p routerLink="/contact" class="contact">Contact</p>
               </mat-card-content>

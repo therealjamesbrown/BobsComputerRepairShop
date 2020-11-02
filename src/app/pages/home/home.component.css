@@ -10,17 +10,22 @@
 
 .ad{
   text-align: center;
+  background-color: #ede1b98c;
 }
 
 .adButton{
   float: right;
   width: 1px;
-  background-color: #0d48a156;
-  color: rgba(255, 255, 255, 0.61);
+  background-color: white;
+  color: black;
 }
 
-.adContainer{
-  background-color: #0d48a1e1;
+.questions{
+  text-align: center;
+}
+
+.purchaseGraph{
+  text-align: center;
 }
 
 
@@ -29,10 +34,6 @@ h1{
   font-size: 28px;
 }
 
-.contact{
-  font-size: 12px;
-  font-weight: 200;
-}
 
 .contactContainer{
   background-color: #0d47a1;

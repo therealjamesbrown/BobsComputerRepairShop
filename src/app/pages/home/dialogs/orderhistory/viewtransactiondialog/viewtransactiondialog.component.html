@@ -1,30 +1,40 @@
 <mat-card>
     <mat-card-content>
-<h1 mat-dialog-title>Transaction Details</h1>
-<mat-dialog-content class="mat-typography">
-  <mat-list>
-      <div FxLayout="column">
-      <div fxFlex class="lineItemOuter">
-      <mat-list-item>Line Items:
-          <mat-list class="innerLineItem">
-              <div fxLayout="column">
-                <div fxFlex *ngFor="let item of transaction.lineItem">
-                    <mat-list-item>Title:{{item.title}}<br />Amount:{{item.price | currency}}</mat-list-item>
+<p><span class="title">Order Details</span><span style="float: right;">Order Date:<br />{{transaction.orderDate | date:'medium'}}</span></p>
+<br />
+      <div fxLayout="column">
+              <div fxFlex>
+                <div fxLayout="row">
+                  <div fxFlex>
+                Line Items:
+                <ul *ngFor="let item of transaction.lineItem">
+                    <li>
+                    Title:{{item.title}}<br />Amount:{{item.price | currency}}
+                  </li>
+                  </ul>
+                  Line Item Total:<br /> {{transaction.lineItemTotal | currency}}
+                </div>
+                <div fxFlex>
+                  <div fxFlex>
+                    <ul>
+                      <li>Parts Amount:<br /> {{transaction.partsAmount | currency}}</li>
+                      <li>Labor Amount:<br /> {{transaction.laborAmount | currency}}</li>
+                  </ul>
+                  </div>
+                </div>
                 </div>
             </div>
-          </mat-list>
-        </mat-list-item>
-    </div>
+    </div><br />
+    <!--
     <div fxFlex>
-      <mat-list-item>Line Item Total: {{transaction.lineItemTotal | currency}}</mat-list-item>
-      <mat-list-item>Order Date: {{transaction.orderDate}}</mat-list-item>
-      <mat-list-item>Parts Amount: {{transaction.partsAmount | currency}}</mat-list-item>
-      <mat-list-item>Labor Amount: {{transaction.laborAmount | currency}}</mat-list-item>
+      Order Date: {{transaction.orderDate | date:'medium'}}
+      Parts Amount: {{transaction.partsAmount | currency}}
+      Labor Amount: {{transaction.laborAmount | currency}}
     </div>
-</div>
-  </mat-list>
-<h3 align="end"><strong>Grand Total: {{transaction.total | currency}}</strong></h3>
-</mat-dialog-content>
+-->
+  
+<h3 align="end" style="font-weight: 600; text-decoration: underline;">Grand Total: {{transaction.total | currency}}</h3>
+
 <mat-dialog-actions align="end">
   <button mat-raised-button [mat-dialog-close]="false" color="primary">Close</button>
 </mat-dialog-actions>

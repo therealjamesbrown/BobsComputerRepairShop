@@ -1474,6 +1474,7 @@ class ResetPasswordComponent {
         });
     }
     resetPassword() {
+        console.log(this.username);
         this.http.post('/api/session/users/' + this.username + '/reset-password', {
             password: this.form3.controls['password'].value
         }).subscribe(res => {
@@ -5275,9 +5276,9 @@ class VerifyUsernameComponent {
         });
     }
     validateUsername() {
-        const username = this.form1.controls['username'].value;
+        const username = this.form1.get('username').value;
         console.log(username);
-        this.http.get('/api/session/verify/users/' + username).subscribe(res => {
+        this.http.get('/api/session/verify/users/' + username + '/security-questions').subscribe(res => {
             //console.log(res['data'].username);
             console.log(res);
             //if we get data back, route to the next step
@@ -5307,7 +5308,7 @@ class VerifyUsernameComponent {
 VerifyUsernameComponent.ɵfac = function VerifyUsernameComponent_Factory(t) { return new (t || VerifyUsernameComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_5__["MatSnackBar"])); };
 VerifyUsernameComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: VerifyUsernameComponent, selectors: [["app-verify-username"]], features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵProvidersFeature"]([{
                 provide: _angular_cdk_stepper__WEBPACK_IMPORTED_MODULE_2__["STEPPER_GLOBAL_OPTIONS"], useValue: { displayDefaultIndicatorType: false }
-            }])], decls: 22, vars: 2, consts: [["fxLayout", "column", 1, "singinOuterContainer"], ["fxFlex", ""], [1, "mat-elevation-z8"], ["fxLayout", "column", 1, "singinInnerContainer"], ["src", "./assets/logo.png", 1, "logo"], [3, "formGroup", "ngSubmit"], ["validateUsernameForm", ""], ["matStepLabel", ""], ["fxLayout", "column"], ["matInput", "", "type", "text", "placeholder", "username", 3, "formControl"], ["fxLayoutAlign", "end"], ["mat-raised-button", "", "color", "primary", "button", "", "routerLink", "/session/signin"], ["mat-raised-button", "", "color", "accent"]], template: function VerifyUsernameComponent_Template(rf, ctx) { if (rf & 1) {
+            }])], decls: 22, vars: 2, consts: [["fxLayout", "column", 1, "singinOuterContainer"], ["fxFlex", ""], [1, "mat-elevation-z8"], ["fxLayout", "column", 1, "singinInnerContainer"], ["src", "./assets/logo.png", 1, "logo"], [3, "formGroup", "ngSubmit"], ["validateUsernameForm", ""], ["matStepLabel", ""], ["fxLayout", "column"], ["matInput", "", "type", "text", "placeholder", "username", 3, "formControl"], ["fxLayoutAlign", "end"], ["mat-raised-button", "", "color", "primary", "button", "", "routerLink", "/session/signin"], ["mat-raised-button", "", "type", "submit", "color", "accent"]], template: function VerifyUsernameComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "h1");

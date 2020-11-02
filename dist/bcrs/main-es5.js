@@ -2897,6 +2897,7 @@
           value: function resetPassword() {
             var _this8 = this;
 
+            console.log(this.username);
             this.http.post('/api/session/users/' + this.username + '/reset-password', {
               password: this.form3.controls['password'].value
             }).subscribe(function (res) {
@@ -10153,9 +10154,9 @@
           value: function validateUsername() {
             var _this25 = this;
 
-            var username = this.form1.controls['username'].value;
+            var username = this.form1.get('username').value;
             console.log(username);
-            this.http.get('/api/session/verify/users/' + username).subscribe(function (res) {
+            this.http.get('/api/session/verify/users/' + username + '/security-questions').subscribe(function (res) {
               //console.log(res['data'].username);
               console.log(res); //if we get data back, route to the next step
 
@@ -10211,7 +10212,7 @@
         }])],
         decls: 22,
         vars: 2,
-        consts: [["fxLayout", "column", 1, "singinOuterContainer"], ["fxFlex", ""], [1, "mat-elevation-z8"], ["fxLayout", "column", 1, "singinInnerContainer"], ["src", "./assets/logo.png", 1, "logo"], [3, "formGroup", "ngSubmit"], ["validateUsernameForm", ""], ["matStepLabel", ""], ["fxLayout", "column"], ["matInput", "", "type", "text", "placeholder", "username", 3, "formControl"], ["fxLayoutAlign", "end"], ["mat-raised-button", "", "color", "primary", "button", "", "routerLink", "/session/signin"], ["mat-raised-button", "", "color", "accent"]],
+        consts: [["fxLayout", "column", 1, "singinOuterContainer"], ["fxFlex", ""], [1, "mat-elevation-z8"], ["fxLayout", "column", 1, "singinInnerContainer"], ["src", "./assets/logo.png", 1, "logo"], [3, "formGroup", "ngSubmit"], ["validateUsernameForm", ""], ["matStepLabel", ""], ["fxLayout", "column"], ["matInput", "", "type", "text", "placeholder", "username", 3, "formControl"], ["fxLayoutAlign", "end"], ["mat-raised-button", "", "color", "primary", "button", "", "routerLink", "/session/signin"], ["mat-raised-button", "", "type", "submit", "color", "accent"]],
         template: function VerifyUsernameComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);

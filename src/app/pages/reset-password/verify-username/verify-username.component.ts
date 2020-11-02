@@ -60,7 +60,7 @@ export class VerifyUsernameComponent implements OnInit {
   
   ngOnInit() {
 
-    this.form1 = this.fb.group({
+    this.form1=this.fb.group({
       username: [null, Validators.compose([Validators.required])]
     });
   }
@@ -68,9 +68,10 @@ export class VerifyUsernameComponent implements OnInit {
 
 
   validateUsername() {
-    const username = this.form1.get('username').value;
+    const username = this.form1.controls['username'].value;
     console.log(username);
-    this.http.get('/api/session/verify/users/' + username).subscribe(res => {
+
+    this.http.get('/api/session/verify/users/' + username).subscribe (res => {
       //console.log(res['data'].username);
       console.log(res);
       //if we get data back, route to the next step

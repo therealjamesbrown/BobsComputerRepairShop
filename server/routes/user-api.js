@@ -77,6 +77,42 @@ router.get('/:id', async(req, res) => {
   });
 
 
+
+/**
+ * 
+ * --Find User by username--
+ * Created by JB
+ */
+router.get('/username/:username', async(req, res) => {
+    try {
+        console.log(req.params.username)
+      User.findOne({'username': req.params.username}, function(err, user) {
+  
+        console.log('i fired')
+  
+        if (err) {
+          console.log(err); 
+  
+          const mongoDbErrorResponse = new ErrorResponse ('500', 'Internal server error', err);
+  
+          res.status(500).send(mongoDbErrorResponse.toObject());
+        } else {
+  
+          console.log(user);
+          const mongoDBFindUserByIDSuccess = new BaseResponse('200', 'Success!', user);
+          res.json(mongoDBFindUserByIDSuccess.toObject());
+        }
+      })
+    } catch (e) {
+      console.log(e);
+      const errorCatchResponse = new ErrorResponse('500', 'Internal server error', err)
+      res.status(500).send(errorCatchResponse.toObject());
+    }
+  });
+
+
+
+
 /**
  * 
  * FindSelectedSecurityQuestion

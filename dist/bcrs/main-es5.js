@@ -13,6 +13,103 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"], {
     /***/
+<<<<<<< HEAD
+=======
+    "+kNq":
+    /*!*******************************************************!*\
+      !*** ./src/app/pages/services/userprofile.service.ts ***!
+      \*******************************************************/
+
+    /*! exports provided: UserprofileService */
+
+    /***/
+    function kNq(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "UserprofileService", function () {
+        return UserprofileService;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/common/http */
+      "tk/3");
+      /**
+       *
+       * ================================
+       * ; Title: userprofile.service.ts
+       * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+       * ; Modified by: Sarah Kovar
+       * ; Date: 10/24/2020
+       * ; Description: service responsible for services that relate to the profile page
+       * ================================
+       *
+       */
+
+
+      var UserprofileService = /*#__PURE__*/function () {
+        function UserprofileService(http) {
+          _classCallCheck(this, UserprofileService);
+
+          this.http = http;
+        }
+        /**
+         *
+         * GET USER DETAILS
+         *
+         */
+
+
+        _createClass(UserprofileService, [{
+          key: "getUserDetails",
+          value: function getUserDetails(username) {
+            return this.http.get("/api/users/username/".concat(username));
+          }
+        }]);
+
+        return UserprofileService;
+      }();
+
+      UserprofileService.ɵfac = function UserprofileService_Factory(t) {
+        return new (t || UserprofileService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
+      };
+
+      UserprofileService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: UserprofileService,
+        factory: UserprofileService.ɵfac,
+        providedIn: 'root'
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserprofileService, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+          args: [{
+            providedIn: 'root'
+          }]
+        }], function () {
+          return [{
+            type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+          }];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
+>>>>>>> 5c3d6f89311598505093f2df68f7562f268781c7
     "/ScO":
     /*!**************************************************************************!*\
       !*** ./src/app/pages/profile/update-account/update-account.component.ts ***!
@@ -6069,10 +6166,68 @@
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
+<<<<<<< HEAD
 
       var UserdetailsComponent = /*#__PURE__*/function () {
         function UserdetailsComponent() {
           _classCallCheck(this, UserdetailsComponent);
+=======
+      /* harmony import */
+
+
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/material/dialog */
+      "0IaG");
+      /* harmony import */
+
+
+      var _services_userprofile_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ../../services/userprofile.service */
+      "+kNq");
+      /* harmony import */
+
+
+      var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ngx-cookie-service */
+      "b6Qw");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
+      /**
+       *
+       * ================================
+       * ; Title: userdetails.service.ts
+       * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+       * ; Modified by: Sarah Kovar
+       * ; Date: 10/24/2020
+       * ; Description: component responsible for populating the user details
+       * ================================
+       *
+       */
+
+
+      var UserdetailsComponent = /*#__PURE__*/function () {
+        function UserdetailsComponent(dialog, userProfileService, cookieService) {
+          var _this16 = this;
+
+          _classCallCheck(this, UserdetailsComponent);
+
+          /**
+           *
+           * Pull in the user details
+           *
+           */
+          this.dialog = dialog;
+          this.userProfileService = userProfileService;
+          this.cookieService = cookieService;
+          this.username = this.cookieService.get('sessionuser');
+          this.userProfileService.getUserDetails(this.username).subscribe(function (res) {
+            _this16.userDetailsDataSource = res['data']; //console.log(this.userDetailsDataSource);
+          });
+>>>>>>> 5c3d6f89311598505093f2df68f7562f268781c7
         }
 
         _createClass(UserdetailsComponent, [{
@@ -6084,12 +6239,17 @@
       }();
 
       UserdetailsComponent.ɵfac = function UserdetailsComponent_Factory(t) {
+<<<<<<< HEAD
         return new (t || UserdetailsComponent)();
+=======
+        return new (t || UserdetailsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_userprofile_service__WEBPACK_IMPORTED_MODULE_2__["UserprofileService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"]));
+>>>>>>> 5c3d6f89311598505093f2df68f7562f268781c7
       };
 
       UserdetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: UserdetailsComponent,
         selectors: [["app-userdetails"]],
+<<<<<<< HEAD
         decls: 2,
         vars: 0,
         template: function UserdetailsComponent_Template(rf, ctx) {
@@ -6101,6 +6261,110 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
         },
+=======
+        decls: 22,
+        vars: 9,
+        template: function UserdetailsComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h1");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Personal Details");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "ul");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Role: TODO");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](19, "date");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "Date Modified: TODO");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.username);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userDetailsDataSource.firstName);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userDetailsDataSource.lastName);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userDetailsDataSource.phoneNumber);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userDetailsDataSource.address);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userDetailsDataSource.email);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](19, 7, ctx.userDetailsDataSource.date_created));
+          }
+        },
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"]],
+>>>>>>> 5c3d6f89311598505093f2df68f7562f268781c7
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3Byb2ZpbGUvdXNlcmRldGFpbHMvdXNlcmRldGFpbHMuY29tcG9uZW50LmNzcyJ9 */"]
       });
       /*@__PURE__*/
@@ -6114,7 +6378,17 @@
             styleUrls: ['./userdetails.component.css']
           }]
         }], function () {
+<<<<<<< HEAD
           return [];
+=======
+          return [{
+            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]
+          }, {
+            type: _services_userprofile_service__WEBPACK_IMPORTED_MODULE_2__["UserprofileService"]
+          }, {
+            type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"]
+          }];
+>>>>>>> 5c3d6f89311598505093f2df68f7562f268781c7
         }, null);
       })();
       /***/
@@ -6248,7 +6522,7 @@
         }, {
           key: "signin",
           value: function signin() {
-            var _this16 = this;
+            var _this17 = this;
 
             var username = this.form.controls.userName.value;
             var password = this.form.controls.password.value; //console.log(username);
@@ -6262,14 +6536,14 @@
 
               if (res['data'].username) {
                 //user authenticated
-                _this16.cookieService.set('sessionuser', res['data'].username, 1);
+                _this17.cookieService.set('sessionuser', res['data'].username, 1);
 
-                _this16.router.navigate(['/']);
+                _this17.router.navigate(['/']);
               }
             }, function (err) {
-              _this16.errorMessage = 'Invalid username or password. Try again.';
+              _this17.errorMessage = 'Invalid username or password. Try again.';
 
-              _this16.openSnackBar(_this16.errorMessage);
+              _this17.openSnackBar(_this17.errorMessage);
             });
           }
         }, {
@@ -6603,7 +6877,7 @@
 
       var CreateorderComponent = /*#__PURE__*/function () {
         function CreateorderComponent(http, catalogService) {
-          var _this17 = this;
+          var _this18 = this;
 
           _classCallCheck(this, CreateorderComponent);
 
@@ -6619,7 +6893,7 @@
            */
 
           this.catalogService.findAllCatalogItems().subscribe(function (res) {
-            _this17.catalogDataSource = res['data'];
+            _this18.catalogDataSource = res['data'];
           }, function (err) {
             console.log(err);
           });
@@ -7621,6 +7895,11 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-card-content");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "app-update-account");
+<<<<<<< HEAD
+=======
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+>>>>>>> 5c3d6f89311598505093f2df68f7562f268781c7
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -7633,8 +7912,11 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+<<<<<<< HEAD
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+=======
+>>>>>>> 5c3d6f89311598505093f2df68f7562f268781c7
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
@@ -8344,15 +8626,15 @@
         _createClass(ErrorInterceptor, [{
           key: "intercept",
           value: function intercept(req, next) {
-            var _this18 = this;
+            var _this19 = this;
 
             return next.handle(req).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err) {
               if ([404].indexOf(err.status) !== -1) {
-                _this18.router.navigate(['/session/404']);
+                _this19.router.navigate(['/session/404']);
               }
 
               if ([500].indexOf(err.status) !== -1) {
-                _this18.router.navigate(['/session/500']);
+                _this19.router.navigate(['/session/500']);
               } //otherwise, catch error and trhow
 
 
@@ -9250,7 +9532,7 @@
 
       var SecurityquestionmanagementComponent = /*#__PURE__*/function () {
         function SecurityquestionmanagementComponent(http, dialog, securityQuestionService) {
-          var _this19 = this;
+          var _this20 = this;
 
           _classCallCheck(this, SecurityquestionmanagementComponent);
 
@@ -9262,7 +9544,7 @@
           this.securityQuestionService = securityQuestionService;
           this.displayedColumns = ["question", "status", "action"];
           this.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-            _this19.securityQuestions = res["data"];
+            _this20.securityQuestions = res["data"];
             console.log(res); //console.log(this.securityQuestionService);
           }, function (err) {
             console.log(err);
@@ -9282,7 +9564,7 @@
         }, {
           key: "createSecurityQuestion",
           value: function createSecurityQuestion() {
-            var _this20 = this;
+            var _this21 = this;
 
             var dialogRef = this.dialog.open(_dialogs_create_securityquestion_dialog_create_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_2__["CreateSecurityquestionDialogComponent"], {
               data: {},
@@ -9291,9 +9573,9 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'create') {
-                _this20.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                  _this20.securityQuestions = res['data'];
-                  console.log(_this20.securityQuestions);
+                _this21.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                  _this21.securityQuestions = res['data'];
+                  console.log(_this21.securityQuestions);
                 }, function (err) {
                   console.log(err);
                 });
@@ -9304,7 +9586,7 @@
         }, {
           key: "updateSecurityQuestion",
           value: function updateSecurityQuestion(data) {
-            var _this21 = this;
+            var _this22 = this;
 
             console.log(data);
             var dialogRef = this.dialog.open(_dialogs_update_securityquestion_dialog_update_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_3__["UpdateSecurityquestionDialogComponent"], {
@@ -9317,9 +9599,9 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'update') {
-                _this21.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                  _this21.securityQuestions = res['data'];
-                  console.log(_this21.securityQuestions);
+                _this22.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                  _this22.securityQuestions = res['data'];
+                  console.log(_this22.securityQuestions);
                 }, function (err) {
                   console.log(err);
                 });
@@ -9330,7 +9612,7 @@
         }, {
           key: "deleteSecurityQuestion",
           value: function deleteSecurityQuestion(questionId) {
-            var _this22 = this;
+            var _this23 = this;
 
             var dialogRef = this.dialog.open(_dialogs_delete_securityquestion_dialog_delete_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_1__["DeleteSecurityquestionDialogComponent"], {
               data: {
@@ -9345,12 +9627,12 @@
               if (result == 'confirm') {
                 console.log(questionId);
 
-                _this22.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
+                _this23.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
                   console.log('Security question successfully disabled');
 
-                  _this22.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                    _this22.securityQuestions = res['data'];
-                    console.log(_this22.securityQuestions);
+                  _this23.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                    _this23.securityQuestions = res['data'];
+                    console.log(_this23.securityQuestions);
                   }, function (err) {
                     console.log(err);
                   });
@@ -9977,12 +10259,12 @@
         _createClass(UserManagementComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this23 = this;
+            var _this24 = this;
 
             //Begin Brendans code
             this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
-              _this23.users = data['data'];
-              console.log(_this23.users);
+              _this24.users = data['data'];
+              console.log(_this24.users);
             }); //end Brendans code
           }
           /**Begin Brendans code */
@@ -9990,7 +10272,7 @@
         }, {
           key: "post",
           value: function post() {
-            var _this24 = this;
+            var _this25 = this;
 
             var dialogRef = this.dialog.open(_dialogs_user_admin_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_2__["PostDialogComponent"], {
               disableClose: true,
@@ -9998,9 +10280,9 @@
             }); //added by JB 10/28. After user is submitted, refresh the user list.
 
             dialogRef.afterClosed().subscribe(function (result) {
-              _this24.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
-                _this24.users = data['data'];
-                console.log(_this24.users);
+              _this25.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
+                _this25.users = data['data'];
+                console.log(_this25.users);
               });
             });
           }
@@ -10278,7 +10560,7 @@
         }, {
           key: "validateUsername",
           value: function validateUsername() {
-            var _this25 = this;
+            var _this26 = this;
 
             var username = this.form1.controls['username'].value;
             console.log(username);
@@ -10287,7 +10569,7 @@
               console.log(res); //if we get data back, route to the next step
 
               if (res['data']) {
-                _this25.router.navigate(['/session/verify-security-questions'], {
+                _this26.router.navigate(['/session/verify-security-questions'], {
                   queryParams: {
                     username: username
                   },
@@ -10295,16 +10577,16 @@
                 }); //else if there is not res data or its null, we'll handle it here and in the err
 
               } else if (!res['data']) {
-                _this25.errorMessage = 'Invalid username or password. Try again.';
+                _this26.errorMessage = 'Invalid username or password. Try again.';
 
-                _this25.openSnackBar(_this25.errorMessage);
+                _this26.openSnackBar(_this26.errorMessage);
 
                 console.log('first error fired');
               }
             }, function (err) {
-              _this25.errorMessage = 'Invalid username or password. Try again.';
+              _this26.errorMessage = 'Invalid username or password. Try again.';
 
-              _this25.openSnackBar(_this25.errorMessage);
+              _this26.openSnackBar(_this26.errorMessage);
 
               console.log(err);
             });
@@ -12169,7 +12451,7 @@
         // }
         //end add
         function VerifySecurityQuestionsComponent(route, router, http, fb) {
-          var _this26 = this;
+          var _this27 = this;
 
           _classCallCheck(this, VerifySecurityQuestionsComponent);
 
@@ -12180,7 +12462,7 @@
           this.username = this.route.snapshot.queryParamMap.get('username');
           console.log(this.username);
           this.http.get('api/users/' + this.username + '/security-questions').subscribe(function (res) {
-            _this26.questions = res['data']; //console.log(this.securityQuestions);
+            _this27.questions = res['data']; //console.log(this.securityQuestions);
 
             console.log(res);
           }, function (err) {
@@ -12188,9 +12470,9 @@
           }, function () {
             //console.log('i fired')
             //console.log(this.questions.securityQuestions[0].questionText);
-            _this26.question1 = _this26.questions.securityQuestions[0].questionText;
-            _this26.question2 = _this26.questions.securityQuestions[1].questionText;
-            _this26.question3 = _this26.questions.securityQuestions[2].questionText;
+            _this27.question1 = _this27.questions.securityQuestions[0].questionText;
+            _this27.question2 = _this27.questions.securityQuestions[1].questionText;
+            _this27.question3 = _this27.questions.securityQuestions[2].questionText;
             /*
                   console.log(this.question1);
                   console.log(this.question2);
@@ -12210,7 +12492,7 @@
         }, {
           key: "verifySecurityQuestions",
           value: function verifySecurityQuestions() {
-            var _this27 = this;
+            var _this28 = this;
 
             var answerToSecurityQuestion1 = this.form2.controls['answerToSecurityQuestion1'].value;
             var answerToSecurityQuestion2 = this.form2.controls['answerToSecurityQuestion2'].value;
@@ -12227,10 +12509,10 @@
               console.log(res);
 
               if (res['message'] === 'Success!') {
-                _this27.router.navigate(['/session/reset-password'], {
+                _this28.router.navigate(['/session/reset-password'], {
                   queryParams: {
                     isAuthenticated: 'true',
-                    username: _this27.username
+                    username: _this28.username
                   },
                   skipLocationChange: true
                 });

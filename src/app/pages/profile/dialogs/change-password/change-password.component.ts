@@ -1,3 +1,17 @@
+/**
+ * 
+ * ================================
+ * ; Title: changePassword.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Modified by: James Brown
+ * ; Date: 10/14/2020
+ * ; Description: component responsible for changin the user password in the profile page
+ * ================================
+ * 
+ */
+
+
+
 import { Component, OnInit } from '@angular/core';
 import { UserprofileService } from 'src/app/pages/services/userprofile.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';

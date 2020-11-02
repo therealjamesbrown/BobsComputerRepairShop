@@ -1,3 +1,16 @@
+/**
+ * 
+ * ================================
+ * ; Title: update-account.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Modified by: James Brown
+ * ; Date: 10/14/2020
+ * ; Description: component responsible for updating the user profile
+ * ================================
+ * 
+ */
+
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';

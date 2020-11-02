@@ -46,30 +46,24 @@
                 <mat-card-title>Set Your Security Questions.</mat-card-title>
                 <mat-card-subtitle>So You Can Reset Your Password.</mat-card-subtitle>
                 <!-- Security Question 1 -->
-                <mat-form-field>
                     <mat-label>Security Question 1</mat-label>
                     <mat-select [(value)]="securityQuestion1">
                         <mat-option *ngFor="let question of questions">{{ question.questionId }}</mat-option>
                     </mat-select>
-                </mat-form-field>
                 <input type="text" formControlName="securityQuestion1Answer" />
                 <br>
                 <!-- Security Question 2 -->
-                <mat-form-field>
-                   <mat-form-field>Security Question 2</mat-form-field>
+                    <mat-label>Security Question 2</mat-label>
                     <mat-select [(value)]="securityQuestion2">
                         <mat-option *ngFor="let question of questions">{{ question.questionId }}</mat-option>
                     </mat-select>
-                </mat-form-field>
                 <input type="text" formControlName="securityQuestion2Answer" />
                 <br>
                 <!-- Security Question 3 -->
-                <mat-form-field>
                     <mat-label>Security Question 3</mat-label>
                     <mat-select [(value)]="securityQuestion3">
                         <mat-option *ngFor="let question of questions">{{ question.questionId }}</mat-option>
                     </mat-select>
-                </mat-form-field>
                 <input type="text" formControlName="securityQuestion3Answer" />
             </mat-card-content>
             <br>

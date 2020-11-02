@@ -13,6 +13,177 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"], {
     /***/
+    "+kNq":
+    /*!*******************************************************!*\
+      !*** ./src/app/pages/services/userprofile.service.ts ***!
+      \*******************************************************/
+
+    /*! exports provided: UserprofileService */
+
+    /***/
+    function kNq(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "UserprofileService", function () {
+        return UserprofileService;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/common/http */
+      "tk/3");
+      /**
+       *
+       * ================================
+       * ; Title: userprofile.service.ts
+       * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+       * ; Modified by: Sarah Kovar
+       * ; Date: 10/24/2020
+       * ; Description: service responsible for services that relate to the profile page
+       * ================================
+       *
+       */
+
+
+      var UserprofileService = /*#__PURE__*/function () {
+        function UserprofileService(http) {
+          _classCallCheck(this, UserprofileService);
+
+          this.http = http;
+        }
+        /**
+         *
+         * GET USER DETAILS
+         *
+         */
+
+
+        _createClass(UserprofileService, [{
+          key: "getUserDetails",
+          value: function getUserDetails(username) {
+            return this.http.get("/api/users/username/".concat(username));
+          }
+        }]);
+
+        return UserprofileService;
+      }();
+
+      UserprofileService.ɵfac = function UserprofileService_Factory(t) {
+        return new (t || UserprofileService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]));
+      };
+
+      UserprofileService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({
+        token: UserprofileService,
+        factory: UserprofileService.ɵfac,
+        providedIn: 'root'
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserprofileService, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+          args: [{
+            providedIn: 'root'
+          }]
+        }], function () {
+          return [{
+            type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]
+          }];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
+    "/ScO":
+    /*!**************************************************************************!*\
+      !*** ./src/app/pages/profile/update-account/update-account.component.ts ***!
+      \**************************************************************************/
+
+    /*! exports provided: UpdateAccountComponent */
+
+    /***/
+    function ScO(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "UpdateAccountComponent", function () {
+        return UpdateAccountComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+
+      var UpdateAccountComponent = /*#__PURE__*/function () {
+        function UpdateAccountComponent() {
+          _classCallCheck(this, UpdateAccountComponent);
+        }
+
+        _createClass(UpdateAccountComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }]);
+
+        return UpdateAccountComponent;
+      }();
+
+      UpdateAccountComponent.ɵfac = function UpdateAccountComponent_Factory(t) {
+        return new (t || UpdateAccountComponent)();
+      };
+
+      UpdateAccountComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: UpdateAccountComponent,
+        selectors: [["app-update-account"]],
+        decls: 2,
+        vars: 0,
+        template: function UpdateAccountComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "update-account works!");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+        },
+        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3Byb2ZpbGUvdXBkYXRlLWFjY291bnQvdXBkYXRlLWFjY291bnQuY29tcG9uZW50LmNzcyJ9 */"]
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UpdateAccountComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'app-update-account',
+            templateUrl: './update-account.component.html',
+            styleUrls: ['./update-account.component.css']
+          }]
+        }], function () {
+          return [];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
     0:
     /*!***************************!*\
       !*** multi ./src/main.ts ***!
@@ -6050,6 +6221,231 @@
     },
 
     /***/
+    "TqJp":
+    /*!********************************************************************!*\
+      !*** ./src/app/pages/profile/userdetails/userdetails.component.ts ***!
+      \********************************************************************/
+
+    /*! exports provided: UserdetailsComponent */
+
+    /***/
+    function TqJp(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "UserdetailsComponent", function () {
+        return UserdetailsComponent;
+      });
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/material/dialog */
+      "0IaG");
+      /* harmony import */
+
+
+      var _services_userprofile_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ../../services/userprofile.service */
+      "+kNq");
+      /* harmony import */
+
+
+      var ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ngx-cookie-service */
+      "b6Qw");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
+      /**
+       *
+       * ================================
+       * ; Title: userdetails.service.ts
+       * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+       * ; Modified by: Sarah Kovar
+       * ; Date: 10/24/2020
+       * ; Description: component responsible for populating the user details
+       * ================================
+       *
+       */
+
+
+      var UserdetailsComponent = /*#__PURE__*/function () {
+        function UserdetailsComponent(dialog, userProfileService, cookieService) {
+          var _this16 = this;
+
+          _classCallCheck(this, UserdetailsComponent);
+
+          /**
+           *
+           * Pull in the user details
+           *
+           */
+          this.dialog = dialog;
+          this.userProfileService = userProfileService;
+          this.cookieService = cookieService;
+          this.username = this.cookieService.get('sessionuser');
+          this.userProfileService.getUserDetails(this.username).subscribe(function (res) {
+            _this16.userDetailsDataSource = res['data']; //console.log(this.userDetailsDataSource);
+          });
+        }
+
+        _createClass(UserdetailsComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }]);
+
+        return UserdetailsComponent;
+      }();
+
+      UserdetailsComponent.ɵfac = function UserdetailsComponent_Factory(t) {
+        return new (t || UserdetailsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_userprofile_service__WEBPACK_IMPORTED_MODULE_2__["UserprofileService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"]));
+      };
+
+      UserdetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+        type: UserdetailsComponent,
+        selectors: [["app-userdetails"]],
+        decls: 22,
+        vars: 9,
+        template: function UserdetailsComponent_Template(rf, ctx) {
+          if (rf & 1) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h1");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Personal Details");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "ul");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "Role: TODO");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](19, "date");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "li");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "Date Modified: TODO");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          }
+
+          if (rf & 2) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.username);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userDetailsDataSource.firstName);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userDetailsDataSource.lastName);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userDetailsDataSource.phoneNumber);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userDetailsDataSource.address);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userDetailsDataSource.email);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](19, 7, ctx.userDetailsDataSource.date_created));
+          }
+        },
+        pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"]],
+        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3Byb2ZpbGUvdXNlcmRldGFpbHMvdXNlcmRldGFpbHMuY29tcG9uZW50LmNzcyJ9 */"]
+      });
+      /*@__PURE__*/
+
+      (function () {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserdetailsComponent, [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+          args: [{
+            selector: 'app-userdetails',
+            templateUrl: './userdetails.component.html',
+            styleUrls: ['./userdetails.component.css']
+          }]
+        }], function () {
+          return [{
+            type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]
+          }, {
+            type: _services_userprofile_service__WEBPACK_IMPORTED_MODULE_2__["UserprofileService"]
+          }, {
+            type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"]
+          }];
+        }, null);
+      })();
+      /***/
+
+    },
+
+    /***/
     "UE1v":
     /*!**************************************************!*\
       !*** ./src/app/pages/signin/signin.component.ts ***!
@@ -6176,7 +6572,7 @@
         }, {
           key: "signin",
           value: function signin() {
-            var _this16 = this;
+            var _this17 = this;
 
             var username = this.form.controls.userName.value;
             var password = this.form.controls.password.value; //console.log(username);
@@ -6190,14 +6586,14 @@
 
               if (res['data'].username) {
                 //user authenticated
-                _this16.cookieService.set('sessionuser', res['data'].username, 1);
+                _this17.cookieService.set('sessionuser', res['data'].username, 1);
 
-                _this16.router.navigate(['/']);
+                _this17.router.navigate(['/']);
               }
             }, function (err) {
-              _this16.errorMessage = 'Invalid username or password. Try again.';
+              _this17.errorMessage = 'Invalid username or password. Try again.';
 
-              _this16.openSnackBar(_this16.errorMessage);
+              _this17.openSnackBar(_this17.errorMessage);
             });
           }
         }, {
@@ -6531,7 +6927,7 @@
 
       var CreateorderComponent = /*#__PURE__*/function () {
         function CreateorderComponent(http, catalogService) {
-          var _this17 = this;
+          var _this18 = this;
 
           _classCallCheck(this, CreateorderComponent);
 
@@ -6547,7 +6943,7 @@
            */
 
           this.catalogService.findAllCatalogItems().subscribe(function (res) {
-            _this17.catalogDataSource = res['data'];
+            _this18.catalogDataSource = res['data'];
           }, function (err) {
             console.log(err);
           });
@@ -7456,6 +7852,30 @@
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
+      /* harmony import */
+
+
+      var _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/flex-layout/flex */
+      "XiUz");
+      /* harmony import */
+
+
+      var _angular_material_card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/material/card */
+      "Wp6s");
+      /* harmony import */
+
+
+      var _userdetails_userdetails_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./userdetails/userdetails.component */
+      "TqJp");
+      /* harmony import */
+
+
+      var _update_account_update_account_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ./update-account/update-account.component */
+      "/ScO");
       /**
        *
        * ================================
@@ -7489,18 +7909,62 @@
       ProfileComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: ProfileComponent,
         selectors: [["app-profile"]],
-        decls: 2,
+        decls: 13,
         vars: 0,
+        consts: [["fxLayout", "column", 1, "outerContainer"], ["fxFlex", "", 1, "childColumnContainers"], ["fxLayout", "row wrap", "fxLayoutGap", "10px"], ["fxFlex", ""]],
         template: function ProfileComponent_Template(rf, ctx) {
           if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "profile works!");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 1);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "mat-card");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "mat-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "app-userdetails");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 3);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "mat-card");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-card-content");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "app-update-account");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }
         },
-        styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3Byb2ZpbGUvcHJvZmlsZS5jb21wb25lbnQuY3NzIn0= */"]
+        directives: [_angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_1__["DefaultLayoutDirective"], _angular_material_card__WEBPACK_IMPORTED_MODULE_2__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_2__["MatCardContent"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_1__["DefaultFlexDirective"], _angular_flex_layout_flex__WEBPACK_IMPORTED_MODULE_1__["DefaultLayoutGapDirective"], _userdetails_userdetails_component__WEBPACK_IMPORTED_MODULE_3__["UserdetailsComponent"], _update_account_update_account_component__WEBPACK_IMPORTED_MODULE_4__["UpdateAccountComponent"]],
+        styles: [".outerContainer[_ngcontent-%COMP%] {\n    width: 90%;\n    margin: 0 auto;\n  }\n  \n  .childColumnContainers[_ngcontent-%COMP%]{\n    margin-top: 10px;\n    margin-bottom: 5px;\n  }\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvcHJvZmlsZS9wcm9maWxlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxVQUFVO0lBQ1YsY0FBYztFQUNoQjs7RUFFQTtJQUNFLGdCQUFnQjtJQUNoQixrQkFBa0I7RUFDcEIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9wcm9maWxlL3Byb2ZpbGUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5vdXRlckNvbnRhaW5lciB7XG4gICAgd2lkdGg6IDkwJTtcbiAgICBtYXJnaW46IDAgYXV0bztcbiAgfVxuICBcbiAgLmNoaWxkQ29sdW1uQ29udGFpbmVyc3tcbiAgICBtYXJnaW4tdG9wOiAxMHB4O1xuICAgIG1hcmdpbi1ib3R0b206IDVweDtcbiAgfVxuICAiXX0= */"]
       });
       /*@__PURE__*/
 
@@ -7935,6 +8399,18 @@
       var _pages_reset_password_reset_password_process_reset_password_process_component__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(
       /*! ./pages/reset-password/reset-password-process/reset-password-process.component */
       "uFZa");
+      /* harmony import */
+
+
+      var _pages_profile_userdetails_userdetails_component__WEBPACK_IMPORTED_MODULE_66__ = __webpack_require__(
+      /*! ./pages/profile/userdetails/userdetails.component */
+      "TqJp");
+      /* harmony import */
+
+
+      var _pages_profile_update_account_update_account_component__WEBPACK_IMPORTED_MODULE_67__ = __webpack_require__(
+      /*! ./pages/profile/update-account/update-account.component */
+      "/ScO");
       /**
        *
        * ================================
@@ -7970,7 +8446,7 @@
 
       (function () {
         (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _shared_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_6__["BaseLayoutComponent"], _shared_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_7__["AuthLayoutComponent"], _pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_14__["SigninComponent"], _pages_administration_administration_component__WEBPACK_IMPORTED_MODULE_24__["AdministrationComponent"], _pages_profile_profile_component__WEBPACK_IMPORTED_MODULE_25__["ProfileComponent"], _pages_contact_contact_component__WEBPACK_IMPORTED_MODULE_26__["ContactComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_27__["AboutComponent"], _app_pages_administration_dialogs_user_admin_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_29__["PostDialogComponent"], _app_pages_administration_dialogs_user_admin_put_dialog_put_dialog_component__WEBPACK_IMPORTED_MODULE_30__["PutDialogComponent"], _app_pages_administration_dialogs_user_admin_patch_dialog_patch_dialog_component__WEBPACK_IMPORTED_MODULE_31__["PatchDialogComponent"], _pages_administration_rolemanagement_rolemanagement_component__WEBPACK_IMPORTED_MODULE_32__["RolemanagementComponent"], _pages_administration_catalogmanagement_catalogmanagement_component__WEBPACK_IMPORTED_MODULE_33__["CatalogmanagementComponent"], _pages_administration_purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_34__["PurchasegraphComponent"], _pages_administration_securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_35__["SecurityquestionmanagementComponent"], _app_pages_administration_usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_36__["UserManagementComponent"], _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_38__["DeleteRecordDialogComponentComponent"], _pages_administration_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_39__["CreateRoleDialogComponent"], _pages_administration_dialogs_create_securityquestion_dialog_create_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_40__["CreateSecurityquestionDialogComponent"], _pages_administration_dialogs_delete_securityquestion_dialog_delete_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_41__["DeleteSecurityquestionDialogComponent"], _pages_administration_dialogs_update_role_dialog_update_role_dialog_component__WEBPACK_IMPORTED_MODULE_42__["UpdateRoleDialogComponent"], _pages_administration_dialogs_user_options_dialog_dialogs_more_vert_dialog_more_vert_dialog_component__WEBPACK_IMPORTED_MODULE_44__["MoreVertDialogComponent"], _pages_administration_dialogs_create_catalog_item_create_catalog_item_component__WEBPACK_IMPORTED_MODULE_46__["CreateCatalogItemComponent"], _pages_administration_dialogs_update_catalog_item_update_catalog_item_component__WEBPACK_IMPORTED_MODULE_47__["UpdateCatalogItemComponent"], _pages_administration_dialogs_delete_catalog_item_delete_catalog_item_component__WEBPACK_IMPORTED_MODULE_48__["DeleteCatalogItemComponent"], _pages_administration_dialogs_update_securityquestion_dialog_update_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_49__["UpdateSecurityquestionDialogComponent"], _pages_create_account_create_account_component__WEBPACK_IMPORTED_MODULE_50__["CreateAccountComponent"], _pages_error_error_component__WEBPACK_IMPORTED_MODULE_54__["ErrorComponent"], _pages_notfound_notfound_component__WEBPACK_IMPORTED_MODULE_55__["NotfoundComponent"], _pages_home_createorder_createorder_component__WEBPACK_IMPORTED_MODULE_57__["CreateorderComponent"], _pages_home_orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_58__["OrderhistoryComponent"], _pages_reset_password_verify_username_verify_username_component__WEBPACK_IMPORTED_MODULE_60__["VerifyUsernameComponent"], _pages_reset_password_verify_security_questions_verify_security_questions_component__WEBPACK_IMPORTED_MODULE_61__["VerifySecurityQuestionsComponent"], _pages_reset_password_reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_62__["ResetPasswordComponent"], _pages_home_dialogs_orderhistory_viewtransactiondialog_viewtransactiondialog_component__WEBPACK_IMPORTED_MODULE_63__["ViewtransactiondialogComponent"], _pages_home_dialogs_orderhistory_view_all_transactions_dialog_view_all_transactions_dialog_component__WEBPACK_IMPORTED_MODULE_64__["ViewAllTransactionsDialogComponent"], _pages_reset_password_reset_password_process_reset_password_process_component__WEBPACK_IMPORTED_MODULE_65__["ResetPasswordProcessComponent"]],
+          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _shared_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_6__["BaseLayoutComponent"], _shared_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_7__["AuthLayoutComponent"], _pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_14__["SigninComponent"], _pages_administration_administration_component__WEBPACK_IMPORTED_MODULE_24__["AdministrationComponent"], _pages_profile_profile_component__WEBPACK_IMPORTED_MODULE_25__["ProfileComponent"], _pages_contact_contact_component__WEBPACK_IMPORTED_MODULE_26__["ContactComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_27__["AboutComponent"], _app_pages_administration_dialogs_user_admin_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_29__["PostDialogComponent"], _app_pages_administration_dialogs_user_admin_put_dialog_put_dialog_component__WEBPACK_IMPORTED_MODULE_30__["PutDialogComponent"], _app_pages_administration_dialogs_user_admin_patch_dialog_patch_dialog_component__WEBPACK_IMPORTED_MODULE_31__["PatchDialogComponent"], _pages_administration_rolemanagement_rolemanagement_component__WEBPACK_IMPORTED_MODULE_32__["RolemanagementComponent"], _pages_administration_catalogmanagement_catalogmanagement_component__WEBPACK_IMPORTED_MODULE_33__["CatalogmanagementComponent"], _pages_administration_purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_34__["PurchasegraphComponent"], _pages_administration_securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_35__["SecurityquestionmanagementComponent"], _app_pages_administration_usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_36__["UserManagementComponent"], _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_38__["DeleteRecordDialogComponentComponent"], _pages_administration_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_39__["CreateRoleDialogComponent"], _pages_administration_dialogs_create_securityquestion_dialog_create_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_40__["CreateSecurityquestionDialogComponent"], _pages_administration_dialogs_delete_securityquestion_dialog_delete_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_41__["DeleteSecurityquestionDialogComponent"], _pages_administration_dialogs_update_role_dialog_update_role_dialog_component__WEBPACK_IMPORTED_MODULE_42__["UpdateRoleDialogComponent"], _pages_administration_dialogs_user_options_dialog_dialogs_more_vert_dialog_more_vert_dialog_component__WEBPACK_IMPORTED_MODULE_44__["MoreVertDialogComponent"], _pages_administration_dialogs_create_catalog_item_create_catalog_item_component__WEBPACK_IMPORTED_MODULE_46__["CreateCatalogItemComponent"], _pages_administration_dialogs_update_catalog_item_update_catalog_item_component__WEBPACK_IMPORTED_MODULE_47__["UpdateCatalogItemComponent"], _pages_administration_dialogs_delete_catalog_item_delete_catalog_item_component__WEBPACK_IMPORTED_MODULE_48__["DeleteCatalogItemComponent"], _pages_administration_dialogs_update_securityquestion_dialog_update_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_49__["UpdateSecurityquestionDialogComponent"], _pages_create_account_create_account_component__WEBPACK_IMPORTED_MODULE_50__["CreateAccountComponent"], _pages_error_error_component__WEBPACK_IMPORTED_MODULE_54__["ErrorComponent"], _pages_notfound_notfound_component__WEBPACK_IMPORTED_MODULE_55__["NotfoundComponent"], _pages_home_createorder_createorder_component__WEBPACK_IMPORTED_MODULE_57__["CreateorderComponent"], _pages_home_orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_58__["OrderhistoryComponent"], _pages_reset_password_verify_username_verify_username_component__WEBPACK_IMPORTED_MODULE_60__["VerifyUsernameComponent"], _pages_reset_password_verify_security_questions_verify_security_questions_component__WEBPACK_IMPORTED_MODULE_61__["VerifySecurityQuestionsComponent"], _pages_reset_password_reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_62__["ResetPasswordComponent"], _pages_home_dialogs_orderhistory_viewtransactiondialog_viewtransactiondialog_component__WEBPACK_IMPORTED_MODULE_63__["ViewtransactiondialogComponent"], _pages_home_dialogs_orderhistory_view_all_transactions_dialog_view_all_transactions_dialog_component__WEBPACK_IMPORTED_MODULE_64__["ViewAllTransactionsDialogComponent"], _pages_reset_password_reset_password_process_reset_password_process_component__WEBPACK_IMPORTED_MODULE_65__["ResetPasswordProcessComponent"], _pages_profile_userdetails_userdetails_component__WEBPACK_IMPORTED_MODULE_66__["UserdetailsComponent"], _pages_profile_update_account_update_account_component__WEBPACK_IMPORTED_MODULE_67__["UpdateAccountComponent"]],
           imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ReactiveFormsModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_16__["MatInputModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__["MatFormFieldModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__["MatSnackBarModule"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_20__["MatDividerModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_22__["MatMenuModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_23__["MatListModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_28__["MatTableModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_56__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_37__["MatSortModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_43__["MatSelectModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_45__["MatSlideToggleModule"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_51__["MatStepperModule"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_52__["ScrollingModule"]]
         });
       })();
@@ -7981,7 +8457,7 @@
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
           args: [{
-            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _shared_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_6__["BaseLayoutComponent"], _shared_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_7__["AuthLayoutComponent"], _pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_14__["SigninComponent"], _pages_administration_administration_component__WEBPACK_IMPORTED_MODULE_24__["AdministrationComponent"], _pages_profile_profile_component__WEBPACK_IMPORTED_MODULE_25__["ProfileComponent"], _pages_contact_contact_component__WEBPACK_IMPORTED_MODULE_26__["ContactComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_27__["AboutComponent"], _app_pages_administration_dialogs_user_admin_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_29__["PostDialogComponent"], _app_pages_administration_dialogs_user_admin_put_dialog_put_dialog_component__WEBPACK_IMPORTED_MODULE_30__["PutDialogComponent"], _app_pages_administration_dialogs_user_admin_patch_dialog_patch_dialog_component__WEBPACK_IMPORTED_MODULE_31__["PatchDialogComponent"], _pages_administration_rolemanagement_rolemanagement_component__WEBPACK_IMPORTED_MODULE_32__["RolemanagementComponent"], _pages_administration_catalogmanagement_catalogmanagement_component__WEBPACK_IMPORTED_MODULE_33__["CatalogmanagementComponent"], _pages_administration_purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_34__["PurchasegraphComponent"], _pages_administration_securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_35__["SecurityquestionmanagementComponent"], _app_pages_administration_usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_36__["UserManagementComponent"], _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_38__["DeleteRecordDialogComponentComponent"], _pages_administration_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_39__["CreateRoleDialogComponent"], _pages_administration_dialogs_create_securityquestion_dialog_create_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_40__["CreateSecurityquestionDialogComponent"], _pages_administration_dialogs_delete_securityquestion_dialog_delete_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_41__["DeleteSecurityquestionDialogComponent"], _pages_administration_dialogs_update_role_dialog_update_role_dialog_component__WEBPACK_IMPORTED_MODULE_42__["UpdateRoleDialogComponent"], _pages_administration_dialogs_user_options_dialog_dialogs_more_vert_dialog_more_vert_dialog_component__WEBPACK_IMPORTED_MODULE_44__["MoreVertDialogComponent"], _pages_administration_dialogs_create_catalog_item_create_catalog_item_component__WEBPACK_IMPORTED_MODULE_46__["CreateCatalogItemComponent"], _pages_administration_dialogs_update_catalog_item_update_catalog_item_component__WEBPACK_IMPORTED_MODULE_47__["UpdateCatalogItemComponent"], _pages_administration_dialogs_delete_catalog_item_delete_catalog_item_component__WEBPACK_IMPORTED_MODULE_48__["DeleteCatalogItemComponent"], _pages_administration_dialogs_update_securityquestion_dialog_update_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_49__["UpdateSecurityquestionDialogComponent"], _pages_create_account_create_account_component__WEBPACK_IMPORTED_MODULE_50__["CreateAccountComponent"], _pages_error_error_component__WEBPACK_IMPORTED_MODULE_54__["ErrorComponent"], _pages_notfound_notfound_component__WEBPACK_IMPORTED_MODULE_55__["NotfoundComponent"], _pages_home_createorder_createorder_component__WEBPACK_IMPORTED_MODULE_57__["CreateorderComponent"], _pages_home_orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_58__["OrderhistoryComponent"], _pages_reset_password_verify_username_verify_username_component__WEBPACK_IMPORTED_MODULE_60__["VerifyUsernameComponent"], _pages_reset_password_verify_security_questions_verify_security_questions_component__WEBPACK_IMPORTED_MODULE_61__["VerifySecurityQuestionsComponent"], _pages_reset_password_reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_62__["ResetPasswordComponent"], _pages_home_dialogs_orderhistory_viewtransactiondialog_viewtransactiondialog_component__WEBPACK_IMPORTED_MODULE_63__["ViewtransactiondialogComponent"], _pages_home_dialogs_orderhistory_view_all_transactions_dialog_view_all_transactions_dialog_component__WEBPACK_IMPORTED_MODULE_64__["ViewAllTransactionsDialogComponent"], _pages_reset_password_reset_password_process_reset_password_process_component__WEBPACK_IMPORTED_MODULE_65__["ResetPasswordProcessComponent"]],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"], _shared_base_layout_base_layout_component__WEBPACK_IMPORTED_MODULE_6__["BaseLayoutComponent"], _shared_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_7__["AuthLayoutComponent"], _pages_signin_signin_component__WEBPACK_IMPORTED_MODULE_14__["SigninComponent"], _pages_administration_administration_component__WEBPACK_IMPORTED_MODULE_24__["AdministrationComponent"], _pages_profile_profile_component__WEBPACK_IMPORTED_MODULE_25__["ProfileComponent"], _pages_contact_contact_component__WEBPACK_IMPORTED_MODULE_26__["ContactComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_27__["AboutComponent"], _app_pages_administration_dialogs_user_admin_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_29__["PostDialogComponent"], _app_pages_administration_dialogs_user_admin_put_dialog_put_dialog_component__WEBPACK_IMPORTED_MODULE_30__["PutDialogComponent"], _app_pages_administration_dialogs_user_admin_patch_dialog_patch_dialog_component__WEBPACK_IMPORTED_MODULE_31__["PatchDialogComponent"], _pages_administration_rolemanagement_rolemanagement_component__WEBPACK_IMPORTED_MODULE_32__["RolemanagementComponent"], _pages_administration_catalogmanagement_catalogmanagement_component__WEBPACK_IMPORTED_MODULE_33__["CatalogmanagementComponent"], _pages_administration_purchasegraph_purchasegraph_component__WEBPACK_IMPORTED_MODULE_34__["PurchasegraphComponent"], _pages_administration_securityquestionmanagement_securityquestionmanagement_component__WEBPACK_IMPORTED_MODULE_35__["SecurityquestionmanagementComponent"], _app_pages_administration_usermanagement_usermanagement_component__WEBPACK_IMPORTED_MODULE_36__["UserManagementComponent"], _pages_administration_rolemanagement_delete_record_dialog_component_delete_record_dialog_component_component__WEBPACK_IMPORTED_MODULE_38__["DeleteRecordDialogComponentComponent"], _pages_administration_dialogs_create_role_dialog_create_role_dialog_component__WEBPACK_IMPORTED_MODULE_39__["CreateRoleDialogComponent"], _pages_administration_dialogs_create_securityquestion_dialog_create_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_40__["CreateSecurityquestionDialogComponent"], _pages_administration_dialogs_delete_securityquestion_dialog_delete_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_41__["DeleteSecurityquestionDialogComponent"], _pages_administration_dialogs_update_role_dialog_update_role_dialog_component__WEBPACK_IMPORTED_MODULE_42__["UpdateRoleDialogComponent"], _pages_administration_dialogs_user_options_dialog_dialogs_more_vert_dialog_more_vert_dialog_component__WEBPACK_IMPORTED_MODULE_44__["MoreVertDialogComponent"], _pages_administration_dialogs_create_catalog_item_create_catalog_item_component__WEBPACK_IMPORTED_MODULE_46__["CreateCatalogItemComponent"], _pages_administration_dialogs_update_catalog_item_update_catalog_item_component__WEBPACK_IMPORTED_MODULE_47__["UpdateCatalogItemComponent"], _pages_administration_dialogs_delete_catalog_item_delete_catalog_item_component__WEBPACK_IMPORTED_MODULE_48__["DeleteCatalogItemComponent"], _pages_administration_dialogs_update_securityquestion_dialog_update_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_49__["UpdateSecurityquestionDialogComponent"], _pages_create_account_create_account_component__WEBPACK_IMPORTED_MODULE_50__["CreateAccountComponent"], _pages_error_error_component__WEBPACK_IMPORTED_MODULE_54__["ErrorComponent"], _pages_notfound_notfound_component__WEBPACK_IMPORTED_MODULE_55__["NotfoundComponent"], _pages_home_createorder_createorder_component__WEBPACK_IMPORTED_MODULE_57__["CreateorderComponent"], _pages_home_orderhistory_orderhistory_component__WEBPACK_IMPORTED_MODULE_58__["OrderhistoryComponent"], _pages_reset_password_verify_username_verify_username_component__WEBPACK_IMPORTED_MODULE_60__["VerifyUsernameComponent"], _pages_reset_password_verify_security_questions_verify_security_questions_component__WEBPACK_IMPORTED_MODULE_61__["VerifySecurityQuestionsComponent"], _pages_reset_password_reset_password_reset_password_component__WEBPACK_IMPORTED_MODULE_62__["ResetPasswordComponent"], _pages_home_dialogs_orderhistory_viewtransactiondialog_viewtransactiondialog_component__WEBPACK_IMPORTED_MODULE_63__["ViewtransactiondialogComponent"], _pages_home_dialogs_orderhistory_view_all_transactions_dialog_view_all_transactions_dialog_component__WEBPACK_IMPORTED_MODULE_64__["ViewAllTransactionsDialogComponent"], _pages_reset_password_reset_password_process_reset_password_process_component__WEBPACK_IMPORTED_MODULE_65__["ResetPasswordProcessComponent"], _pages_profile_userdetails_userdetails_component__WEBPACK_IMPORTED_MODULE_66__["UserdetailsComponent"], _pages_profile_update_account_update_account_component__WEBPACK_IMPORTED_MODULE_67__["UpdateAccountComponent"]],
             imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _angular_flex_layout__WEBPACK_IMPORTED_MODULE_8__["FlexLayoutModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_9__["MatToolbarModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_13__["ReactiveFormsModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"], _angular_material_input__WEBPACK_IMPORTED_MODULE_16__["MatInputModule"], _angular_material_form_field__WEBPACK_IMPORTED_MODULE_17__["MatFormFieldModule"], _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_19__["MatSnackBarModule"], _angular_material_divider__WEBPACK_IMPORTED_MODULE_20__["MatDividerModule"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"], _angular_material_menu__WEBPACK_IMPORTED_MODULE_22__["MatMenuModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_23__["MatListModule"], _angular_material_table__WEBPACK_IMPORTED_MODULE_28__["MatTableModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_material_paginator__WEBPACK_IMPORTED_MODULE_56__["MatPaginatorModule"], _angular_material_sort__WEBPACK_IMPORTED_MODULE_37__["MatSortModule"], _angular_material_select__WEBPACK_IMPORTED_MODULE_43__["MatSelectModule"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_45__["MatSlideToggleModule"], _angular_material_stepper__WEBPACK_IMPORTED_MODULE_51__["MatStepperModule"], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_52__["ScrollingModule"]],
             providers: [{
               provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_12__["HTTP_INTERCEPTORS"],
@@ -8192,15 +8668,15 @@
         _createClass(ErrorInterceptor, [{
           key: "intercept",
           value: function intercept(req, next) {
-            var _this18 = this;
+            var _this19 = this;
 
             return next.handle(req).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err) {
               if ([404].indexOf(err.status) !== -1) {
-                _this18.router.navigate(['/session/404']);
+                _this19.router.navigate(['/session/404']);
               }
 
               if ([500].indexOf(err.status) !== -1) {
-                _this18.router.navigate(['/session/500']);
+                _this19.router.navigate(['/session/500']);
               } //otherwise, catch error and trhow
 
 
@@ -9098,7 +9574,7 @@
 
       var SecurityquestionmanagementComponent = /*#__PURE__*/function () {
         function SecurityquestionmanagementComponent(http, dialog, securityQuestionService) {
-          var _this19 = this;
+          var _this20 = this;
 
           _classCallCheck(this, SecurityquestionmanagementComponent);
 
@@ -9110,7 +9586,7 @@
           this.securityQuestionService = securityQuestionService;
           this.displayedColumns = ["question", "status", "action"];
           this.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-            _this19.securityQuestions = res["data"];
+            _this20.securityQuestions = res["data"];
             console.log(res); //console.log(this.securityQuestionService);
           }, function (err) {
             console.log(err);
@@ -9130,7 +9606,7 @@
         }, {
           key: "createSecurityQuestion",
           value: function createSecurityQuestion() {
-            var _this20 = this;
+            var _this21 = this;
 
             var dialogRef = this.dialog.open(_dialogs_create_securityquestion_dialog_create_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_2__["CreateSecurityquestionDialogComponent"], {
               data: {},
@@ -9139,9 +9615,9 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'create') {
-                _this20.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                  _this20.securityQuestions = res['data'];
-                  console.log(_this20.securityQuestions);
+                _this21.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                  _this21.securityQuestions = res['data'];
+                  console.log(_this21.securityQuestions);
                 }, function (err) {
                   console.log(err);
                 });
@@ -9152,7 +9628,7 @@
         }, {
           key: "updateSecurityQuestion",
           value: function updateSecurityQuestion(data) {
-            var _this21 = this;
+            var _this22 = this;
 
             console.log(data);
             var dialogRef = this.dialog.open(_dialogs_update_securityquestion_dialog_update_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_3__["UpdateSecurityquestionDialogComponent"], {
@@ -9165,9 +9641,9 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'update') {
-                _this21.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                  _this21.securityQuestions = res['data'];
-                  console.log(_this21.securityQuestions);
+                _this22.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                  _this22.securityQuestions = res['data'];
+                  console.log(_this22.securityQuestions);
                 }, function (err) {
                   console.log(err);
                 });
@@ -9178,7 +9654,7 @@
         }, {
           key: "deleteSecurityQuestion",
           value: function deleteSecurityQuestion(questionId) {
-            var _this22 = this;
+            var _this23 = this;
 
             var dialogRef = this.dialog.open(_dialogs_delete_securityquestion_dialog_delete_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_1__["DeleteSecurityquestionDialogComponent"], {
               data: {
@@ -9193,12 +9669,12 @@
               if (result == 'confirm') {
                 console.log(questionId);
 
-                _this22.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
+                _this23.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
                   console.log('Security question successfully disabled');
 
-                  _this22.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                    _this22.securityQuestions = res['data'];
-                    console.log(_this22.securityQuestions);
+                  _this23.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                    _this23.securityQuestions = res['data'];
+                    console.log(_this23.securityQuestions);
                   }, function (err) {
                     console.log(err);
                   });
@@ -9825,12 +10301,12 @@
         _createClass(UserManagementComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this23 = this;
+            var _this24 = this;
 
             //Begin Brendans code
             this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
-              _this23.users = data['data'];
-              console.log(_this23.users);
+              _this24.users = data['data'];
+              console.log(_this24.users);
             }); //end Brendans code
           }
           /**Begin Brendans code */
@@ -9838,7 +10314,7 @@
         }, {
           key: "post",
           value: function post() {
-            var _this24 = this;
+            var _this25 = this;
 
             var dialogRef = this.dialog.open(_dialogs_user_admin_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_2__["PostDialogComponent"], {
               disableClose: true,
@@ -9846,9 +10322,9 @@
             }); //added by JB 10/28. After user is submitted, refresh the user list.
 
             dialogRef.afterClosed().subscribe(function (result) {
-              _this24.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
-                _this24.users = data['data'];
-                console.log(_this24.users);
+              _this25.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
+                _this25.users = data['data'];
+                console.log(_this25.users);
               });
             });
           }
@@ -10126,7 +10602,7 @@
         }, {
           key: "validateUsername",
           value: function validateUsername() {
-            var _this25 = this;
+            var _this26 = this;
 
             var username = this.form1.controls['username'].value;
             console.log(username);
@@ -10135,7 +10611,7 @@
               console.log(res); //if we get data back, route to the next step
 
               if (res['data']) {
-                _this25.router.navigate(['/session/verify-security-questions'], {
+                _this26.router.navigate(['/session/verify-security-questions'], {
                   queryParams: {
                     username: username
                   },
@@ -10143,16 +10619,16 @@
                 }); //else if there is not res data or its null, we'll handle it here and in the err
 
               } else if (!res['data']) {
-                _this25.errorMessage = 'Invalid username or password. Try again.';
+                _this26.errorMessage = 'Invalid username or password. Try again.';
 
-                _this25.openSnackBar(_this25.errorMessage);
+                _this26.openSnackBar(_this26.errorMessage);
 
                 console.log('first error fired');
               }
             }, function (err) {
-              _this25.errorMessage = 'Invalid username or password. Try again.';
+              _this26.errorMessage = 'Invalid username or password. Try again.';
 
-              _this25.openSnackBar(_this25.errorMessage);
+              _this26.openSnackBar(_this26.errorMessage);
 
               console.log(err);
             });
@@ -12017,7 +12493,7 @@
         // }
         //end add
         function VerifySecurityQuestionsComponent(route, router, http, fb) {
-          var _this26 = this;
+          var _this27 = this;
 
           _classCallCheck(this, VerifySecurityQuestionsComponent);
 
@@ -12028,7 +12504,7 @@
           this.username = this.route.snapshot.queryParamMap.get('username');
           console.log(this.username);
           this.http.get('api/users/' + this.username + '/security-questions').subscribe(function (res) {
-            _this26.questions = res['data']; //console.log(this.securityQuestions);
+            _this27.questions = res['data']; //console.log(this.securityQuestions);
 
             console.log(res);
           }, function (err) {
@@ -12036,9 +12512,9 @@
           }, function () {
             //console.log('i fired')
             //console.log(this.questions.securityQuestions[0].questionText);
-            _this26.question1 = _this26.questions.securityQuestions[0].questionText;
-            _this26.question2 = _this26.questions.securityQuestions[1].questionText;
-            _this26.question3 = _this26.questions.securityQuestions[2].questionText;
+            _this27.question1 = _this27.questions.securityQuestions[0].questionText;
+            _this27.question2 = _this27.questions.securityQuestions[1].questionText;
+            _this27.question3 = _this27.questions.securityQuestions[2].questionText;
             /*
                   console.log(this.question1);
                   console.log(this.question2);
@@ -12058,7 +12534,7 @@
         }, {
           key: "verifySecurityQuestions",
           value: function verifySecurityQuestions() {
-            var _this27 = this;
+            var _this28 = this;
 
             var answerToSecurityQuestion1 = this.form2.controls['answerToSecurityQuestion1'].value;
             var answerToSecurityQuestion2 = this.form2.controls['answerToSecurityQuestion2'].value;
@@ -12075,10 +12551,10 @@
               console.log(res);
 
               if (res['message'] === 'Success!') {
-                _this27.router.navigate(['/session/reset-password'], {
+                _this28.router.navigate(['/session/reset-password'], {
                   queryParams: {
                     isAuthenticated: 'true',
-                    username: _this27.username
+                    username: _this28.username
                   },
                   skipLocationChange: true
                 });

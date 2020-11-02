@@ -13,8 +13,6 @@
 
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"], {
     /***/
-<<<<<<< HEAD
-=======
     "+kNq":
     /*!*******************************************************!*\
       !*** ./src/app/pages/services/userprofile.service.ts ***!
@@ -109,7 +107,6 @@
     },
 
     /***/
->>>>>>> 5c3d6f89311598505093f2df68f7562f268781c7
     "/ScO":
     /*!**************************************************************************!*\
       !*** ./src/app/pages/profile/update-account/update-account.component.ts ***!
@@ -1715,9 +1712,6 @@
           this.router = router;
           this.http = http;
           this.fb = fb;
-          this.securityQuestion1 = "What was your first car model?";
-          this.securityQuestion2 = "What is your mother's maiden name?";
-          this.securityQuestion3 = "What was the first book you have read?";
         }
 
         _createClass(CreateAccountComponent, [{
@@ -1746,7 +1740,9 @@
               password: new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"](null, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required)
             });
             this.http.get('/api/securityQuestions').subscribe(function (res) {
-              _this5.questions = res['data'];
+              _this5.securityQuestion1 = res['data'][0].questionId;
+              _this5.securityQuestion2 = res['data'][1].questionId;
+              _this5.securityQuestion3 = res['data'][2].questionId;
             });
           }
         }, {
@@ -6166,12 +6162,6 @@
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
       "fXoL");
-<<<<<<< HEAD
-
-      var UserdetailsComponent = /*#__PURE__*/function () {
-        function UserdetailsComponent() {
-          _classCallCheck(this, UserdetailsComponent);
-=======
       /* harmony import */
 
 
@@ -6227,7 +6217,6 @@
           this.userProfileService.getUserDetails(this.username).subscribe(function (res) {
             _this16.userDetailsDataSource = res['data']; //console.log(this.userDetailsDataSource);
           });
->>>>>>> 5c3d6f89311598505093f2df68f7562f268781c7
         }
 
         _createClass(UserdetailsComponent, [{
@@ -6239,29 +6228,12 @@
       }();
 
       UserdetailsComponent.ɵfac = function UserdetailsComponent_Factory(t) {
-<<<<<<< HEAD
-        return new (t || UserdetailsComponent)();
-=======
         return new (t || UserdetailsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_userprofile_service__WEBPACK_IMPORTED_MODULE_2__["UserprofileService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"]));
->>>>>>> 5c3d6f89311598505093f2df68f7562f268781c7
       };
 
       UserdetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
         type: UserdetailsComponent,
         selectors: [["app-userdetails"]],
-<<<<<<< HEAD
-        decls: 2,
-        vars: 0,
-        template: function UserdetailsComponent_Template(rf, ctx) {
-          if (rf & 1) {
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "userdetails works!");
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-          }
-        },
-=======
         decls: 22,
         vars: 9,
         template: function UserdetailsComponent_Template(rf, ctx) {
@@ -6336,7 +6308,7 @@
           if (rf & 2) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.username);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userDetailsDataSource.username);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -6364,7 +6336,6 @@
           }
         },
         pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"]],
->>>>>>> 5c3d6f89311598505093f2df68f7562f268781c7
         styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3Byb2ZpbGUvdXNlcmRldGFpbHMvdXNlcmRldGFpbHMuY29tcG9uZW50LmNzcyJ9 */"]
       });
       /*@__PURE__*/
@@ -6378,9 +6349,6 @@
             styleUrls: ['./userdetails.component.css']
           }]
         }], function () {
-<<<<<<< HEAD
-          return [];
-=======
           return [{
             type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]
           }, {
@@ -6388,7 +6356,6 @@
           }, {
             type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_3__["CookieService"]
           }];
->>>>>>> 5c3d6f89311598505093f2df68f7562f268781c7
         }, null);
       })();
       /***/
@@ -7895,11 +7862,6 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "mat-card-content");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "app-update-account");
-<<<<<<< HEAD
-=======
-
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
->>>>>>> 5c3d6f89311598505093f2df68f7562f268781c7
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -7912,11 +7874,8 @@
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-<<<<<<< HEAD
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-=======
->>>>>>> 5c3d6f89311598505093f2df68f7562f268781c7
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
           }

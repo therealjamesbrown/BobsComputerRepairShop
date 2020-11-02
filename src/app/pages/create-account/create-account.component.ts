@@ -30,9 +30,9 @@ export class CreateAccountComponent implements OnInit {
   thirdFormGroup: FormGroup
   newUser: any
   questions: any
-  securityQuestion1: any = "What was your first car model?"
-  securityQuestion2: any = "What is your mother's maiden name?"
-  securityQuestion3: any = "What was the first book you have read?"
+  securityQuestion1: any
+  securityQuestion2: any
+  securityQuestion3: any
   constructor(private cookieService: CookieService, private router: Router, private http: HttpClient, private fb: FormBuilder) { }
   ngOnInit() {
     this.firstFormGroup = this.fb.group({
@@ -56,7 +56,9 @@ export class CreateAccountComponent implements OnInit {
       password: new FormControl(null, Validators.required)
     })
     this.http.get('/api/securityQuestions').subscribe(res => {
-      this.questions = res['data']
+      this.securityQuestion1 = res['data'][0].questionId
+      this.securityQuestion2 = res['data'][1].questionId
+      this.securityQuestion3 = res['data'][2].questionId
     })
   }
   registerAccount() {

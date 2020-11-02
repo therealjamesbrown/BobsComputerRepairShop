@@ -70,7 +70,7 @@ export class VerifyUsernameComponent implements OnInit {
   validateUsername() {
     const username = this.form1.get('username').value;
     console.log(username);
-    this.http.get('/api/session/verify/users/' + username + '/security-questions').subscribe(res => {
+    this.http.get('/api/session/verify/users/' + username).subscribe(res => {
       //console.log(res['data'].username);
       console.log(res);
       //if we get data back, route to the next step

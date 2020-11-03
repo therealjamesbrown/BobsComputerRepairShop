@@ -46,6 +46,15 @@ export class UserprofileService {
    }
 
 
+   /**
+    * 
+    * GetAllSecurityQuestions
+    * 
+    */
+   getAllSecurityQuestions(): Observable<any>{
+     return this.http.get(`/api/securityQuestions`);
+   }
+   
   /**
    * 
    * CHANGE SECURITY QUESTIONS

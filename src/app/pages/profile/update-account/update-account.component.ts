@@ -16,6 +16,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserprofileService } from '../../services/userprofile.service';
 import { ChangePasswordComponent } from '../dialogs/change-password/change-password.component'
+import { ChangeSecurityQuestionsComponent } from '../dialogs/change-security-questions/change-security-questions.component';
 
 @Component({
   selector: 'app-update-account',
@@ -32,6 +33,7 @@ export class UpdateAccountComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
   /**
    * 
    * Change Password
@@ -50,7 +52,12 @@ export class UpdateAccountComponent implements OnInit {
    * Change Security Questions
    * 
    */
-
+  changeUserSecurityQuestions(){
+    const dialogRef = this.dialog.open(ChangeSecurityQuestionsComponent, {
+      disableClose: true,
+      width: "800px"
+    })
+  }
 
 
   /**

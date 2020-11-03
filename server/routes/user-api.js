@@ -104,7 +104,7 @@ router.get('/username/:username', async(req, res) => {
         console.log(req.params.username)
       User.findOne({'username': req.params.username}, function(err, user) {
   
-        console.log('i fired')
+        //console.log('i fired')
   
         if (err) {
           console.log(err); 
@@ -240,7 +240,8 @@ router.put('/:id', async(req, res) => {
                     username: req.body.username,
                     phoneNumber: req.body.phoneNumber,
                     address: req.body.address,
-                    email: req.body.email
+                    email: req.body.email,
+                    securityQuestions: req.body.securityQuestions
                 });
 
                 user.save(function(err, savedUser) {

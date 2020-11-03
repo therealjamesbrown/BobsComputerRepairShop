@@ -63,10 +63,12 @@ export class SigninComponent implements OnInit {
       username,
       password
     }).subscribe(res => {
-      console.log(res['data'].username);
+      //console.log(res['data']._id);
       if (res['data'].username){
         //user authenticated
+        //set the username and ID cookies, we'll use these all over the application
         this.cookieService.set('sessionuser', res['data'].username, 1);
+        this.cookieService.set('userId', res['data']._id, 1);
         this.router.navigate(['/']);
       }
     }, err => {

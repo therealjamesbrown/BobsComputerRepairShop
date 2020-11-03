@@ -63,22 +63,22 @@ export class CreateAccountComponent implements OnInit {
   }
   registerAccount() {
     this.newUser = {
-      username: this.firstFormGroup.get('username').value,
-      password: this.firstFormGroup.get('password').value,
-      firstName: this.firstFormGroup.get('firstName').value,
-      lastName: this.firstFormGroup.get('lastName').value,
-      phoneNumber: this.firstFormGroup.get('phoneNumber').value,
-      address: this.firstFormGroup.get('address').value
+      username: this.firstFormGroup.get('username').value.trim(),
+      password: this.firstFormGroup.get('password').value.trim(),
+      firstName: this.firstFormGroup.get('firstName').value.trim(),
+      lastName: this.firstFormGroup.get('lastName').value.trim(),
+      phoneNumber: this.firstFormGroup.get('phoneNumber').value.trim(),
+      address: this.firstFormGroup.get('address').value.trim()
     }
   }
   setSecurityQuestions() {
    this.newUser['securityQuestions'] = {
      Question1: this.securityQuestion1,
-     Question1Answer: this.secondFormGroup.get('securityQuestion1Answer').value,
+     Question1Answer: this.secondFormGroup.get('securityQuestion1Answer').value.trim(),
      Question2: this.securityQuestion2,
-     Question2Answer: this.secondFormGroup.get('securityQuestion2Answer').value,
+     Question2Answer: this.secondFormGroup.get('securityQuestion2Answer').value.trim(),
      Question3: this.securityQuestion3,
-     Question3Answer: this.secondFormGroup.get('securityQuestion3Answer').value
+     Question3Answer: this.secondFormGroup.get('securityQuestion3Answer').value.trim()
    }
    console.log(this.newUser)
    this.http.post('/api/users', this.newUser).subscribe(err => {
@@ -91,8 +91,8 @@ export class CreateAccountComponent implements OnInit {
   }
   signIn() {
    let signInUser = {
-     username: this.thirdFormGroup.get('username').value,
-     password: this.thirdFormGroup.get('password').value
+     username: this.thirdFormGroup.get('username').value.trim(),
+     password: this.thirdFormGroup.get('password').value.trim()
    }
    this.http.post('/api/session/signin', signInUser).subscribe(res => {
     if (res['data'].username) {

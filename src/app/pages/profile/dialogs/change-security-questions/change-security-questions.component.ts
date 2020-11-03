@@ -17,6 +17,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { CookieService } from 'ngx-cookie-service';
 import { UserprofileService } from 'src/app/pages/services/userprofile.service';
+import { SuccessComponent } from '../success/success.component';
 
 @Component({
   selector: 'app-change-security-questions',
@@ -109,6 +110,17 @@ userId: string = this.cookieService.get('userId');;
       ]
     }).subscribe(res => {
       console.log(res);
+      if(res['message'] === 'Success!'){
+        //open new dialog
+        const dialogRef = this.dialog.open(SuccessComponent, {
+          width: "100px"
+        })
+  
+      } else {
+        //call snackbar and display failure
+  
+  
+      }
     })
   }
 }

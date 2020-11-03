@@ -43,7 +43,23 @@ try {
         res.json(ErrorMessage.toObject())
     }
  })
+/**
+ * 
+ * --Find User by ID--
+ * Created by SK
+ */
 
+router.get('/:username/role', function(req, res) {
+    User.findOne({ "username": req.params.username }, function(err, user) {
+        if (err) {
+            const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+            res.json(ErrorMessage.toObject())
+        } else {
+            const SuccessMessage = new BaseResponse('200', 'Get Request Success', user)
+            res.json(SuccessMessage.toObject())
+        }
+    })
+})
 
 /**
  * 

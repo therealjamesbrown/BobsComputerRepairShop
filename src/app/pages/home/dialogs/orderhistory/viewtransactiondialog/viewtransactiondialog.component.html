@@ -1,6 +1,7 @@
 <mat-card>
     <mat-card-content>
 <p><span class="title">Order Details</span><span style="float: right;">Order Date:<br />{{transaction.orderDate | date:'medium'}}</span></p>
+<mat-divider></mat-divider>
 <br />
       <div fxLayout="column">
               <div fxFlex>
@@ -10,6 +11,7 @@
                 <ul *ngFor="let item of transaction.lineItem">
                     <li>
                     Title:{{item.title}}<br />Amount:{{item.price | currency}}
+                  
                   </li>
                   </ul>
                   Line Item Total:<br /> {{transaction.lineItemTotal | currency}}
@@ -25,14 +27,6 @@
                 </div>
             </div>
     </div><br />
-    <!--
-    <div fxFlex>
-      Order Date: {{transaction.orderDate | date:'medium'}}
-      Parts Amount: {{transaction.partsAmount | currency}}
-      Labor Amount: {{transaction.laborAmount | currency}}
-    </div>
--->
-  
 <h3 align="end" style="font-weight: 600; text-decoration: underline;">Grand Total: {{transaction.total | currency}}</h3>
 
 <mat-dialog-actions align="end">

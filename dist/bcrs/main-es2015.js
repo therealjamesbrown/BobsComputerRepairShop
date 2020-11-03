@@ -7015,8 +7015,7 @@ class ChangeSecurityQuestionsComponent {
          * Make the post request to update the questions
          *
          */
-        this.http.put(`api/users/5f934d2d402e8c3882dc318b`, {
-            username: this.username,
+        this.http.put(`api/users/${this.username}/security-questions`, {
             securityQuestions: [
                 {
                     questionText: securityQuestionSeletedOne,

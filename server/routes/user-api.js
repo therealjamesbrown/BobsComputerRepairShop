@@ -265,6 +265,52 @@ router.put('/:id', async(req, res) => {
 })
 
 
+
+
+
+/**
+* 
+* --Update User Security Questions-- 
+* 
+*/
+
+router.put('/:username/security-questions', async(req, res) => {
+    try {
+        User.findOne({'username': req.params.username}, function(err, user){
+            if (err) {
+                console.log(err);
+                const updateSecurityQuestionsUserMongoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error', err);
+                res.status(500).send(updateSecurityQuestionsUserMongoDbErrorResponse.toObject());
+            } else {
+                console.log(user);
+                user.set({
+                    securityQuestions: req.body.securityQuestions
+                });
+
+                user.save(function(err, savedUser) {
+                    if(err) {
+                        console.log(err);
+                        const saveUserSecurityQuestionsMongoDbErrorResponse = new ErrorResponse('500', 'Internal Server Error!', err);
+                        res.status(500).send(saveUserSecurityQuestionsMongoDbErrorResponse.toObject());
+                    } else {
+                        console.log(savedUser);
+                        const saveUserSecurityQuestionsSuccessResponse = new BaseResponse('200', 'Success!', savedUser);
+                        res.json(saveUserSecurityQuestionsSuccessResponse.toObject());
+                    }
+                })
+            }
+        })
+    } catch (e) {
+        console.log(e);
+        const updateUserSecurityQuestionsCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error!', e.message);
+        res.status(500).send(updateUserSecurityQuestionsCatchErrorResponse.toObject());
+    }
+})
+
+
+
+
+
 /**
  * 
  * --Delete User--

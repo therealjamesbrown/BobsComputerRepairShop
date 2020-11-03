@@ -13491,8 +13491,7 @@
              *
              */
 
-            this.http.put("api/users/5f934d2d402e8c3882dc318b", {
-              username: this.username,
+            this.http.put("api/users/".concat(this.username, "/security-questions"), {
               securityQuestions: [{
                 questionText: securityQuestionSeletedOne,
                 answerText: securityQuestionOneAnswer

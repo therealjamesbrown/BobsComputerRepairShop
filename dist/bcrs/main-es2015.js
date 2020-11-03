@@ -1367,6 +1367,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/input */ "qFsG");
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/dialog */ "0IaG");
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/button */ "bTqV");
+/**
+ *
+ * ================================
+ * ; Title: changePassword.component.ts
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Modified by: James Brown
+ * ; Date: 10/14/2020
+ * ; Description: component responsible for changin the user password in the profile page
+ * ================================
+ *
+ */
 
 
 
@@ -1400,15 +1411,6 @@ class ChangePasswordComponent {
         const password = this.form.controls.password.value;
         console.log(username);
         console.log(password);
-        /*
-          this.http.post(`/api/session/users/${username}/reset-password`, {
-            password
-          }).subscribe(res => {
-            console.log(res)
-          }, err => {
-            console.log(err);
-          })
-        */
         this.userProfileServce.changeUserPassword(username, password).subscribe(res => {
             console.log(res);
         }, err => {

@@ -17,9 +17,11 @@ import { UserprofileService } from 'src/app/pages/services/userprofile.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar, 
   MatSnackBarVerticalPosition 
- } from '@angular/material/snack-bar'
+ } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { SuccessComponent } from '../success/success.component'
 
 @Component({
   selector: 'app-change-password',
@@ -37,7 +39,8 @@ export class ChangePasswordComponent implements OnInit {
     private fb: FormBuilder, 
     private http: HttpClient,
     private _snackBar: MatSnackBar,
-    private cookieService: CookieService ) { }
+    private cookieService: CookieService,
+    private dialog: MatDialog ) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -54,6 +57,17 @@ changePassword(){
 
   this.userProfileServce.changeUserPassword(username, password).subscribe(res =>{
     console.log(res)
+    if(res['message'] === 'Success!'){
+      //open new dialog
+      const dialogRef = this.dialog.open(SuccessComponent, {
+        width: "100px"
+      })
+
+    } else {
+      //call snackbar and display failure
+
+
+    }
   }, err => {
     console.log(err);
   })

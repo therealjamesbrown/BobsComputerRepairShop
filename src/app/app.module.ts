@@ -80,6 +80,7 @@ import { ResetPasswordProcessComponent } from './pages/reset-password/reset-pass
 import { UserdetailsComponent } from './pages/profile/userdetails/userdetails.component';
 import { UpdateAccountComponent } from './pages/profile/update-account/update-account.component';
 import { ChangePasswordComponent } from './pages/profile/dialogs/change-password/change-password.component';
+import { SuccessComponent } from './pages/profile/dialogs/success/success.component';
 
 
 
@@ -125,7 +126,8 @@ import { ChangePasswordComponent } from './pages/profile/dialogs/change-password
     ResetPasswordProcessComponent,
     UserdetailsComponent,
     UpdateAccountComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,

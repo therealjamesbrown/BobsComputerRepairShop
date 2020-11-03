@@ -54,7 +54,7 @@ userId: string = this.cookieService.get('userId');;
           this.filteredSecurityQuestionsDataSource.push(question);
         }
       }
-      console.log(this.filteredSecurityQuestionsDataSource);
+      //console.log(this.filteredSecurityQuestionsDataSource);
     })
    }
 
@@ -108,7 +108,7 @@ userId: string = this.cookieService.get('userId');;
         }
       ]
     }).subscribe(res => {
-      console.log(res);
+      //console.log(res);
       if(res['message'] === 'Success!'){
         //open new dialog
         const dialogRef = this.dialog.open(SuccessComponent, {

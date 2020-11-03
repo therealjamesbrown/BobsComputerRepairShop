@@ -44,11 +44,11 @@ export class SecurityquestionmanagementComponent implements OnInit {
     this.securityQuestionService.findAllSecurityQuestions().subscribe(
       (res) => {
         this.securityQuestions = res["data"];
-        console.log(res);
+        //console.log(res);
         //console.log(this.securityQuestionService);
       },
       (err) => {
-        console.log(err);
+       // console.log(err);
       }
     );
   }
@@ -76,7 +76,7 @@ export class SecurityquestionmanagementComponent implements OnInit {
 
        this.securityQuestionService.findAllSecurityQuestions().subscribe(res => {
          this.securityQuestions = res['data'];
-         console.log(this.securityQuestions);
+         //console.log(this.securityQuestions);
        }, err => {
          console.log(err);
        })

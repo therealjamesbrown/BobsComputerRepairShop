@@ -59,17 +59,17 @@ router.get('/:id', function(req, res) {
     Role.find({ "_id": req.params.id }, function(err, user) {
         if (err) { 
             const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
-            res.json(ErrorMessage) 
+            res.json(ErrorMessage.toObject());
         }
         // Sends user data
         else { 
-            const SuccessMessage = new BaseResponse('500', 'Internal Server Error', err)
-            res.json(SuccessMessage) 
+            const SuccessMessage = new BaseResponse('200', 'Success!', user)
+            res.json(SuccessMessage.toObject()) ;
         }
     })
 } catch (e) {
         const ErrorMessage = new ErrorMessage('500', 'Internal Server Error', err)
-        res.json(ErrorMessage)
+        res.json(ErrorMessage.toObject());
 }})
 
 /**

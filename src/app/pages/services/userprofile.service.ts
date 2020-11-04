@@ -45,7 +45,6 @@ export class UserprofileService {
      });
    }
 
-
    /**
     * 
     * GetAllSecurityQuestions
@@ -63,15 +62,6 @@ export class UserprofileService {
   updateUserSecurityQuestions(){
 
   }
-
-  /**
-   * 
-   * CHANGE EMAIL
-   * 
-   */
-updateUserEmail(){
-
-}
 
   /**
    * 

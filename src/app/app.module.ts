@@ -82,6 +82,7 @@ import { UpdateAccountComponent } from './pages/profile/update-account/update-ac
 import { ChangePasswordComponent } from './pages/profile/dialogs/change-password/change-password.component';
 import { SuccessComponent } from './pages/profile/dialogs/success/success.component';
 import { ChangeSecurityQuestionsComponent } from './pages/profile/dialogs/change-security-questions/change-security-questions.component';
+import { UpdateContactDialogComponent } from './pages/profile/dialogs/update-contact-dialog/update-contact-dialog.component';
 
 
 
@@ -129,8 +130,9 @@ import { ChangeSecurityQuestionsComponent } from './pages/profile/dialogs/change
     UpdateAccountComponent,
     ChangePasswordComponent,
     SuccessComponent,
-    ChangeSecurityQuestionsComponent
-  ],
+    ChangeSecurityQuestionsComponent,
+    UpdateContactDialogComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

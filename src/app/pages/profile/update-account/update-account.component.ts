@@ -17,6 +17,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UserprofileService } from '../../services/userprofile.service';
 import { ChangePasswordComponent } from '../dialogs/change-password/change-password.component'
 import { ChangeSecurityQuestionsComponent } from '../dialogs/change-security-questions/change-security-questions.component';
+import { UpdateContactDialogComponent } from '../dialogs/update-contact-dialog/update-contact-dialog.component';
 
 @Component({
   selector: 'app-update-account',
@@ -62,18 +63,16 @@ export class UpdateAccountComponent implements OnInit {
 
   /**
    * 
-   * Change Email
+   * Update Contact Details
    * 
    */
 
-
-
-  /**
-   * 
-   * Change Address
-   * 
-   */
-
+  updateUserContactDetails(){
+    const dialogRef = this.dialog.open(UpdateContactDialogComponent, {
+      disableClose: true,
+      width: "800px"
+    })
+  }
 
 
 }

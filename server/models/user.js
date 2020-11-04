@@ -28,7 +28,8 @@ let UserSchema = new Schema({
     role: UserRoleSchema,    // role: {type: String, default: 'standard'}//need to define default
     securityQuestions: [SelectedSecurityQuestions],
     date_created: { type: Date, default: new Date() },
-    date_modified: { type: Date }
+    date_modified: { type: Date },
+    role: {type: String }
 
 }, { collection: 'user' })
 

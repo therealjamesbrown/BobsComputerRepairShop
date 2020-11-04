@@ -90,18 +90,40 @@ console.log(res);
      }
 
 
-  ngOnInit(): void {
-       
-  
-  }
+  ngOnInit(): void {}
 
 
   changeUserContactDetails(){
+    const userId = this.cookieService.get('userId');
+    const firstName = this.updateContactForm.controls.firstName.value;
+    const lastName = this.updateContactForm.controls.lastName.value;
+    const username = this.user; 
     const contactPhone = this.updateContactForm.controls.phone.value;
     const contactAddress = this.updateContactForm.controls.address.value;
     const contactEmail = this.updateContactForm.controls.email.value;
-    console.log(this.userData);
-    //console.log(contactPhone);
-    //console.log(contactAddress)
+  
+    this.userProfileService.updateUserContactDetails(
+                                                      userId,
+                                                      firstName,
+                                                      lastName,
+                                                      username,
+                                                      contactPhone,
+                                                      contactAddress,
+                                                      contactEmail).subscribe( res =>{
+                                                        //console.log(res);
+                                                        const dialogRef = this.dialog.open(SuccessComponent, {
+                                                          width: "100px"
+                                                        })
+                                                      }, err => {
+                                                        this.errorMessage = 'Something went wrong.';
+                                                        this.openSnackBar(this.errorMessage);
+                                                      });
   }
+  openSnackBar(errorMessage: string) {
+    this._snackBar.open(errorMessage, 'Close', {
+      duration: 7000,
+      verticalPosition: 'top',
+      panelClass: 'error'
+    });
+}
 }

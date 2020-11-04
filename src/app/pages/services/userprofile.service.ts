@@ -59,17 +59,15 @@ export class UserprofileService {
    * CHANGE SECURITY QUESTIONS
    * 
    */
-  updateUserSecurityQuestions(){
-
-  }
-
-  /**
-   * 
-   * CHANG ADDRESS
-   * 
-   */
-  updateUserStreetAddress(){
-    
+  updateUserContactDetails(userId, firstName, lastName, username, phoneNumber, address, email): Observable<any>{
+    return this.http.put(`api/users/${userId}`, {
+      firstName: firstName,
+      lastName: lastName,
+      username: username,
+      phoneNumber: phoneNumber,
+      address: address,
+      email: email
+    })
   }
 
 }

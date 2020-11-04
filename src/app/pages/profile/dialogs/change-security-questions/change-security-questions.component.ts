@@ -117,9 +117,19 @@ userId: string = this.cookieService.get('userId');;
   
       } else {
         //call snackbar and display failure
-  
+   //call snackbar and display failure
+   this.errorMessage = 'Something went wrong.';
+   this.openSnackBar(this.errorMessage);
   
       }
     })
+    
   }
+  openSnackBar(errorMessage: string) {
+    this._snackBar.open(errorMessage, 'Close', {
+      duration: 7000,
+      verticalPosition: 'top',
+      panelClass: 'error'
+    });
+}
 }

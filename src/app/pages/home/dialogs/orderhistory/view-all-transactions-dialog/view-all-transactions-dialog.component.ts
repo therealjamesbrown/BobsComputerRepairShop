@@ -13,6 +13,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { PurchasehistoryService } from 'src/app/pages/services/purchasehistory.service';
+import { ViewtransactiondialogComponent } from '../viewtransactiondialog/viewtransactiondialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -22,15 +24,15 @@ import { PurchasehistoryService } from 'src/app/pages/services/purchasehistory.s
 })
 export class ViewAllTransactionsDialogComponent implements OnInit {
   allPurchaseHistoryDataSource: any;
-  displayedColumns: string[] = ['date', 'amount'];
-  actions: string[] = ['update', 'disable'];
+  displayedColumns: string[] = ['date', 'amount', 'action'];
+  //actions: string[] = ['update', 'disable'];
   checked: any = false;
   username: string = this.cookieService.get('sessionuser');
-  dateFormatted;
 
   constructor(
     private cookieService: CookieService,
     private purchaseHistoryService: PurchasehistoryService,
+    private dialog: MatDialog
   ) {
     this.purchaseHistoryService.findAllPurchasesByUserName(this.username).subscribe(res => {
       this.allPurchaseHistoryDataSource = res['data'];
@@ -41,4 +43,23 @@ export class ViewAllTransactionsDialogComponent implements OnInit {
    }
   ngOnInit(): void {
   }
+
+
+
+/*
+Function that allows us to view transaction details for one transaction.
+*/
+viewTransactionDetails(transaction){
+  //console.log(transaction);
+  const dialogRef = this.dialog.open(ViewtransactiondialogComponent, {
+    data: transaction,
+    disableClose: true,
+    width: '800px'
+  })
+
+  dialogRef.afterClosed().subscribe(result => {
+   // console.log('closed');
+  })
+}
+
 }

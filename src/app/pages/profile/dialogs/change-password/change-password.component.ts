@@ -52,8 +52,8 @@ changePassword(){
   const username = this.cookieService.get('sessionuser');
   const password = this.form.controls.password.value;
 
-  console.log(username);
-  console.log(password);
+  //console.log(username);
+  //console.log(password);
 
   this.userProfileServce.changeUserPassword(username, password).subscribe(res =>{
     console.log(res)
@@ -65,11 +65,20 @@ changePassword(){
 
     } else {
       //call snackbar and display failure
-
+      this.errorMessage = 'Something went wrong.';
+        this.openSnackBar(this.errorMessage);
 
     }
   }, err => {
     console.log(err);
   })
+}
+
+openSnackBar(errorMessage: string) {
+  this._snackBar.open(errorMessage, 'Close', {
+    duration: 7000,
+    verticalPosition: 'top',
+    panelClass: 'error'
+  });
 }
 }

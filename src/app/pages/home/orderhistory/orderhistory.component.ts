@@ -31,7 +31,6 @@ export class OrderhistoryComponent implements OnInit {
   actions: string[] = ['update', 'disable'];
   checked: any = false;
   username: string = this.cookieService.get('sessionuser');
-  dateFormatted;
   nonArchivedPurchaseHistoryDataSource: any;
 
   constructor(

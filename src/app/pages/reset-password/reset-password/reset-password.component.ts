@@ -15,6 +15,7 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+import { MatSnackBar, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 //import { UserInterface } from '../../../shared/user.interface';
 import { ViewChild } from '@angular/core';
 import { VerifySecurityQuestionsComponent } from '../verify-security-questions/verify-security-questions.component';
@@ -34,7 +35,9 @@ export class ResetPasswordComponent implements OnInit {
 
    isAuthenticated: string;
    username: string;
-   form3: FormGroup;
+   form3: FormGroup;  
+   successMessage: string;
+   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
 /*
  //begin add
@@ -56,7 +59,7 @@ export class ResetPasswordComponent implements OnInit {
  //end add
  */
 
-constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private fb: FormBuilder, private cookieService: CookieService) {
+constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router, private fb: FormBuilder, private cookieService: CookieService, private _snackBar: MatSnackBar) {
    this.isAuthenticated = this.route.snapshot.queryParamMap.get('isAuthenticated');
    this.username = this.route.snapshot.queryParamMap.get('username');
    console.log(this.username);
@@ -72,6 +75,10 @@ constructor(private http: HttpClient, private route: ActivatedRoute, private rou
    });
  }
 
+ navigateSecurityQuestions(){
+  this.router.navigate(['/session/verify-security-questions'], {queryParams: {username: this.username}, skipLocationChange: true});
+ }
+
  resetPassword() {
    console.log(this.username)
    this.http.post('/api/session/users/' + this.username + '/reset-password', {
@@ -79,10 +86,20 @@ constructor(private http: HttpClient, private route: ActivatedRoute, private rou
    }).subscribe(res => {
      //user authenticated
      this.cookieService.set('sessionuser', this.username, 1);  
+
+     this.successMessage = 'Password reset success. You will be redirected to the login screen.';
+     this.openSnackBar(this.successMessage);
+
      this.router.navigate(['/']);
    }, err => {
      console.log(err);
    })
  }
-
+ openSnackBar(errorMessage: string) {
+  this._snackBar.open(errorMessage, 'Close', {
+    duration: 7000,
+    verticalPosition: 'top',
+    panelClass: 'error'
+  });
+}
 }

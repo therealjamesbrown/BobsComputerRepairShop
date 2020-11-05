@@ -7347,6 +7347,7 @@
             _this19.phone = _this19.userDetailsDataSource.phoneNumber;
             _this19.address = _this19.userDetailsDataSource.address;
             _this19.email = _this19.userDetailsDataSource.email;
+            _this19.role = _this19.userDetailsDataSource.role;
             _this19.dateCreated = _this19.userDetailsDataSource.date_created; //console.log(this.userDetailsDataSource);
           });
         }
@@ -7367,7 +7368,7 @@
         type: UserdetailsComponent,
         selectors: [["app-userdetails"]],
         decls: 32,
-        vars: 17,
+        vars: 18,
         consts: [[1, "personalInfo"], [1, "innerPersonalDetails"], [2, "padding-top", "10px"], [3, "inset"], [2, "padding-bottom", "10px"]],
         template: function UserdetailsComponent_Template(rf, ctx) {
           if (rf & 1) {
@@ -7431,7 +7432,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "li");
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Role: TODO");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -7509,13 +7510,17 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("inset", true);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Role: ", ctx.role, "");
+
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("inset", true);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Date Created: ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](27, 15, ctx.dateCreated), "");
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Date Created: ", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](27, 16, ctx.dateCreated), "");
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
@@ -8012,23 +8017,49 @@
 
       function CreateorderComponent_td_11_Template(rf, ctx) {
         if (rf & 1) {
+          var _r12 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "td", 9);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "mat-checkbox");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-checkbox", 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CreateorderComponent_td_11_Template_mat_checkbox_click_1_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r12);
+
+            return $event.stopPropagation();
+          })("change", function CreateorderComponent_td_11_Template_mat_checkbox_change_1_listener($event) {
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r12);
+
+            var row_r10 = ctx.$implicit;
+
+            var ctx_r13 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+            return $event ? ctx_r13.selection.toggle(row_r10) : null;
+          });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          var ctx_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("checked", ctx_r5.selection);
         }
       }
 
       function CreateorderComponent_tr_12_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 10);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 11);
         }
       }
 
       function CreateorderComponent_tr_13_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 11);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "tr", 12);
         }
       }
 
@@ -8059,6 +8090,33 @@
         _createClass(CreateorderComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {}
+          /** Whether the number of selected elements matches the total number of rows. */
+
+        }, {
+          key: "isAllSelected",
+          value: function isAllSelected() {
+            var numSelected = this.selection.selected.length;
+            var numRows = this.catalogDataSource.length;
+            return numSelected === numRows;
+          }
+          /** Selects all rows if they are not all selected; otherwise clear selection. */
+
+        }, {
+          key: "masterToggle",
+          value: function masterToggle() {
+            var _this22 = this;
+
+            this.isAllSelected() ? this.selection.clear() : this.catalogDataSource.forEach(function (row) {
+              return _this22.selection.select(row);
+            });
+          }
+        }, {
+          key: "logSelection",
+          value: function logSelection() {
+            this.selection.selected.forEach(function (s) {
+              return console.log(s.name);
+            });
+          }
         }]);
 
         return CreateorderComponent;
@@ -8073,7 +8131,7 @@
         selectors: [["app-createorder"]],
         decls: 14,
         vars: 3,
-        consts: [["mat-table", "", 1, "mat-elevation-z8", 3, "dataSource"], ["matColumnDef", "title"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "price"], ["matColumnDef", "select"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["mat-header-cell", ""], ["mat-cell", ""], ["mat-header-row", ""], ["mat-row", ""]],
+        consts: [["mat-table", "", 1, "mat-elevation-z8", 3, "dataSource"], ["matColumnDef", "title"], ["mat-header-cell", "", 4, "matHeaderCellDef"], ["mat-cell", "", 4, "matCellDef"], ["matColumnDef", "price"], ["matColumnDef", "select"], ["mat-header-row", "", 4, "matHeaderRowDef"], ["mat-row", "", 4, "matRowDef", "matRowDefColumns"], ["mat-header-cell", ""], ["mat-cell", ""], [3, "checked", "click", "change"], ["mat-header-row", ""], ["mat-row", ""]],
         template: function CreateorderComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
@@ -8104,7 +8162,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](10, CreateorderComponent_th_10_Template, 2, 0, "th", 2);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, CreateorderComponent_td_11_Template, 2, 0, "td", 3);
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](11, CreateorderComponent_td_11_Template, 2, 1, "td", 3);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
 
@@ -9807,15 +9865,15 @@
         _createClass(ErrorInterceptor, [{
           key: "intercept",
           value: function intercept(req, next) {
-            var _this22 = this;
+            var _this23 = this;
 
             return next.handle(req).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(function (err) {
               if ([404].indexOf(err.status) !== -1) {
-                _this22.router.navigate(['/session/404']);
+                _this23.router.navigate(['/session/404']);
               }
 
               if ([500].indexOf(err.status) !== -1) {
-                _this22.router.navigate(['/session/500']);
+                _this23.router.navigate(['/session/500']);
               } //otherwise, catch error and trhow
 
 
@@ -10713,7 +10771,7 @@
 
       var SecurityquestionmanagementComponent = /*#__PURE__*/function () {
         function SecurityquestionmanagementComponent(http, dialog, securityQuestionService) {
-          var _this23 = this;
+          var _this24 = this;
 
           _classCallCheck(this, SecurityquestionmanagementComponent);
 
@@ -10725,7 +10783,7 @@
           this.securityQuestionService = securityQuestionService;
           this.displayedColumns = ["question", "status", "action"];
           this.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-            _this23.securityQuestions = res["data"]; //console.log(res);
+            _this24.securityQuestions = res["data"]; //console.log(res);
             //console.log(this.securityQuestionService);
           }, function (err) {// console.log(err);
           });
@@ -10744,7 +10802,7 @@
         }, {
           key: "createSecurityQuestion",
           value: function createSecurityQuestion() {
-            var _this24 = this;
+            var _this25 = this;
 
             var dialogRef = this.dialog.open(_dialogs_create_securityquestion_dialog_create_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_2__["CreateSecurityquestionDialogComponent"], {
               data: {},
@@ -10753,8 +10811,8 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'create') {
-                _this24.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                  _this24.securityQuestions = res['data']; //console.log(this.securityQuestions);
+                _this25.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                  _this25.securityQuestions = res['data']; //console.log(this.securityQuestions);
                 }, function (err) {
                   console.log(err);
                 });
@@ -10765,7 +10823,7 @@
         }, {
           key: "updateSecurityQuestion",
           value: function updateSecurityQuestion(data) {
-            var _this25 = this;
+            var _this26 = this;
 
             console.log(data);
             var dialogRef = this.dialog.open(_dialogs_update_securityquestion_dialog_update_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_3__["UpdateSecurityquestionDialogComponent"], {
@@ -10778,9 +10836,9 @@
             });
             dialogRef.afterClosed().subscribe(function (result) {
               if (result === 'update') {
-                _this25.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                  _this25.securityQuestions = res['data'];
-                  console.log(_this25.securityQuestions);
+                _this26.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                  _this26.securityQuestions = res['data'];
+                  console.log(_this26.securityQuestions);
                 }, function (err) {
                   console.log(err);
                 });
@@ -10791,7 +10849,7 @@
         }, {
           key: "deleteSecurityQuestion",
           value: function deleteSecurityQuestion(questionId) {
-            var _this26 = this;
+            var _this27 = this;
 
             var dialogRef = this.dialog.open(_dialogs_delete_securityquestion_dialog_delete_securityquestion_dialog_component__WEBPACK_IMPORTED_MODULE_1__["DeleteSecurityquestionDialogComponent"], {
               data: {
@@ -10806,12 +10864,12 @@
               if (result == 'confirm') {
                 console.log(questionId);
 
-                _this26.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
+                _this27.securityQuestionService.deleteSecurityQuestion(questionId).subscribe(function (res) {
                   console.log('Security question successfully disabled');
 
-                  _this26.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
-                    _this26.securityQuestions = res['data'];
-                    console.log(_this26.securityQuestions);
+                  _this27.securityQuestionService.findAllSecurityQuestions().subscribe(function (res) {
+                    _this27.securityQuestions = res['data'];
+                    console.log(_this27.securityQuestions);
                   }, function (err) {
                     console.log(err);
                   });
@@ -11438,12 +11496,12 @@
         _createClass(UserManagementComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this27 = this;
+            var _this28 = this;
 
             //Begin Brendans code
             this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
-              _this27.users = data['data'];
-              console.log(_this27.users);
+              _this28.users = data['data'];
+              console.log(_this28.users);
             }); //end Brendans code
           }
           /**Begin Brendans code */
@@ -11451,7 +11509,7 @@
         }, {
           key: "post",
           value: function post() {
-            var _this28 = this;
+            var _this29 = this;
 
             var dialogRef = this.dialog.open(_dialogs_user_admin_post_dialog_post_dialog_component__WEBPACK_IMPORTED_MODULE_2__["PostDialogComponent"], {
               disableClose: true,
@@ -11459,9 +11517,9 @@
             }); //added by JB 10/28. After user is submitted, refresh the user list.
 
             dialogRef.afterClosed().subscribe(function (result) {
-              _this28.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
-                _this28.users = data['data'];
-                console.log(_this28.users);
+              _this29.http.get('http://localhost:3000/api/users', httpOptions).subscribe(function (data) {
+                _this29.users = data['data'];
+                console.log(_this29.users);
               });
             });
           }
@@ -11739,7 +11797,7 @@
         }, {
           key: "validateUsername",
           value: function validateUsername() {
-            var _this29 = this;
+            var _this30 = this;
 
             var username = this.form1.controls['username'].value;
             console.log(username);
@@ -11748,7 +11806,7 @@
               console.log(res); //if we get data back, route to the next step
 
               if (res['data']) {
-                _this29.router.navigate(['/session/verify-security-questions'], {
+                _this30.router.navigate(['/session/verify-security-questions'], {
                   queryParams: {
                     username: username
                   },
@@ -11756,16 +11814,16 @@
                 }); //else if there is not res data or its null, we'll handle it here and in the err
 
               } else if (!res['data']) {
-                _this29.errorMessage = 'Invalid username or password. Try again.';
+                _this30.errorMessage = 'Invalid username or password. Try again.';
 
-                _this29.openSnackBar(_this29.errorMessage);
+                _this30.openSnackBar(_this30.errorMessage);
 
                 console.log('first error fired');
               }
             }, function (err) {
-              _this29.errorMessage = 'Invalid username or password. Try again.';
+              _this30.errorMessage = 'Invalid username or password. Try again.';
 
-              _this29.openSnackBar(_this29.errorMessage);
+              _this30.openSnackBar(_this30.errorMessage);
 
               console.log(err);
             });
@@ -13630,7 +13688,7 @@
         // }
         //end add
         function VerifySecurityQuestionsComponent(route, router, http, fb) {
-          var _this30 = this;
+          var _this31 = this;
 
           _classCallCheck(this, VerifySecurityQuestionsComponent);
 
@@ -13641,7 +13699,7 @@
           this.username = this.route.snapshot.queryParamMap.get('username');
           console.log(this.username);
           this.http.get('api/users/' + this.username + '/security-questions').subscribe(function (res) {
-            _this30.questions = res['data']; //console.log(this.securityQuestions);
+            _this31.questions = res['data']; //console.log(this.securityQuestions);
 
             console.log(res);
           }, function (err) {
@@ -13649,9 +13707,9 @@
           }, function () {
             //console.log('i fired')
             //console.log(this.questions.securityQuestions[0].questionText);
-            _this30.question1 = _this30.questions.securityQuestions[0].questionText;
-            _this30.question2 = _this30.questions.securityQuestions[1].questionText;
-            _this30.question3 = _this30.questions.securityQuestions[2].questionText;
+            _this31.question1 = _this31.questions.securityQuestions[0].questionText;
+            _this31.question2 = _this31.questions.securityQuestions[1].questionText;
+            _this31.question3 = _this31.questions.securityQuestions[2].questionText;
             /*
                   console.log(this.question1);
                   console.log(this.question2);
@@ -13671,7 +13729,7 @@
         }, {
           key: "verifySecurityQuestions",
           value: function verifySecurityQuestions() {
-            var _this31 = this;
+            var _this32 = this;
 
             var answerToSecurityQuestion1 = this.form2.controls['answerToSecurityQuestion1'].value;
             var answerToSecurityQuestion2 = this.form2.controls['answerToSecurityQuestion2'].value;
@@ -13688,10 +13746,10 @@
               console.log(res);
 
               if (res['message'] === 'Success!') {
-                _this31.router.navigate(['/session/reset-password'], {
+                _this32.router.navigate(['/session/reset-password'], {
                   queryParams: {
                     isAuthenticated: 'true',
-                    username: _this31.username
+                    username: _this32.username
                   },
                   skipLocationChange: true
                 });
@@ -13977,7 +14035,7 @@
 
       var ChangeSecurityQuestionsComponent = /*#__PURE__*/function () {
         function ChangeSecurityQuestionsComponent(userProfileService, fb, _snackBar, cookieService, dialog, http) {
-          var _this32 = this;
+          var _this33 = this;
 
           _classCallCheck(this, ChangeSecurityQuestionsComponent);
 
@@ -13993,11 +14051,11 @@
           this.userProfileService.getAllSecurityQuestions().subscribe(function (res) {
             //console.log(res.data);
             //get all the security questions and set it to our initial data array
-            _this32.securityQuestionsDataSource = res.data; //Initialize the new array, filter out the disabled ones, and pushed the active ones into the new array
+            _this33.securityQuestionsDataSource = res.data; //Initialize the new array, filter out the disabled ones, and pushed the active ones into the new array
 
-            _this32.filteredSecurityQuestionsDataSource = [];
+            _this33.filteredSecurityQuestionsDataSource = [];
 
-            var _iterator4 = _createForOfIteratorHelper(_this32.securityQuestionsDataSource),
+            var _iterator4 = _createForOfIteratorHelper(_this33.securityQuestionsDataSource),
                 _step4;
 
             try {
@@ -14005,7 +14063,7 @@
                 var question = _step4.value;
 
                 if (question.isDisabled !== true) {
-                  _this32.filteredSecurityQuestionsDataSource.push(question);
+                  _this33.filteredSecurityQuestionsDataSource.push(question);
                 }
               } //console.log(this.filteredSecurityQuestionsDataSource);
 
@@ -14033,7 +14091,7 @@
         }, {
           key: "changeSecurityQuestions",
           value: function changeSecurityQuestions() {
-            var _this33 = this;
+            var _this34 = this;
 
             var securityQuestionSeletedOne = this.form.controls.securityQuestionSeletedOne.value;
             var securityQuestionOneAnswer = this.form.controls.securityQuestionOneAnswer.value;
@@ -14071,15 +14129,15 @@
               //console.log(res);
               if (res['message'] === 'Success!') {
                 //open new dialog
-                var dialogRef = _this33.dialog.open(_success_success_component__WEBPACK_IMPORTED_MODULE_2__["SuccessComponent"], {
+                var dialogRef = _this34.dialog.open(_success_success_component__WEBPACK_IMPORTED_MODULE_2__["SuccessComponent"], {
                   width: "100px"
                 });
               } else {
                 //call snackbar and display failure
                 //call snackbar and display failure
-                _this33.errorMessage = 'Something went wrong.';
+                _this34.errorMessage = 'Something went wrong.';
 
-                _this33.openSnackBar(_this33.errorMessage);
+                _this34.openSnackBar(_this34.errorMessage);
               }
             });
           }

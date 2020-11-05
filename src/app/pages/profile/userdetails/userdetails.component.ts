@@ -52,6 +52,7 @@ export class UserdetailsComponent implements OnInit {
       this.phone = this.userDetailsDataSource.phoneNumber;
       this.address = this.userDetailsDataSource.address;
       this.email = this.userDetailsDataSource.email;
+      this.role = this.userDetailsDataSource.role;
       this.dateCreated = this.userDetailsDataSource.date_created;
 
       //console.log(this.userDetailsDataSource);

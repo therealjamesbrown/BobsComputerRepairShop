@@ -26,18 +26,18 @@
                 <div fxLayout="column">
                     <h4 fxFlex>Standard Fees</h4>
                     <mat-form-field style="width: 300px !important;">
-                        <input matInput name="parts" ngModel="" placeholder="Parts" type="number" />
+                        <input matInput name="parts" value="0" ngModel="0" placeholder="Parts" type="number" />
                     </mat-form-field>
 
                     <mat-form-field style="width: 300px !important;">
-                        <input matInput name="labor" ngModel="" placeholder="Labor @ 50.00/hr" type="number" />
+                        <input matInput name="labor" ngModel="0" value="0" placeholder="Labor @ 50.00/hr" type="number" />
                     </mat-form-field>
                 </div>
             </mat-card-content>
             <!--Form actions-->
             <mat-divider></mat-divider>
             <mat-card-actions align="end">
-                <button mat-raised-button type="reset" color="warn">Cancel</button>
+                <button mat-raised-button type="reset" color="warn">Reset</button>
                 <button mat-raised-button color="primary">Submit</button>
             </mat-card-actions>
         </form>

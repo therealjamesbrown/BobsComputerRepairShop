@@ -84,6 +84,7 @@ import { SuccessComponent } from './pages/profile/dialogs/success/success.compon
 import { ChangeSecurityQuestionsComponent } from './pages/profile/dialogs/change-security-questions/change-security-questions.component';
 import { UpdateContactDialogComponent } from './pages/profile/dialogs/update-contact-dialog/update-contact-dialog.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { InvoiceReviewDialogComponent } from './pages/home/dialogs/invoice-review-dialog/invoice-review-dialog.component';
 
 
 
@@ -132,7 +133,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     ChangePasswordComponent,
     SuccessComponent,
     ChangeSecurityQuestionsComponent,
-    UpdateContactDialogComponent
+    UpdateContactDialogComponent,
+    InvoiceReviewDialogComponent
     ],
   imports: [
     BrowserModule,

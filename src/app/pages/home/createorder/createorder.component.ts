@@ -22,6 +22,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { InvoiceReviewDialogComponent } from '../dialogs/invoice-review-dialog/invoice-review-dialog.component';
 
 
 @Component({
@@ -131,6 +132,13 @@ discount: string;
      } 
 
      console.log(invoice);
+     const dialogRef = this.dialog.open(InvoiceReviewDialogComponent, {
+       data: {
+         invoice: invoice
+       },
+       disableClose: true,
+       width: '800px'
+     })
      
   }
 

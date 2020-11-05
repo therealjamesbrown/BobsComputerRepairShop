@@ -18,6 +18,11 @@ import { HttpClient } from '@angular/common/http';
 import {MatTableDataSource} from '@angular/material/table';
 import { CatalogService } from '../../administration/services/catalog.service';
 import { Catalog } from '../../administration/interfaces/catalog.interface';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 @Component({
   selector: 'app-createorder',
@@ -25,12 +30,25 @@ import { Catalog } from '../../administration/interfaces/catalog.interface';
   styleUrls: ['./createorder.component.css']
 })
 export class CreateorderComponent implements OnInit {
-  catalogDataSource: Catalog[];
-  displayedColumns: string[] = ['title', 'price', 'select'];
-  actions: string[] = ['update', 'disable'];
-  checked: any = false;
+form: FormGroup;
+userName: string;
+allServices: []; //all the services (disabled and enabled)
+activeServices: []; //only enabled services
+lineItems: any[];
+discount: string;
 
-  constructor(private http: HttpClient, private catalogService: CatalogService) {
+
+  constructor(
+    private http: HttpClient, 
+    private catalogService: CatalogService,
+    private cookieService: CookieService,
+    private fb: FormBuilder,
+    private dialog: MatDialog,
+    private router: Router
+    ) {
+
+    //get the username
+    this.userName = this.cookieService.get('sessionuser');
 
     /**
      * 
@@ -38,7 +56,16 @@ export class CreateorderComponent implements OnInit {
      * 
      */
     this.catalogService.findAllCatalogItems().subscribe(res => {
-      this.catalogDataSource = res['data'];
+      this.allServices = (res['data']);
+      
+      //filter out the archived transractions and push them into a new datasource array
+    this.activeServices = [];
+    for(let item of this.allServices){
+      if(item['isDisabled'] != true ){
+        this.activeServices.push(item);
+      }
+    }
+    //console.log(this.activeServices);
     }, err => {
       console.log(err);
     })
@@ -46,6 +73,65 @@ export class CreateorderComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      parts: [null, Validators.required],
+      labor: [null, Validators.required],
+      alternator: [null, null]
+    })
+  }
+
+  submit(form){
+    //console.log('form just got logged')
+    console.log(form);
+    const selectedServiceIds = [];
+
+    for(const[key, value] of Object.entries(form.checkGroup)) {
+      if(value) {
+        selectedServiceIds.push({
+          id: key
+        })
+      }
+    }
+    console.log(selectedServiceIds);
+    this.lineItems = [];
+
+    /**
+     * 
+     * Build the invoice object
+     * 
+     */
+     for(const savedService of this.activeServices){
+       for(const selectedService of selectedServiceIds) {
+         if(savedService['_id'] === selectedService.id){
+          this.lineItems.push({
+            title: savedService['title'],
+            price: savedService['price']
+          });
+         }
+       }
+     }
+     console.log(this.lineItems);
+
+     const partsAmount = parseFloat(form.parts);
+     const laborAmount = form.labor * 50;
+     const lineItemTotal = this.lineItems.reduce((prev, cur) => prev + cur.price, 0);
+     const subTotal = partsAmount + laborAmount + lineItemTotal;
+     const discount = parseFloat(subTotal) * .10;
+     const total = subTotal - discount
+     console.log(total);
+
+     const invoice = {
+       userName: this.userName,
+       lineItems: this.lineItems,
+       partsAmount: partsAmount,
+       laborAmount: laborAmount,
+       lineItemTotal: lineItemTotal,
+       total: total,
+       orderDate: new Date()
+     } 
+
+     console.log(invoice);
+     
   }
 
 }

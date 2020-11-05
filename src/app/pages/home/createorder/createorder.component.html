@@ -1,31 +1,45 @@
 <p>Create Order</p> 
 
-<table mat-table [dataSource]="catalogDataSource" class="mat-elevation-z8">
+<mat-card>
+        <form #serviceRepairForm="ngForm" (ngSubmit)="submit(serviceRepairForm.value); serviceRepairForm.reset();">
+            <mat-card-content>
+                <div fxLayout="column">
+                    <h3>Services</h3>
+                    <div fxFlex>
+                            <div fxFlex ngModelGroup="checkGroup">
+                                <ul>
+                            <div fxLayout="row wrap" fxLayoutAlign="space-evenly"
+                            >
+                                <li *ngFor="let service of activeServices">
+                                    <mat-checkbox name="{{service._id}}" ngModel color="accent">
+                                        {{service.title}} ({{service.price | currency}})
+                                    </mat-checkbox>
+                                </li>
+                            </div>
+                        </ul>
+                            </div>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+                <br />
+                <!--Parts and Labor-->
+                <div fxLayout="column">
+                    <h4 fxFlex>Standard Fees</h4>
+                    <mat-form-field style="width: 300px !important;">
+                        <input matInput name="parts" ngModel="" placeholder="Parts" type="number" />
+                    </mat-form-field>
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
+                    <mat-form-field style="width: 300px !important;">
+                        <input matInput name="labor" ngModel="" placeholder="Labor @ 50.00/hr" type="number" />
+                    </mat-form-field>
+                </div>
+            </mat-card-content>
+            <!--Form actions-->
+            <mat-divider></mat-divider>
+            <mat-card-actions align="end">
+                <button mat-raised-button type="reset" color="warn">Cancel</button>
+                <button mat-raised-button color="primary">Submit</button>
+            </mat-card-actions>
+        </form>
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef> Title </th>
-      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
-    </ng-container>
-
-    <!-- Position Column -->
-    <ng-container matColumnDef="price">
-        <th mat-header-cell *matHeaderCellDef> Price </th>
-        <td mat-cell *matCellDef="let element"> {{element.price | currency}} </td>
-      </ng-container>
-
-    <!-- Checkbox Column -->
-    <ng-container matColumnDef="select">
-        <th mat-header-cell *matHeaderCellDef> Select </th>
-        <td mat-cell *matCellDef="let element"> 
-            <mat-checkbox></mat-checkbox>
-        </td>
-      </ng-container>
-  
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+</mat-card>

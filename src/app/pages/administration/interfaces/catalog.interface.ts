@@ -12,6 +12,6 @@
 
 
  export interface Catalog {
-     title: Number;
+     title: any;
      price: String;
  }

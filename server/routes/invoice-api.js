@@ -46,7 +46,11 @@ router.get('/', async(req, res) => {
     }
 }) 
 
-
+/**
+ * 
+ * --Find Purchases By Service --
+ * Completed by BM
+ */
 
 /**
  * 

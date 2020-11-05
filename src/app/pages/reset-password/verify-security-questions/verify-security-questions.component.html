@@ -10,6 +10,7 @@
                   <div fxFlex>
                       <img src="./assets/logo.png" class="logo">
                   </div>
+                  <h2>Verify Security Questions</h2>
   <!--
                   <mat-horizontal-stepper #stepper>
                     <mat-step [stepControl]="form2">-->
@@ -43,12 +44,15 @@
             </mat-list>
             <br/><br/>
   
-            <div fxFlex fxLayoutAlign="end">
+            <div fxFlex fxLayoutAlign="end" fxLayoutGap="10px">
               <a fxFlex fxLayoutAlign="start" routerLink="/session/forgot">
                 <mat-icon>west</mat-icon>
                 </a>
               <button type="button" mat-raised-button color="primary" routerLink="/session/signin">Cancel</button>
-              <button type="submit" mat-raised-button color="accent">Next</button>
+              <button type="submit" 
+              [disabled]="!form2.valid"
+              mat-raised-button 
+              color="primary">Next</button>
             </div>
             
           </mat-card-content>

@@ -14,6 +14,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
+import { MatSnackBar, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { ViewChild } from '@angular/core';
 import { VerifyUsernameComponent } from '../verify-username/verify-username.component';  //add
 import { ResetPasswordComponent } from '../reset-password/reset-password.component'; //add
@@ -39,7 +40,9 @@ export class VerifySecurityQuestionsComponent implements OnInit {
   question3: string;
   username: string;
   form2: FormGroup;
-questions;
+  questions;
+  errorMessage: string;
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
   //begin add
  // @ViewChild(VerifyUsernameComponent) stepOneComponent: VerifyUsernameComponent;
@@ -59,7 +62,7 @@ questions;
  // }
 //end add
 
-  constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, private fb: FormBuilder) {
+  constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient, private fb: FormBuilder, private _snackBar: MatSnackBar) {
     this.username=this.route.snapshot.queryParamMap.get('username');
     console.log(this.username);
 
@@ -111,22 +114,17 @@ questions;
         this.router.navigate(['/session/reset-password'], {queryParams: {isAuthenticated: 'true', username: this.username}, skipLocationChange: true})
       } else {
         console.log('Unable to verify security question responses.')
+        this.errorMessage = 'Invalid security question answers. Try again.';
+        this.openSnackBar(this.errorMessage);
+
       }
-    })
+    });
   }
-}
 
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
+  openSnackBar(errorMessage: string) {
+    this._snackBar.open(errorMessage, 'Close', {
+      duration: 7000,
+      verticalPosition: 'top',
+      panelClass: 'error'
+    });
+  }}

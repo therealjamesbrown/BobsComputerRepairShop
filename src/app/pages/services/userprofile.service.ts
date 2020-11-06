@@ -70,4 +70,21 @@ export class UserprofileService {
     })
   }
 
+  /**
+   * 
+   * Create Invoice
+   * 
+   */
+  createInvoice(invoice){
+    console.log(invoice);
+    return this.http.post(`/api/invoices`, {
+      lineItem: invoice.lineItems,
+      partsAmount: invoice.partsAmount,
+      laborAmount: invoice.laborAmount,
+      lineItemTotal: invoice.lineItemTotal,
+      total: invoice.total,
+      username: invoice.userName,
+      orderDate: invoice.orderDate
+    })
+  }
 }

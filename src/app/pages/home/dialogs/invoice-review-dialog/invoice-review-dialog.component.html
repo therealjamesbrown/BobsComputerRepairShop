@@ -1,0 +1,37 @@
+<mat-card>
+    <mat-card-content>
+<p><span class="title">Order Details</span><span style="float: right;">Order Date:<br />{{invoice.orderDate | date:'medium'}}</span></p>
+<mat-divider></mat-divider>
+<br />
+      <div fxLayout="column">
+              <div fxFlex>
+                <div fxLayout="row">
+                  <div fxFlex>
+                <strong>Line Items:</strong>
+                <ul *ngFor="let item of invoice.lineItems">
+                    <li>
+                    Title: {{item.title}}<br />Amount: {{item.price | currency}}
+                  </li>
+                  </ul>
+                  <strong>Line Item Total:</strong><br /> {{invoice.lineItemTotal | currency}}
+                </div>
+                <div fxFlex>
+                  <div fxFlex>
+                    <ul>
+                      <li><strong>Parts Amount:</strong><br /> {{invoice.partsAmount | currency}}</li>
+                      <li><strong>Labor Amount:</strong><br /> {{invoice.laborAmount | currency}}</li>
+                  </ul>
+                  </div>
+                </div>
+                </div>
+            </div>
+    </div><br />
+    <strong>Discount:</strong><br />10% off automatically applied!! 
+<h3 align="end" style="font-weight: 600; text-decoration: underline;">Grand Total: {{invoice.total | currency}}</h3>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button matDialogClose="false" color="primary">Cancel</button>
+  <button mat-raised-button matDialogClose="confirm" color="primary">Submit Order</button>
+</mat-dialog-actions>
+</mat-card-content>
+</mat-card>

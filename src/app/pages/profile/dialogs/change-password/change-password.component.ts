@@ -21,7 +21,7 @@ import { MatSnackBar,
 import { MatDialog } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-import { SuccessComponent } from '../success/success.component'
+import { SuccessComponent } from '../success/success.component';
 
 @Component({
   selector: 'app-change-password',

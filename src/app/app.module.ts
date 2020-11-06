@@ -83,6 +83,8 @@ import { ChangePasswordComponent } from './pages/profile/dialogs/change-password
 import { SuccessComponent } from './pages/profile/dialogs/success/success.component';
 import { ChangeSecurityQuestionsComponent } from './pages/profile/dialogs/change-security-questions/change-security-questions.component';
 import { UpdateContactDialogComponent } from './pages/profile/dialogs/update-contact-dialog/update-contact-dialog.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { InvoiceReviewDialogComponent } from './pages/home/dialogs/invoice-review-dialog/invoice-review-dialog.component';
 
 
 
@@ -131,7 +133,8 @@ import { UpdateContactDialogComponent } from './pages/profile/dialogs/update-con
     ChangePasswordComponent,
     SuccessComponent,
     ChangeSecurityQuestionsComponent,
-    UpdateContactDialogComponent
+    UpdateContactDialogComponent,
+    InvoiceReviewDialogComponent
     ],
   imports: [
     BrowserModule,
@@ -159,7 +162,8 @@ import { UpdateContactDialogComponent } from './pages/profile/dialogs/update-con
     MatSelectModule,
     MatSlideToggleModule,
     MatStepperModule,
-    ScrollingModule
+    ScrollingModule,
+    MatCheckboxModule
   ],
   providers: [ {
     provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true

@@ -7,3 +7,7 @@ p{
   li{
       list-style: none;
   }
+
+  h3{
+      margin-bottom: -2px;
+  }

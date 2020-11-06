@@ -19,19 +19,28 @@
                   <div fxFlex>
                     <ul>
                       <li><strong>Parts Amount:</strong><br /> {{invoice.partsAmount | currency}}</li>
-                      <li><strong>Labor Amount:</strong><br /> {{invoice.laborAmount | currency}}</li>
+                      <li><strong>Labor @ $50 per/hour:</strong><br /> {{invoice.laborAmount | currency}}</li>
                   </ul>
                   </div>
                 </div>
                 </div>
             </div>
     </div><br />
-    <strong>Discount:</strong><br />10% off automatically applied!! 
+    <span style="text-align: center;"><strong>10% off automatically applied!! </strong></span>
+    <div align="end">
+      <ul>
+        <li><h3>-Summary-</h3></li>
+        <li><strong>Parts & Labor Total:</strong><br /> {{invoice.laborAmount + invoice.partsAmount | currency}}</li>
+        <li><strong>Line Item Total:</strong><br /> {{invoice.lineItemTotal | currency}}</li>
+        <li><strong style="color: green;">Discount:</strong><br />-{{discount | currency}}
+        </li>
+      </ul>
+    </div>
 <h3 align="end" style="font-weight: 600; text-decoration: underline;">Grand Total: {{invoice.total | currency}}</h3>
 
 <mat-dialog-actions align="end">
-  <button mat-raised-button matDialogClose="false" color="primary">Cancel</button>
-  <button mat-raised-button matDialogClose="confirm" color="primary">Submit Order</button>
+  <button mat-raised-button matDialogClose="cancel" color="primary">Cancel</button>
+  <button mat-raised-button matDialogClose="confirm" color="primary" cdkFocusInitial>Submit Order</button>
 </mat-dialog-actions>
 </mat-card-content>
 </mat-card>

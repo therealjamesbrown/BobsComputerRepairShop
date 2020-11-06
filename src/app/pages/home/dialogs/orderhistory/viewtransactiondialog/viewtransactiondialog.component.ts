@@ -29,7 +29,8 @@ lineItemTotal;
 orderDate;
 partsAmount;
 grandTotal;
-
+discount;
+subtotal;
 
   constructor(
     private dialogRef: MatDialogRef<ViewtransactiondialogComponent>,
@@ -45,10 +46,15 @@ grandTotal;
       this.partsAmount = data.partsAmount;
       this.grandTotal = data.total;
       
+
+      this.subtotal = this.laborAmount + this.lineItemTotal + this.partsAmount;
+      this.discount = this.subtotal * .10;
       for(let item of this.lineItem){
-        console.log(item.title);
+        //console.log(item.title);
       }
      }
+
+     
 
   ngOnInit(): void {
   }

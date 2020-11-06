@@ -7,26 +7,35 @@
               <div fxFlex>
                 <div fxLayout="row">
                   <div fxFlex>
-                Line Items:
+                <strong>Line Items:</strong>
                 <ul *ngFor="let item of transaction.lineItem">
                     <li>
                     Title:{{item.title}}<br />Amount:{{item.price | currency}}
                   
                   </li>
                   </ul>
-                  Line Item Total:<br /> {{transaction.lineItemTotal | currency}}
+                  <strong>Line Item Total:</strong><br /> {{transaction.lineItemTotal | currency}}
                 </div>
                 <div fxFlex>
                   <div fxFlex>
                     <ul>
-                      <li>Parts Amount:<br /> {{transaction.partsAmount | currency}}</li>
-                      <li>Labor Amount:<br /> {{transaction.laborAmount | currency}}</li>
+                      <li><strong>Parts Amount:</strong><br /> {{transaction.partsAmount | currency}}</li>
+                      <li><strong>Labor Amount:</strong><br /> {{transaction.laborAmount | currency}}</li>
                   </ul>
                   </div>
                 </div>
                 </div>
             </div>
     </div><br />
+    <div align="end">
+      <ul>
+        <li><h3>-Summary-</h3></li>
+        <li><strong>Parts & Labor Total:</strong><br /> {{transaction.partsAmount + transaction.laborAmount | currency}}</li>
+        <li><strong>Line Item Total:</strong><br /> {{transaction.lineItemTotal | currency}}</li>
+        <li><strong style="color: green;">Discount:</strong><br />-{{discount | currency}}
+        </li>
+      </ul>
+    </div>
 <h3 align="end" style="font-weight: 600; text-decoration: underline;">Grand Total: {{transaction.total | currency}}</h3>
 
 <mat-dialog-actions align="end">

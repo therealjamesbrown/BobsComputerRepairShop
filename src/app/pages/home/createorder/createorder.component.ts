@@ -86,9 +86,12 @@ verticalPosition: MatSnackBarVerticalPosition = 'bottom';
     })
   }
 
+  logform(){
+    console.log(this.form);
+  }
+
   submit(form){
     //console.log('form just got logged')
-    //console.log(form);
     const selectedServiceIds = [];
 
     for(const[key, value] of Object.entries(form.checkGroup)) {
@@ -117,8 +120,9 @@ verticalPosition: MatSnackBarVerticalPosition = 'bottom';
        }
      }
      //console.log(this.lineItems);
-
+ 
      const partsAmount = parseFloat(form.parts);
+     console.log(partsAmount);
      const laborAmount = form.labor * 50;
      const lineItemTotal = this.lineItems.reduce((prev, cur) => prev + cur.price, 0);
      const subTotal = partsAmount + laborAmount + lineItemTotal;
@@ -139,7 +143,8 @@ verticalPosition: MatSnackBarVerticalPosition = 'bottom';
      //console.log(invoice);
      const dialogRef = this.dialog.open(InvoiceReviewDialogComponent, {
        data: {
-         invoice: invoice
+         invoice: invoice,
+         discount: discount
        },
        disableClose: true,
        width: '800px'
@@ -158,6 +163,7 @@ verticalPosition: MatSnackBarVerticalPosition = 'bottom';
            
            
            )} else {
+             //do something
              console.log('something went wrong.')
            }
 
@@ -165,9 +171,9 @@ verticalPosition: MatSnackBarVerticalPosition = 'bottom';
          }, err => {
            console.log(err);
          });
-
-         
-       }    
+       } else if (result === 'cancel'){
+        //do something
+       }  
      })     
   }
 }

@@ -14,7 +14,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
-import { HttpClient } from '@angular/common/http';
 import {MatTableDataSource} from '@angular/material/table';
 import { CatalogService } from '../../administration/services/catalog.service';
 import { Catalog } from '../../administration/interfaces/catalog.interface';
@@ -44,7 +43,6 @@ verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
 
   constructor(
-    private http: HttpClient, 
     private catalogService: CatalogService,
     private cookieService: CookieService,
     private fb: FormBuilder,
@@ -78,19 +76,15 @@ verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
    }
 
-  ngOnInit(): void {
-    this.form = this.fb.group({
-      parts: [null, Validators.required],
-      labor: [null, Validators.required],
-      alternator: [null, null]
-    })
-  }
+  ngOnInit(): void {}
 
   logform(){
     console.log(this.form);
+    this.router.navigate(['/']);
   }
 
   submit(form){
+    console.log(form);
     //console.log('form just got logged')
     const selectedServiceIds = [];
 
@@ -173,6 +167,7 @@ verticalPosition: MatSnackBarVerticalPosition = 'bottom';
          });
        } else if (result === 'cancel'){
         //do something
+       console.log(form.parts)
        }  
      })     
   }

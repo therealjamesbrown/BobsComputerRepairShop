@@ -52,26 +52,26 @@ router.get('/', async(req, res) => {
  * --Find Purchases By Employee
  * By JB 11/6
  */
-router.get('/purchases-graph/:username', async(req, res) => {
+router.get('/purchases-graph/user/:username', async(req, res) => {
     try {
         Invoice.aggregate(
             [
                 {
-                  $match: {
-                    'username': `$${req.params.username}`
+                  '$match': {
+                    'username': `${req.params.username}`
                   }
                 }, {
-                  $unwind: {
+                  '$unwind': {
                     'path': '$lineItem'
                   }
                 }, {
-                  $group: {
+                  '$group': {
                     '_id': {
-                     ' title': '$lineItem.title', 
+                      'title': '$lineItem.title', 
                       'price': '$lineItem.price'
                     }, 
-                    count: {
-                      $sum: 1
+                    'count': {
+                      '$sum': 1
                     }
                   }
                 }

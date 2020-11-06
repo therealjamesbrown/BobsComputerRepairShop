@@ -7,17 +7,11 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 __webpack_require__(/*! /Users/brendanmulhern/Desktop/BobsComputerRepairShop/src/custom-theme.scss */"E2ln");
 __webpack_require__(/*! /Users/brendanmulhern/Desktop/BobsComputerRepairShop/src/styles.css */"OmL/");
-module.exports = __webpack_require__(/*! /Users/brendanmulhern/Desktop/BobsComputerRepairShop/node_modules/primeicons/primeicons.css */"QSGA");
-=======
-__webpack_require__(/*! /Users/james/Desktop/school/web-450/web-450/BobsComputerRepairShop/src/custom-theme.scss */"E2ln");
-__webpack_require__(/*! /Users/james/Desktop/school/web-450/web-450/BobsComputerRepairShop/src/styles.css */"OmL/");
-__webpack_require__(/*! /Users/james/Desktop/school/web-450/web-450/BobsComputerRepairShop/node_modules/primeicons/primeicons.css */"QSGA");
-__webpack_require__(/*! /Users/james/Desktop/school/web-450/web-450/BobsComputerRepairShop/node_modules/primeng/resources/themes/saga-blue/theme.css */"HQ35");
-module.exports = __webpack_require__(/*! /Users/james/Desktop/school/web-450/web-450/BobsComputerRepairShop/node_modules/primeng/resources/primeng.min.css */"wDIQ");
->>>>>>> 04730765d94e544b50fad5da5e63e8c9cfa5dd9c
+__webpack_require__(/*! /Users/brendanmulhern/Desktop/BobsComputerRepairShop/node_modules/primeicons/primeicons.css */"QSGA");
+__webpack_require__(/*! /Users/brendanmulhern/Desktop/BobsComputerRepairShop/node_modules/primeng/resources/themes/saga-blue/theme.css */"HQ35");
+module.exports = __webpack_require__(/*! /Users/brendanmulhern/Desktop/BobsComputerRepairShop/node_modules/primeng/resources/primeng.min.css */"wDIQ");
 
 
 /***/ }),

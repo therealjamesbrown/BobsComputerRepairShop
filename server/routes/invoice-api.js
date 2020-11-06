@@ -52,6 +52,56 @@ router.get('/', async(req, res) => {
  * Completed by BM
  */
 
+router.get('/purchases-graph', async(req, res) => {
+try {
+    // Using mongodb aggregate function
+    Invoice.aggregate([
+        {   
+            // Calls the unwind function
+            $unwind: '$lineItem'
+        },
+        {   
+            // Then groups the data
+            $group:
+            {
+                '_id':
+                {
+                    'title': '$lineItem.title',
+                    'price': '$lineItem.price'
+                },
+                'count':
+                {   
+                    // Then adds up the titles
+                    $sum: 1
+                }
+            }
+        },
+        {   
+            // Then sorts by the title
+            $sort:
+            {
+                '_id.title': 1
+            }
+        }
+    ], function(err, purchaseGraph) {
+        if (err) {
+            console.log(err)
+            const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', err)
+            res.status(500).json(ErrorMessage.toObject())
+        } else {
+            console.log(purchaseGraph)
+            const SuccessMessage = new BaseResponse('200', 'Query Successful', purchaseGraph)
+            res.status(200).json(SuccessMessage.toObject())
+        }
+    }) 
+    } catch (e) {
+        console.log(e)
+        const ErrorMessage = new ErrorResponse('500', 'Internal Server Error', e)
+        res.status(500).json(ErrorMessage.toObject())
+    }
+})
+
+
 /**
  * 
  * --Find Invoice by ID--

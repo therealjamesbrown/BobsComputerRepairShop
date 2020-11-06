@@ -85,6 +85,7 @@ import { ChangeSecurityQuestionsComponent } from './pages/profile/dialogs/change
 import { UpdateContactDialogComponent } from './pages/profile/dialogs/update-contact-dialog/update-contact-dialog.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { InvoiceReviewDialogComponent } from './pages/home/dialogs/invoice-review-dialog/invoice-review-dialog.component';
+import { PurchaseHistoryGraphComponent } from './pages/home/purchase-history-graph/purchase-history-graph.component';
 
 
 
@@ -134,7 +135,8 @@ import { InvoiceReviewDialogComponent } from './pages/home/dialogs/invoice-revie
     SuccessComponent,
     ChangeSecurityQuestionsComponent,
     UpdateContactDialogComponent,
-    InvoiceReviewDialogComponent
+    InvoiceReviewDialogComponent,
+    PurchaseHistoryGraphComponent
     ],
   imports: [
     BrowserModule,

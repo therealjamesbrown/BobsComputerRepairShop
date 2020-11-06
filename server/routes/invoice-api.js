@@ -46,6 +46,54 @@ router.get('/', async(req, res) => {
     }
 }) 
 
+
+/**
+ * 
+ * --Find Purchases By Employee
+ * By JB 11/6
+ */
+router.get('/purchases-graph/:username', async(req, res) => {
+    try {
+        Invoice.aggregate(
+            [
+                {
+                  $match: {
+                    'username': `$${req.params.username}`
+                  }
+                }, {
+                  $unwind: {
+                    'path': '$lineItem'
+                  }
+                }, {
+                  $group: {
+                    '_id': {
+                     ' title': '$lineItem.title', 
+                      'price': '$lineItem.price'
+                    }, 
+                    count: {
+                      $sum: 1
+                    }
+                  }
+                }
+              ], function(err, userPurchaseGraph){
+                  if(err){
+                    console.log(err);
+                    const purchaseGraphUserError = new ErrorResponse('500', 'Internal Server Error', err);
+                    res.status(500).json(purchaseGraphUserError.toObject());
+                  } else {
+                    console.log(userPurchaseGraph);
+                    const purchaseGraphUserSuccess = new BaseResponse('200', 'Success!', userPurchaseGraph);
+                    res.status(200).json(purchaseGraphUserSuccess.toObject());
+                  }
+              }
+        )
+    } catch(e){
+        console.log(e.message);
+        const purchaseGraphUserCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error!', e.message);
+        res.status(500).json(purchaseGraphUserCatchErrorResponse.toObject());
+    }
+})
+
 /**
  * 
  * --Find Purchases By Service --

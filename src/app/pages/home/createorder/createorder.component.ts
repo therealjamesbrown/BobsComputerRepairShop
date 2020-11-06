@@ -23,7 +23,9 @@ import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { InvoiceReviewDialogComponent } from '../dialogs/invoice-review-dialog/invoice-review-dialog.component';
-
+import { UserprofileService } from '../../services/userprofile.service';
+import { SuccessComponent } from '../../profile/dialogs/success/success.component';
+import { MatSnackBar, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-createorder',
@@ -37,6 +39,8 @@ allServices: []; //all the services (disabled and enabled)
 activeServices: []; //only enabled services
 lineItems: any[];
 discount: string;
+errorMessage: string;
+verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
 
   constructor(
@@ -45,7 +49,8 @@ discount: string;
     private cookieService: CookieService,
     private fb: FormBuilder,
     private dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private userProfileService: UserprofileService
     ) {
 
     //get the username
@@ -83,7 +88,7 @@ discount: string;
 
   submit(form){
     //console.log('form just got logged')
-    console.log(form);
+    //console.log(form);
     const selectedServiceIds = [];
 
     for(const[key, value] of Object.entries(form.checkGroup)) {
@@ -93,7 +98,7 @@ discount: string;
         })
       }
     }
-    console.log(selectedServiceIds);
+    //console.log(selectedServiceIds);
     this.lineItems = [];
 
     /**
@@ -111,7 +116,7 @@ discount: string;
          }
        }
      }
-     console.log(this.lineItems);
+     //console.log(this.lineItems);
 
      const partsAmount = parseFloat(form.parts);
      const laborAmount = form.labor * 50;
@@ -119,7 +124,7 @@ discount: string;
      const subTotal = partsAmount + laborAmount + lineItemTotal;
      const discount = parseFloat(subTotal) * .10;
      const total = subTotal - discount
-     console.log(total);
+     //console.log(total);
 
      const invoice = {
        userName: this.userName,
@@ -131,15 +136,38 @@ discount: string;
        orderDate: new Date()
      } 
 
-     console.log(invoice);
+     //console.log(invoice);
      const dialogRef = this.dialog.open(InvoiceReviewDialogComponent, {
        data: {
          invoice: invoice
        },
        disableClose: true,
        width: '800px'
-     })
-     
-  }
+     });
 
+     dialogRef.afterClosed().subscribe(result => {
+       if (result === 'confirm') {
+         console.log('Invoice saved');
+         this.userProfileService.createInvoice(invoice).subscribe(res => {
+           console.log(res);
+           if(res['message'] === 'Successful POST Request'){
+            this.router.navigate(['/']);
+           this.dialog.open(SuccessComponent, {
+            width: "100px"
+           }
+           
+           
+           )} else {
+             console.log('something went wrong.')
+           }
+
+           
+         }, err => {
+           console.log(err);
+         });
+
+         
+       }    
+     })     
+  }
 }

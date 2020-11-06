@@ -30,9 +30,8 @@
 <h3 align="end" style="font-weight: 600; text-decoration: underline;">Grand Total: {{invoice.total | currency}}</h3>
 
 <mat-dialog-actions align="end">
-  <button mat-raised-button [mat-dialog-close]="false" color="primary">Cancel</button>
-  <button mat-raised-button [mat-dialog-close]="false" color="primary">Submit Order</button>
-
+  <button mat-raised-button matDialogClose="false" color="primary">Cancel</button>
+  <button mat-raised-button matDialogClose="confirm" color="primary">Submit Order</button>
 </mat-dialog-actions>
 </mat-card-content>
 </mat-card>

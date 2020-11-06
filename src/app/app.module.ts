@@ -86,7 +86,7 @@ import { UpdateContactDialogComponent } from './pages/profile/dialogs/update-con
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { InvoiceReviewDialogComponent } from './pages/home/dialogs/invoice-review-dialog/invoice-review-dialog.component';
 import { PurchaseHistoryGraphComponent } from './pages/home/purchase-history-graph/purchase-history-graph.component';
-
+import { ChartModule } from 'primeng/chart';
 
 
 @NgModule({
@@ -165,7 +165,8 @@ import { PurchaseHistoryGraphComponent } from './pages/home/purchase-history-gra
     MatSlideToggleModule,
     MatStepperModule,
     ScrollingModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ChartModule
   ],
   providers: [ {
     provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true

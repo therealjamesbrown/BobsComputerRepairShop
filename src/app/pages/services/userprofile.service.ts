@@ -87,4 +87,14 @@ export class UserprofileService {
       orderDate: invoice.orderDate
     })
   }
+
+
+  /**
+   * 
+   * Get purchases by graph for the user api
+   * 
+   */
+  getUserPurchasesByGraph(username): Observable<any>{
+    return this.http.get(`/api/invoices/purchases-graph/user/${username}`);
+  }
 }

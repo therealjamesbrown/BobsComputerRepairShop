@@ -44,4 +44,10 @@ export class PurchasehistoryService {
         //no need to pass any body
       })
     }
+
+  findPurchasesbyServiceGraph() {
+    return this.http.get ('/api/invoices/purchases-graph');
+  }
+
+
 }

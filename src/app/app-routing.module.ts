@@ -28,6 +28,8 @@ import { VerifyUsernameComponent } from './pages/reset-password/verify-username/
 import { VerifySecurityQuestionsComponent } from './pages/reset-password/verify-security-questions/verify-security-questions.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password/reset-password.component';
 import { ResetPasswordProcessComponent } from './pages/reset-password/reset-password-process/reset-password-process.component';
+import { PurchasegraphComponent } from './pages/administration/purchasegraph/purchasegraph.component';
+import { RoleGuard } from './shared/role.guard';
 
 const routes: Routes = [
   {//path for logged in users
@@ -52,7 +54,8 @@ const routes: Routes = [
       },
       {
         path: 'admin',
-        component: AdministrationComponent
+        component: AdministrationComponent,
+        canActivate: [RoleGuard]
       },
       {
         path: 'not-found',

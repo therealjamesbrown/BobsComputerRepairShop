@@ -97,4 +97,17 @@ export class UserprofileService {
   getUserPurchasesByGraph(username): Observable<any>{
     return this.http.get(`/api/invoices/purchases-graph/user/${username}`);
   }
+
+
+
+  /**
+   * 
+   * Find User Role
+   * 
+   */
+  getUserRole(username: string): Observable<any>{
+    return this.http.get(`/api/users/${username}/role`);
+  }
 }
+
+

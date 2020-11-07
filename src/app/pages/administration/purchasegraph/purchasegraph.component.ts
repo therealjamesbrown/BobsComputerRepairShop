@@ -47,7 +47,8 @@ export class PurchasegraphComponent implements OnInit {
         '#0066CC',
         '#6B3FA0',
         '#AF593E',
-        '#6CDAE7'
+        '#6CDAE7',
+        '#F1B60E'
       ],
       hoverBackgroundColor: [
         '#ED0A3F',
@@ -56,7 +57,8 @@ export class PurchasegraphComponent implements OnInit {
         '#0066CC',
         '#6B3FA0',
         '#AF593E',
-        '#6CDAE7'
+        '#6CDAE7',
+        '#F1B60E'
       ],
       data: this.itemCount
     },

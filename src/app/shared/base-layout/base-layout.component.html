@@ -8,7 +8,9 @@
       <a class="navbar-link" routerLink="/about">About</a>
       <a class="navbar-link" routerLink="/contact">Contact Us</a>
       <a class="navbar-link" routerLink="/profile">Profile</a>
+      <div *ngIf = "this.isVisible">
       <a class="navbar-link" routerLink="/admin">Administration</a>
+      </div>
       <span></span>
       <span class="example-spacer"></span>
       <a class="navbar-link" routerLink="/" (click)="singOut()">Sign Out</a>

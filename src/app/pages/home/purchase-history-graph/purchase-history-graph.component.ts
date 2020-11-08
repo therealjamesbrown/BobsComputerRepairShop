@@ -27,6 +27,14 @@ export class PurchaseHistoryGraphComponent implements OnInit {
       this.userProfileService.getUserPurchasesByGraph(this.username).subscribe(res => {
         this.purchases = res['data'];
         console.log(this.purchases);
+        //set a cookie that we'll grab from the parent component to hide the graph if no data is present.
+        //this is helpful for new users.
+        if(this.purchases.length === 0){
+          this.cookieService.set('hidegraph', 'nodata', 1);
+          //console.log('i fired');
+        } else {
+          this.cookieService.set('showGraph', 'true', 1);
+        }
 
         //loop the purchases
         for (const item of this.purchases){
@@ -41,26 +49,28 @@ export class PurchaseHistoryGraphComponent implements OnInit {
             {
               data: this.itemCount,
               backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
+                '#ED0A3F',
+                '#FF8833',
+                '#5FA777',
+                '#0066CC',
+                '#6B3FA0',
+                '#AF593E',
+                '#6CDAE7',
+                '#F1B60E'
+              ],
+              hoverBackgroundColor: [
+                '#ED0A3F',
+                '#FF8833',
+                '#5FA777',
+                '#0066CC',
+                '#6B3FA0',
+                '#AF593E',
+                '#6CDAE7',
+                '#F1B60E'
+              ],
             }
           ]
         };
-        console.log('data object');
-        console.log(this.data);
       })
    }
 

@@ -27,9 +27,16 @@ const httpOptions = {
 })
 export class PostDialogComponent implements OnInit {
   createUserForm: any
+  roles: any
+  selected: any
+  role: any
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
+
   ngOnInit() {
+    this.http.get('/api/roles').subscribe(res => {
+      this.roles = res['data']
+    })
     this.createUserForm = this.fb.group({
       username: [null, Validators.compose([Validators.required])],
       password:  [null, Validators.compose([Validators.required])],
@@ -37,7 +44,8 @@ export class PostDialogComponent implements OnInit {
       lastName: [null, Validators.compose([Validators.required])],
       address: [null, Validators.compose([Validators.required])],
       email: [null, Validators.compose([Validators.required])],
-      phoneNumber: [null, Validators.compose([Validators.required])]
+      phoneNumber: [null, Validators.compose([Validators.required])],
+      role: [null, Validators.required]
     })
   }
   createUser() {
@@ -48,7 +56,8 @@ export class PostDialogComponent implements OnInit {
       lastName: this.createUserForm.get('lastName').value,
       address: this.createUserForm.get('address').value,
       email: this.createUserForm.get('email').value,
-      phoneNumber: this.createUserForm.get('phoneNumber').value
+      phoneNumber: this.createUserForm.get('phoneNumber').value,
+      role: ''
     }
     this.http.post('http://localhost:3000/api/users', newUser, httpOptions).subscribe(err => {
       if (err) console.log(err)

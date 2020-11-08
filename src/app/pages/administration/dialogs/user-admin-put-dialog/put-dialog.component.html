@@ -46,6 +46,13 @@
                 <input matInput class="text-center" placeholder="Ex. (555) 555-5555" formControlName="phoneNumber" />
             </mat-form-field>
             <br>
+            <div>
+                <mat-label>Role</mat-label>
+                <br>
+                <mat-select [value]="selected">
+                    <mat-option *ngFor="let role of roles" formControlName="role">{{ role.text }}</mat-option>
+                </mat-select>
+            </div>
             <mat-dialog-actions>
                 <button mat-button mat-dialog-close>Cancel</button>
                 <button type="submit"mat-button mat-dialog-close>Update User</button>

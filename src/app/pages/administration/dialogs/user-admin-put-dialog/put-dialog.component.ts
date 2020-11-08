@@ -29,8 +29,13 @@ const httpOptions = {
 export class PutDialogComponent implements OnInit {
   updatedUserForm: FormGroup
   user: any
+  roles: any
+  selected: any
   constructor(private cookieService: CookieService, private http: HttpClient, private fb: FormBuilder) { }
   ngOnInit() {
+    this.http.get('/api/roles').subscribe(res => {
+      this.roles = res['data']
+    })
     this.updatedUserForm = this.fb.group({
       username: [null, Validators.compose([Validators.required])],
       password:  [null, Validators.compose([Validators.required])],
@@ -38,7 +43,8 @@ export class PutDialogComponent implements OnInit {
       lastName: [null, Validators.compose([Validators.required])],
       address: [null, Validators.compose([Validators.required])],
       email: [null, Validators.compose([Validators.required])],
-      phoneNumber: [null, Validators.compose([Validators.required])]
+      phoneNumber: [null, Validators.compose([Validators.required])],
+      role: [null, Validators.required]
     })
    /* let id = this.cookieService.get('updateId')
     this.http.get(`http://localhost:3000/api/user/${id}`).subscribe(user => {
@@ -53,8 +59,10 @@ export class PutDialogComponent implements OnInit {
       lastName: this.updatedUserForm.get('lastName').value,
       address: this.updatedUserForm.get('address').value,
       email: this.updatedUserForm.get('email').value,
-      phoneNumber: this.updatedUserForm.get('phoneNumber').value
+      phoneNumber: this.updatedUserForm.get('phoneNumber').value,
+      role: this.updatedUserForm.get('role').value
     }
+    console.log(updatedUser.role)
     let id = this.cookieService.get('id')
     this.http.put(`http://localhost:3000/api/users/${id}`, updatedUser, httpOptions).subscribe(err => {
       if (err) console.log(err)

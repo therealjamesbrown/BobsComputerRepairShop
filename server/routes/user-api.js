@@ -196,7 +196,8 @@ router.post('/', async(req, res) => {
             lastName:    req.body.lastName,
             phoneNumber: req.body.phoneNumber,
             address:     req.body.address,
-            email:       req.body.email
+            email:       req.body.email,
+            role: req.body.role
         }
 
         User.create(newUser, function(err, user){
@@ -240,7 +241,8 @@ router.put('/:id', async(req, res) => {
                     username: req.body.username,
                     phoneNumber: req.body.phoneNumber,
                     address: req.body.address,
-                    email: req.body.email
+                    email: req.body.email,
+                    role: req.body.role
                 });
 
                 user.save(function(err, savedUser) {

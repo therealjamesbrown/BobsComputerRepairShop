@@ -24,9 +24,7 @@ export class BaseLayoutComponent implements OnInit {
 
   year: number = Date.now();  
 
-  //sarah add
   username: any = this.cookieService.get('sessionuser');
-  //userProfile: any;
   role: any;
   isVisible: Boolean;
   
@@ -37,11 +35,10 @@ export class BaseLayoutComponent implements OnInit {
       console.log(this.username.role);
 
       if(this.username.role === "admin"){
-        // console.log('i fired first');
         this.isVisible = true;
         console.log(this.isVisible);
         
-       } else if (this.username.role === "standard"){
+       } else {
        this.isVisible = false;
        console.log(this.isVisible);
        }

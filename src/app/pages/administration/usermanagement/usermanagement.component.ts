@@ -34,7 +34,7 @@ export class UserManagementComponent implements OnInit {
   
   //Variable Declaration
   users: any
-  displayedColumns: any = [ 'username', 'fistName', 'lastName', 'phoneNumber', 'address','isDisabled', 'actions']
+  displayedColumns: any = [ 'username', 'fistName', 'lastName', 'phoneNumber', 'address','isDisabled', 'actions', 'roles']
 
   constructor(public dialog: MatDialog, private http: HttpClient, private roleService: RoleService, private cookieService: CookieService) { }
 

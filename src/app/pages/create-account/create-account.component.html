@@ -13,26 +13,32 @@
                 <mat-label>Username</mat-label>
                 <input matInput placeholder="Ex. thespidermonkey25" formControlName="username" required>
             </mat-form-field>
+            <br>
             <mat-form-field>
                 <mat-label>Password</mat-label>
                 <input matInput placeholder="Ex. root" formControlName="password" required> 
             </mat-form-field>
+            <br>
             <mat-form-field>
                 <mat-label>First Name</mat-label>
                 <input matInput placeholder="Ex. Peter" formControlName="firstName" required>
             </mat-form-field>
+            <br>
             <mat-form-field>
                 <mat-label>Last Name</mat-label>
                 <input matInput placeholder="Ex. Parker" formControlName="lastName" required>
             </mat-form-field>
+            <br>
             <mat-form-field>
                 <mat-label>Phone Number</mat-label>
                 <input matInput placeholder="Ex. 867 5309" formControlName="phoneNumber" required>
             </mat-form-field>
+            <br>
             <mat-form-field>
                 <mat-label>Address</mat-label>
                 <input matInput placehodler="Ex. 12 Brooklyn Street" formControlName="address" required>
             </mat-form-field>
+            <br>
             <div>
                 <a routerLink="/session/signin">Sign In</a>
                 <button mat-button (click)="registerAccount()" matStepperNext>Next</button>
@@ -50,21 +56,27 @@
                     <div>
                         <mat-label>{{ securityQuestion1 }}</mat-label>
                     </div>
+                <mat-form-field>
                 <input matInput type="text" formControlName="securityQuestion1Answer" required>
+                </mat-form-field>
                 <br>
                 <!-- Security Question 2 -->
                     <mat-label>Security Question 2</mat-label>
                     <div>
                         <mat-label>{{ securityQuestion2 }}</mat-label>
                     </div>
+                <mat-form-field>
                 <input matInput type="text" formControlName="securityQuestion2Answer" required>
+                 </mat-form-field>
                 <br>
                 <!-- Security Question 3 -->
                     <mat-label>Security Question 3</mat-label>
                     <div>
                         <mat-label>{{ securityQuestion3 }}</mat-label>
                     </div>
+                <mat-form-field>
                 <input matInput type="text" formControlName="securityQuestion3Answer" required>
+                </mat-form-field>
             </mat-card-content>
             <br>
             <!-- Security Question 3 End -->
@@ -80,12 +92,12 @@
         <form [formGroup]="thirdFormGroup">
         <mat-form-field>
             <mat-label>Username</mat-label>
-            <input matInput formControlName="username" placeholder="Ex. spidermonkey25" required>
+            <input style="text-align: center;" matInput formControlName="username" placeholder="Ex. spidermonkey25" required>
         </mat-form-field>
         <br>
         <mat-form-field>
             <mat-label>Password</mat-label>
-            <input matInput formControlName="password" placeholder="Ex. Password" required>
+            <input style="text-align: center;" matInput formControlName="password" placeholder="Ex. Password" required>
         </mat-form-field>
         <div>
             <button mat-button matStepperPrevious>Back</button>

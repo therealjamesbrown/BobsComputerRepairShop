@@ -19,7 +19,7 @@ describe('PostDialogComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should be true', () => {
+    expect(component.createUser()).toBeTruthy();
   });
 });

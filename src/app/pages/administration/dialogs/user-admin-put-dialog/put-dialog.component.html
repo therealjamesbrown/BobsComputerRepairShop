@@ -49,8 +49,8 @@
             <div>
                 <mat-label>Role</mat-label>
                 <br>
-                <mat-select [value]="selected">
-                    <mat-option *ngFor="let role of roles" formControlName="role">{{ role.text }}</mat-option>
+                <mat-select [formControl]="updatedUserForm.controls['role']">
+                    <mat-option *ngFor="let role of roles" [value]="role.text">{{ role.text }}</mat-option>
                 </mat-select>
             </div>
             <mat-dialog-actions>

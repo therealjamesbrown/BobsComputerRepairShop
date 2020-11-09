@@ -60,9 +60,8 @@ export class PutDialogComponent implements OnInit {
       address: this.updatedUserForm.get('address').value,
       email: this.updatedUserForm.get('email').value,
       phoneNumber: this.updatedUserForm.get('phoneNumber').value,
-      role: this.updatedUserForm.get('role').value
+      role: this.updatedUserForm.controls.role.value
     }
-    console.log(updatedUser.role)
     let id = this.cookieService.get('id')
     this.http.put(`http://localhost:3000/api/users/${id}`, updatedUser, httpOptions).subscribe(err => {
       if (err) console.log(err)

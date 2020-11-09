@@ -57,8 +57,9 @@ export class PostDialogComponent implements OnInit {
       address: this.createUserForm.get('address').value,
       email: this.createUserForm.get('email').value,
       phoneNumber: this.createUserForm.get('phoneNumber').value,
-      role: ''
+      role: this.createUserForm.controls.role.value
     }
+    console.log(newUser)
     this.http.post('http://localhost:3000/api/users', newUser, httpOptions).subscribe(err => {
       if (err) console.log(err)
       else console.log("POST SUCCESS")

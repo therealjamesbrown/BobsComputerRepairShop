@@ -10,7 +10,7 @@
  * 
  */
 
-import { SecurityQuestion } from '../interfaces/security-question.interface
+import { SecurityQuestion } from '../interfaces/security-question.interface'
 import { Role } from '../interfaces/role.interface'
 
 export interface User {

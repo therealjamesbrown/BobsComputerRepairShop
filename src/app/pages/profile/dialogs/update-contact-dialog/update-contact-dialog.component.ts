@@ -101,6 +101,7 @@ console.log(res);
     const contactPhone = this.updateContactForm.controls.phone.value;
     const contactAddress = this.updateContactForm.controls.address.value;
     const contactEmail = this.updateContactForm.controls.email.value;
+    const role = this.updateContactForm.controls.role.value;
   
     this.userProfileService.updateUserContactDetails(
                                                       userId,
@@ -109,7 +110,8 @@ console.log(res);
                                                       username,
                                                       contactPhone,
                                                       contactAddress,
-                                                      contactEmail).subscribe( res =>{
+                                                      contactEmail,
+                                                      role).subscribe( res =>{
                                                         //console.log(res);
                                                         const dialogRef = this.dialog.open(SuccessComponent, {
                                                           width: "100px"

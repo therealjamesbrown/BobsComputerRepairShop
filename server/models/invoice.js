@@ -4,7 +4,7 @@
  * ; Title: invoice.js
  * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
  * ; Modified by: James Brown
- * ; Date: 10/14/2020
+ * ; Date: 10/14/2020s
  * ; Description: Model that connects to the invoice collection
  * ================================
  * 

@@ -199,7 +199,9 @@ router.post('/', async(req, res) => {
             email:       req.body.email,
             role:        req.body.role
         }
+        
         console.log(newUser)
+        console.log(req.body);
         User.create(newUser, function(err, user){
             if(err){
                 console.log(err);
@@ -234,7 +236,6 @@ router.put('/:id', async(req, res) => {
                 res.status(500).send(updateUserMongoDbErrorResponse.toObject());
             } else {
                 console.log(user);
-
                 user.set({
                     firstName: req.body.firstName,
                     lastName: req.body.lastName,

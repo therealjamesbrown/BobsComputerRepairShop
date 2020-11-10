@@ -42,7 +42,7 @@ app.use('/', express.static(path.join(__dirname, '../dist/bcrs')));
 /**
  * Variables
  */
-const port = 3000 || process.env.PORT; // server port
+const port = 3000; // server port
 
 // TODO: This line will need to be replaced with your actual database connection string
 const conn = 'mongodb+srv://admin:admin@cluster0.jiil7.mongodb.net/BCRS?retryWrites=true&w=majority';
@@ -77,7 +77,7 @@ app.use('/api/session', SessionApi);
 /**
  * Create and start server
  */
-http.createServer(app).listen(port, function() {
+http.createServer(app).listen(process.env.PORT || port, function() {
   console.log(`Application started and listening on port: ${port}`)
 }); // end http create server function test
 

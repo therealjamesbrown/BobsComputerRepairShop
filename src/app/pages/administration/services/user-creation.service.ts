@@ -9,14 +9,29 @@
  * ================================
  * 
  */
-
+import { HttpClient} from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user.interface'
-
+import { Observable } from 'rxjs'
 @Injectable({
   providedIn: 'root'
 })
 export class UserCreationService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  get(): Observable<User[]> {
+    return this.http.get<User[]>('/api/users')
+  }
+  getUserById(id): Observable<User> {
+    return this.http.get<User>(`/api/users/${id}`)
+  }
+  post(data): Observable<User> {
+    return this.http.post<User>('/api/users', data)
+  }
+  put(id, data): Observable<User> {
+    return this.http.put<User>(`/api/users/${id}`, data)
+  }
+  patch(id, data): Observable<User> {
+    return this.http.patch<User>(`/api/users/${id}`, data)
+  }
 }

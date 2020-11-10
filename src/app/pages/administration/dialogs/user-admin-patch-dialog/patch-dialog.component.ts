@@ -12,12 +12,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { CookieService } from 'ngx-cookie-service'
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json'
-  })
-}
+import { UserCreationService } from '../../services/user-creation.service'
+import { User } from '../../interfaces/user.interface'
 
 @Component({
   selector: 'app-patch-dialog',
@@ -25,8 +21,8 @@ const httpOptions = {
   styleUrls: ['./patch-dialog.component.css']
 })
 export class PatchDialogComponent implements OnInit {
-
-  constructor(private cookieService: CookieService, private http: HttpClient) { }
+  user: User
+  constructor(private userCreationService: UserCreationService, private cookieService: CookieService, private http: HttpClient) { }
 
   ngOnInit() { }
   cancel() {
@@ -34,7 +30,14 @@ export class PatchDialogComponent implements OnInit {
   }
   delete() {
     let id = this.cookieService.get('id')
-    this.http.patch(`http://localhost:3000/api/users/${id}`, httpOptions).subscribe(err => {
+    this.userCreationService.getUserById(id).subscribe(res => {
+      if (res) {
+        this.user = res['data']
+      } else {
+        console.log("No User Found")
+      }
+    })
+    this.userCreationService.patch(id, this.user).subscribe(err => {
       if (err) console.log(err)
      else console.log("DELETE Success")
    }) 

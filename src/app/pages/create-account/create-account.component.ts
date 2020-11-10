@@ -16,6 +16,8 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router'
 import { CookieService } from 'ngx-cookie-service'
+import { UserSignUpService } from '../administration/services/user-signup'
+
 @Component({
   selector: 'app-create-account',
   templateUrl: './create-account.component.html',
@@ -33,7 +35,7 @@ export class CreateAccountComponent implements OnInit {
   securityQuestion1: any
   securityQuestion2: any
   securityQuestion3: any
-  constructor(private cookieService: CookieService, private router: Router, private http: HttpClient, private fb: FormBuilder) { }
+  constructor(private userSignUpService: UserSignUpService, private cookieService: CookieService, private router: Router, private http: HttpClient, private fb: FormBuilder) { }
   ngOnInit() {
     this.firstFormGroup = this.fb.group({
       username: new FormControl(null, Validators.required),
@@ -55,7 +57,7 @@ export class CreateAccountComponent implements OnInit {
       username: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required)
     })
-    this.http.get('/api/securityQuestions').subscribe(res => {
+    this.userSignUpService.getSecurityQuestions().subscribe(res => {
       this.securityQuestion1 = res['data'][0].questionId
       this.securityQuestion2 = res['data'][1].questionId
       this.securityQuestion3 = res['data'][2].questionId
@@ -81,7 +83,7 @@ export class CreateAccountComponent implements OnInit {
      Question3Answer: this.secondFormGroup.get('securityQuestion3Answer').value.trim()
    }
    console.log(this.newUser)
-   this.http.post('/api/users', this.newUser).subscribe(err => {
+   this.userSignUpService.postUsers(this.newUser).subscribe(err => {
     if (err) {
       console.log(err)
     } else {
@@ -94,7 +96,7 @@ export class CreateAccountComponent implements OnInit {
      username: this.thirdFormGroup.get('username').value.trim(),
      password: this.thirdFormGroup.get('password').value.trim()
    }
-   this.http.post('/api/session/signin', signInUser).subscribe(res => {
+   this.userSignUpService.signIn(signInUser).subscribe(res => {
     if (res['data'].username) {
       this.cookieService.set('sessionuser', res['data'].username, 1)
       this.router.navigate(['/'])

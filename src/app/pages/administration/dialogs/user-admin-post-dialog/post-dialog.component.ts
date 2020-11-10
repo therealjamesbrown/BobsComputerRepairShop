@@ -12,13 +12,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*'
-  })
-}
+import { UserCreationService } from '../../services/user-creation.service'
 
 @Component({
   selector: 'app-post-dialog',
@@ -30,11 +24,11 @@ export class PostDialogComponent implements OnInit {
   roles: any
   selected: any
   role: any
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private userCreationService: UserCreationService, private fb: FormBuilder, private http: HttpClient) { }
 
 
   ngOnInit() {
-    this.http.get('/api/roles').subscribe(res => {
+    this.userCreationService.get().subscribe(res => {
       this.roles = res['data']
     })
     this.createUserForm = this.fb.group({
@@ -59,7 +53,7 @@ export class PostDialogComponent implements OnInit {
       phoneNumber: this.createUserForm.get('phoneNumber').value,
       role: this.createUserForm.controls.role.value
     }
-    this.http.post('http://localhost:3000/api/users', newUser, httpOptions).subscribe(err => {
+    this.userCreationService.post(newUser).subscribe(err => {
       if (err) console.log(err)
       else console.log("POST SUCCESS")
     }) 

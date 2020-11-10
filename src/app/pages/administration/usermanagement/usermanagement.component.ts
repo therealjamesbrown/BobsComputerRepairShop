@@ -18,13 +18,7 @@ import { PatchDialogComponent } from '../dialogs/user-admin-patch-dialog/patch-d
 import { RoleService } from '../services/role.service';
 import { CookieService } from 'ngx-cookie-service';
 import { MoreVertDialogComponent } from '../dialogs/user-options-dialog/dialogs/more-vert-dialog/more-vert-dialog.component'
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*'
-  })
-}
+import { UserCreationService } from '../services/user-creation.service'
 @Component({
   selector: 'app-usermanagement',
   templateUrl: './usermanagement.component.html',
@@ -36,12 +30,12 @@ export class UserManagementComponent implements OnInit {
   users: any
   displayedColumns: any = [ 'username', 'fistName', 'lastName', 'phoneNumber', 'address','isDisabled', 'actions', 'roles']
 
-  constructor(public dialog: MatDialog, private http: HttpClient, private roleService: RoleService, private cookieService: CookieService) { }
+  constructor(private userCreationService: UserCreationService, public dialog: MatDialog, private http: HttpClient, private roleService: RoleService, private cookieService: CookieService) { }
 
 
   ngOnInit() {
     //Begin Brendans code
-    this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(data => {
+    this.userCreationService.get().subscribe(data => {
       this.users = data['data'];
     })
     //end Brendans code
@@ -54,7 +48,7 @@ export class UserManagementComponent implements OnInit {
       width:'800px'});
       //added by JB 10/28. After user is submitted, refresh the user list.
       dialogRef.afterClosed().subscribe(result => {
-        this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(data => {
+        this.userCreationService.get().subscribe(data => {
       this.users = data['data'];
     })
       })

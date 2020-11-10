@@ -13,6 +13,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { CookieService } from 'ngx-cookie-service'
+import { UserCreationService } from '../../services/user-creation.service'
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -31,9 +32,9 @@ export class PutDialogComponent implements OnInit {
   user: any
   roles: any
   selected: any
-  constructor(private cookieService: CookieService, private http: HttpClient, private fb: FormBuilder) { }
+  constructor(private userCreationService: UserCreationService, private cookieService: CookieService, private http: HttpClient, private fb: FormBuilder) { }
   ngOnInit() {
-    this.http.get('/api/roles').subscribe(res => {
+    this.userCreationService.get().subscribe(res => {
       this.roles = res['data']
     })
     this.updatedUserForm = this.fb.group({
@@ -63,7 +64,7 @@ export class PutDialogComponent implements OnInit {
       role: this.updatedUserForm.controls.role.value
     }
     let id = this.cookieService.get('id')
-    this.http.put(`http://localhost:3000/api/users/${id}`, updatedUser, httpOptions).subscribe(err => {
+    this.userCreationService.put(id, updatedUser).subscribe(err => {
       if (err) console.log(err)
       else console.log("UPDATE Success")
     })

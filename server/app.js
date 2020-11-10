@@ -79,4 +79,6 @@ app.use('/api/session', SessionApi);
  */
 http.createServer(app).listen(port, function() {
   console.log(`Application started and listening on port: ${port}`)
-}); // end http create server function
+}); // end http create server function test
+
+

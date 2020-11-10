@@ -14,6 +14,7 @@ import { Validators, FormGroup, FormBuilder } from '@angular/forms'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { CookieService } from 'ngx-cookie-service'
 import { UserCreationService } from '../../services/user-creation.service'
+import { UserprofileService } from 'src/app/pages/services/userprofile.service';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -32,11 +33,36 @@ export class PutDialogComponent implements OnInit {
   user: any
   roles: any
   selected: any
-  constructor(private userCreationService: UserCreationService, private cookieService: CookieService, private http: HttpClient, private fb: FormBuilder) { }
+  rolesDataSource;
+  filteredRolesDataSource;
+
+  
+  constructor(private userCreationService: UserCreationService, private cookieService: CookieService, private http: HttpClient, private fb: FormBuilder, private userProfileService: UserprofileService) {
+
+   }
   ngOnInit() {
     this.userCreationService.get().subscribe(res => {
       this.roles = res['data']
+      //console.log(this.roles);
+    });
+
+    
+    this.userCreationService.getAllUserRoles().subscribe(res =>{
+      console.log(res.data);
+      //get all the roles and set it to our initial data array
+      this.rolesDataSource = res.data;
+
+      //Initialize the new array, filter out the disabled ones, and pushed the active ones into the new array
+      this.filteredRolesDataSource = [];
+      for (let role of this.rolesDataSource){
+        if(role.isDisabled !== true){
+          this.filteredRolesDataSource.push(role);
+        }
+      }
+      //console.log(this.filteredSecurityQuestionsDataSource);
     })
+
+
     this.updatedUserForm = this.fb.group({
       username: [null, Validators.compose([Validators.required])],
       password:  [null, Validators.compose([Validators.required])],

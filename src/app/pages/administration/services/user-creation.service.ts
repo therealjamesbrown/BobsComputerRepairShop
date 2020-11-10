@@ -34,4 +34,8 @@ export class UserCreationService {
   patch(id, data): Observable<User> {
     return this.http.patch<User>(`/api/users/${id}`, data)
   }
+
+  getAllUserRoles(): Observable<any>{
+    return this.http.get('/api/roles/');
+  }
 }

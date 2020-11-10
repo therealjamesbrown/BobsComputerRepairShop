@@ -32,9 +32,7 @@ export class CreateAccountComponent implements OnInit {
   thirdFormGroup: FormGroup
   newUser: any
   questions: any
-  securityQuestion1: any
-  securityQuestion2: any
-  securityQuestion3: any
+  securityQuestions: any
   constructor(private userSignUpService: UserSignUpService, private cookieService: CookieService, private router: Router, private http: HttpClient, private fb: FormBuilder) { }
   ngOnInit() {
     this.firstFormGroup = this.fb.group({
@@ -58,9 +56,8 @@ export class CreateAccountComponent implements OnInit {
       password: new FormControl(null, Validators.required)
     })
     this.userSignUpService.getSecurityQuestions().subscribe(res => {
-      this.securityQuestion1 = res['data'][0].questionId
-      this.securityQuestion2 = res['data'][1].questionId
-      this.securityQuestion3 = res['data'][2].questionId
+      this.securityQuestions = res['data']
+      console.log(this.securityQuestions)
     })
   }
   registerAccount() {
@@ -75,11 +72,11 @@ export class CreateAccountComponent implements OnInit {
   }
   setSecurityQuestions() {
    this.newUser['securityQuestions'] = {
-     Question1: this.securityQuestion1,
+     Question1: this.secondFormGroup.controls.securityQuestion1.value,
      Question1Answer: this.secondFormGroup.get('securityQuestion1Answer').value.trim(),
-     Question2: this.securityQuestion2,
+     Question2: this.secondFormGroup.controls.securityQuestion2.value,
      Question2Answer: this.secondFormGroup.get('securityQuestion2Answer').value.trim(),
-     Question3: this.securityQuestion3,
+     Question3: this.secondFormGroup.controls.securityQuestion3.value,
      Question3Answer: this.secondFormGroup.get('securityQuestion3Answer').value.trim()
    }
    console.log(this.newUser)

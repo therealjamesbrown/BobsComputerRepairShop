@@ -54,7 +54,9 @@
                 <!-- Security Question 1 -->
                     <mat-label>Security Question 1</mat-label>
                     <div>
-                        <mat-label>{{ securityQuestion1 }}</mat-label>
+                        <mat-select [formControl]="secondFormGroup.controls['securityQuestion1']">
+                            <mat-option *ngFor="let question of securityQuestions">{{ question.questionId }}</mat-option>
+                        </mat-select>
                     </div>
                 <mat-form-field>
                 <input matInput type="text" formControlName="securityQuestion1Answer" required>
@@ -63,7 +65,9 @@
                 <!-- Security Question 2 -->
                     <mat-label>Security Question 2</mat-label>
                     <div>
-                        <mat-label>{{ securityQuestion2 }}</mat-label>
+                        <mat-select [formControl]="secondFormGroup.controls['securityQuestion2']">
+                            <mat-option *ngFor="let question of securityQuestions">{{ question.questionId }}</mat-option>
+                        </mat-select>
                     </div>
                 <mat-form-field>
                 <input matInput type="text" formControlName="securityQuestion2Answer" required>
@@ -72,7 +76,9 @@
                 <!-- Security Question 3 -->
                     <mat-label>Security Question 3</mat-label>
                     <div>
-                        <mat-label>{{ securityQuestion3 }}</mat-label>
+                        <mat-select [formControl]="secondFormGroup.controls['securityQuestion3']">
+                            <mat-option *ngFor="let question of securityQuestions">{{ question.questionId }}</mat-option>
+                        </mat-select>
                     </div>
                 <mat-form-field>
                 <input matInput type="text" formControlName="securityQuestion3Answer" required>

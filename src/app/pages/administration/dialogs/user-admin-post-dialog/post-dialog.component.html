@@ -52,7 +52,7 @@
                 <mat-label>Role</mat-label>
                 <br>
                 <mat-select [value]="selected" [formControl]="createUserForm.controls['role']">
-                    <mat-option *ngFor="let role of roles" [value]="role.text">{{ role.text }}</mat-option>
+                    <mat-option *ngFor="let role of filteredRolesDataSource" [value]="role.text">{{ role.text }}</mat-option>
                 </mat-select>
             </div>
         </div>

@@ -24,6 +24,9 @@ export class PostDialogComponent implements OnInit {
   roles: any
   selected: any
   role: any
+  rolesDataSource;
+  filteredRolesDataSource;
+
   constructor(private userCreationService: UserCreationService, private fb: FormBuilder, private http: HttpClient) { }
 
 
@@ -31,6 +34,24 @@ export class PostDialogComponent implements OnInit {
     this.userCreationService.get().subscribe(res => {
       this.roles = res['data']
     })
+
+
+    this.userCreationService.getAllUserRoles().subscribe(res =>{
+      console.log(res.data);
+      //get all the roles and set it to our initial data array
+      this.rolesDataSource = res.data;
+
+      //Initialize the new array, filter out the disabled ones, and pushed the active ones into the new array
+      this.filteredRolesDataSource = [];
+      for (let role of this.rolesDataSource){
+        if(role.isDisabled !== true){
+          this.filteredRolesDataSource.push(role);
+        }
+      }
+      //console.log(this.filteredSecurityQuestionsDataSource);
+    })
+
+
     this.createUserForm = this.fb.group({
       username: [null, Validators.compose([Validators.required])],
       password:  [null, Validators.compose([Validators.required])],

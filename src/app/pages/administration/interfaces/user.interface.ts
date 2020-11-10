@@ -1,3 +1,6 @@
+import { SecurityQuestion } from '../interfaces/security-question.interface
+import { Role } from '../interfaces/role.interface'
+
 export interface User {
     username: string;
     password: string;
@@ -7,13 +10,8 @@ export interface User {
     address: string;
     email: string;
     isDisable: boolean;
-    role: {
-
-    };
-    securityQuestions: {
-
-    };
+    role: [Role];
+    securityQuestions: [SecurityQuestion];
     date_created: Date;
-    date_modified: Date;
-    role: string;    
+    date_modified: Date; 
 }

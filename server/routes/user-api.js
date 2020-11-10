@@ -45,8 +45,8 @@ try {
  })
 /**
  * 
- * --Find User by ID--
- * Created by SK
+ * --Find User Role By Username--
+ * Created by BM
  */
 
 router.get('/:username/role', function(req, res) {

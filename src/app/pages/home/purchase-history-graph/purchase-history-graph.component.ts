@@ -1,3 +1,16 @@
+/**
+ * 
+ * ================================
+ * ; Title: Purchase-history-graph
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Modified by: James Brown
+ * ; Date: 10/14/2020
+ * ; Description: component responsible for purchase history graph 
+ * ================================
+ * 
+ */
+
+
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UserprofileService } from '../../services/userprofile.service';

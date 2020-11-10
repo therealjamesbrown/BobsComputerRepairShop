@@ -1,3 +1,16 @@
+/**
+ * 
+ * ================================
+ * ; Title: Invoice Dialog
+ * ; Authors: Sarah Kovar; James Brown; Brendan Mulhern
+ * ; Modified by: James Brown
+ * ; Date: 10/14/2020
+ * ; Description: Component dialog responsible for invoice summary
+ * ================================
+ * 
+ */
+
+
 import { Component, Inject, OnInit } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 

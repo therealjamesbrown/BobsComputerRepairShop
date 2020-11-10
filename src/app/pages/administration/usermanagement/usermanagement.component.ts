@@ -43,7 +43,6 @@ export class UserManagementComponent implements OnInit {
     //Begin Brendans code
     this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(data => {
       this.users = data['data'];
-      console.log(this.users)
     })
     //end Brendans code
    }
@@ -57,7 +56,6 @@ export class UserManagementComponent implements OnInit {
       dialogRef.afterClosed().subscribe(result => {
         this.http.get('http://localhost:3000/api/users', httpOptions).subscribe(data => {
       this.users = data['data'];
-      console.log(this.users)
     })
       })
    }

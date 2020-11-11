@@ -2005,7 +2005,7 @@
 
       function CreateAccountComponent_mat_option_57_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 27);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
 
@@ -2015,6 +2015,8 @@
         if (rf & 2) {
           var question_r5 = ctx.$implicit;
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", question_r5.questionId);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](question_r5.questionId);
@@ -2023,7 +2025,7 @@
 
       function CreateAccountComponent_mat_option_65_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 27);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
 
@@ -2033,6 +2035,8 @@
         if (rf & 2) {
           var question_r6 = ctx.$implicit;
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", question_r6.questionId);
+
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](question_r6.questionId);
@@ -2041,7 +2045,7 @@
 
       function CreateAccountComponent_mat_option_73_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option");
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-option", 27);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
 
@@ -2050,6 +2054,8 @@
 
         if (rf & 2) {
           var question_r7 = ctx.$implicit;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("value", question_r7.questionId);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
 
@@ -2170,7 +2176,7 @@
         }])],
         decls: 100,
         vars: 12,
-        consts: [["color", "primary", 2, "text-align", "center"], ["stepper", ""], [3, "stepControl"], [2, "text-align", "center"], [3, "formGroup"], ["matStepLabel", ""], ["matInput", "", "placeholder", "Ex. thespidermonkey25", "formControlName", "username", "required", ""], ["matInput", "", "placeholder", "Ex. root", "formControlName", "password", "required", ""], ["matInput", "", "placeholder", "Ex. Peter", "formControlName", "firstName", "required", ""], ["matInput", "", "placeholder", "Ex. Parker", "formControlName", "lastName", "required", ""], ["matInput", "", "placeholder", "Ex. 867 5309", "formControlName", "phoneNumber", "required", ""], ["matInput", "", "placehodler", "Ex. 12 Brooklyn Street", "formControlName", "address", "required", ""], ["routerLink", "/session/signin"], ["mat-button", "", "matStepperNext", "", 3, "click"], ["label", "Security Questions", 3, "stepControl"], [2, "text-align", "center", 3, "formGroup", "ngSubmit"], [3, "formControl"], [4, "ngFor", "ngForOf"], ["matInput", "", "type", "text", "formControlName", "securityQuestion1Answer", "required", ""], ["matInput", "", "type", "text", "formControlName", "securityQuestion2Answer", "required", ""], ["matInput", "", "type", "text", "formControlName", "securityQuestion3Answer", "required", ""], ["mat-button", "", "matStepPrevious", ""], ["type", "submit", "mat-button", "", "matStepperNext", ""], ["label", "Sign In", 3, "stepControl"], ["matInput", "", "formControlName", "username", "placeholder", "Ex. spidermonkey25", "required", "", 2, "text-align", "center"], ["matInput", "", "formControlName", "password", "placeholder", "Ex. Password", "required", "", 2, "text-align", "center"], ["mat-button", "", "matStepperPrevious", ""]],
+        consts: [["color", "primary", 2, "text-align", "center"], ["stepper", ""], [3, "stepControl"], [2, "text-align", "center"], [3, "formGroup"], ["matStepLabel", ""], ["matInput", "", "placeholder", "Ex. thespidermonkey25", "formControlName", "username", "required", ""], ["matInput", "", "placeholder", "Ex. root", "formControlName", "password", "required", ""], ["matInput", "", "placeholder", "Ex. Peter", "formControlName", "firstName", "required", ""], ["matInput", "", "placeholder", "Ex. Parker", "formControlName", "lastName", "required", ""], ["matInput", "", "placeholder", "Ex. 867 5309", "formControlName", "phoneNumber", "required", ""], ["matInput", "", "placehodler", "Ex. 12 Brooklyn Street", "formControlName", "address", "required", ""], ["routerLink", "/session/signin"], ["mat-button", "", "matStepperNext", "", 3, "click"], ["label", "Security Questions", 3, "stepControl"], [2, "text-align", "center", 3, "formGroup", "ngSubmit"], [3, "formControl"], [3, "value", 4, "ngFor", "ngForOf"], ["matInput", "", "type", "text", "formControlName", "securityQuestion1Answer", "required", ""], ["matInput", "", "type", "text", "formControlName", "securityQuestion2Answer", "required", ""], ["matInput", "", "type", "text", "formControlName", "securityQuestion3Answer", "required", ""], ["mat-button", "", "matStepPrevious", ""], ["type", "submit", "mat-button", "", "matStepperNext", ""], ["label", "Sign In", 3, "stepControl"], ["matInput", "", "formControlName", "username", "placeholder", "Ex. spidermonkey25", "required", "", 2, "text-align", "center"], ["matInput", "", "formControlName", "password", "placeholder", "Ex. Password", "required", "", 2, "text-align", "center"], ["mat-button", "", "matStepperPrevious", ""], [3, "value"]],
         template: function CreateAccountComponent_Template(rf, ctx) {
           if (rf & 1) {
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "mat-card");
@@ -2341,7 +2347,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](56, "mat-select", 16);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](57, CreateAccountComponent_mat_option_57_Template, 2, 1, "mat-option", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](57, CreateAccountComponent_mat_option_57_Template, 2, 2, "mat-option", 17);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -2365,7 +2371,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](64, "mat-select", 16);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](65, CreateAccountComponent_mat_option_65_Template, 2, 1, "mat-option", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](65, CreateAccountComponent_mat_option_65_Template, 2, 2, "mat-option", 17);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -2389,7 +2395,7 @@
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](72, "mat-select", 16);
 
-            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](73, CreateAccountComponent_mat_option_73_Template, 2, 1, "mat-option", 17);
+            _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](73, CreateAccountComponent_mat_option_73_Template, 2, 2, "mat-option", 17);
 
             _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
 
@@ -15774,9 +15780,9 @@
           value: function verifySecurityQuestions() {
             var _this37 = this;
 
-            var answerToSecurityQuestion1 = this.form2.controls['answerToSecurityQuestion1'].value;
-            var answerToSecurityQuestion2 = this.form2.controls['answerToSecurityQuestion2'].value;
-            var answerToSecurityQuestion3 = this.form2.controls['answerToSecurityQuestion3'].value;
+            var answerToSecurityQuestion1 = this.form2.controls['answerToSecurityQuestion1'].value.trim();
+            var answerToSecurityQuestion2 = this.form2.controls['answerToSecurityQuestion2'].value.trim();
+            var answerToSecurityQuestion3 = this.form2.controls['answerToSecurityQuestion3'].value.trim();
             console.log(answerToSecurityQuestion1 + answerToSecurityQuestion2 + answerToSecurityQuestion3);
             this.http.post('/api/session/verify/users/' + this.username + '/security-questions', {
               questionText1: this.question1,

@@ -12,7 +12,7 @@ router.post('/webhook', async(req, res) => {
         //log the request and return a 200 to paypal, so they quit trying to resend it
         console.log(req.body);
         console.log(req.headers);
-        res.status(200).send('Success!');
+        res.status(200).send();
 
         /*verify the dang thing is actually from paypal
         let certURL = "https://api.sandbox.paypal.com/v1/notifications/certs/CERT-360caa42-fca2a594-a5cafa77";

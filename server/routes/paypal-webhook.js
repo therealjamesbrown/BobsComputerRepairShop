@@ -42,7 +42,7 @@ router.post('/webhook', async(req, res) => {
         let webhookVerifciationURL = 'https://api-m.sandbox.paypal.com/v1/notifications/verify-webhook-signature';
         let webhookSiteURL = 'https://webhook.site/081c42e7-b0d6-48f4-a11c-8912dfd9be03'
         //send it off to PayPal for verification
-        axios.post(webhookSiteURL, {
+        axios.post(webhookVerifciationURL, {
             auth_logo, certURL, transmissionId, transmissionSignature, 
             transmissionTimestamp, webhook_event}, {
             headers: {

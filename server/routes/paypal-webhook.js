@@ -54,7 +54,7 @@ router.post('/webhook', async(req, res) => {
           }
         ).then(res => {
             //console.log(`statusCode: ${res.statusCode}`)
-            console.log(res);
+            console.log(res.data);
           })
           .catch(error => {
             console.error(error)

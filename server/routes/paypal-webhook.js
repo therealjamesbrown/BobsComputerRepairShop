@@ -12,6 +12,7 @@ const ErrorResponse = require('../services/error-response');
 
 router.post('/webhook', async(req, res) => {
     try {
+        console.log(req);
         //log the request and return a 200 to paypal, so they quit trying to resend it
         res.status(200).send();
         //console.log(req.body);
@@ -53,7 +54,7 @@ router.post('/webhook', async(req, res) => {
           }
         ).then(res => {
             //console.log(`statusCode: ${res.statusCode}`)
-            console.log(res.data.response);
+            console.log(res);
           })
           .catch(error => {
             console.error(error)

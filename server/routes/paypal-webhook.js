@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const https = require('https');
 
+const axios = require('axios')
+
 
 //bring in our base and error response classes
 const BaseResponse = require('../services/base-response');
@@ -11,9 +13,10 @@ const ErrorResponse = require('../services/error-response');
 router.post('/webhook', async(req, res) => {
     try {
         //log the request and return a 200 to paypal, so they quit trying to resend it
+        res.status(200).send();
         //console.log(req.body);
        // console.log(req.headers);
-        res.status(200).send();
+        
 
 
         //retrieve the values for your request, so you can verify it came from paypal
@@ -23,23 +26,35 @@ router.post('/webhook', async(req, res) => {
         let transmissionTimestamp = req['headers']['paypal-transmission-time'];
         let auth_logo = req['headers']['paypal-auth-algo'];
         let requestBody = req.body;
-
-        //construct the POST headers
+        let accessToken = 'A21AAIglYXftVLuGW2LniHz9iZ6dKhmzWL7mW7RThr5v27yMLkuqS7bUmV5fFSNJlOqIld6BOyDIYY_LWDY4kUfEiyz0mErpQ';
 
         //construct the POST body
-        const webhookEventForVerification = JSON.stringify({
+        let webhookEventForVerification = {
             auth_logo: auth_logo,
             certURL: certURL,
             transmissionId: transmissionId,
             transmissionSignature: transmissionSignature,
             transmissionTimestamp: transmissionTimestamp,
             webhook_event: requestBody
-          })
-          console.log(webhookEventForVerification);
+          };
+          //console.log(webhookEventForVerification);
 
+        let webhookVerifciationURL = 'https://api-m.sandbox.paypal.com/v1/notifications/verify-webhook-signature';
+        let webhookSiteURL = 'https://webhook.site/081c42e7-b0d6-48f4-a11c-8912dfd9be03'
         //send it off to PayPal for verification
-        
-
+        axios.post(webhookVerifciationURL, {webhookEventForVerification}, {
+            headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + accessToken
+            }
+          }
+        ).then(res => {
+            //console.log(`statusCode: ${res.statusCode}`)
+            console.log(res.data.response);
+          })
+          .catch(error => {
+            console.error(error)
+          })
         //write it to the db if everything is good
 
         

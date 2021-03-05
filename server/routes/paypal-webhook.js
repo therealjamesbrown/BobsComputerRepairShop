@@ -20,15 +20,17 @@ router.post('/webhook', async(req, res) => {
 
 
         //retrieve the values for your request, so you can verify it came from paypal
-        let certURL = req['headers']['paypal-cert-url'];
-        let transmissionId = req['headers']['paypal-transmission-id'];
-        let transmissionSignature = req['headers']['paypal-transmission-sig'];
-        let transmissionTimestamp = req['headers']['paypal-transmission-time'];
         let auth_logo = req['headers']['paypal-auth-algo'];
+        let cert_url = req['headers']['paypal-cert-url'];
+        let transmission_id = req['headers']['paypal-transmission-id'];
+        let transmission_sig = req['headers']['paypal-transmission-sig'];
+        let transmission_time = req['headers']['paypal-transmission-time'];
         let webhook_event = req.body;
+        let webhook_id = '5CN950598E705025N';
         let accessToken = 'A21AAIglYXftVLuGW2LniHz9iZ6dKhmzWL7mW7RThr5v27yMLkuqS7bUmV5fFSNJlOqIld6BOyDIYY_LWDY4kUfEiyz0mErpQ';
 
         //construct the POST body
+        /*
         let webhookEventForVerification = {
             auth_logo: auth_logo,
             certURL: certURL,
@@ -37,14 +39,13 @@ router.post('/webhook', async(req, res) => {
             transmissionTimestamp: transmissionTimestamp,
             webhook_event: webhook_event
           };
-          //console.log(webhookEventForVerification);
+          //console.log(webhookEventForVerification);*/
 
         let webhookVerifciationURL = 'https://api-m.sandbox.paypal.com/v1/notifications/verify-webhook-signature';
         let webhookSiteURL = 'https://webhook.site/081c42e7-b0d6-48f4-a11c-8912dfd9be03'
         //send it off to PayPal for verification
         axios.post(webhookVerifciationURL, {
-            auth_logo, certURL, transmissionId, transmissionSignature, 
-            transmissionTimestamp, webhook_event}, {
+            auth_logo, cert_url, transmission_id, transmission_sig, transmission_time,webhook_id, webhook_event}, {
             headers: {
             'Content-Type': 'application/json',
             Authorization: 'Bearer ' + accessToken

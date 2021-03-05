@@ -25,7 +25,7 @@ router.post('/webhook', async(req, res) => {
         let transmissionSignature = req['headers']['paypal-transmission-sig'];
         let transmissionTimestamp = req['headers']['paypal-transmission-time'];
         let auth_logo = req['headers']['paypal-auth-algo'];
-        let requestBody = req.body;
+        let webhook_event = req.body;
         let accessToken = 'A21AAIglYXftVLuGW2LniHz9iZ6dKhmzWL7mW7RThr5v27yMLkuqS7bUmV5fFSNJlOqIld6BOyDIYY_LWDY4kUfEiyz0mErpQ';
 
         //construct the POST body
@@ -35,14 +35,16 @@ router.post('/webhook', async(req, res) => {
             transmissionId: transmissionId,
             transmissionSignature: transmissionSignature,
             transmissionTimestamp: transmissionTimestamp,
-            webhook_event: requestBody
+            webhook_event: webhook_event
           };
           //console.log(webhookEventForVerification);
 
         let webhookVerifciationURL = 'https://api-m.sandbox.paypal.com/v1/notifications/verify-webhook-signature';
         let webhookSiteURL = 'https://webhook.site/081c42e7-b0d6-48f4-a11c-8912dfd9be03'
         //send it off to PayPal for verification
-        axios.post(webhookVerifciationURL, {webhookEventForVerification}, {
+        axios.post(webhookSiteURL, {
+            auth_logo, certURL, transmissionId, transmissionSignature, 
+            transmissionTimestamp, webhook_event}, {
             headers: {
             'Content-Type': 'application/json',
             Authorization: 'Bearer ' + accessToken

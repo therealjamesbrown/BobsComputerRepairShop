@@ -20,7 +20,7 @@ router.post('/webhook', async(req, res) => {
 
 
         //retrieve the values for your request, so you can verify it came from paypal
-        let auth_logo = req['headers']['paypal-auth-algo'];
+        let auth_algo = req['headers']['paypal-auth-algo'];
         let cert_url = req['headers']['paypal-cert-url'];
         let transmission_id = req['headers']['paypal-transmission-id'];
         let transmission_sig = req['headers']['paypal-transmission-sig'];
@@ -45,7 +45,7 @@ router.post('/webhook', async(req, res) => {
         let webhookSiteURL = 'https://webhook.site/081c42e7-b0d6-48f4-a11c-8912dfd9be03'
         //send it off to PayPal for verification
         axios.post(webhookVerifciationURL, {
-            auth_logo, cert_url, transmission_id, transmission_sig, transmission_time,webhook_id, webhook_event}, {
+            auth_algo, cert_url, transmission_id, transmission_sig, transmission_time,webhook_id, webhook_event}, {
             headers: {
             'Content-Type': 'application/json',
             Authorization: 'Bearer ' + accessToken
